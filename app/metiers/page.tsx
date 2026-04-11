@@ -129,22 +129,23 @@ const FAQ = [
 function MetierCard({ metier, color }: { metier: typeof METIERS[0]['metiers'][0]; color: string }) {
   return (
     <div
-      className="bg-white p-5 group hover:shadow-md transition-shadow duration-300"
-      style={{ borderLeft: `3px solid ${color}` }}
+      className="bg-white p-5 group hover:shadow-[0_2px_32px_rgba(28,28,23,0.08)] transition-shadow duration-300"
+      style={{ borderLeft: `4px solid ${color}` }}
     >
+      {/* Title-LG */}
       <h3
-        className="text-lg font-semibold text-[#0e0e0e] mb-2 group-hover:text-[#c9a84c] transition-colors duration-300"
+        className="text-[1.375rem] font-bold text-[#1c1c17] mb-2 group-hover:text-[#c9a84c] transition-colors duration-300"
+        style={{ letterSpacing: '-0.02em' }}
       >
         {metier.titre}
       </h3>
-      <p
-        className="text-sm text-[#6b6b6b] leading-relaxed mb-4"
-      >
+      {/* Body-LG */}
+      <p className="text-base text-[#6b6b6b] leading-relaxed mb-4">
         {metier.description}
       </p>
       <Link
         href={`/article/${metier.slug}`}
-        className="inline-flex items-center gap-1 text-[10px] tracking-widest uppercase transition-colors"
+        className="font-mono inline-flex items-center gap-1 text-xs font-bold tracking-widest uppercase transition-colors"
         style={{ color }}
       >
         Lire l&apos;analyse
@@ -164,9 +165,7 @@ function FaqItem({ item }: { item: typeof FAQ[0] }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-4 py-5 text-left"
       >
-        <span
-          className="text-base font-semibold text-[#0e0e0e] leading-snug"
-        >
+        <span className="text-base font-bold text-[#1c1c17] leading-snug">
           {item.q}
         </span>
         <svg
@@ -182,7 +181,7 @@ function FaqItem({ item }: { item: typeof FAQ[0] }) {
       </button>
       {open && (
         <p
-          className="text-sm text-[#6b6b6b] leading-relaxed pb-5 pr-8"
+          className="text-base text-[#6b6b6b] leading-relaxed pb-5 pr-8"
         >
           {item.a}
         </p>
@@ -193,29 +192,21 @@ function FaqItem({ item }: { item: typeof FAQ[0] }) {
 
 export default function MetiersPage() {
   return (
-    <div className="bg-[#f4f0e8] min-h-screen pt-24 md:pt-32 pb-24">
+    <div className="bg-[#fcf9f0] min-h-screen pt-24 md:pt-32 pb-24">
       <div className="max-w-5xl mx-auto px-5 md:px-8">
 
         {/* Header */}
         <header className="mb-16 md:mb-20 max-w-2xl">
-          <span
-            className="text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] block mb-4"
-          >
+          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-4">
             Analyse par métier
           </span>
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0e0e0e] leading-[1.05] mb-6"
-          >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#1c1c17] leading-[1.05] mb-6" style={{ letterSpacing: '-0.02em' }}>
             Votre métier face à l&apos;IA
           </h1>
-          <p
-            className="text-lg text-[#0e0e0e] leading-relaxed mb-4"
-          >
+          <p className="text-base text-[#1c1c17] leading-relaxed mb-4">
             15 professions analysées avec méthode. Pas de catastrophisme, pas de déni : une lecture lucide de ce que l&apos;IA change réellement, tâche par tâche.
           </p>
-          <p
-            className="text-base text-[#6b6b6b] leading-relaxed"
-          >
+          <p className="text-base text-[#6b6b6b] leading-relaxed">
             Chaque analyse est construite à partir de sources publiques, retours terrain et observations concrètes sur l&apos;évolution des outils. Le niveau d&apos;exposition est évalué selon la proportion de tâches automatisables dans les 3 à 5 prochaines années.
           </p>
         </header>
@@ -229,9 +220,7 @@ export default function MetiersPage() {
           ].map(({ label, color }) => (
             <div key={label} className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }} />
-              <span
-                className="text-[10px] tracking-wider uppercase text-[#6b6b6b]"
-              >
+              <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#6b6b6b]">
                 {label}
               </span>
             </div>
@@ -243,9 +232,7 @@ export default function MetiersPage() {
           <section key={section.niveau} className="mb-16">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-2 h-8" style={{ backgroundColor: section.color }} />
-              <h2
-                className="text-2xl font-bold text-[#0e0e0e]"
-              >
+              <h2 className="text-[1.75rem] font-bold text-[#1c1c17]" style={{ letterSpacing: '-0.02em' }}>
                 {section.label}
               </h2>
             </div>
@@ -262,14 +249,10 @@ export default function MetiersPage() {
 
         {/* FAQ */}
         <section className="mb-20">
-          <span
-            className="text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] block mb-4"
-          >
+          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-4">
             Questions fréquentes
           </span>
-          <h2
-            className="text-3xl font-bold text-[#0e0e0e] mb-10"
-          >
+          <h2 className="text-[1.75rem] font-bold text-[#1c1c17] mb-10" style={{ letterSpacing: '-0.02em' }}>
             Ce que vous vous demandez vraiment
           </h2>
           <div>
@@ -281,27 +264,20 @@ export default function MetiersPage() {
 
         {/* CTA ailucide.com */}
         <section className="bg-[#1a3a4a] p-10 md:p-14 text-center">
-          <span
-            className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] block mb-4"
-          >
+          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-4">
             Cadre ou dirigeant ?
           </span>
-          <h2
-            className="font-playfair text-3xl md:text-4xl font-black not-italic text-white mb-4"
-          >
+          <h2 className="text-[1.75rem] md:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
             Mesurez votre exposition à l&apos;IA
           </h2>
-          <p
-            className="font-source text-base text-[#f4f0e8]/80 mb-8 max-w-xl mx-auto"
-            style={{ fontWeight: 400 }}
-          >
+          <p className="text-base text-[#fcf9f0]/80 mb-8 max-w-xl mx-auto leading-relaxed">
             Un diagnostic personnalisé en 10 minutes. Comprenez précisément quelles dimensions de votre poste sont concernées et par quoi commencer.
           </p>
           <a
             href="https://ailucide.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-4 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
+            className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-4 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
           >
             Faire mon diagnostic
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

@@ -46,13 +46,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     : '';
 
   return (
-    <div className="pt-24 md:pt-32 pb-20 bg-[#f4f0e8] min-h-screen">
+    <div className="pt-24 md:pt-32 pb-20 bg-[#fcf9f0] min-h-screen">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Back link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 mb-12"
-          style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6b6b6b' }}
+          className="font-mono inline-flex items-center gap-2 mb-12 text-xs font-bold tracking-[0.1em] uppercase text-[#6b6b6b] hover:text-[#1c1c17] transition-colors"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M8 2L3 7L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -65,24 +64,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <article>
             {/* Header */}
             <header className="mb-12 md:mb-16">
-              <span
-                className="inline-block text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] bg-[#0e0e0e] px-3 py-1.5 mb-6"
-              >
+              {/* Tag — Label-MD */}
+              <span className="font-mono inline-block text-xs font-bold tracking-[0.1em] uppercase text-[#c9a84c] bg-[#1c1c17] px-3 py-1.5 mb-6">
                 {article.tag}
               </span>
-              <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0e0e0e] leading-[1.05] mb-6"
-              >
+              {/* Article headline — Headline-MD scale, Space Grotesk 700 */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1c1c17] leading-[1.05] mb-6" style={{ letterSpacing: '-0.02em' }}>
                 {article.title}
               </h1>
-              <p
-                className="text-base md:text-lg text-[#0e0e0e] leading-relaxed mb-8"
-              >
+              <p className="text-base md:text-lg text-[#1c1c17] leading-relaxed mb-8">
                 {article.excerpt}
               </p>
-              <div
-                className="flex flex-wrap items-center gap-4 text-[10px] tracking-wider uppercase text-[#6b6b6b]"
-              >
+              {/* Label-MD metadata */}
+              <div className="font-mono flex flex-wrap items-center gap-4 text-xs font-bold tracking-[0.05em] uppercase text-[#6b6b6b]">
                 <span>{article.author || 'Rédaction IA Lucide'}</span>
                 <span className="w-1 h-1 bg-[#c9a84c]/40 rounded-full" />
                 {formattedDate && <span>{formattedDate}</span>}
@@ -104,26 +98,20 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
             {/* Newsletter CTA */}
             <div className="mt-12 bg-[#1a3a4a] px-6 py-8 text-center">
-              <span
-                className="text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] block mb-3"
-              >
+              <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-3">
                 Newsletter
               </span>
-              <p
-                className="text-xl font-bold text-white mb-4"
-              >
+              <p className="text-[1.75rem] font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
                 Rejoignez 500+ professionnels lucides qui domptent l&apos;IA
               </p>
-              <p
-                className="text-sm text-[#f4f0e8]/70 mb-6"
-              >
+              <p className="text-base text-[#fcf9f0]/70 mb-6">
                 Une analyse par semaine. Concrète. Sans bullshit.
               </p>
               <a
                 href="https://newsletter.ialucide.fr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-3 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
+                className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-3 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
               >
                 S&apos;inscrire gratuitement
               </a>
@@ -131,15 +119,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
             {/* Ressources CTA */}
             <div className="mt-6 border border-[#c9a84c]/30 bg-white px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <p
-                className="text-base text-[#0e0e0e] leading-relaxed"
-              >
+              <p className="text-base text-[#1c1c17] leading-relaxed">
                 Retrouvez la liste complète des outils validés par{' '}
-                <strong className="font-semibold">ialucide</strong> sur notre page Ressources.
+                <strong className="font-bold">ialucide</strong> sur notre page Ressources.
               </p>
               <Link
                 href="/ressources"
-                className="inline-flex items-center gap-2 text-[10px] tracking-widest uppercase text-[#0e0e0e] border border-[#0e0e0e] px-4 py-2.5 hover:bg-[#0e0e0e] hover:text-[#f4f0e8] transition-all duration-500 whitespace-nowrap flex-shrink-0"
+                className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#1c1c17] border border-[#1c1c17] px-4 py-2.5 hover:bg-[#1c1c17] hover:text-[#fcf9f0] transition-all duration-500 whitespace-nowrap flex-shrink-0"
               >
                 Voir les ressources
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
@@ -152,14 +138,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {sidebarArticles.length > 0 && (
               <div className="mt-16 pt-12 border-t border-[#c9a84c]/20">
                 <div className="mb-8">
-                  <span
-                    className="text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] block mb-2"
-                  >
+                  <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-2">
                     À lire aussi
                   </span>
-                  <h2
-                    className="text-2xl md:text-3xl font-bold text-[#0e0e0e]"
-                  >
+                  <h2 className="text-[1.75rem] md:text-3xl font-bold text-[#1c1c17]" style={{ letterSpacing: '-0.02em' }}>
                     Articles similaires
                   </h2>
                 </div>
@@ -168,26 +150,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     <Link
                       key={rel.slug}
                       href={`/article/${rel.slug}`}
-                      className="group border border-[#c9a84c]/15 bg-white p-6 hover:border-[#c9a84c]/40 hover:shadow-md transition-all duration-300"
+                      className="group border border-[#c9a84c]/15 bg-white p-6 hover:border-[#c9a84c]/40 hover:shadow-[0_2px_32px_rgba(28,28,23,0.08)] transition-all duration-300"
                     >
-                      <span
-                        className="inline-block text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] bg-[#0e0e0e] px-3 py-1.5 mb-4"
-                      >
+                      <span className="font-mono inline-block text-xs font-bold tracking-[0.1em] uppercase text-[#c9a84c] bg-[#1c1c17] px-3 py-1.5 mb-4">
                         {rel.tag}
                       </span>
-                      <h3
-                        className="text-lg font-bold text-[#0e0e0e] mb-3 group-hover:text-[#c9a84c] transition-colors duration-300 leading-snug"
-                      >
+                      <h3 className="text-[1.375rem] font-bold text-[#1c1c17] mb-3 group-hover:text-[#c9a84c] transition-colors duration-300 leading-snug" style={{ letterSpacing: '-0.02em' }}>
                         {rel.title}
                       </h3>
-                      <p
-                        className="text-sm text-[#6b6b6b] mb-4 leading-relaxed"
-                      >
+                      <p className="text-base text-[#6b6b6b] mb-4 leading-relaxed">
                         {rel.excerpt}
                       </p>
-                      <span
-                        className="inline-flex items-center gap-1 text-[10px] tracking-widest uppercase text-[#0e0e0e] hover:text-[#c9a84c] transition-colors"
-                      >
+                      <span className="font-mono inline-flex items-center gap-1 text-xs font-bold tracking-widest uppercase text-[#1c1c17] hover:text-[#c9a84c] transition-colors">
                         Lire la suite →
                       </span>
                     </Link>

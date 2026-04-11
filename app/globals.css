@@ -1,5 +1,5 @@
-/* ── Google Fonts : chargement direct (weights 400, 700, 900) ── */
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap');
+/* ── Google Fonts fallback (next/font self-hosts; this covers SSR flash) ── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@1,700&family=Space+Grotesk:wght@400;500;700&display=swap');
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
@@ -7,44 +7,48 @@
 /* ── Design tokens ── */
 @theme {
   /*
-   * Les variables --nf-* sont injectées sur <html> par next/font (self-hosted).
-   * Elles servent de première priorité ; sinon on tombe sur les Google Fonts
-   * chargées via @import ci-dessus, puis sur les fallbacks système.
+   * --nf-* variables are injected on <html> by next/font (self-hosted).
+   * They take priority; Google Fonts @import above is the SSR fallback.
    */
-  --font-playfair: var(--nf-playfair, 'Playfair Display', Georgia, serif);
-  --font-source:   var(--nf-source,   'Source Serif 4',   Georgia, serif);
-  --font-mono:     var(--nf-mono,     'DM Mono',          ui-monospace, monospace);
+  --font-sans:     var(--nf-sans,     'Space Grotesk',    system-ui, sans-serif);
+  --font-playfair: var(--nf-playfair,  'Playfair Display', Georgia, serif);
+  --font-mono:     var(--nf-mono,      'DM Mono',          ui-monospace, monospace);
 }
 
 /* ── Base ── */
 *, *::before, *::after {
   scrollbar-width: thin;
-  scrollbar-color: #c9a84c #0e0e0e;
+  scrollbar-color: #c9a84c #1c1c17;
 }
 
 html {
-  font-family: var(--font-source);
+  font-family: var(--font-sans);
 }
 
 body {
-  background-color: #f4f0e8;
-  color: #0e0e0e;
-  font-family: var(--font-source);
+  background-color: #fcf9f0;
+  color: #1c1c17;
+  font-family: var(--font-sans);
+  font-size: 1rem;
   font-weight: 400;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
   background-color: #c9a84c;
-  color: #0e0e0e;
+  color: #1c1c17;
 }
 
-/* ── Headings : Playfair Display 900 italic par défaut ── */
+/* ── Typography scale ── */
+/* Space Grotesk 700, upright, tight tracking — for all headings by default.
+   Playfair Display italic is ONLY for the hero Display-LG (applied via explicit class). */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair);
-  font-weight: 900;
-  font-style: italic;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.02em;
 }
 
 /* ── Animations ── */
@@ -63,45 +67,47 @@ h1, h2, h3, h4, h5, h6 {
 .animate-delay-4 { animation-delay: 0.4s; }
 .animate-delay-5 { animation-delay: 0.5s; }
 
-/* ── Article prose (pages fond crème) ── */
+/* ── Article prose ── */
 .prose-ia {
-  font-family: var(--font-source);
-  font-size: 1.0625rem;
-  line-height: 1.8;
-  color: #0e0e0e;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1c1c17;
 }
 
 .prose-ia h1 {
-  display: none; /* Le H1 du markdown duplique le titre affiché dans le header */
+  display: none; /* H1 from markdown duplicates the displayed title */
 }
 
 .prose-ia h2 {
-  font-family: var(--font-playfair);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 1.75rem;   /* Headline-MD */
+  font-weight: 700;
   font-style: normal;
-  color: #0e0e0e;
+  letter-spacing: -0.02em;
+  color: #1c1c17;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .prose-ia h3 {
-  font-family: var(--font-source);
-  font-size: 1.1875rem;
-  font-weight: 400;
-  font-style: italic;
-  color: #0e0e0e;
+  font-family: var(--font-sans);
+  font-size: 1.375rem;  /* Title-LG */
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  color: #1c1c17;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
 .prose-ia h4 {
-  font-family: var(--font-playfair);
+  font-family: var(--font-sans);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
-  color: #0e0e0e;
+  color: #1c1c17;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -111,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
 }
 
-.prose-ia strong { font-weight: 600; }
+.prose-ia strong { font-weight: 700; }
 .prose-ia em     { font-style: italic; }
 
 .prose-ia a {
@@ -124,10 +130,9 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 2px solid #c9a84c;
   padding-left: 1.5rem;
   margin: 2rem 0;
-  font-family: var(--font-playfair);
   font-style: italic;
   font-size: 1.125rem;
-  color: rgba(0,0,0,0.7);
+  color: rgba(28, 28, 23, 0.65);
 }
 
 .prose-ia ul {
@@ -171,16 +176,18 @@ h1, h2, h3, h4, h5, h6 {
 .prose-ia th {
   padding: 0.875rem 1.25rem;
   text-align: left;
-  font-family: var(--font-source);
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;   /* Label-MD */
+  font-weight: 700;
   font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: #6b6b6b;
 }
 
 .prose-ia td {
   padding: 0.875rem 1.25rem;
-  color: #0e0e0e;
+  color: #1c1c17;
   line-height: 1.6;
   border-bottom: 1px solid rgba(0,0,0,0.07);
 }
@@ -198,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .prose-ia pre {
-  background: #0e0e0e;
+  background: #1c1c17;
   padding: 1.5rem;
   overflow-x: auto;
   margin: 2rem 0;
@@ -207,6 +214,6 @@ h1, h2, h3, h4, h5, h6 {
 .prose-ia pre code {
   background: none;
   padding: 0;
-  color: #f4f0e8;
+  color: #fcf9f0;
   font-size: 0.875rem;
 }

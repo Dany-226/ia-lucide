@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Source_Serif_4, DM_Mono } from 'next/font/google';
+import { Playfair_Display, Space_Grotesk, DM_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -8,16 +8,15 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--nf-playfair',
   display: 'swap',
-  weight: ['400', '700', '900'],
-  style: ['normal', 'italic'],
+  weight: ['700'],
+  style: ['italic'],
 });
 
-const sourceSerif = Source_Serif_4({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--nf-source',
+  variable: '--nf-sans',
   display: 'swap',
-  weight: ['300', '400', '600'],
-  style: ['normal', 'italic'],
+  weight: ['400', '500', '700'],
 });
 
 const dmMono = DM_Mono({
@@ -47,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${playfair.variable} ${sourceSerif.variable} ${dmMono.variable} font-source`}
+      className={`${playfair.variable} ${spaceGrotesk.variable} ${dmMono.variable} font-sans`}
     >
       <body className="min-h-screen flex flex-col">
         <Navbar />

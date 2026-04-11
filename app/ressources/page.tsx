@@ -80,27 +80,24 @@ function ToolCard({ tool }: { tool: typeof TOOLS[0]['items'][0] }) {
   return (
     <div className="bg-white border border-[#c9a84c]/15 p-6 hover:border-[#c9a84c]/40 hover:shadow-md transition-all duration-300">
       <div className="mb-3">
-        <h3
-          className="text-xl font-bold text-[#0e0e0e]"
-        >
+        {/* Title-LG */}
+        <h3 className="text-[1.375rem] font-bold text-[#1c1c17]" style={{ letterSpacing: '-0.02em' }}>
           {tool.name}
         </h3>
-        <span
-          className="text-[10px] tracking-widest uppercase text-[#c9a84c]"
-        >
+        {/* Label-MD */}
+        <span className="font-mono text-xs font-bold tracking-widest uppercase text-[#c9a84c]">
           {tool.subtitle}
         </span>
       </div>
-      <p
-        className="text-sm text-[#6b6b6b] leading-relaxed mb-5"
-      >
+      {/* Body-LG */}
+      <p className="text-base text-[#6b6b6b] leading-relaxed mb-5">
         {tool.description}
       </p>
       <a
         href={tool.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-[10px] tracking-widest uppercase text-[#0e0e0e] border border-[#0e0e0e] px-4 py-2.5 hover:bg-[#0e0e0e] hover:text-[#f4f0e8] transition-all duration-500"
+        className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#1c1c17] border border-[#1c1c17] px-4 py-2.5 hover:bg-[#1c1c17] hover:text-[#fcf9f0] transition-all duration-500"
       >
         {tool.cta}
         <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
@@ -113,24 +110,18 @@ function ToolCard({ tool }: { tool: typeof TOOLS[0]['items'][0] }) {
 
 export default function RessourcesPage() {
   return (
-    <div className="bg-[#f4f0e8] min-h-screen pt-24 md:pt-32 pb-24">
+    <div className="bg-[#fcf9f0] min-h-screen pt-24 md:pt-32 pb-24">
       <div className="max-w-4xl mx-auto px-5 md:px-8">
 
         {/* Header */}
         <header className="mb-16 md:mb-20">
-          <span
-            className="text-[10px] tracking-[0.4em] uppercase text-[#c9a84c] block mb-4"
-          >
+          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] block mb-4">
             Ressources — Mis à jour mensuellement
           </span>
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0e0e0e] leading-[1.05] mb-6"
-          >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#1c1c17] leading-[1.05] mb-6" style={{ letterSpacing: '-0.02em' }}>
             Les Meilleurs Outils IA : La Sélection ialucide
           </h1>
-          <p
-            className="text-lg text-[#0e0e0e] leading-relaxed max-w-2xl"
-          >
+          <p className="text-base text-[#1c1c17] leading-relaxed max-w-2xl">
             Le paysage de l&apos;intelligence artificielle évolue chaque jour. Pour vous aider à naviguer dans cet écosystème, l&apos;équipe de{' '}
             <strong>ialucide</strong> a testé, comparé et sélectionné les solutions les plus performantes pour chaque métier.
           </p>
@@ -143,7 +134,7 @@ export default function RessourcesPage() {
             <section key={section.category}>
               <div className="mb-6">
                 <h2
-                  className="text-2xl md:text-3xl font-bold text-[#0e0e0e] mb-2"
+                  className="text-[1.75rem] font-bold text-[#1c1c17] mb-2"
                 >
                   {section.category}
                 </h2>
@@ -166,7 +157,7 @@ export default function RessourcesPage() {
         {/* Base44 section */}
         <section className="mb-12">
           <h2
-            className="text-2xl md:text-3xl font-bold text-[#0e0e0e] mb-2"
+            className="text-[1.75rem] font-bold text-[#1c1c17] mb-2"
           >
             Vibecoder une application web
           </h2>
@@ -210,26 +201,19 @@ export default function RessourcesPage() {
 
         {/* CTA final */}
         <section className="bg-[#1a3a4a] p-10 md:p-14 text-center mt-8">
-          <span
-            className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] block mb-4"
-          >
+          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-4">
             Accompagnement sur mesure
           </span>
-          <h2
-            className="font-playfair text-2xl md:text-3xl font-black not-italic text-white mb-4"
-          >
+          <h2 className="text-[1.75rem] md:text-3xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
             Les outils ne sont rien sans la méthode.
           </h2>
-          <p
-            className="font-source text-base text-[#f4f0e8]/80 mb-8 max-w-xl mx-auto"
-            style={{ fontWeight: 400 }}
-          >
+          <p className="text-base text-[#fcf9f0]/80 mb-8 max-w-xl mx-auto leading-relaxed">
             Si vous souhaitez un audit complet des outils adaptés à votre structure, l&apos;équipe de{' '}
             <strong className="text-white">ialucide</strong> vous accompagne.
           </p>
           <a
             href="mailto:contact@ialucide.fr"
-            className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-4 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
+            className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-4 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
           >
             Réserver un audit IA
           </a>
@@ -237,9 +221,7 @@ export default function RessourcesPage() {
 
         {/* Mention affiliation */}
         <section className="mt-12 border border-[#c9a84c]/20 bg-white p-6 md:p-8">
-          <h2
-            className="text-lg font-bold text-[#0e0e0e] mb-4"
-          >
+          <h2 className="text-base font-bold text-[#1c1c17] mb-4">
             Mention de Transparence (Affiliation)
           </h2>
           <blockquote

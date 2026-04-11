@@ -8,18 +8,16 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="pt-28 md:pt-36 pb-20 bg-[#0e0e0e] min-h-screen">
+    <div className="pt-28 md:pt-36 pb-20 bg-[#1c1c17] min-h-screen">
       <div className="max-w-3xl mx-auto px-5 md:px-8">
 
         {/* Header */}
         <div className="mb-16 md:mb-20 animate-fade-in-up">
-          <span
-            className="text-[10px] tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block"
-          >
+          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block">
             À propos — Février 2026
           </span>
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-black italic text-[#f4f0e8] leading-[1.05]"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#fcf9f0] leading-[1.05]"
           >
             Voir l&apos;IA sans illusions.
           </h1>
@@ -31,7 +29,7 @@ export default function AboutPage() {
           {/* Section 1 */}
           <section>
             <h2
-              className="text-2xl md:text-3xl font-bold italic text-[#f4f0e8] mb-6"
+              className="text-2xl md:text-3xl font-bold text-[#fcf9f0] mb-6"
             >
               Pourquoi ialucide.fr ?
             </h2>
@@ -44,7 +42,7 @@ export default function AboutPage() {
               ].map((text, i) => (
                 <p
                   key={i}
-                  className="text-base md:text-lg text-[#d4d0c8] leading-[1.85]"
+                  className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85]"
                 >
                   {text}
                 </p>
@@ -62,7 +60,7 @@ export default function AboutPage() {
           {/* Section 2 */}
           <section>
             <h2
-              className="text-2xl md:text-3xl font-bold italic text-[#f4f0e8] mb-8"
+              className="text-2xl md:text-3xl font-bold text-[#fcf9f0] mb-8"
             >
               Ce que vous trouverez ici
             </h2>
@@ -83,12 +81,12 @@ export default function AboutPage() {
               ].map((item) => (
                 <div key={item.title} className="border-l-2 border-[#c9a84c]/40 pl-6">
                   <h3
-                    className="text-lg font-semibold text-[#f4f0e8] mb-2"
+                    className="text-lg font-semibold text-[#fcf9f0] mb-2"
                   >
                     {item.title}
                   </h3>
                   <p
-                    className="text-base text-[#d4d0c8] leading-[1.8]"
+                    className="text-base text-[#fcf9f0]/70 leading-[1.8]"
                   >
                     {item.text}
                   </p>
@@ -102,28 +100,28 @@ export default function AboutPage() {
           {/* Section 3 — Qui suis-je */}
           <section>
             <h2
-              className="text-2xl md:text-3xl font-bold italic text-[#f4f0e8] mb-6"
+              className="text-2xl md:text-3xl font-bold text-[#fcf9f0] mb-6"
             >
               Qui suis-je ?
             </h2>
             <div className="space-y-5">
               <p
-                className="text-base md:text-lg text-[#d4d0c8] leading-[1.85]"
+                className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85]"
               >
-                Je m&apos;appelle <strong className="text-[#f4f0e8] font-semibold">Daniel Rollin</strong>. Depuis 15 ans, j&apos;exerce comme expert indépendant en appareillage prothétique externe en France — un métier de haute technicité, au carrefour du médical, du réglementaire et de la relation patient.
+                Je m&apos;appelle <strong className="text-[#fcf9f0] font-semibold">Daniel Rollin</strong>. Depuis 15 ans, j&apos;exerce comme expert indépendant en appareillage prothétique externe en France — un métier de haute technicité, au carrefour du médical, du réglementaire et de la relation patient.
               </p>
               <p
-                className="text-base md:text-lg text-[#d4d0c8] leading-[1.85]"
+                className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85]"
               >
                 C&apos;est dans ce secteur que j&apos;ai observé pour la première fois, concrètement, ce que fait une technologie disruptive sur un métier : pas de façon abstraite, mais tâche par tâche, compétence par compétence. Ce que l&apos;outil remplace. Ce qu&apos;il amplifie. Ce qu&apos;il rend obsolète sans prévenir.
               </p>
               <p
-                className="text-base md:text-lg text-[#d4d0c8] leading-[1.85]"
+                className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85]"
               >
                 En parallèle, j&apos;ai fondé DIGICORPEX et commencé à construire des outils digitaux pour mon secteur — ce qui m&apos;a amené à tester, comprendre et challenger les modèles d&apos;IA dans des contextes professionnels réels, pas en laboratoire.
               </p>
               <p
-                className="text-base md:text-lg text-[#d4d0c8] leading-[1.85]"
+                className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85]"
               >
                 Je ne suis pas chercheur en IA. Ce que je fais, c&apos;est appliquer à d&apos;autres métiers la même grille d&apos;analyse que j&apos;ai développée sur le mien : qu&apos;est-ce qui change vraiment ? À quel rythme ? Avec quelles conséquences concrètes pour les professionnels en exercice ?{' '}
                 <a
@@ -136,7 +134,7 @@ export default function AboutPage() {
                 </a>
               </p>
               <p
-                className="text-base md:text-lg text-[#d4d0c8] leading-[1.85]"
+                className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85]"
               >
                 ialucide.fr est le résultat de cette démarche.
               </p>
@@ -148,18 +146,18 @@ export default function AboutPage() {
           {/* Contact */}
           <section>
             <h2
-              className="text-2xl md:text-3xl font-bold italic text-[#f4f0e8] mb-6"
+              className="text-2xl md:text-3xl font-bold text-[#fcf9f0] mb-6"
             >
               Une question ? Une suggestion ?
             </h2>
             <p
-              className="text-base md:text-lg text-[#d4d0c8] leading-[1.85] mb-8"
+              className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85] mb-8"
             >
               Si vous travaillez dans un métier que nous n&apos;avons pas encore analysé, si vous avez des retours d&apos;expérience concrets sur l&apos;IA dans votre secteur, ou si vous souhaitez échanger — écrivez-moi.
             </p>
             <a
               href="mailto:contact@ialucide.fr"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0e0e0e] transition-all duration-500 text-xs tracking-widest uppercase"
+              className="font-mono inline-flex items-center gap-2 px-8 py-3.5 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#1c1c17] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
             >
               contact@ialucide.fr
             </a>
@@ -170,17 +168,17 @@ export default function AboutPage() {
           {/* ailucide.com */}
           <section className="border border-[#c9a84c]/20 p-8">
             <h2
-              className="text-xl font-bold text-[#f4f0e8] mb-4"
+              className="text-xl font-bold text-[#fcf9f0] mb-4"
             >
               ialucide.fr et ailucide.com
             </h2>
             <p
-              className="text-base text-[#d4d0c8] leading-[1.8] mb-4"
+              className="text-base text-[#fcf9f0]/70 leading-[1.8] mb-4"
             >
               ialucide.fr s&apos;adresse à tous les professionnels qui veulent comprendre l&apos;impact de l&apos;IA sur leur métier.
             </p>
             <p
-              className="text-base text-[#d4d0c8] leading-[1.8]"
+              className="text-base text-[#fcf9f0]/70 leading-[1.8]"
             >
               Si vous êtes cadre supérieur, dirigeant ou profession libérale et que vous souhaitez aller plus loin — mesurez votre exposition professionnelle et patrimoniale à l&apos;IA sur{' '}
               <a

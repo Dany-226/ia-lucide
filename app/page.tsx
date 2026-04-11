@@ -10,7 +10,7 @@ export default function Home() {
     <>
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#0e0e0e]" />
+        <div className="absolute inset-0 bg-[#1c1c17]" />
 
         {/* Grain texture */}
         <div
@@ -25,23 +25,24 @@ export default function Home() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-5 text-center">
           <div className="animate-fade-in-up">
-            <span
-              className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block"
-            >
+            {/* Label-MD */}
+            <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block">
               Média indépendant
             </span>
           </div>
 
+          {/* Display-LG — Playfair Display italic, reserved for hero only */}
           <h1
-            className="animate-fade-in-up animate-delay-1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black italic leading-[0.95] tracking-tight text-[#f4f0e8] mb-8"
+            className="font-playfair italic animate-fade-in-up animate-delay-1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-[#fcf9f0] mb-8"
           >
             Voir l&apos;IA
             <br />
             <span className="text-[#c9a84c]">sans illusions</span>
           </h1>
 
+          {/* Body-LG */}
           <p
-            className="animate-fade-in-up animate-delay-2 text-base md:text-lg text-[#6b6b6b] max-w-xl mx-auto mb-12 leading-relaxed"
+            className="animate-fade-in-up animate-delay-2 text-base text-[#6b6b6b] max-w-xl mx-auto mb-12 leading-relaxed"
           >
             Analyses, enquêtes et perspectives sur la transformation des métiers
             par l&apos;intelligence artificielle. Sans jargon, sans fantasme.
@@ -50,13 +51,13 @@ export default function Home() {
           <div className="animate-fade-in-up animate-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#articles"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0e0e0e] transition-all duration-500 text-xs tracking-widest uppercase"
+              className="font-mono inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#1c1c17] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
             >
               Lire les derniers articles
             </a>
             <Link
               href="/about"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#6b6b6b]/30 text-[#6b6b6b] hover:border-[#f4f0e8]/50 hover:text-[#f4f0e8] transition-all duration-500 text-xs tracking-widest uppercase"
+              className="font-mono inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#6b6b6b]/30 text-[#6b6b6b] hover:border-[#fcf9f0]/50 hover:text-[#fcf9f0] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
             >
               Notre mission
             </Link>
@@ -72,14 +73,12 @@ export default function Home() {
       </section>
 
       {/* ── Articles Grid ── */}
-      <section id="articles" className="py-20 md:py-28 bg-[#f4f0e8]">
+      <section id="articles" className="py-20 md:py-28 bg-[#fcf9f0]">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          {/* Section header */}
+          {/* Section header — Label-MD */}
           <div className="flex items-center gap-6 mb-12 md:mb-16">
             <div className="h-px flex-1 bg-[#c9a84c]/20" />
-            <h2
-              className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-[#c9a84c]"
-            >
+            <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c]">
               Derniers articles
             </h2>
             <div className="h-px flex-1 bg-[#c9a84c]/20" />
@@ -89,7 +88,7 @@ export default function Home() {
           {articles.length > 0 && (
             <div className="mb-8">
               <Link href={`/article/${articles[0].slug}`} className="group block">
-                <article className="bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:border-t-2 hover:border-t-[#c9a84c] transition-all duration-500 hover:-translate-y-1">
+                <article className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] hover:shadow-[0_4px_32px_rgba(28,28,23,0.08)] hover:border-t-2 hover:border-t-[#c9a84c] transition-all duration-500 hover:-translate-y-1">
                   <div className="grid grid-cols-1 md:grid-cols-2">
                     {articles[0].image_url && (
                       <div className="relative overflow-hidden" style={{ minHeight: '300px' }}>
@@ -101,37 +100,34 @@ export default function Home() {
                           sizes="(max-width: 768px) 100vw, 50vw"
                           priority
                         />
-                        <div className="absolute inset-0 bg-[#0e0e0e]/25 group-hover:bg-[#0e0e0e]/10 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-[#1c1c17]/25 group-hover:bg-[#1c1c17]/10 transition-all duration-500" />
                         <div className="absolute top-4 left-4">
-                          <span
-                            className="text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 bg-[#0e0e0e]/80 text-[#c9a84c] border border-[#c9a84c]/30"
-                          >
+                          {/* Label-MD tag */}
+                          <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase px-3 py-1.5 bg-[#1c1c17]/80 text-[#c9a84c] border border-[#c9a84c]/30">
                             {articles[0].tag}
                           </span>
                         </div>
                       </div>
                     )}
                     <div className="p-8 md:p-10 flex flex-col justify-center space-y-4">
+                      {/* Headline-MD */}
                       <h3
-                        className="text-2xl md:text-3xl font-bold text-[#0e0e0e] leading-tight group-hover:text-[#c9a84c] transition-colors duration-300"
+                        className="text-[1.75rem] font-bold text-[#1c1c17] leading-tight group-hover:text-[#c9a84c] transition-colors duration-300"
+                        style={{ letterSpacing: '-0.02em' }}
                       >
                         {articles[0].title}
                       </h3>
-                      <p
-                        className="text-base text-[#6b6b6b] leading-relaxed line-clamp-3"
-                      >
+                      {/* Body-LG */}
+                      <p className="text-base text-[#6b6b6b] leading-relaxed line-clamp-3">
                         {articles[0].excerpt}
                       </p>
+                      {/* Label-MD metadata */}
                       <div className="flex items-center gap-3 pt-2">
-                        <span
-                          className="text-[10px] tracking-wider text-[#6b6b6b] uppercase"
-                        >
+                        <span className="font-mono text-xs font-bold tracking-[0.05em] uppercase text-[#6b6b6b]">
                           {articles[0].author || 'Rédaction'}
                         </span>
                         <span className="w-1 h-1 bg-[#c9a84c]/40 rounded-full" />
-                        <span
-                          className="text-[10px] tracking-wider text-[#6b6b6b]"
-                        >
+                        <span className="font-mono text-xs text-[#6b6b6b]">
                           {articles[0].read_time} min de lecture
                         </span>
                       </div>
@@ -144,37 +140,33 @@ export default function Home() {
 
           {/* Rest of articles grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {articles.slice(1).map((article, i) => (
+            {articles.slice(1).map((article) => (
               <ArticleCard key={article.slug} {...article} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── ailucide.com Promo ── */}
+      {/* ── Diagnostic Banner ── */}
       <section className="py-20 bg-[#1a3a4a]">
         <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
-          <span
-            className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block"
-          >
+          {/* Label-MD */}
+          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block">
             Pour les cadres et dirigeants
           </span>
-          <h2
-            className="font-playfair text-3xl sm:text-4xl md:text-5xl font-black not-italic text-white mb-6 leading-tight"
-          >
+          {/* Headline-MD */}
+          <h2 className="text-[1.75rem] sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
             Mesurez votre exposition à l&apos;IA en 10 minutes.
           </h2>
-          <p
-            className="font-source text-base md:text-lg text-[#f4f0e8] mb-10 leading-relaxed max-w-2xl mx-auto"
-            style={{ fontWeight: 300 }}
-          >
+          {/* Body-LG */}
+          <p className="text-base text-[#fcf9f0]/80 mb-10 leading-relaxed max-w-2xl mx-auto">
             Diagnostic patrimonial et professionnel gratuit — méthode utilisée par des profils à hauts revenus.
           </p>
           <a
             href="https://ailucide.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 border border-[#c9a84c] text-[#c9a84c] font-mono hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500 text-xs tracking-widest uppercase"
+            className="font-mono inline-flex items-center gap-2 px-8 py-3.5 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
           >
             Faire mon diagnostic
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -185,28 +177,25 @@ export default function Home() {
       </section>
 
       {/* ── Newsletter ── */}
-      <section id="newsletter" className="py-20 bg-[#f4f0e8]">
+      <section id="newsletter" className="py-20 bg-[#fcf9f0]">
         <div className="max-w-2xl mx-auto px-5 md:px-8 text-center">
-          <span
-            className="text-[10px] tracking-[0.4em] uppercase text-[#c9a84c] mb-4 block"
-          >
+          {/* Label-MD */}
+          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] mb-4 block">
             Newsletter gratuite
           </span>
-          <h2
-            className="text-3xl md:text-4xl font-bold text-[#0e0e0e] mb-4"
-          >
+          {/* Headline-MD */}
+          <h2 className="text-[1.75rem] md:text-4xl font-bold text-[#1c1c17] mb-4" style={{ letterSpacing: '-0.02em' }}>
             Une analyse par semaine.
           </h2>
-          <p
-            className="text-base text-[#6b6b6b] mb-8 leading-relaxed"
-          >
+          {/* Body-LG */}
+          <p className="text-base text-[#6b6b6b] mb-8 leading-relaxed">
             Concrète. Sans bullshit. Pour les professionnels qui veulent comprendre et agir.
           </p>
           <a
             href="https://newsletter.ialucide.fr"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#0e0e0e] text-[#f4f0e8] hover:bg-[#c9a84c] hover:text-[#0e0e0e] transition-all duration-500 text-xs tracking-widest uppercase"
+            className="font-mono inline-flex items-center gap-2 px-8 py-3.5 bg-[#1c1c17] text-[#fcf9f0] hover:bg-[#c9a84c] hover:text-[#1c1c17] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
           >
             S&apos;inscrire gratuitement
           </a>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#c9a84c]/15 bg-[#0e0e0e]">
+    <footer className="border-t border-[#c9a84c]/15 bg-[#1c1c17]">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Logo + tagline */}
