@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'À propos — IA Lucide',
   description:
     "IA Lucide : le regard lucide sur l'IA qui transforme les métiers. Qui nous sommes, notre mission, notre méthodologie.",
+  alternates: {
+    canonical: 'https://ialucide.fr/about/',
+  },
 };
 
 export default function AboutPage() {

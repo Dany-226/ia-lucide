@@ -17,6 +17,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.title} : Guide 2026 | ialucide`,
     description: (article.excerpt || '').slice(0, 155),
+    alternates: {
+      canonical: `https://ialucide.fr/article/${slug}/`,
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -35,6 +38,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const related = getRelatedArticles(article);
   const allRecent = getAllArticles().filter(a => a.slug !== slug).slice(0, 3);
+  const sameTagArticles = related.slice(0, 3);
   const sidebarArticles = related.length > 0 ? related : allRecent;
 
   const formattedDate = article.date
@@ -134,19 +138,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </Link>
             </div>
 
-            {/* Related articles */}
-            {sidebarArticles.length > 0 && (
+            {/* Related articles — même tag (maillage interne SEO) */}
+            {(sameTagArticles.length > 0 || allRecent.length > 0) && (
               <div className="mt-16 pt-12 border-t border-[#c9a84c]/20">
                 <div className="mb-8">
                   <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-2">
-                    À lire aussi
+                    {sameTagArticles.length > 0 ? `${article.tag}` : 'À lire aussi'}
                   </span>
                   <h2 className="text-[1.75rem] md:text-3xl font-bold text-[#1c1c17]" style={{ letterSpacing: '-0.02em' }}>
-                    Articles similaires
+                    {sameTagArticles.length > 0
+                      ? `Articles du même métier`
+                      : 'Articles récents'}
                   </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {sidebarArticles.slice(0, 2).map((rel) => (
+                  {(sameTagArticles.length > 0 ? sameTagArticles : allRecent).slice(0, 2).map((rel) => (
                     <Link
                       key={rel.slug}
                       href={`/article/${rel.slug}`}

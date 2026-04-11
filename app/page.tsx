@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllArticles } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://ialucide.fr/',
+  },
+};
 
 export default function Home() {
   const articles = getAllArticles();
@@ -132,6 +139,9 @@ export default function Home() {
                           {articles[0].read_time} min de lecture
                         </span>
                       </div>
+                      <span className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#c9a84c] mt-2 group-hover:gap-3 transition-all duration-300">
+                        Lire l&apos;article complet →
+                      </span>
                     </div>
                   </div>
                 </article>

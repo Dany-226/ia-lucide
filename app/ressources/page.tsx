@@ -3,7 +3,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Outils IA Recommandés : La Sélection Expert de ialucide',
   description:
-    'Découvrez les meilleurs outils d\'intelligence artificielle testés et validés par ialucide pour les comptables, juristes, développeurs et architectes.',
+    "Découvrez les meilleurs outils d'intelligence artificielle testés et validés par ialucide pour les comptables, juristes, développeurs et architectes.",
+  alternates: {
+    canonical: 'https://ialucide.fr/ressources/',
+  },
 };
 
 const TOOLS = [
