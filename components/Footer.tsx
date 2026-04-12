@@ -89,9 +89,21 @@ export default async function Footer() {
           <p className="font-mono text-[10px] tracking-wider text-[#6b6b6b] uppercase">
             © 2026 IA Lucide — Tous droits réservés
           </p>
-          <p className="text-xs text-[#6b6b6b]/50 italic">
-            ialucide.fr
-          </p>
+          <div className="flex items-center gap-6">
+            {[
+              { label: 'Contact', href: '/contact/' },
+              { label: 'Mentions légales', href: '/mentions-legales/' },
+              { label: 'Confidentialité', href: '/politique-confidentialite/' },
+            ].map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="font-mono text-[10px] tracking-wider text-[#6b6b6b] uppercase hover:text-[#c9a84c] transition-colors duration-300"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
