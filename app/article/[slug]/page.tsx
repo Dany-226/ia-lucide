@@ -2,6 +2,7 @@ import { getAllArticles, getArticleBySlug, getRelatedArticles } from '@/lib/arti
 import { notFound } from 'next/navigation';
 import { remark } from 'remark';
 import html from 'remark-html';
+import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 import ArticleSidebar from '@/components/ArticleSidebar';
 
@@ -33,7 +34,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = getArticleBySlug(slug);
   if (!article) notFound();
 
-  const processed = await remark().use(html).process(article.content ?? '');
+  const processed = await remark().use(remarkGfm).use(html).process(article.content ?? '');
   const contentHtml = processed.toString();
 
   const related = getRelatedArticles(article);
