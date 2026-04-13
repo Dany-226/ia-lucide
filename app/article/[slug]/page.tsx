@@ -112,7 +112,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 Une analyse par semaine. Concrète. Sans bullshit.
               </p>
               <a
-                href="https://newsletter.ialucide.fr"
+                href="https://5f540821.sibforms.com/serve/MUIFAEeWVNhCOvJ0YK2GWiW7rGJ8g3biN7u2pd1jE74wZhs4RWPpsKMe6DCRyUfAtUL6RzsxcxgvzBSIWzIHGexnBr97R55NjLqWhtZvIZqB3zcZCM06gqyCRp-BQtOgmvgqJv2DHSo9o8sK_SeTTAVzJFAcovxwUSXF--E6dN10q_ByVgQpwQvg5twwUGhvL6p-NpsfnjdOAKvYqg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-3 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
