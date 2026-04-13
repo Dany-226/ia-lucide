@@ -162,38 +162,45 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9375rem;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
-  margin: 2rem 0;
+  border: 1px solid #6b6b6b;
+  margin: 2.5rem 0;
   overflow-x: auto;
   display: block;
 }
 
 .prose-ia thead {
-  border-bottom: 1px solid rgba(0,0,0,0.15);
+  background: #1a3a4a;
 }
 
 .prose-ia th {
   padding: 0.875rem 1.25rem;
   text-align: left;
   font-family: var(--font-sans);
-  font-size: 0.75rem;   /* Label-MD */
+  font-size: 0.75rem;
   font-weight: 700;
-  font-style: normal;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #6b6b6b;
+  letter-spacing: 0.06em;
+  color: #f4f0e8;
+  border-right: 1px solid rgba(244, 240, 232, 0.15);
 }
+
+.prose-ia th:last-child { border-right: none; }
 
 .prose-ia td {
   padding: 0.875rem 1.25rem;
-  color: #1c1c17;
+  color: #0e0e0e;
   line-height: 1.6;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
+  border-right: 1px solid #6b6b6b;
+  border-bottom: 1px solid #6b6b6b;
 }
 
-.prose-ia tr:last-child td  { border-bottom: none; }
-.prose-ia td:first-child    { font-weight: 600; }
+.prose-ia td:last-child { border-right: none; }
+
+.prose-ia tbody tr:nth-child(odd)  { background: #ffffff; }
+.prose-ia tbody tr:nth-child(even) { background: #f4f0e8; }
+
+.prose-ia tr:last-child td { border-bottom: none; }
+.prose-ia td:first-child   { font-weight: 600; }
 
 .prose-ia code {
   font-family: var(--font-mono);
