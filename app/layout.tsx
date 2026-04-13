@@ -9,7 +9,7 @@ const playfair = Playfair_Display({
   variable: '--nf-playfair',
   display: 'swap',
   weight: ['700', '900'],
-  style: ['italic'],
+  style: ['normal', 'italic'],
 });
 
 const spaceGrotesk = Space_Grotesk({

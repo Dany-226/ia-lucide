@@ -40,12 +40,12 @@ export default function Home() {
 
           {/* Display-LG — Playfair Display italic, reserved for hero only */}
           <h1
-            className="font-playfair italic animate-fade-in-up animate-delay-1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#fcf9f0] mb-8"
+            className="font-playfair animate-fade-in-up animate-delay-1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#fcf9f0] mb-8"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Voir l&apos;IA
             <br />
-            <span className="text-[#c9a84c]">sans illusions</span>
+            <span className="italic text-[#c9a84c]">sans illusions</span>
           </h1>
 
           {/* Body-LG */}
