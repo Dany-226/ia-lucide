@@ -157,50 +157,6 @@ export default function RessourcesPage() {
           ))}
         </div>
 
-        {/* Base44 section */}
-        <section className="mb-12">
-          <h2
-            className="text-[1.75rem] font-bold text-[#1c1c17] mb-2"
-          >
-            Vibecoder une application web
-          </h2>
-          <p
-            className="text-base text-[#6b6b6b] mb-6"
-          >
-            Découvrir l&apos;assistance IA pour développer vos idées
-          </p>
-          <div className="bg-white border border-[#c9a84c]/15 p-6 hover:border-[#c9a84c]/40 hover:shadow-md transition-all duration-300">
-            <div className="mb-3">
-              <h3
-                className="text-xl font-bold text-[#0e0e0e]"
-              >
-                Base44
-              </h3>
-              <span
-                className="text-[10px] tracking-widest uppercase text-[#c9a84c]"
-              >
-                Développement IA no-code / low-code
-              </span>
-            </div>
-            <p
-              className="text-sm text-[#6b6b6b] leading-relaxed mb-5"
-            >
-              Transformez vos idées en applications web fonctionnelles grâce à l&apos;IA. Base44 vous permet de concevoir, développer et déployer vos projets digitaux sans être développeur.
-            </p>
-            <a
-              href="https://base44.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[10px] tracking-widest uppercase text-[#0e0e0e] border border-[#0e0e0e] px-4 py-2.5 hover:bg-[#0e0e0e] hover:text-[#f4f0e8] transition-all duration-500"
-            >
-              Découvrir Base44
-              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
-                <path d="M1 10L10 1M10 1H4M10 1v6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-          </div>
-          <div className="h-px bg-[#c9a84c]/15 mt-12" />
-        </section>
 
         {/* CTA final */}
         <section className="bg-[#1a3a4a] p-10 md:p-14 text-center mt-8">
