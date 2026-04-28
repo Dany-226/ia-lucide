@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://ialucide.fr/ressources/',
   },
+  openGraph: {
+    description: "Découvrez les meilleurs outils d'intelligence artificielle testés et validés par ialucide pour les comptables, juristes, développeurs et architectes.",
+  },
+  twitter: {
+    description: "Découvrez les meilleurs outils d'intelligence artificielle testés et validés par ialucide pour les comptables, juristes, développeurs et architectes.",
+  },
 };
 
 const TOOLS = [

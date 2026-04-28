@@ -23,7 +23,7 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
           Une analyse par semaine sur l&apos;IA et les métiers.
         </p>
         <a
-          href="https://5f540821.sibforms.com/serve/MUIFAEeWVNhCOvJ0YK2GWiW7rGJ8g3biN7u2pd1jE74wZhs4RWPpsKMe6DCRyUfAtUL6RzsxcxgvzBSIWzIHGexnBr97R55NjLqWhtZvIZqB3zcZCM06gqyCRp-BQtOgmvgqJv2DHSo9o8sK_SeTTAVzJFAcovxwUSXF--E6dN10q_ByVgQpwQvg5twwUGhvL6p-NpsfnjdOAKvYqg=="
+          href="https://ialucide.beehiiv.com/subscribe"
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono inline-block text-xs font-bold tracking-widest uppercase text-[#c9a84c] border-b border-[#c9a84c]/40 hover:border-[#c9a84c] transition-colors pb-0.5"

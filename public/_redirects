@@ -1,10 +1,95 @@
-/Article?slug=juriste-avocat /article/juriste-avocat 301
-/Article?slug=architecte /article/architecte 301
-/Article?slug=developpeur-augmente-ia-2026 /article/developpeur-augmente-ia-2026 301
-/article?slug=commercial /article/commercial 301
-/article?slug=comptable /article/comptable 301
-/article?slug=developpeur /article/developpeur 301
-/article?slug=assistant-administratif /article/assistant-administratif 301
+# === Redirections articles - format query string Base44 ===
+# Pour chaque slug d'article, deux règles : minuscule et CamelCase
+
+/article?slug=adaptation-ia-manager-retour-experience /article/adaptation-ia-manager-retour-experience/ 301
+/Article?slug=adaptation-ia-manager-retour-experience /article/adaptation-ia-manager-retour-experience/ 301
+
+/article?slug=architecte-ia-conception-batiment /article/architecte-ia-conception-batiment/ 301
+/Article?slug=architecte-ia-conception-batiment /article/architecte-ia-conception-batiment/ 301
+
+/article?slug=assistant /article/assistant/ 301
+/Article?slug=assistant /article/assistant/ 301
+
+/article?slug=avis-ialucide-ia /article/avis-ialucide-ia/ 301
+/Article?slug=avis-ialucide-ia /article/avis-ialucide-ia/ 301
+
+/article?slug=choisir-llm-professionnel-comparatif /article/choisir-llm-professionnel-comparatif/ 301
+/Article?slug=choisir-llm-professionnel-comparatif /article/choisir-llm-professionnel-comparatif/ 301
+
+/article?slug=commercial /article/commercial/ 301
+/Article?slug=commercial /article/commercial/ 301
+
+/article?slug=comptable /article/comptable/ 301
+/Article?slug=comptable /article/comptable/ 301
+
+/article?slug=consultant /article/consultant/ 301
+/Article?slug=consultant /article/consultant/ 301
+
+/article?slug=controleur-financier /article/controleur-financier/ 301
+/Article?slug=controleur-financier /article/controleur-financier/ 301
+
+/article?slug=developpeur-augmente-ia-2026 /article/developpeur-augmente-ia-2026/ 301
+/Article?slug=developpeur-augmente-ia-2026 /article/developpeur-augmente-ia-2026/ 301
+
+/article?slug=developpeur-ia-2026 /article/developpeur-ia-2026/ 301
+/Article?slug=developpeur-ia-2026 /article/developpeur-ia-2026/ 301
+
+/article?slug=developpeur /article/developpeur/ 301
+/Article?slug=developpeur /article/developpeur/ 301
+
+/article?slug=enseignant /article/enseignant/ 301
+/Article?slug=enseignant /article/enseignant/ 301
+
+/article?slug=expert-comptable-ia-guide-2026 /article/expert-comptable-ia-guide-2026/ 301
+/Article?slug=expert-comptable-ia-guide-2026 /article/expert-comptable-ia-guide-2026/ 301
+
+/article?slug=graphiste /article/graphiste/ 301
+/Article?slug=graphiste /article/graphiste/ 301
+
+/article?slug=impact-intelligence-artificielle-metiers /article/impact-intelligence-artificielle-metiers/ 301
+/Article?slug=impact-intelligence-artificielle-metiers /article/impact-intelligence-artificielle-metiers/ 301
+
+/article?slug=jensen-huang-nvidia-ia-sans-peur /article/jensen-huang-nvidia-ia-sans-peur/ 301
+/Article?slug=jensen-huang-nvidia-ia-sans-peur /article/jensen-huang-nvidia-ia-sans-peur/ 301
+
+/article?slug=journaliste /article/journaliste/ 301
+/Article?slug=journaliste /article/journaliste/ 301
+
+/article?slug=juriste-ia-avocat-pratique-augmentee /article/juriste-ia-avocat-pratique-augmentee/ 301
+/Article?slug=juriste-ia-avocat-pratique-augmentee /article/juriste-ia-avocat-pratique-augmentee/ 301
+
+/article?slug=licenciements-ia-vraies-raisons /article/licenciements-ia-vraies-raisons/ 301
+/Article?slug=licenciements-ia-vraies-raisons /article/licenciements-ia-vraies-raisons/ 301
+
+/article?slug=manager /article/manager/ 301
+/Article?slug=manager /article/manager/ 301
+
+/article?slug=medecin /article/medecin/ 301
+/Article?slug=medecin /article/medecin/ 301
+
+/article?slug=outils-ia-experts-comptables-2026 /article/outils-ia-experts-comptables-2026/ 301
+/Article?slug=outils-ia-experts-comptables-2026 /article/outils-ia-experts-comptables-2026/ 301
+
+/article?slug=outils-ia-juristes-avocats-2026 /article/outils-ia-juristes-avocats-2026/ 301
+/Article?slug=outils-ia-juristes-avocats-2026 /article/outils-ia-juristes-avocats-2026/ 301
+
+/article?slug=rh-recruteur /article/rh-recruteur/ 301
+/Article?slug=rh-recruteur /article/rh-recruteur/ 301
+
+/article?slug=traducteur /article/traducteur/ 301
+/Article?slug=traducteur /article/traducteur/ 301
+
+# === Redirections pages légales - format CamelCase Base44 ===
+
+/MentionsLegales /mentions-legales/ 301
+/PolitiqueConfidentialite /politique-confidentialite/ 301
+/APropos /about/ 301
+/Ressources /ressources/ 301
+/Contact /contact/ 301
+/Metiers /metiers/ 301
+
+# === Redirections IDs Base44 obsolètes (vers home) ===
+
 /Article?id=69a07ad8e7133c18a4034acc / 301
 /Article?id=69a1e94559083f394f08d5c4 / 301
 /Article?id=69a1a5538f6925f5571ef9a2 / 301

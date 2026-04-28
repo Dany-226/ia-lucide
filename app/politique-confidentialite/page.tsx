@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Politique de confidentialité — IA Lucide',
-  description: 'Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Brevo.',
+  description: 'Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.',
   alternates: {
     canonical: 'https://ialucide.fr/politique-confidentialite/',
+  },
+  openGraph: {
+    description: 'Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.',
+  },
+  twitter: {
+    description: 'Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.',
   },
 };
 
@@ -41,12 +47,12 @@ export default function PolitiqueConfidentialitePage() {
           {/* Newsletter */}
           <section>
             <h2 className="text-2xl md:text-3xl font-bold text-[#fcf9f0] mb-6">
-              Newsletter — Brevo (ex-SendinBlue)
+              Newsletter — Beehiiv
             </h2>
             <div className="space-y-5 text-base text-[#fcf9f0]/70 leading-[1.85]">
               <p>
                 Si vous choisissez de vous abonner à la newsletter de ialucide.fr, votre adresse e-mail est transmise et stockée par notre prestataire d&apos;emailing{' '}
-                <strong className="text-[#fcf9f0]">Brevo (anciennement SendinBlue)</strong>, société française dont le siège est situé à Paris.
+                <strong className="text-[#fcf9f0]">Beehiiv</strong>, plateforme d&apos;envoi de newsletters dont le siège est situé aux États-Unis.
               </p>
               <div className="border-l-2 border-[#c9a84c]/40 pl-6 space-y-3">
                 <p><strong className="text-[#fcf9f0]">Données collectées :</strong> adresse e-mail uniquement.</p>
@@ -56,7 +62,8 @@ export default function PolitiqueConfidentialitePage() {
                 <p><strong className="text-[#fcf9f0]">Désinscription :</strong> via le lien présent dans chaque email ou par demande à contact@ialucide.fr.</p>
               </div>
               <p>
-                Brevo agit en qualité de sous-traitant au sens du RGPD. Leur politique de confidentialité est consultable sur brevo.com.
+                Beehiiv agit en qualité de sous-traitant au sens du RGPD. Leur politique de confidentialité est consultable sur{' '}
+                <a href="https://www.beehiiv.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline">beehiiv.com/privacy</a>.
               </p>
             </div>
           </section>

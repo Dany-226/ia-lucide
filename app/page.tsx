@@ -5,8 +5,16 @@ import { getAllArticles } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 
 export const metadata: Metadata = {
+  title: "IA Lucide — Le regard lucide sur l'IA qui transforme les métiers",
+  description: "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
   alternates: {
     canonical: 'https://ialucide.fr/',
+  },
+  openGraph: {
+    description: "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
+  },
+  twitter: {
+    description: "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
   },
 };
 
@@ -203,7 +211,7 @@ export default function Home() {
             Concrète. Sans bullshit. Pour les professionnels qui veulent comprendre et agir.
           </p>
           <a
-            href="https://5f540821.sibforms.com/serve/MUIFAEeWVNhCOvJ0YK2GWiW7rGJ8g3biN7u2pd1jE74wZhs4RWPpsKMe6DCRyUfAtUL6RzsxcxgvzBSIWzIHGexnBr97R55NjLqWhtZvIZqB3zcZCM06gqyCRp-BQtOgmvgqJv2DHSo9o8sK_SeTTAVzJFAcovxwUSXF--E6dN10q_ByVgQpwQvg5twwUGhvL6p-NpsfnjdOAKvYqg=="
+            href="https://ialucide.beehiiv.com/subscribe"
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono inline-flex items-center gap-2 px-8 py-3.5 bg-[#1c1c17] text-[#fcf9f0] hover:bg-[#c9a84c] hover:text-[#1c1c17] transition-all duration-500 text-xs font-bold tracking-widest uppercase"

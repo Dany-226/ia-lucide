@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://ialucide.fr/mentions-legales/',
   },
+  openGraph: {
+    description: 'Mentions légales de ialucide.fr — éditeur DIGICORPEX, hébergeur Cloudflare Inc.',
+  },
+  twitter: {
+    description: 'Mentions légales de ialucide.fr — éditeur DIGICORPEX, hébergeur Cloudflare Inc.',
+  },
 };
 
 export default function MentionsLegalesPage() {

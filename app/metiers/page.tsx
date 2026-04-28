@@ -1,8 +1,20 @@
-'use client';
-
-import Link from 'next/link';
-import { useState } from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import MetiersFaqItem from '@/components/MetiersFaqItem';
+
+export const metadata: Metadata = {
+  title: 'Votre métier face à l\'IA — Analyse par profession | ialucide',
+  description: '15 professions analysées : comptable, juriste, développeur, médecin, RH… Découvrez l\'impact réel de l\'IA sur votre métier, tâche par tâche. Ni catastrophisme, ni déni.',
+  alternates: {
+    canonical: 'https://ialucide.fr/metiers/',
+  },
+  openGraph: {
+    description: '15 professions analysées : comptable, juriste, développeur, médecin, RH… Découvrez l\'impact réel de l\'IA sur votre métier, tâche par tâche. Ni catastrophisme, ni déni.',
+  },
+  twitter: {
+    description: '15 professions analysées : comptable, juriste, développeur, médecin, RH… Découvrez l\'impact réel de l\'IA sur votre métier, tâche par tâche. Ni catastrophisme, ni déni.',
+  },
+};
 
 const METIERS = [
   {
@@ -132,14 +144,12 @@ function MetierCard({ metier, color }: { metier: typeof METIERS[0]['metiers'][0]
       className="bg-white p-5 group hover:shadow-[0_2px_32px_rgba(28,28,23,0.08)] transition-shadow duration-300"
       style={{ borderLeft: `4px solid ${color}` }}
     >
-      {/* Title-LG */}
       <h3
         className="text-[1.375rem] font-bold text-[#1c1c17] mb-2 group-hover:text-[#c9a84c] transition-colors duration-300"
         style={{ letterSpacing: '-0.02em' }}
       >
         {metier.titre}
       </h3>
-      {/* Body-LG */}
       <p className="text-base text-[#6b6b6b] leading-relaxed mb-4">
         {metier.description}
       </p>
@@ -153,39 +163,6 @@ function MetierCard({ metier, color }: { metier: typeof METIERS[0]['metiers'][0]
           <path d="M2 5.5H9M6 2.5l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </Link>
-    </div>
-  );
-}
-
-function FaqItem({ item }: { item: typeof FAQ[0] }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-[#0e0e0e]/10">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-start justify-between gap-4 py-5 text-left"
-      >
-        <span className="text-base font-bold text-[#1c1c17] leading-snug">
-          {item.q}
-        </span>
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-          className="text-[#c9a84c] mt-0.5 flex-shrink-0 transition-transform duration-300"
-          style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
-        >
-          <path d="M4 6l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
-      {open && (
-        <p
-          className="text-base text-[#6b6b6b] leading-relaxed pb-5 pr-8"
-        >
-          {item.a}
-        </p>
-      )}
     </div>
   );
 }
@@ -257,7 +234,7 @@ export default function MetiersPage() {
           </h2>
           <div>
             {FAQ.map((item, i) => (
-              <FaqItem key={i} item={item} />
+              <MetiersFaqItem key={i} item={item} />
             ))}
           </div>
         </section>

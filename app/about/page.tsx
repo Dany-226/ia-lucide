@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://ialucide.fr/about/',
   },
+  openGraph: {
+    description: "IA Lucide : le regard lucide sur l'IA qui transforme les métiers. Qui nous sommes, notre mission, notre méthodologie.",
+  },
+  twitter: {
+    description: "IA Lucide : le regard lucide sur l'IA qui transforme les métiers. Qui nous sommes, notre mission, notre méthodologie.",
+  },
 };
 
 export default function AboutPage() {
