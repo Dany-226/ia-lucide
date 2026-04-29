@@ -1,0 +1,60 @@
+{
+  "title": "Assureurs IA",
+  "slides": [
+    {
+      "type": "cover",
+      "tag": "Analyse ialucide",
+      "title": "Des assureurs refusent de couvrir <span class='or'>l'IA.</span>",
+      "body": "AIG, Great American, W. R. Berkley. Pas des acteurs marginaux.",
+      "counter": "01 / 07"
+    },
+    {
+      "type": "stat",
+      "tag": "Le fait",
+      "stat": "3",
+      "statLabel": "grands assureurs américains ont demandé aux régulateurs d'exclure l'IA de leurs polices commerciales.",
+      "body": "Une demande formelle. Pas une rumeur.",
+      "counter": "02 / 07"
+    },
+    {
+      "type": "text",
+      "tag": "Le cas extrême",
+      "title": "W. R. Berkley veut exclure <span class='or'>\"tout usage réel ou allégué\"</span> de l'IA.",
+      "body": "Pas seulement les accidents liés à l'IA. <strong>Tout usage.</strong> Même indirect. Même non prouvé.",
+      "counter": "03 / 07"
+    },
+    {
+      "type": "text",
+      "tag": "Pourquoi",
+      "title": "Des risques que les assureurs ne savent pas encore <span class='or'>modéliser.</span>",
+      "body": "AIG parle d'une technologie \"à large spectre\" dont la probabilité de sinistres va <strong>probablement augmenter avec le temps.</strong><br><br>En assurance, l'inconnu ne se couvre pas. Il s'exclut.",
+      "counter": "04 / 07"
+    },
+    {
+      "type": "bullets",
+      "tag": "Ce que ça change",
+      "body": "Si votre entreprise utilise des agents IA et qu'un sinistre survient :",
+      "bullets": [
+        { "name": "Erreur médicale IA", "desc": "potentiellement non couverte" },
+        { "name": "Décision juridique IA", "desc": "potentiellement non couverte" },
+        { "name": "Contenu généré IA", "desc": "potentiellement non couvert" }
+      ],
+      "counter": "05 / 07"
+    },
+    {
+      "type": "text",
+      "tag": "La lecture lucide",
+      "title": "Ce n'est pas une raison de ne pas utiliser l'IA.",
+      "body": "C'est une raison de savoir <strong>exactement ce que votre police couvre</strong> avant de déployer un agent en production.<br><br>La question n'est pas technologique. Elle est contractuelle.",
+      "counter": "06 / 07"
+    },
+    {
+      "type": "cta",
+      "tag": "Aller plus loin",
+      "title": "L'analyse complète <span class='or'>sur le site.</span>",
+      "body": "Sources, contexte réglementaire, implications métier.",
+      "cta": "ialucide.fr",
+      "counter": "07 / 07"
+    }
+  ]
+}

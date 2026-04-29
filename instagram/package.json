@@ -1,0 +1,5 @@
+{
+  "name": "ialucide-instagram",
+  "scripts": { "generate": "node generate.js" },
+  "dependencies": { "puppeteer": "^21.0.0" }
+}

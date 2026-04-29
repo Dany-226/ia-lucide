@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: #0e0e0e;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&display=swap');
+  .slide {
+    width: 1080px; height: 1080px;
+    background: #0e0e0e;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 13px; letter-spacing: 3px;
+    color: #c9a84c;
+    border: 1px solid #c9a84c44;
+    padding: 6px 14px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    width: fit-content;
+  }
+  .accent-line { width: 48px; height: 3px; background: #c9a84c; margin-bottom: 32px; }
+  .title {
+    font-size: 56px; font-weight: 800;
+    color: #ffffff; line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .title .or { color: #c9a84c; }
+  .stat { font-size: 120px; font-weight: 800; color: #c9a84c; line-height: 1; margin-bottom: 12px; }
+  .stat-label { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+  .body { font-size: 22px; color: #aaaaaa; line-height: 1.65; }
+  .body strong { color: #ffffff; }
+  .footer { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-size: 13px; letter-spacing: 4px; color: #c9a84c; text-transform: uppercase; }
+  .counter { font-size: 13px; color: #444; letter-spacing: 2px; }
+  .cta-box {
+    border: 2px solid #c9a84c;
+    padding: 20px 36px;
+    display: inline-block;
+    margin-top: 32px;
+  }
+  .cta-text { font-size: 18px; letter-spacing: 2px; color: #c9a84c; text-transform: uppercase; font-weight: 700; }
+  .bullet-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .bullet-row { display: flex; align-items: flex-start; gap: 16px; }
+  .bullet-dot { width: 8px; height: 8px; background: #c9a84c; flex-shrink: 0; margin-top: 8px; }
+  .bullet-name { font-size: 20px; font-weight: 700; color: #fff; min-width: 220px; }
+  .bullet-desc { font-size: 17px; color: #666; }
+  .deco { position: absolute; border-radius: 50%; border: 1px solid #c9a84c11; }
+</style>
+</head>
+<body>
+<div class="slide" id="slide"></div>
+<script>
+  const data = SLIDE_DATA_PLACEHOLDER;
+  const el = document.getElementById('slide');
+
+  if (data.type === 'cover') {
+    el.innerHTML = `
+      <div class="deco" style="width:500px;height:500px;top:-150px;right:-150px;"></div>
+      <div>
+        <div class="tag">${data.tag}</div>
+        <div class="title">${data.title}</div>
+        <div class="body">${data.body}</div>
+      </div>
+      <div class="footer">
+        <div class="brand">ialucide.fr</div>
+        <div class="counter">${data.counter}</div>
+      </div>`;
+  } else if (data.type === 'stat') {
+    el.innerHTML = `
+      <div>
+        <div class="tag">${data.tag}</div>
+        <div class="accent-line"></div>
+        <div class="stat">${data.stat}</div>
+        <div class="stat-label">${data.statLabel}</div>
+        <div class="body">${data.body}</div>
+      </div>
+      <div class="footer">
+        <div class="brand">ialucide.fr</div>
+        <div class="counter">${data.counter}</div>
+      </div>`;
+  } else if (data.type === 'bullets') {
+    const bullets = data.bullets.map(b =>
+      `<div class="bullet-row">
+        <div class="bullet-dot"></div>
+        <div class="bullet-name">${b.name}</div>
+        <div class="bullet-desc">${b.desc}</div>
+      </div>`).join('');
+    el.innerHTML = `
+      <div>
+        <div class="tag">${data.tag}</div>
+        <div class="accent-line"></div>
+        <div class="body" style="color:#fff">${data.body}</div>
+        <div class="bullet-list">${bullets}</div>
+      </div>
+      <div class="footer">
+        <div class="brand">ialucide.fr</div>
+        <div class="counter">${data.counter}</div>
+      </div>`;
+  } else if (data.type === 'cta') {
+    el.innerHTML = `
+      <div class="deco" style="width:300px;height:300px;bottom:-80px;left:-80px;"></div>
+      <div>
+        <div class="tag">${data.tag}</div>
+        <div class="title">${data.title}</div>
+        <div class="body">${data.body}</div>
+        <div class="cta-box"><div class="cta-text">${data.cta} →</div></div>
+      </div>
+      <div class="footer">
+        <div class="brand">ialucide.fr</div>
+        <div class="counter">${data.counter}</div>
+      </div>`;
+  } else {
+    el.innerHTML = `
+      <div>
+        <div class="tag">${data.tag}</div>
+        <div class="accent-line"></div>
+        <div class="title">${data.title}</div>
+        <div class="body">${data.body}</div>
+      </div>
+      <div class="footer">
+        <div class="brand">ialucide.fr</div>
+        <div class="counter">${data.counter}</div>
+      </div>`;
+  }
+</script>
+</body>
+</html>
