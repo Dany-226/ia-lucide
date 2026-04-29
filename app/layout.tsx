@@ -36,6 +36,9 @@ export const metadata: Metadata = {
       "Analyses par métier sur l'impact réel de l'intelligence artificielle.",
     siteName: 'IA Lucide',
   },
+  other: {
+    'impact-site-verification': '679f10f1-0511-476f-979a-b265417ca7b6',
+  },
 };
 
 export default function RootLayout({
