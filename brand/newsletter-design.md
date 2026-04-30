@@ -146,6 +146,14 @@ L'équipe ialucide
 
 ---
 
+## Historique des éditions
+
+| # | Date | Sujet | Outil recommandé | Angle analyse |
+|---|---|---|---|---|
+| 2 | 6 mai 2026 | Vos données dans ChatGPT : ce que vous acceptez vraiment | Mistral Le Chat Pro | ChatGPT entraîne ses modèles sur vos conversations — sauf si vous l'en empêchez |
+
+---
+
 ## Checklist avant envoi
 
 - [ ] Sous-titre = "L'IA sans jargon, sans fantasme."
