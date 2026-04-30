@@ -95,3 +95,9 @@
 /Article?id=69a1a5538f6925f5571ef9a2 / 301
 /Article?id=69a1e9b9a89f71dfe4a6a7d2 / 301
 /Article?id=69a1727f47c2c516ed1899f8 / 301
+
+# === Fusions doublons - redirections 301 ===
+
+/article/developpeur-ia-2026/ /article/developpeur-augmente-ia-2026/ 301
+/article/developpeur/ /article/developpeur-augmente-ia-2026/ 301
+/article/comptable/ /article/expert-comptable-ia-guide-2026/ 301
