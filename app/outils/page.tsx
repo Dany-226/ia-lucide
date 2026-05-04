@@ -14,14 +14,8 @@ export const metadata: Metadata = {
   },
 };
 
-const OUTILS_TAGS = new Set(['juriste', 'comptable', 'développeur']);
-
 export default function OutilsPage() {
-  const articles = getAllArticles().filter(a => {
-    const tag = a.tag.toLowerCase();
-    const slug = a.slug.toLowerCase();
-    return OUTILS_TAGS.has(tag) && (slug.includes('outils') || slug.includes('comparatif'));
-  });
+  const articles = getAllArticles().filter(a => a.category === 'outils');
 
   return (
     <>

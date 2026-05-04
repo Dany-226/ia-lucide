@@ -14,12 +14,8 @@ export const metadata: Metadata = {
   },
 };
 
-const COMPRENDRE_TAGS = new Set(['analyse', 'stratégie ia', 'adaptation professionnelle']);
-
 export default function ComprendrePage() {
-  const articles = getAllArticles().filter(a =>
-    COMPRENDRE_TAGS.has(a.tag.toLowerCase())
-  );
+  const articles = getAllArticles().filter(a => a.category === 'comprendre');
 
   return (
     <>
