@@ -5,6 +5,7 @@ import html from 'remark-html';
 import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 import ArticleSidebar from '@/components/ArticleSidebar';
+import ArticleCard from '@/components/ArticleCard';
 
 export async function generateStaticParams() {
   const articles = getAllArticles();
@@ -46,6 +47,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const allRecent = getAllArticles().filter(a => a.slug !== slug).slice(0, 3);
   const sameTagArticles = related.slice(0, 3);
   const sidebarArticles = related.length > 0 ? related : allRecent;
+
+  const sameCategoryArticles = article.category
+    ? getAllArticles()
+        .filter(a => a.slug !== slug && a.category === article.category)
+        .slice(0, 3)
+    : [];
 
   const formattedDate = article.date
     ? new Date(article.date).toLocaleDateString('fr-FR', {
@@ -191,6 +198,25 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </div>
+
+      {sameCategoryArticles.length > 0 && (
+        <section className="py-16 md:py-20 border-t border-[#c9a84c]/20 mt-12 bg-[#fcf9f0]">
+          <div className="max-w-7xl mx-auto px-5 md:px-8">
+            <div className="flex items-center gap-6 mb-10 md:mb-14">
+              <div className="h-px flex-1 bg-[#c9a84c]/20" />
+              <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c]">
+                Dans la même catégorie
+              </h2>
+              <div className="h-px flex-1 bg-[#c9a84c]/20" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {sameCategoryArticles.map(a => (
+                <ArticleCard key={a.slug} {...a} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }
