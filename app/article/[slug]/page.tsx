@@ -7,6 +7,12 @@ import Link from 'next/link';
 import ArticleSidebar from '@/components/ArticleSidebar';
 import ArticleCard from '@/components/ArticleCard';
 
+const CATEGORY_MAP = {
+  metiers:    { label: 'Métiers',    href: '/metiers/' },
+  outils:     { label: 'Outils',     href: '/outils/' },
+  comprendre: { label: 'Comprendre', href: '/comprendre/' },
+} as const;
+
 export async function generateStaticParams() {
   const articles = getAllArticles();
   return articles.map(a => ({ slug: a.slug }));
@@ -62,19 +68,56 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       })
     : '';
 
+  const catEntry = article.category ? CATEGORY_MAP[article.category] : null;
+  const truncatedTitle = article.title.length > 40
+    ? article.title.slice(0, 40) + '…'
+    : article.title;
+
+  const breadcrumbItems = [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://ialucide.fr/' },
+    ...(catEntry ? [{
+      '@type': 'ListItem',
+      position: 2,
+      name: catEntry.label,
+      item: `https://ialucide.fr${catEntry.href}`,
+    }] : []),
+    { '@type': 'ListItem', position: catEntry ? 3 : 2, name: article.title },
+  ];
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems,
+  };
+
   return (
     <div className="pt-24 md:pt-32 pb-20 bg-[#fcf9f0] min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        {/* Back link */}
-        <Link
-          href="/"
-          className="font-mono inline-flex items-center gap-2 mb-12 text-xs font-bold tracking-[0.1em] uppercase text-[#6b6b6b] hover:text-[#1c1c17] transition-colors"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M8 2L3 7L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          Retour
-        </Link>
+        {/* Breadcrumb */}
+        <nav aria-label="Fil d'Ariane" className="mb-8">
+          <ol className="font-mono flex flex-wrap items-center gap-0 text-[11px] tracking-[0.05em]">
+            <li>
+              <Link href="/" className="text-[#6b6b6b] hover:text-[#c9a84c] transition-colors duration-200">
+                Accueil
+              </Link>
+            </li>
+            {catEntry && (
+              <>
+                <li className="mx-2 text-[#c9a84c] select-none">›</li>
+                <li>
+                  <Link href={catEntry.href} className="text-[#6b6b6b] hover:text-[#c9a84c] transition-colors duration-200">
+                    {catEntry.label}
+                  </Link>
+                </li>
+              </>
+            )}
+            <li className="mx-2 text-[#c9a84c] select-none">›</li>
+            <li className="text-[#6b6b6b]">{truncatedTitle}</li>
+          </ol>
+        </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 lg:gap-16">
           {/* ── Main article ── */}
