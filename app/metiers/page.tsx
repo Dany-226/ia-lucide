@@ -3,16 +3,18 @@ import Link from 'next/link';
 import MetiersFaqItem from '@/components/MetiersFaqItem';
 
 export const metadata: Metadata = {
-  title: 'Votre métier face à l\'IA — Analyse par profession | ialucide',
-  description: '15 professions analysées : comptable, juriste, développeur, médecin, RH… Découvrez l\'impact réel de l\'IA sur votre métier, tâche par tâche. Ni catastrophisme, ni déni.',
+  title: "Métiers menacés par l'IA en France (2026) : 15 analyses par profession | ialucide",
+  description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 15 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   alternates: {
     canonical: 'https://ialucide.fr/metiers/',
   },
   openGraph: {
-    description: '15 professions analysées : comptable, juriste, développeur, médecin, RH… Découvrez l\'impact réel de l\'IA sur votre métier, tâche par tâche. Ni catastrophisme, ni déni.',
+    title: "Métiers menacés par l'IA en France (2026) : 15 analyses par profession | ialucide",
+    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 15 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   },
   twitter: {
-    description: '15 professions analysées : comptable, juriste, développeur, médecin, RH… Découvrez l\'impact réel de l\'IA sur votre métier, tâche par tâche. Ni catastrophisme, ni déni.',
+    title: "Métiers menacés par l'IA en France (2026) : 15 analyses par profession | ialucide",
+    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 15 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   },
 };
 
@@ -185,6 +187,9 @@ export default function MetiersPage() {
           </p>
           <p className="text-base text-[#6b6b6b] leading-relaxed">
             Chaque analyse est construite à partir de sources publiques, retours terrain et observations concrètes sur l&apos;évolution des outils. Le niveau d&apos;exposition est évalué selon la proportion de tâches automatisables dans les 3 à 5 prochaines années.
+          </p>
+          <p className="text-base text-[#6b6b6b] leading-relaxed">
+            En France, 5 millions d&apos;emplois sont estimés fortement exposés à l&apos;IA d&apos;ici 2030 - sans que cela signifie automatiquement suppression. 120 métiers sont identifiés en première ligne de cette mutation. Pour chacun, l&apos;enjeu réel est de distinguer les tâches automatisables des compétences qui résistent.
           </p>
         </header>
 
