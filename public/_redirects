@@ -1,3 +1,13 @@
+# === Slash final — URLs sans slash vers URLs canoniques ===
+
+/article/enseignant /article/enseignant/ 301
+/article/architecte-ia-conception-batiment /article/architecte-ia-conception-batiment/ 301
+/article/graphiste /article/graphiste/ 301
+/article/rh-recruteur /article/rh-recruteur/ 301
+/article/comptable /article/comptable/ 301
+/article/choisir-llm-professionnel-comparatif /article/choisir-llm-professionnel-comparatif/ 301
+/article/consultant /article/consultant/ 301
+
 # === Redirections articles - format query string Base44 ===
 # Pour chaque slug d'article, deux règles : minuscule et CamelCase
 
