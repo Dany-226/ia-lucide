@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${article.title} : Guide 2026 | ialucide`,
     description: (article.excerpt || '').slice(0, 155),
     alternates: {
-      canonical: `https://ialucide.fr/article/${slug}/`,
+      canonical: `https://ialucide.fr/article/${slug}`,
     },
     openGraph: {
       title: article.title,
