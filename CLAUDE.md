@@ -64,3 +64,56 @@ Ces éléments signalent un texte généré par IA. Les éviter systématiquemen
 - Pas d'évangélisme ("l'IA va transformer...", "une opportunité sans précédent...")
 - Pas de catastrophisme ("les métiers vont disparaître...", "une menace existentielle...")
 - Pas de fausse neutralité ("certains pensent X, d'autres pensent Y" sans prise de position)
+
+## Session SEO — 15 juillet 2026 : découverte et correction d'un Worker Cloudflare obsolète
+
+### Contexte critique découvert
+Un Worker Cloudflare nommé `ialucide-seo` était routé sur `ialucide.fr/*` (priorité sur Cloudflare Pages)
+depuis l'époque Base44/Vite SPA. Il n'était documenté nulle part (ni ici, ni dans le projet).
+
+**Ce qu'il faisait** : pour les requêtes de crawlers uniquement (Googlebot, Bingbot, etc. — détection par
+user-agent), il appelait `BASE44_API_URL` (`https://ialucide.base44.app/getArticles`) pour générer du HTML
+pré-rendu — un mécanisme de prerendering nécessaire à l'époque de la SPA React, devenu obsolète depuis la
+migration Next.js static export.
+
+**Le problème** : Base44 a été fermé (compte résilié). Le Worker continuait à s'exécuter, l'appel API échouait
+silencieusement (`try/catch` → tableau vide), et le Worker servait quand même un `200 OK` avec une **page
+d'accueil vide de tout article** — uniquement à Googlebot, mise en cache 1h. Les visiteurs humains n'étaient
+jamais affectés (le Worker les laissait passer en `pass-through` direct vers Pages).
+
+**Conséquence probable** : c'est la cause la plus vraisemblable de la chute d'indexation observée sur 3 mois
+(40 → 18 pages indexées dans GSC), la homepage étant le point d'entrée principal du maillage interne pour
+Googlebot.
+
+### Action effectuée
+Suppression complète de la route Workers `ialucide.fr/*` → `ialucide-seo` (Cloudflare Dashboard →
+Workers Routes → Remove). Cloudflare Pages sert désormais directement le HTML statique Next.js à tous les
+visiteurs, y compris les crawlers. Vérifié via GSC Inspection de l'URL (test live) : homepage complète avec
+tous les articles et le maillage interne intact.
+
+**Point de vigilance pour l'avenir** : si un besoin de prerendering spécifique aux crawlers réapparaît, ne
+jamais dépendre d'une API externe sans fallback vers le contenu statique en cas d'échec. Toujours vérifier
+les Workers Routes actives (`ialucide.fr/*`) avant tout diagnostic SEO — elles s'exécutent avant Cloudflare
+Pages et peuvent masquer complètement le comportement réel du site pour Google.
+
+### Redirect Rules créées (Cloudflare Dashboard → Rules → Redirect Rules)
+Pour corriger les 9 URLs en 404 identifiées dans GSC (Indexation → Pages → Introuvable 404), toutes héritées
+de l'ancienne architecture Base44 avec query strings — non gérables via `_redirects` (limitation déjà connue,
+cf. section SEO plus haut) :
+
+1. `redirect-article-slug` — `ialucide.fr/article?slug=*` → `ialucide.fr/article/${1}/` (301)
+2. `redirect-article-slug-uppercase` — `ialucide.fr/Article?slug=*` → `ialucide.fr/article/${1}/` (301)
+3. `redirect-article-id` — `ialucide.fr/*rticle?id=*` → `ialucide.fr/metiers/` (301, pas de mapping
+   id→slug disponible, fallback vers page thématique)
+4. `redirect-about-camelcase` — `ialucide.fr/About` → `ialucide.fr/about/` (301)
+
+Testé et validé : les 3 cas passent, y compris la chaîne complète `?slug=comptable` → `/article/comptable/`
+→ résolution via `_redirects` existant → `expert-comptable-ia-guide-2026` (bon article final).
+
+### À surveiller (pas d'action immédiate)
+- Courbe GSC Indexation (Vue d'ensemble) sur les 1-3 prochaines semaines — test de l'hypothèse Worker.
+- Les 26 URLs "Explorée, actuellement non indexée" (GSC) — hypothèse initiale de cannibalisation éditoriale
+  invalidée après lecture du contenu réel (articles distincts, pas de gabarit pauvre). Attendre un recrawl
+  post-correction avant tout nouveau diagnostic sur ce point — ne pas retravailler le contenu maintenant.
+- Slug orphelin `ia-comptabilite-expert-comptable-2026` (vu en 404, sans correspondance connue) — vérifier
+  s'il subsiste un lien interne mort quelque part sur le site.
