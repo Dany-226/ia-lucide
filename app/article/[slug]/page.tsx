@@ -1,8 +1,12 @@
 import { getAllArticles, getArticleBySlug, getRelatedArticles } from '@/lib/articles';
 import { notFound } from 'next/navigation';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema, type Options as SanitizeSchema } from 'rehype-sanitize';
+import rehypeStringify from 'rehype-stringify';
 import Link from 'next/link';
 import ArticleSidebar from '@/components/ArticleSidebar';
 import ArticleCard from '@/components/ArticleCard';
@@ -12,6 +16,25 @@ const CATEGORY_MAP = {
   outils:     { label: 'Outils',     href: '/outils/' },
   comprendre: { label: 'Comprendre', href: '/comprendre/' },
 } as const;
+
+// Autorise uniquement <div class="cta-button-wrapper"> et <a class="cta-button" href="...">
+// en plus du schéma par défaut (GitHub) — tout le reste du HTML brut reste filtré.
+const articleContentSchema: SanitizeSchema = {
+  ...defaultSchema,
+  attributes: {
+    ...defaultSchema.attributes,
+    a: [
+      ...(defaultSchema.attributes?.a ?? []).filter(
+        (attr) => !(Array.isArray(attr) && attr[0] === 'className')
+      ),
+      ['className', 'data-footnote-backref', 'cta-button'],
+    ],
+    div: [
+      ...(defaultSchema.attributes?.div ?? []),
+      ['className', 'cta-button-wrapper'],
+    ],
+  },
+};
 
 export async function generateStaticParams() {
   const articles = getAllArticles();
@@ -46,7 +69,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = getArticleBySlug(slug);
   if (!article) notFound();
 
-  const processed = await remark().use(remarkGfm).use(html).process(article.content ?? '');
+  const processed = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeSanitize, articleContentSchema)
+    .use(rehypeStringify)
+    .process(article.content ?? '');
   const contentHtml = processed.toString();
 
   const related = getRelatedArticles(article);

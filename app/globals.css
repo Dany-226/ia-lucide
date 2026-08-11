@@ -126,6 +126,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 .prose-ia a:hover { text-decoration: underline; }
 
+.prose-ia .cta-button-wrapper {
+  margin: 2rem 0;
+}
+
+.prose-ia .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  text-decoration: none;
+  border: 1px solid #c9a84c;
+  padding: 0.75rem 2rem;
+  transition: all 0.5s;
+}
+.prose-ia .cta-button:hover {
+  background-color: #c9a84c;
+  color: #1a3a4a;
+  text-decoration: none;
+}
+
 .prose-ia blockquote {
   border-left: 2px solid #c9a84c;
   padding-left: 1.5rem;
