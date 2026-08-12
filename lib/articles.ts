@@ -9,7 +9,7 @@ export interface Article {
   title: string;
   excerpt: string;
   tag: string;
-  category?: 'metiers' | 'outils' | 'comprendre';
+  category?: 'metiers' | 'outils' | 'comprendre' | 'entrepreneuriat';
   author: string;
   read_time: string;
   date: string;

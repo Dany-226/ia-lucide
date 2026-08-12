@@ -98,7 +98,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       })
     : '';
 
-  const catEntry = article.category ? CATEGORY_MAP[article.category] : null;
+  const catEntry = article.category && article.category in CATEGORY_MAP
+    ? CATEGORY_MAP[article.category as keyof typeof CATEGORY_MAP]
+    : null;
   const truncatedTitle = article.title.length > 40
     ? article.title.slice(0, 40) + '…'
     : article.title;
