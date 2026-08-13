@@ -10,6 +10,9 @@
 ## Workflow publication article
 1. Créer le fichier MDX dans /content/ avec frontmatter complet
 2. git add, commit, push → Cloudflare déploie en 2-3 min
+3. Une fois le déploiement propagé, notifier les moteurs de recherche via IndexNow :
+   `npm run indexnow -- --urls=https://ialucide.fr/article/<slug-du-nouvel-article>/`
+   (sans argument `--urls`, la commande soumet tout le site — à réserver aux cas exceptionnels)
 
 ## Format MDX obligatoire
 title, slug, excerpt, tag, author, read_time, image_url, featured, date
