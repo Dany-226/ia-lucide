@@ -113,10 +113,43 @@ cf. section SEO plus haut) :
 Testé et validé : les 3 cas passent, y compris la chaîne complète `?slug=comptable` → `/article/comptable/`
 → résolution via `_redirects` existant → `expert-comptable-ia-guide-2026` (bon article final).
 
+### Session SEO — 19 août 2026 : table de correspondance anciens slugs Base44 → slugs actuels
+
+11 nouvelles URLs en 404 remontées par GSC, toutes héritées de Base44. Investigation complète :
+test direct de chaque URL (`curl -IL`), croisement avec les slugs de `content/*.mdx` et avec les
+4 Redirect Rules ci-dessus.
+
+**Cause racine** : `redirect-article-slug` et `redirect-article-slug-uppercase` sont des wildcards
+génériques (`/article?slug=*` → `/article/${1}/`) qui supposent que l'ancien slug = le nom du
+fichier MDX actuel. Faux pour les slugs Base44 raccourcis renommés lors de la migration Next.js -
+la redirection aboutit à un 404 silencieux au lieu du bon article.
+
+Table de correspondance (vérifiée via `git log` sur le commit de migration initiale `4577623` -
+les fichiers actuels existent déjà sous leur nom long depuis ce tout premier commit Next.js, aucun
+renommage `git mv` détecté : les slugs courts Base44 n'ont jamais existé comme fichiers dans ce repo) :
+
+| Ancien slug Base44 | Slug actuel |
+|---|---|
+| `architecte` | `architecte-ia-conception-batiment` |
+| `juriste-avocat` | `juriste-ia-avocat-pratique-augmentee` |
+| `comptable` | `expert-comptable-ia-guide-2026` (déjà couvert via `_redirects`) |
+| `ia-comptabilite-expert-comptable-2026` | `expert-comptable-ia-guide-2026` |
+| `medecin` | inchangé, slug déjà correct |
+| `developpeur-augmente-ia-2026` | inchangé, slug déjà correct |
+
+**Slug orphelin `ia-comptabilite-expert-comptable-2026` résolu** : la règle `_redirects` ajoutée le
+11/05 (`fix: redirect slug 404 ia-comptabilite vers outils-ia-experts-comptables`) pointait vers le
+mauvais article - `outils-ia-experts-comptables-2026` est un comparatif d'outils, alors que le titre
+d'`expert-comptable-ia-guide-2026` ("IA et Comptabilité : Guide 2026 de l'Expert-Comptable Augmenté")
+correspond terme à terme à l'ancien slug. Cette règle était de toute façon inopérante : shadow par
+la règle générique `/article/:slug /article/:slug/ 301` déclarée plus haut dans le même fichier.
+
+**Point d'attention `_redirects`** : Cloudflare Pages traite ce fichier de haut en bas, premier match
+gagnant. Toute règle spécifique par chemin doit être déclarée avant les règles génériques `/article/:slug`,
+sous peine d'être silencieusement neutralisée comme ci-dessus.
+
 ### À surveiller (pas d'action immédiate)
 - Courbe GSC Indexation (Vue d'ensemble) sur les 1-3 prochaines semaines — test de l'hypothèse Worker.
 - Les 26 URLs "Explorée, actuellement non indexée" (GSC) — hypothèse initiale de cannibalisation éditoriale
   invalidée après lecture du contenu réel (articles distincts, pas de gabarit pauvre). Attendre un recrawl
   post-correction avant tout nouveau diagnostic sur ce point — ne pas retravailler le contenu maintenant.
-- Slug orphelin `ia-comptabilite-expert-comptable-2026` (vu en 404, sans correspondance connue) — vérifier
-  s'il subsiste un lien interne mort quelque part sur le site.
