@@ -32,7 +32,7 @@ const METIERS = [
       {
         titre: 'Juriste / Avocat',
         description: "Recherche jurisprudentielle, rédaction de contrats, veille réglementaire : les legaltechs et les LLM performent déjà au niveau junior. La plaidoirie et la stratégie résistent.",
-        slug: 'juriste-ia-avocat-pratique-augmentee',
+        slug: 'guide-ia-juristes-avocats-2026',
       },
       {
         titre: 'Traducteur',
