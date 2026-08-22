@@ -23,8 +23,8 @@
 /article?slug=commercial /article/commercial/ 301
 /Article?slug=commercial /article/commercial/ 301
 
-/article?slug=comptable /article/comptable/ 301
-/Article?slug=comptable /article/comptable/ 301
+/article?slug=comptable /article/expert-comptable-ia-guide-2026/ 301
+/Article?slug=comptable /article/expert-comptable-ia-guide-2026/ 301
 
 /article?slug=consultant /article/consultant/ 301
 /Article?slug=consultant /article/consultant/ 301
@@ -35,11 +35,11 @@
 /article?slug=developpeur-augmente-ia-2026 /article/developpeur-augmente-ia-2026/ 301
 /Article?slug=developpeur-augmente-ia-2026 /article/developpeur-augmente-ia-2026/ 301
 
-/article?slug=developpeur-ia-2026 /article/developpeur-ia-2026/ 301
-/Article?slug=developpeur-ia-2026 /article/developpeur-ia-2026/ 301
+/article?slug=developpeur-ia-2026 /article/developpeur-augmente-ia-2026/ 301
+/Article?slug=developpeur-ia-2026 /article/developpeur-augmente-ia-2026/ 301
 
-/article?slug=developpeur /article/developpeur/ 301
-/Article?slug=developpeur /article/developpeur/ 301
+/article?slug=developpeur /article/developpeur-augmente-ia-2026/ 301
+/Article?slug=developpeur /article/developpeur-augmente-ia-2026/ 301
 
 /article?slug=enseignant /article/enseignant/ 301
 /Article?slug=enseignant /article/enseignant/ 301
@@ -106,12 +106,16 @@
 /article/developpeur/ /article/developpeur-augmente-ia-2026/ 301
 /article/comptable/ /article/expert-comptable-ia-guide-2026/ 301
 
+# === Fusion guide-ia-juristes-avocats-2026 (3 anciens slugs supprimés) + slug architecte orphelin ===
+
+/article/juriste-ia-avocat-pratique-augmentee/ /article/guide-ia-juristes-avocats-2026/ 301
+/article/outils-ia-juristes-avocats-2026/ /article/guide-ia-juristes-avocats-2026/ 301
+/article/juriste-avocat/ /article/guide-ia-juristes-avocats-2026/ 301
+/article/architecte/ /article/architecte-ia-conception-batiment/ 301
+
 /About /about 301
 /Home / 301
-/Article?slug=comptable /article/comptable 301
 /Article?slug=architecte /article/architecte 301
-/Article?slug=developpeur-augmente-ia-2026 /article/developpeur-augmente-ia-2026 301
-/Article?slug=medecin /article/medecin 301
 /Article?slug=juriste-avocat /article/juriste-avocat 301
 /Article?id=69a081abc75a106ddf686823 / 301
 /article/ia-comptabilite-expert-comptable-2026 /article/outils-ia-experts-comptables-2026 301

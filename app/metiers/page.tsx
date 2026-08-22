@@ -27,7 +27,7 @@ const METIERS = [
       {
         titre: 'Comptable',
         description: "Saisie, rapprochements, déclarations fiscales : les IA automatisent l'essentiel des tâches répétitives. Le rôle évolue vers le conseil et l'analyse stratégique.",
-        slug: 'comptable',
+        slug: 'expert-comptable-ia-guide-2026',
       },
       {
         titre: 'Juriste / Avocat',
@@ -101,7 +101,7 @@ const METIERS = [
       {
         titre: 'Développeur',
         description: "La génération de code accélère la production mais exige plus de recul architectural. Le développeur se transforme en chef d'orchestre, superviseur de l'IA plutôt que simple exécutant.",
-        slug: 'developpeur',
+        slug: 'developpeur-augmente-ia-2026',
       },
       {
         titre: 'Architecte',
