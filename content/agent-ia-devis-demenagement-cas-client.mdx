@@ -1,0 +1,41 @@
+---
+title: "Automatiser les devis d'une entreprise de déménagement avec un agent IA : cas client"
+slug: "agent-ia-devis-demenagement-cas-client"
+excerpt: "Le client dit trois pièces mais oublie la cave, l'équipe est mal dimensionnée, le volume change la veille. Comment un agent IA a repris cette chaîne de bout en bout pour un déménageur."
+tag: "Agents IA"
+author: "Daniel Rollin"
+read_time: "6"
+image_url: ""
+featured: false
+date: "2026-08-23"
+---
+
+Le client annonce trois pièces au téléphone. Il oublie la cave. L'équipe envoyée est mal dimensionnée pour le volume réel, découvert sur place. Le volume change encore la veille du déménagement, et tout est à refaire dans l'urgence. Voici comment un agent IA a repris cette chaîne pour un client déménageur, sans lui retirer la main sur les décisions qui comptent.
+
+## Le point de départ : contrôler les données, pas les hallucinations
+
+Le système part d'un formulaire, toujours lui. Ce n'est pas un détail : demander les informations sous forme structurée plutôt que de laisser un agent deviner à partir d'un texte libre est ce qui limite le risque d'erreur ou d'approximation. Le formulaire demande volume, nombre d'étages, présence d'un ascenseur, distance, date souhaitée.
+
+## Ce que fait l'agent, du devis à la facture
+
+**Informations manquantes détectées, relance directe.** Si le volume ou un autre champ clé n'est pas renseigné, l'agent relance immédiatement plutôt que de laisser un devis incomplet avancer dans le processus.
+
+**Devis calculé selon des règles métier définies à l'avance.** Taille d'équipe nécessaire, camion adapté, distance à parcourir : le calcul suit des règles fixées par le déménageur, pas une estimation générique.
+
+**Relances automatiques à J+3 et J+7** pour les devis restés sans réponse, sans qu'une personne ait à surveiller un tableau de suivi.
+
+**Devis accepté : tournée optimisée et confirmation envoyée à J-3.**
+
+**Volume modifié la veille : re-chiffrage automatique**, plutôt qu'une correction manuelle dans l'urgence au moment où l'équipe s'apprête à partir.
+
+**Facture émise, relance de paiement à J+15** si elle reste impayée.
+
+## Ce qui reste entre les mains du déménageur
+
+Le déménageur valide le devis et la tournée à chaque étape clé. L'agent prépare, chiffre, relance et re-calcule, mais la décision finale sur ce qui part réellement en tournée reste une validation humaine. Le reste, la mécanique répétitive de suivi et de relance, tourne sans intervention.
+
+## La limite à connaître
+
+Ce système fonctionne parce que les règles métier (taille d'équipe par volume, tarification par distance) ont été définies clairement en amont, avec le déménageur, avant que l'agent ne les applique. Un agent ne devine pas ces règles, il les exécute. La qualité du résultat dépend directement de la précision de ce cadrage initial, pas seulement de la capacité de l'agent à traiter du texte.
+
+*Ce déploiement a été réalisé par [Digicorpex](https://www.digicorpex.com), l'agence que j'ai fondée à Bordeaux, pour un client réel. Le nom de l'entreprise n'est pas cité par souci de confidentialité commerciale.*
