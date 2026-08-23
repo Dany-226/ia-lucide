@@ -92,6 +92,36 @@ Ces éléments signalent un texte généré par IA. Les éviter systématiquemen
 - Pas de catastrophisme ("les métiers vont disparaître...", "une menace existentielle...")
 - Pas de fausse neutralité ("certains pensent X, d'autres pensent Y" sans prise de position)
 
+## Axe éditorial — Agents IA / Digicorpex
+
+Digicorpex (www.digicorpex.com) est l'agence de Daniel Rollin, basée à Bordeaux : conception
+d'agents IA sur mesure pour PME/TPE (automatisation d'appels, devis, relances, wiki IA/mémoire
+d'entreprise). C'est une structure commerciale que Daniel possède et dirige - pas un partenaire
+d'affiliation tiers.
+
+**Règle de disclosure obligatoire** : tout article ialucide qui lie vers digicorpex.com doit le
+faire avec une mention explicite et non ambiguë du type de lien - par exemple "Digicorpex est
+l'agence que j'ai fondée pour déployer ce type d'agents en PME" ou équivalent. Jamais de lien
+silencieux vers digicorpex présenté comme une recommandation neutre. Cette règle est non
+négociable et prime sur toute autre considération de fluidité rédactionnelle - cohérente avec le
+principe déjà en place de disclosure affiliation standard sur les articles monétisés (cf.
+Conventions plus haut), mais encore plus stricte puisqu'il s'agit d'un intérêt direct, pas d'une
+commission sur un outil tiers testé.
+
+**Angle du pilier "Agents IA"** : pas de contenu générique "les agents IA en 2026, tout savoir" -
+ça sort de la ligne éditoriale factuelle/anti-évangélisme (cf. Style éditorial ci-dessus). Cas
+d'usage métier par métier, dans la continuité du format déjà utilisé sur ialucide (comptables,
+juristes, RH...), avec le même principe "ce que fait l'IA concrètement" + "la limite à connaître".
+Digicorpex traite en parallèle sur son propre blog l'angle "déploiement technique" des mêmes
+métiers - maillage réciproque naturel entre les deux sites sans duplication de contenu, chacun
+gardant sa focale (ialucide : impact métier / digicorpex : mise en œuvre).
+
+**Premier article de référence** : le cas Expertise Prothèse (plateforme no-code
+Airtable/Softr/Make que Daniel a fondée, sur laquelle il a ensuite branché des agents IA pour la
+SEO/Search Console) - cas vérifiable, vécu directement, illustre à la fois l'angle ialucide
+(résultats concrets, avant/après) et le savoir-faire digicorpex, sans recourir à un cas client
+tiers non vérifiable.
+
 ## Session SEO — 15 juillet 2026 : découverte et correction d'un Worker Cloudflare obsolète
 
 ### Contexte critique découvert
