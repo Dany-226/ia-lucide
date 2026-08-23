@@ -23,6 +23,12 @@ title, slug, excerpt, tag, author, read_time, image_url, featured, date
 - Jamais de 'use client' sur une page qui a besoin de metadata SEO
 - Disclosure affiliation sur tous les listicles
 
+## Méthodologie de debug technique
+
+Avant de déclarer un correctif validé : tester plusieurs cas indépendants, pas un seul.
+Une explication qui permet de clore rapidement une investigation est suspecte si elle
+n'a pas été confrontée à un deuxième test qui pourrait la contredire.
+
 ## Structure clé
 - /content/ → articles MDX
 - /app/ → pages Next.js
@@ -34,6 +40,24 @@ title, slug, excerpt, tag, author, read_time, image_url, featured, date
 - Pennylane : contact envoyé, programme direct
 - Liens affiliés à intégrer dans /content/outils-ia-experts-comptables-2026.mdx
   et /content/base44-bolt-lovable-v0-comparatif-vibe-coding-2026.mdx
+
+## robots.txt
+
+Le fichier `app/robots.txt` (statique, convention native Next.js - **pas** `app/robots.ts`,
+qui ne peut pas exprimer le champ non-standard `Content-Signal`) contient les directives
+suivantes, à ne jamais supprimer sans vérifier d'abord si Cloudflare "Managed robots.txt"
+(AI Crawl Control → Overview) est actif :
+
+- `Content-Signal: search=yes,ai-train=no,use=reference` - réserve de droits sur
+  l'entraînement IA au titre de l'article 4 de la directive UE 2019/790
+- `Disallow: /` explicite pour : Amazonbot, Applebot-Extended, Bytespider, CCBot,
+  ClaudeBot, CloudflareBrowserRenderingCrawler, Google-Extended, GPTBot, meta-externalagent
+
+Le toggle Cloudflare Dashboard → AI Crawl Control → Overview → "Managed robots.txt" est
+désactivé depuis le 23/08/2026. S'il est réactivé, Cloudflare injecte automatiquement ces
+mêmes règles EN PLUS du contenu du repo (pas en fallback comme on aurait pu le croire),
+créant un fichier dupliqué. Ne jamais le réactiver sans vider en parallèle le contenu géré
+par Cloudflare du fichier repo.
 
 ## Style éditorial — Patterns à bannir
 
@@ -153,3 +177,57 @@ sous peine d'être silencieusement neutralisée comme ci-dessus.
 - Les 26 URLs "Explorée, actuellement non indexée" (GSC) — hypothèse initiale de cannibalisation éditoriale
   invalidée après lecture du contenu réel (articles distincts, pas de gabarit pauvre). Attendre un recrawl
   post-correction avant tout nouveau diagnostic sur ce point — ne pas retravailler le contenu maintenant.
+
+## Session SEO — 23 août 2026 : audit redirections post-migration Base44, bug de matching query string
+
+Point de départ : une redirection incorrecte observée en prod (`/article?slug=juriste-ia-avocat-
+pratique-augmentee` atterrissait sur un article sans rapport). Investigation en plusieurs temps :
+audit complet de `public/_redirects` et des liens internes, recherche d'une règle générale antérieure
+dans le fichier, puis test direct en prod sur plusieurs slugs pour confirmer la cause.
+
+**Cause racine, plus large qu'un bug ponctuel** : Cloudflare Pages `_redirects` ne matche JAMAIS sur
+la query string, seulement sur le chemin. Toute règle du type `/article?slug=X ... 301` dans ce
+fichier est du code mort - la première règle avec le même chemin gagne pour toutes les requêtes,
+peu importe la query string, qui est ensuite rattachée telle quelle à la destination. Confirmé par
+test direct en prod (`curl -sI`) sur plusieurs slugs distincts (`commercial`, `medecin`, `comptable`,
+`juriste-ia-avocat-pratique-augmentee`) : tous redirigeaient vers la même mauvaise destination
+(`adaptation-ia-manager-retour-experience`, la première règle du bloc). La section entière
+(78 lignes, "format query string Base44") a été supprimée du fichier - voir commit `600af69`. Cela
+invalide au passage l'affirmation "testé et validé" de la session du 15 juillet plus haut : soit ce
+test reposait sur un comportement des Redirect Rules dashboard qui a changé depuis, soit le test
+initial était insuffisant (un seul cas testé, cf. méthodologie ci-dessous).
+
+Le routing par query string doit passer exclusivement par les Cloudflare Redirect Rules (dashboard),
+en "URI Full equals" pour un match exact ou "Wildcard pattern" (pas "Custom filter expression" avec
+un `*` littéral - ça ne matche jamais) pour un pattern générique.
+
+**Méthode de test à toujours appliquer** : `curl -IL "URL" -H "Cache-Control: no-cache"`, jamais
+uniquement au navigateur - le cache edge Cloudflare ET le cache navigateur peuvent tous les deux
+resservir une ancienne réponse après une correction de règle, donnant une fausse impression d'échec
+ou de succès. Tester plusieurs slugs/valeurs différents avant de déclarer une règle wildcard
+fonctionnelle - un seul test positif ne prouve rien sur un pattern générique (cf. Méthodologie de
+debug technique plus haut).
+
+**Table de correspondance des Redirect Rules actives (dashboard, 9 règles, état au 23/08/2026)** :
+
+| # | Nom | Match | Action |
+|---|---|---|---|
+| 1 | Redirect newsletter subdomain to /newsletter/ | Hostname equals `newsletter.ialucide.fr` | 301 → `https://ialucide.fr/newsletter/` |
+| 2 | `redirect-ia-comptabilite-old-path` | URI Full equals `https://ialucide.fr/article/ia-comptabilite-expert-comptable-2026` | 301 → `https://ialucide.fr/article/expert-comptable-ia-guide-2026/` |
+| 3 | `redirect-juriste-avocat-old-slug` | URI Full equals `https://ialucide.fr/article?slug=juriste-avocat`, URI Full equals `https://ialucide.fr/Article?slug=juriste-avocat` | 301 → `https://ialucide.fr/article/juriste-ia-avocat-pratique-augmentee/` |
+| 4 | `redirect-architecte-old-slug` | URI Full equals `https://ialucide.fr/article?slug=architecte`, URI Full equals `https://ialucide.fr/Article?slug=architecte` | 301 → `https://ialucide.fr/article/architecte-ia-conception-batiment/` |
+| 5 | `redirect-article-slug` | URI Full wildcard `https://ialucide.fr/article?slug=*` | 301 → wildcard_replace vers `https://ialucide.fr/article/${1}/` |
+| 6 | `redirect-article-slug-uppercase` | URI Full wildcard `https://ialucide.fr/Article?slug=*` | 301 → wildcard_replace vers `https://ialucide.fr/article/${1}/` |
+| 7 | `redirect-article-id` | URI Full wildcard `https://ialucide.fr/*rticle?id=*` | 301 → wildcard_replace(...) |
+| 8 | `redirect-about-camelcase` | URI Full wildcard `https://ialucide.fr/About` | 301 → wildcard_replace(...) |
+| 9 | `redirect-old-juriste-articles-to-guide` | URI Full equals `https://ialucide.fr/article/harvey-ai-france-cabinets-avocats/`, URI Full equals `https://ialucide.fr/article/outils-ia-juristes-avocats-2026/`, URI Full equals `https://ialucide.fr/article/juriste-ia-avocat-pratique-augmentee/` | 301 → `https://ialucide.fr/article/guide-ia-juristes-avocats-2026/` |
+
+Règles 5 et 6 corrigées le 23/08 : étaient en "Custom filter expression" avec opérateur equals
+littéral, ne matchaient jamais - reconstruites en "Wildcard pattern".
+
+**Note importante** : les règles 3 et 9 se recoupent volontairement sur
+`juriste-ia-avocat-pratique-augmentee` - ce n'est pas une redondance à nettoyer. La règle 3 amène
+l'ancien slug court Base44 `juriste-avocat` vers `/article/juriste-ia-avocat-pratique-augmentee/`,
+qui n'existe plus comme article depuis la fusion ; la règle 9 rattrape ensuite ce chemin (ainsi que
+les deux autres anciens slugs fusionnés) vers `/article/guide-ia-juristes-avocats-2026/`. Double hop
+délibéré, validé par `curl -IL` le 23/08/2026.
