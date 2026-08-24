@@ -181,17 +181,15 @@ export default function Home() {
           <p className="text-base text-[#fcf9f0]/80 mb-10 leading-relaxed max-w-2xl mx-auto">
             Diagnostic patrimonial et professionnel gratuit — méthode utilisée par des profils à hauts revenus.
           </p>
-          <a
-            href="https://ailucide.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/diagnostic-exposition-ia/"
             className="font-mono inline-flex items-center gap-2 px-8 py-3.5 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
           >
             Faire mon diagnostic
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M3 7H11M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </a>
+          </Link>
         </div>
       </section>
 

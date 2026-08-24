@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'À propos — IA Lucide',
@@ -174,12 +175,12 @@ export default function AboutPage() {
 
           <div className="h-px bg-[#c9a84c]/15" />
 
-          {/* ailucide.com */}
+          {/* Diagnostic exposition IA */}
           <section className="border border-[#c9a84c]/20 p-8">
             <h2
               className="text-xl font-bold text-[#fcf9f0] mb-4"
             >
-              ialucide.fr et ailucide.com
+              ialucide.fr
             </h2>
             <p
               className="text-base text-[#fcf9f0]/70 leading-[1.8] mb-4"
@@ -189,15 +190,13 @@ export default function AboutPage() {
             <p
               className="text-base text-[#fcf9f0]/70 leading-[1.8]"
             >
-              Si vous êtes cadre supérieur, dirigeant ou profession libérale et que vous souhaitez aller plus loin — mesurez votre exposition professionnelle et patrimoniale à l&apos;IA sur{' '}
-              <a
-                href="https://ailucide.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              Si vous êtes cadre supérieur, dirigeant ou profession libérale et que vous souhaitez aller plus loin, mesurez votre exposition professionnelle et patrimoniale à l&apos;IA avec notre{' '}
+              <Link
+                href="/diagnostic-exposition-ia/"
                 className="text-[#c9a84c] hover:underline"
               >
-                ailucide.com
-              </a>.
+                diagnostic dédié
+              </Link>.
             </p>
           </section>
 

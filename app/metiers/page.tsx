@@ -255,17 +255,15 @@ export default function MetiersPage() {
           <p className="text-base text-[#fcf9f0]/80 mb-8 max-w-xl mx-auto leading-relaxed">
             Un diagnostic personnalisé en 10 minutes. Comprenez précisément quelles dimensions de votre poste sont concernées et par quoi commencer.
           </p>
-          <a
-            href="https://ailucide.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/diagnostic-exposition-ia/"
             className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-4 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
           >
             Faire mon diagnostic
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7H12M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </a>
+          </Link>
         </section>
 
       </div>

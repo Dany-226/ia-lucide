@@ -74,14 +74,12 @@ export default async function Footer() {
             >
               contact@ialucide.fr
             </a>
-            <a
-              href="https://ailucide.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/"
               className="inline-flex items-center gap-2 text-sm text-[#6b6b6b] hover:text-[#c9a84c] transition-colors duration-300 mt-2"
             >
-              ailucide.com →
-            </a>
+              ialucide.fr →
+            </Link>
           </div>
         </div>
 

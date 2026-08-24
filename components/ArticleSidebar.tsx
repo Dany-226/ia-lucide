@@ -40,14 +40,12 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
         <p className="text-base text-[#fcf9f0]/80 mb-4">
           Mesurez votre exposition à l&apos;IA en 10 minutes.
         </p>
-        <a
-          href="https://ailucide.com"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/diagnostic-exposition-ia/"
           className="font-mono inline-block text-xs font-bold tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-4 py-2 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
         >
           Faire mon diagnostic
-        </a>
+        </Link>
       </div>
 
       {/* Related articles */}
