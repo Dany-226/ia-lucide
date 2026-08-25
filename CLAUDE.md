@@ -92,6 +92,43 @@ Ces éléments signalent un texte généré par IA. Les éviter systématiquemen
 - Pas de catastrophisme ("les métiers vont disparaître...", "une menace existentielle...")
 - Pas de fausse neutralité ("certains pensent X, d'autres pensent Y" sans prise de position)
 
+## Contenu Instagram — règles de production
+
+**Format obligatoire : 1080x1080 (carré), jamais 4:5 (1080x1350).** Instagram recadre
+automatiquement les posts 4:5 en carré au moment de l'upload, sauf action manuelle de
+l'utilisateur (icône d'expansion) - tout contenu placé dans les ~135px du haut ou du bas d'un
+visuel 4:5 disparaît silencieusement au recadrage. Toujours générer en 1080x1080 pour éliminer
+ce risque, pas de marge de sécurité à calculer.
+
+**Ne jamais utiliser Canva:generate-design pour du contenu de marque.** La génération IA de
+Canva produit des résultats hors charte (typographie, mise en page, ton visuel) qui ne
+respectent pas l'identité ialucide, même avec un prompt détaillé. Pour tout visuel de marque
+(posts Instagram, slides, visuels newsletter au-delà du hero simple), générer directement en
+code (Python/Pillow) avec les polices et couleurs exactes de la charte, pas via génération IA
+d'image.
+
+**Polices** : télécharger depuis le dépôt officiel Google Fonts
+(raw.githubusercontent.com/google/fonts, licence OFL) plutôt que de supposer leur présence dans
+l'environnement :
+- Playfair Display : ofl/playfairdisplay/PlayfairDisplay[wght].ttf
+- Space Grotesk : ofl/spacegrotesk/SpaceGrotesk[wght].ttf
+- DM Mono : ofl/dmmono/DMMono-Regular.ttf et DMMono-Medium.ttf
+
+**Assets logo** (fournis par Daniel le 25/08/2026, à réutiliser) :
+- `logo-white.png` : malgré son nom, c'est la version DORÉE avec fond RÉELLEMENT transparent
+  (canal alpha exploitable) - à utiliser sur fonds sombres
+- Aucune version sombre avec transparence native n'existe : la version noire fournie
+  (`ialucide_logo_black_fonts.png`) a un fond crème opaque baked-in (~RGB 241,240,222) qu'il faut
+  détourer par chroma key (seuil de distance colorimétrique ~22) avant de pouvoir la superposer
+  sur un fond coloré (ex : fond or de la slide CTA)
+- Ne jamais utiliser `ialucide_logo_gold.png` comme overlay - fond texturé papier baked-in, non
+  détourable proprement
+
+**Process de génération** : demander toujours confirmation du format et du texte de chaque slide
+avant génération en masse. Ne jamais proposer plusieurs variantes générées par IA à choisir
+(rejeté explicitement le 25/08 - "designs grotesques") - construire directement le rendu final en
+code, avec un seul résultat cohérent avec la charte.
+
 ## Axe éditorial — Agents IA / Digicorpex
 
 Digicorpex (www.digicorpex.com) est l'agence de Daniel Rollin, basée à Bordeaux : conception
