@@ -129,6 +129,20 @@ avant génération en masse. Ne jamais proposer plusieurs variantes générées 
 (rejeté explicitement le 25/08 - "designs grotesques") - construire directement le rendu final en
 code, avec un seul résultat cohérent avec la charte.
 
+## Réseaux sociaux
+
+- **Instagram** : @ialucide (https://www.instagram.com/ialucide/) - handle et marque alignés
+- **X (Twitter)** : compte marque ialucide, mais le handle technique n'a jamais été personnalisé
+  et reste sur l'attribution automatique @daniel_rol22591 (https://x.com/daniel_rol22591) - le nom
+  affiché est "ialucide", mais l'URL/handle ne le reflète pas. À corriger un jour en changeant le
+  handle depuis les réglages du compte X si Daniel veut aligner les deux comptes, non urgent.
+
+Pour toute production de contenu multi-plateforme (ex : carrousel Instagram + version X),
+vérifier lequel des deux comptes est visé avant de produire, les formats et contraintes diffèrent
+(voir section "Contenu Instagram — règles de production" juste au-dessus pour le format
+Instagram ; le format X n'a pas encore été documenté, à faire lors de la première production de
+contenu pour ce compte).
+
 ## Axe éditorial — Agents IA / Digicorpex
 
 Digicorpex (www.digicorpex.com) est l'agence de Daniel Rollin, basée à Bordeaux : conception
