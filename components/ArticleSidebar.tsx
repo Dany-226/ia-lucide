@@ -48,6 +48,14 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
         </Link>
       </div>
 
+      {/* Google Preferred Source */}
+      <div className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] p-6">
+        <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#c9a84c] block mb-3">
+          Suivez ialucide sur Google
+        </span>
+        <div google-add-preferred-source-btn=""></div>
+      </div>
+
       {/* Related articles */}
       {relatedArticles.length > 0 && (
         <div className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] p-6">

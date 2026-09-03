@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Playfair_Display, Space_Grotesk, DM_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -55,6 +56,11 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Script
+          async
+          src="https://news.google.com/swg/js/v1/publisher.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

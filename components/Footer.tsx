@@ -19,6 +19,12 @@ export default async function Footer() {
             <p className="text-sm text-[#6b6b6b] leading-relaxed max-w-xs">
               Le regard lucide sur l&apos;IA qui transforme les métiers.
             </p>
+            <div className="pt-2">
+              <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] block mb-3">
+                Suivez ialucide sur Google
+              </span>
+              <div google-add-preferred-source-btn="" data-theme="dark"></div>
+            </div>
           </div>
 
           {/* Navigation */}
