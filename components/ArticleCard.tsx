@@ -23,7 +23,7 @@ export default function ArticleCard({
   image_url,
 }: ArticleCardProps) {
   return (
-    <Link href={`/article/${slug}`} className="group block">
+    <Link href={`/article/${slug}/`} className="group block">
       <article className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] hover:shadow-[0_4px_32px_rgba(28,28,23,0.08)] hover:border-t-2 hover:border-t-[#c9a84c] transition-all duration-500 hover:-translate-y-1">
         {/* Image / placeholder */}
         <div className="relative overflow-hidden" style={{ height: '220px' }}>

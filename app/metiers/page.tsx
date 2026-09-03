@@ -156,7 +156,7 @@ function MetierCard({ metier, color }: { metier: typeof METIERS[0]['metiers'][0]
         {metier.description}
       </p>
       <Link
-        href={`/article/${metier.slug}`}
+        href={`/article/${metier.slug}/`}
         className="font-mono inline-flex items-center gap-1 text-xs font-bold tracking-widest uppercase transition-colors"
         style={{ color }}
       >

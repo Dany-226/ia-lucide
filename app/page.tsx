@@ -103,7 +103,7 @@ export default function Home() {
           {/* Featured article — full width */}
           {articles.length > 0 && (
             <div className="mb-8">
-              <Link href={`/article/${articles[0].slug}`} className="group block">
+              <Link href={`/article/${articles[0].slug}/`} className="group block">
                 <article className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] hover:shadow-[0_4px_32px_rgba(28,28,23,0.08)] hover:border-t-2 hover:border-t-[#c9a84c] transition-all duration-500 hover:-translate-y-1">
                   <div className="grid grid-cols-1 md:grid-cols-2">
                     {articles[0].image_url && (

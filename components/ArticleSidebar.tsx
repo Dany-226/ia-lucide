@@ -66,7 +66,7 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
             {relatedArticles.map((article) => (
               <Link
                 key={article.slug}
-                href={`/article/${article.slug}`}
+                href={`/article/${article.slug}/`}
                 className="block group"
               >
                 <span className="font-mono text-xs font-bold tracking-[0.05em] uppercase text-[#6b6b6b]">

@@ -282,7 +282,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   {(sameTagArticles.length > 0 ? sameTagArticles : allRecent).slice(0, 2).map((rel) => (
                     <Link
                       key={rel.slug}
-                      href={`/article/${rel.slug}`}
+                      href={`/article/${rel.slug}/`}
                       className="group border border-[#c9a84c]/15 bg-white p-6 hover:border-[#c9a84c]/40 hover:shadow-[0_2px_32px_rgba(28,28,23,0.08)] transition-all duration-300"
                     >
                       <span className="font-mono inline-block text-xs font-bold tracking-[0.1em] uppercase text-[#c9a84c] bg-[#1c1c17] px-3 py-1.5 mb-4">

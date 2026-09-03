@@ -89,7 +89,20 @@ export function getMetierArticles(): Article[] {
 }
 
 export function getRelatedArticles(article: Article, limit = 4): Article[] {
-  return getAllArticles()
-    .filter(a => a.slug !== article.slug && a.tag === article.tag)
-    .slice(0, limit);
+  const all = getAllArticles();
+  const tag = article.tag.toLowerCase();
+  const sameTag = all.filter(
+    a => a.slug !== article.slug && a.tag.toLowerCase() === tag
+  );
+
+  if (sameTag.length >= 2 || !article.category) {
+    return sameTag.slice(0, limit);
+  }
+
+  const usedSlugs = new Set(sameTag.map(a => a.slug));
+  const sameCategory = all.filter(
+    a => a.slug !== article.slug && a.category === article.category && !usedSlugs.has(a.slug)
+  );
+
+  return [...sameTag, ...sameCategory].slice(0, limit);
 }
