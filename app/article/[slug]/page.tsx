@@ -121,11 +121,50 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     itemListElement: breadcrumbItems,
   };
 
+  const canonicalUrl = `https://ialucide.fr/article/${slug}/`;
+  const absoluteImageUrl = article.image_url
+    ? (article.image_url.startsWith('http')
+        ? article.image_url
+        : `https://ialucide.fr${article.image_url}`)
+    : undefined;
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      '@type': 'Person',
+      name: article.author || 'Rédaction IA Lucide',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ialucide',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://ialucide.fr/logo-black.png',
+        width: 1408,
+        height: 768,
+      },
+    },
+    ...(absoluteImageUrl ? { image: absoluteImageUrl } : {}),
+    description: article.excerpt,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl,
+    },
+  };
+
   return (
     <div className="pt-24 md:pt-32 pb-20 bg-[#fcf9f0] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Breadcrumb */}

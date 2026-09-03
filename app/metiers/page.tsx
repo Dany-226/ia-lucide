@@ -169,9 +169,26 @@ function MetierCard({ metier, color }: { metier: typeof METIERS[0]['metiers'][0]
   );
 }
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+
 export default function MetiersPage() {
   return (
     <div className="bg-[#fcf9f0] min-h-screen pt-24 md:pt-32 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="max-w-5xl mx-auto px-5 md:px-8">
 
         {/* Header */}
