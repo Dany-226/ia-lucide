@@ -1,7 +1,3 @@
-# === Slash final — règle universelle articles ===
-
-/article/:slug /article/:slug/ 301
-
 # === Redirections pages légales - format CamelCase Base44 ===
 
 /MentionsLegales /mentions-legales/ 301
@@ -32,9 +28,14 @@
 /article/juriste-avocat/ /article/guide-ia-juristes-avocats-2026/ 301
 /article/architecte/ /article/architecte-ia-conception-batiment/ 301
 
-/About /about 301
+/About /about/ 301
 /Home / 301
-/Article?slug=architecte /article/architecte 301
-/Article?slug=juriste-avocat /article/juriste-avocat 301
+/Article?slug=architecte /article/architecte-ia-conception-batiment/ 301
+/Article?slug=juriste-avocat /article/guide-ia-juristes-avocats-2026/ 301
 /Article?id=69a081abc75a106ddf686823 / 301
-/article/ia-comptabilite-expert-comptable-2026 /article/outils-ia-experts-comptables-2026 301
+/article/ia-comptabilite-expert-comptable-2026/ /article/outils-ia-experts-comptables-2026/ 301
+
+# === Slash final — règle universelle articles (doit rester en dernier : sinon elle intercepte
+# les requêtes sans slash avant les règles de fusion spécifiques ci-dessus) ===
+
+/article/:slug /article/:slug/ 301
