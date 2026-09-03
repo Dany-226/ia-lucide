@@ -10,9 +10,12 @@
 ## Workflow publication article
 1. Créer le fichier MDX dans /content/ avec frontmatter complet
 2. git add, commit, push → Cloudflare déploie en 2-3 min
-3. Une fois le déploiement propagé, notifier les moteurs de recherche via IndexNow :
-   `npm run indexnow -- --urls=https://ialucide.fr/article/<slug-du-nouvel-article>/`
-   (sans argument `--urls`, la commande soumet tout le site — à réserver aux cas exceptionnels)
+3. La notification IndexNow est automatique : le workflow GitHub Actions
+   `.github/workflows/indexnow.yml` se déclenche sur tout push main touchant
+   `content/**.mdx`, détecte les fichiers ajoutés/modifiés, attend que chaque
+   URL réponde 200 (jusqu'à 5 min), puis soumet à IndexNow. Rien à faire
+   manuellement. Pour une soumission exceptionnelle du site entier, la
+   commande manuelle reste disponible : `npm run indexnow` (sans `--urls`).
 
 ## Format MDX obligatoire
 title, slug, excerpt, tag, author, read_time, image_url, featured, date
