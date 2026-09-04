@@ -12,10 +12,39 @@ import ArticleSidebar from '@/components/ArticleSidebar';
 import ArticleCard from '@/components/ArticleCard';
 
 const CATEGORY_MAP = {
-  metiers:    { label: 'Métiers',    href: '/metiers/' },
-  outils:     { label: 'Outils',     href: '/outils/' },
-  comprendre: { label: 'Comprendre', href: '/comprendre/' },
+  metiers:       { label: 'Métiers',       href: '/metiers/' },
+  outils:        { label: 'Outils',        href: '/outils/' },
+  comprendre:    { label: 'Comprendre',    href: '/comprendre/' },
+  'education-ia': { label: 'Éducation IA', href: '/education-ia/' },
 } as const;
+
+// FAQPage schema par article, sur le même modèle que le tableau FAQ codé en
+// dur sur /metiers/ — un article n'entre ici que si son contenu affiche
+// réellement une section FAQ correspondante.
+const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
+  'orientation-scolaire-ia-parents': [
+    {
+      q: "Faut-il éviter les filières jugées « à risque » face à l'IA ?",
+      a: "Pas nécessairement. Une filière rarement citée comme « automatisable » n'est jamais totalement à l'abri d'une évolution, et une filière souvent citée comme exposée conserve des tâches qui resteront humaines longtemps. Le critère filière seul est insuffisant ; il doit se combiner avec l'intérêt réel de l'enfant et la réversibilité du parcours.",
+    },
+    {
+      q: "Mon enfant utilise déjà l'IA pour ses devoirs, dois-je m'inquiéter ?",
+      a: "L'usage n'est pas le problème en soi, l'usage exclusif l'est. Un enfant qui utilise l'IA pour accélérer une tâche mais continue à produire du travail personnel sans assistance sur d'autres tâches développe les deux compétences. Un enfant qui délègue systématiquement perd l'entraînement que ces tâches étaient censées offrir.",
+    },
+    {
+      q: "À quel âge commencer à parler d'IA et d'orientation avec son enfant ?",
+      a: "Dès le collège, sous une forme légère : discuter des outils, de ce qu'ils font bien ou mal, sans en faire un sujet anxiogène. L'orientation proprement dite se construit surtout au lycée, mais les habitudes d'usage de l'IA se forment plus tôt.",
+    },
+    {
+      q: "Est-ce qu'un diplôme reste utile si l'IA automatise une partie du métier visé ?",
+      a: "Oui, dans la grande majorité des cas : le diplôme atteste souvent d'autre chose que la seule exécution de tâches, comme la méthode, le réseau, la crédibilité, l'accès à une profession réglementée. La question n'est pas « le diplôme sert-il encore ? » mais « quelles compétences, en plus du diplôme, viennent le compléter ? ».",
+    },
+    {
+      q: "Comment savoir si je transmets de l'angoisse plutôt que de la lucidité à mon enfant ?",
+      a: "Un bon indicateur : si vos échanges sur l'orientation tournent surtout autour de ce qu'il faut éviter plutôt que de ce que l'enfant a envie de construire, la balance penche probablement du côté de l'angoisse. Reformuler régulièrement en termes de curiosité et de compétences plutôt qu'en termes de risques aide à rééquilibrer.",
+    },
+  ],
+};
 
 // Autorise uniquement <div class="cta-button-wrapper"> et <a class="cta-button" href="...">
 // en plus du schéma par défaut (GitHub) — tout le reste du HTML brut reste filtré.
@@ -156,6 +185,22 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     },
   };
 
+  const articleFaq = ARTICLE_FAQS[slug];
+  const faqJsonLd = articleFaq
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: articleFaq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      }
+    : null;
+
   return (
     <div className="pt-24 md:pt-32 pb-20 bg-[#fcf9f0] min-h-screen">
       <script
@@ -166,6 +211,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Breadcrumb */}
         <nav aria-label="Fil d'Ariane" className="mb-8">
