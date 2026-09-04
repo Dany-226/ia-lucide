@@ -14,7 +14,7 @@ export default async function Footer() {
             <img
               src="/logo-white.png"
               alt="iALucide"
-              style={{ height: '48px', width: 'auto', filter: 'invert(1)' }}
+              style={{ height: 'clamp(44px, 6vw, 68px)', width: 'auto', filter: 'invert(1)' }}
             />
             <p className="text-sm text-[#6b6b6b] leading-relaxed max-w-xs">
               Le regard lucide sur l&apos;IA qui transforme les métiers.
