@@ -44,6 +44,28 @@ const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
       a: "Un bon indicateur : si vos échanges sur l'orientation tournent surtout autour de ce qu'il faut éviter plutôt que de ce que l'enfant a envie de construire, la balance penche probablement du côté de l'angoisse. Reformuler régulièrement en termes de curiosité et de compétences plutôt qu'en termes de risques aide à rééquilibrer.",
     },
   ],
+  'cours-claude-anthropic-academy-bilan': [
+    {
+      q: "L'Anthropic Academy est-elle vraiment gratuite ?",
+      a: "Oui pour les cours et l'attestation de complétion. Les exercices pratiques des cours Claude Code demandent un compte Claude payant ou une clé API. Seule la certification Pearson VUE est payante, de 99 à 175 dollars selon le niveau.",
+    },
+    {
+      q: "Faut-il payer la certification pour que ça compte sur un CV ?",
+      a: "Non, pas systématiquement. L'attestation gratuite suffit à documenter une curiosité et une pratique réelle sur un profil professionnel. La certification payante n'ajoute de la valeur que dans des contextes techniques ou commerciaux précis, détaillés plus haut.",
+    },
+    {
+      q: "Un indépendant peut-il passer la certification sans appartenir à une grande entreprise ?",
+      a: "Oui. L'entrée au Claude Partner Network au niveau de base est gratuite et ouverte aux freelances et indépendants, malgré ce que le nom du programme laisse supposer.",
+    },
+    {
+      q: "La certification Claude est-elle finançable par le CPF en France ?",
+      a: "Non. Anthropic n'a pas de certification Qualiopi, RNCP ou Répertoire Spécifique. Pour un financement CPF ou OPCO, il faut passer par un organisme de formation français certifié, sur un autre programme.",
+    },
+    {
+      q: "Combien de temps avant d'être vraiment opérationnel avec Claude après ces cours ?",
+      a: "Le socle non technique de six à huit heures donne des réflexes d'usage corrects en quelques jours de pratique. Le niveau développeur, quinze à vingt heures de cours, demande ensuite plusieurs semaines de projet réel pour que les notions se transforment en compétence exploitable.",
+    },
+  ],
 };
 
 // Autorise uniquement <div class="cta-button-wrapper"> et <a class="cta-button" href="...">
