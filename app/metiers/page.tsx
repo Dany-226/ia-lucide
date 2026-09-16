@@ -3,18 +3,18 @@ import Link from 'next/link';
 import MetiersFaqItem from '@/components/MetiersFaqItem';
 
 export const metadata: Metadata = {
-  title: "Métiers menacés par l'IA en France (2026) : 15 analyses par profession | ialucide",
-  description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 15 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
+  title: "Métiers menacés par l'IA en France (2026) : 19 analyses par profession | ialucide",
+  description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 19 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   alternates: {
     canonical: 'https://ialucide.fr/metiers/',
   },
   openGraph: {
-    title: "Métiers menacés par l'IA en France (2026) : 15 analyses par profession | ialucide",
-    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 15 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
+    title: "Métiers menacés par l'IA en France (2026) : 19 analyses par profession | ialucide",
+    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 19 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   },
   twitter: {
-    title: "Métiers menacés par l'IA en France (2026) : 15 analyses par profession | ialucide",
-    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 15 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
+    title: "Métiers menacés par l'IA en France (2026) : 19 analyses par profession | ialucide",
+    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 19 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   },
 };
 
@@ -80,6 +80,26 @@ const METIERS = [
         titre: 'Contrôleur financier',
         description: "Consolidation, reporting, détection d'anomalies : les tâches répétitives s'automatisent. L'interprétation des écarts, le conseil aux opérationnels et la vision stratégique restent humains.",
         slug: 'controleur-financier',
+      },
+      {
+        titre: 'Analyste risque',
+        description: "Scoring de premier niveau, agrégation de données, brouillons de rapports : les tâches standards s'automatisent. La validation des cas ambigus et la responsabilité de la décision finale restent humaines.",
+        slug: 'analyste-risque-remplace-par-ia',
+      },
+      {
+        titre: 'Analyste risque crédit',
+        description: "Le scoring de crédit s'automatise depuis des décennies. L'IA générative accélère surtout la rédaction des mémos et l'agrégation de données - les dossiers atypiques restent arbitrés manuellement.",
+        slug: 'analyste-risque-credit-ia-banque',
+      },
+      {
+        titre: 'Analyste risque assurance',
+        description: "Pré-scoring de souscription, détection de fraude, chiffrage des sinistres simples : l'automatisation avance vite sur les profils standards. La fonction actuarielle et les sinistres complexes restent humains.",
+        slug: 'analyste-risque-assurance-ia',
+      },
+      {
+        titre: 'Analyste risque opérationnel',
+        description: "Cartographie des incidents et agrégation de signaux internes s'automatisent. L'évaluation de la culture du risque et l'arbitrage en comité restent un jugement humain.",
+        slug: 'analyste-risque-operationnel-ia-entreprise',
       },
     ],
   },
@@ -200,7 +220,7 @@ export default function MetiersPage() {
             Votre métier face à l&apos;IA
           </h1>
           <p className="text-base text-[#1c1c17] leading-relaxed mb-4">
-            15 professions analysées avec méthode. Pas de catastrophisme, pas de déni : une lecture lucide de ce que l&apos;IA change réellement, tâche par tâche.
+            19 professions analysées avec méthode. Pas de catastrophisme, pas de déni : une lecture lucide de ce que l&apos;IA change réellement, tâche par tâche.
           </p>
           <p className="text-base text-[#6b6b6b] leading-relaxed">
             Chaque analyse est construite à partir de sources publiques, retours terrain et observations concrètes sur l&apos;évolution des outils. Le niveau d&apos;exposition est évalué selon la proportion de tâches automatisables dans les 3 à 5 prochaines années.
