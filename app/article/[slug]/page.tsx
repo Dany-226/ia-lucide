@@ -73,7 +73,7 @@ const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
     },
     {
       q: "Ces outils donnent-ils accès aux bases de données de jurisprudence payantes ?",
-      a: "Ça dépend complètement de l'outil, et c'est une confusion fréquente. Doctrine et Ordalie intègrent l'accès à la jurisprudence dans leur offre : c'est leur cœur de métier, la couche IA vient s'ajouter à une base documentaire déjà constituée. Harvey et Luminance n'ont pas cette fonction pour le droit français : ce sont des outils d'analyse et de rédaction, pas des bases de données juridiques. Un LLM généraliste comme Claude ou ChatGPT n'a accès à aucune base de jurisprudence à jour, ce qui explique le risque d'hallucination déjà évoqué plus haut : sans base vérifiée en arrière-plan, l'outil peut citer un arrêt qui n'existe pas.",
+      a: "Ça dépend complètement de l'outil, et c'est une confusion fréquente. Doctrine et Ordalie intègrent l'accès à la jurisprudence dans leur offre : c'est leur cœur de métier, la couche IA vient s'ajouter à une base documentaire déjà constituée. Harvey et Luminance n'ont pas cette fonction pour le droit français : ce sont des outils d'analyse et de rédaction, pas des bases de données juridiques. L'abonnement Claude grand public ou ChatGPT n'a accès à aucune base de jurisprudence à jour, ce qui explique le risque d'hallucination déjà évoqué plus haut : sans base vérifiée en arrière-plan, l'outil peut citer un arrêt qui n'existe pas. Claude for Legal fait exception sur ce point précis, avec une intégration Thomson Reuters pour la recherche juridique, mais reste positionné sur les grands cabinets internationaux plutôt que sur la pratique française courante.",
     },
     {
       q: "Ordalie ou Harvey, lequel choisir ?",
@@ -85,11 +85,15 @@ const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
     },
     {
       q: "Peut-on remplacer Doctrine par Claude ou ChatGPT pour la recherche juridique ?",
-      a: "Non, et ce n'est pas une question de préférence mais de fonction. Claude et ChatGPT n'ont pas accès à une base de jurisprudence française à jour et peuvent générer une citation de décision inexistante avec une syntaxe parfaitement crédible. Ils sont utiles en complément, pour la rédaction, la reformulation ou le résumé, jamais comme substitut à un outil qui interroge une base documentaire vérifiée.",
+      a: "Non, pas avec l'abonnement Claude grand public, et ce n'est pas une question de préférence mais de fonction. Claude et ChatGPT, dans leur version grand public, n'ont pas accès à une base de jurisprudence française à jour et peuvent générer une citation de décision inexistante avec une syntaxe parfaitement crédible. Ils sont utiles en complément, pour la rédaction, la reformulation ou le résumé, jamais comme substitut à un outil qui interroge une base documentaire vérifiée. Claude for Legal dispose bien d'un accès documentaire dédié via Thomson Reuters, mais cible aujourd'hui les grands cabinets internationaux, pas la pratique française courante - pour un cabinet français de taille moyenne, Doctrine ou Ordalie restent la réponse pertinente.",
     },
     {
       q: "Combien coûte un abonnement Harvey ?",
       a: "Aucun tarif n'est publié. Les estimations du marché situent les contrats entre 1 000 et 3 000 dollars par avocat et par mois, réservés aux cabinets qui peuvent engager plusieurs dizaines de milliers de dollars par an et par utilisateur. Il n'existe ni abonnement individuel ni essai gratuit, ce qui exclut de fait l'essentiel des cabinets français de moins de 20 avocats.",
+    },
+    {
+      q: "Claude for Legal ou Doctrine, lequel choisir pour un cabinet français ?",
+      a: "Ce ne sont pas des concurrents directs aujourd'hui. Doctrine est conçu pour le droit français avec hébergement en France et une base documentaire construite pour cette pratique. Claude for Legal cible pour l'instant les grands cabinets internationaux, sans hébergement européen confirmé ni tarification publique. Pour un cabinet français de taille courante, Doctrine reste le choix par défaut, Claude for Legal étant un outil à surveiller plutôt qu'une alternative disponible dans l'immédiat.",
     },
   ],
 };
