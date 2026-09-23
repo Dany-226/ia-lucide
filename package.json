@@ -10,6 +10,8 @@
     "indexnow": "node scripts/indexnow-submit.js"
   },
   "dependencies": {
+    "@base44/sdk": "^0.8.49",
+    "@base44/vite-plugin": "^1.0.42",
     "@tailwindcss/typography": "^0.5.19",
     "gray-matter": "^4.0.3",
     "next": "16.2.3",
