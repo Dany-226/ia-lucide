@@ -38,7 +38,7 @@ export default function PolitiqueConfidentialitePage() {
               Principe général
             </h2>
             <p className="text-base text-[#fcf9f0]/70 leading-[1.85]">
-              ialucide.fr ne collecte aucune donnée personnelle lors de la simple navigation sur le site. Aucun formulaire d&apos;inscription, aucun espace membre, aucune création de compte n&apos;est proposé. Les seules données personnelles traitées concernent les abonnés à la newsletter (voir ci-dessous).
+              La mesure d&apos;audience par Google Analytics est activée uniquement après votre accord. Vous pouvez lire le site sans l&apos;accepter et modifier votre choix à tout moment avec le bouton « Gérer mes cookies » en bas de page. Les données transmises volontairement à la newsletter sont traitées séparément.
             </p>
           </section>
 
@@ -77,16 +77,18 @@ export default function PolitiqueConfidentialitePage() {
             </h2>
             <div className="space-y-8 text-base text-[#fcf9f0]/70 leading-[1.85]">
               <p>
-                ialucide.fr utilise des cookies tiers à des fins de mesure d&apos;audience et de monétisation. Aucun cookie fonctionnel ni cookie de préférence n&apos;est déposé.
+                Google Analytics et ses cookies de mesure d&apos;audience ne sont chargés qu&apos;après acceptation. Le choix d&apos;accepter ou de refuser est conservé pendant six mois dans le stockage local du navigateur. Ce stockage sert uniquement à mémoriser votre préférence.
               </p>
 
               <div>
                 <h3 className="text-lg font-semibold text-[#fcf9f0] mb-3">Google Analytics</h3>
                 <div className="border-l-2 border-[#c9a84c]/40 pl-6 space-y-2">
                   <p><strong className="text-[#fcf9f0]">Éditeur :</strong> Google LLC (États-Unis)</p>
-                  <p><strong className="text-[#fcf9f0]">Finalité :</strong> mesure d&apos;audience anonymisée (pages vues, provenance du trafic, durée de session).</p>
-                  <p><strong className="text-[#fcf9f0]">Base légale :</strong> intérêt légitime / consentement selon les paramètres du navigateur.</p>
-                  <p><strong className="text-[#fcf9f0]">Opt-out :</strong> extension navigateur Google Analytics Opt-out ou refus via les paramètres de votre navigateur.</p>
+                  <p><strong className="text-[#fcf9f0]">Finalité :</strong> statistiques de fréquentation (pages vues, provenance du trafic, interactions et informations techniques sur le navigateur). Des identifiants pseudonymes sont utilisés ; il ne s&apos;agit pas de données entièrement anonymes.</p>
+                  <p><strong className="text-[#fcf9f0]">Base légale :</strong> consentement préalable.</p>
+                  <p><strong className="text-[#fcf9f0]">Cookies :</strong> durée maximale configurée de six mois, sans prolongation automatique à chaque visite.</p>
+                  <p><strong className="text-[#fcf9f0]">Retrait :</strong> choisissez « Refuser » dans « Gérer mes cookies ». La collecte est arrêtée et les cookies Analytics accessibles au site sont supprimés. Ce retrait ne supprime pas rétroactivement les données déjà collectées.</p>
+                  <p>Les fonctions Google Signals et la personnalisation publicitaire sont désactivées dans cette intégration. Pour en savoir plus : <a href="https://policies.google.com/privacy?hl=fr" className="underline">politique de confidentialité de Google</a>.</p>
                 </div>
               </div>
 
@@ -165,7 +167,7 @@ export default function PolitiqueConfidentialitePage() {
           <div className="h-px bg-[#c9a84c]/15" />
 
           <p className="font-mono text-xs text-[#6b6b6b] tracking-wider">
-            Dernière mise à jour : avril 2026
+            Dernière mise à jour : 7 octobre 2026
           </p>
 
         </div>

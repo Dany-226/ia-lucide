@@ -4,6 +4,7 @@ import { Playfair_Display, Space_Grotesk, DM_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import AnalyticsConsent from '@/components/AnalyticsConsent';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -57,6 +58,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <AnalyticsConsent />
         <Script
           async
           src="https://news.google.com/swg/js/v1/publisher.js"
