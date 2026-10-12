@@ -3,18 +3,18 @@ import Link from 'next/link';
 import MetiersFaqItem from '@/components/MetiersFaqItem';
 
 export const metadata: Metadata = {
-  title: "Métiers menacés par l'IA en France (2026) : 19 analyses par profession | ialucide",
-  description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 19 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
+  title: "Métiers menacés par l'IA en France (2026) : 20 analyses par profession | ialucide",
+  description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 20 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   alternates: {
     canonical: 'https://ialucide.fr/metiers/',
   },
   openGraph: {
-    title: "Métiers menacés par l'IA en France (2026) : 19 analyses par profession | ialucide",
-    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 19 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
+    title: "Métiers menacés par l'IA en France (2026) : 20 analyses par profession | ialucide",
+    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 20 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   },
   twitter: {
-    title: "Métiers menacés par l'IA en France (2026) : 19 analyses par profession | ialucide",
-    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 19 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
+    title: "Métiers menacés par l'IA en France (2026) : 20 analyses par profession | ialucide",
+    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 20 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   },
 };
 
@@ -75,6 +75,11 @@ const METIERS = [
         titre: 'Médecin',
         description: "Aide au diagnostic, rédaction de comptes-rendus, analyse d'imagerie : l'IA augmente le praticien sans le remplacer. La relation patient et le jugement clinique global restent irremplaçables.",
         slug: 'medecin',
+      },
+      {
+        titre: 'Directeur financier / CFO',
+        description: "Clôture, reporting, prévisions : les agents prennent en charge la collecte et le rapprochement des données. L'arbitrage, la responsabilité des comptes et le rôle de partenaire de la direction restent humains.",
+        slug: 'directeur-financier-cfo-ia-2026',
       },
       {
         titre: 'Contrôleur financier',
@@ -220,7 +225,7 @@ export default function MetiersPage() {
             Votre métier face à l&apos;IA
           </h1>
           <p className="text-base text-[#1c1c17] leading-relaxed mb-4">
-            19 professions analysées avec méthode. Pas de catastrophisme, pas de déni : une lecture lucide de ce que l&apos;IA change réellement, tâche par tâche.
+            20 professions analysées avec méthode. Pas de catastrophisme, pas de déni : une lecture lucide de ce que l&apos;IA change réellement, tâche par tâche.
           </p>
           <p className="text-base text-[#6b6b6b] leading-relaxed">
             Chaque analyse est construite à partir de sources publiques, retours terrain et observations concrètes sur l&apos;évolution des outils. Le niveau d&apos;exposition est évalué selon la proportion de tâches automatisables dans les 3 à 5 prochaines années.
