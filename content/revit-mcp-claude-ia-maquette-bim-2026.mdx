@@ -1,0 +1,78 @@
+---
+title: "Revit et Claude : l'IA peut maintenant modifier vos maquettes BIM, avec garde-fous"
+slug: "revit-mcp-claude-ia-maquette-bim-2026"
+excerpt: "Autodesk a ouvert Revit 2027 à Claude via MCP, d'abord en lecture seule, puis en écriture depuis juillet. Ce que l'IA fait vraiment, et où elle bute encore."
+tag: "Architecte"
+category: "outils"
+author: "Daniel Rollin"
+read_time: "5"
+image_url: "https://ialucide.fr/images/revit-mcp/revit-mcp-claude.jpg"
+featured: false
+date: "2026-10-13"
+---
+
+Revit est le logiciel de référence de la maquette numérique (BIM) dans les agences d'architecture et les bureaux d'études.
+
+En avril 2026, la version 2027 est arrivée avec un module passé presque inaperçu hors du secteur : un serveur MCP officiel, publié en avant-première technique.
+
+MCP (Model Context Protocol) est un standard ouvert qui permet à un modèle d'IA de se brancher directement sur un logiciel et d'en interroger les données réelles. Concrètement, on ouvre Claude Desktop, on pose une question en français, et la réponse vient du fichier de projet lui-même, pas d'une capture d'écran ni d'un export PDF. Le principe est le même que celui des [agents IA branchés sur les outils d'une entreprise](/article/agent-ia-serveur-fonctionnement-guide/), appliqué ici à un logiciel métier.
+
+Au lancement, l'outil ne pouvait rien modifier. Cette limite a sauté en juillet : avec la mise à jour Revit 2027.2, Autodesk a ajouté deux serveurs supplémentaires, l'un en écriture contrôlée, l'autre expérimental.
+
+Une bonne partie des articles parus au printemps décrivent donc une situation déjà dépassée.
+
+## Ce que fait l'IA concrètement
+
+### Lire une maquette comme un tableur
+
+Le serveur en lecture permet d'interroger une maquette ouverte, d'y rechercher des éléments et d'en tirer des rapports, sans rien y modifier.
+
+Extraire une information transversale (tous les éléments d'un type, leur répartition par niveau, les paramètres laissés vides) demandait jusqu'ici d'exporter une nomenclature puis de la remettre en forme à la main. La question se pose désormais en une phrase, et la réponse s'appuie sur les données du fichier.
+
+Rien n'est créé ni déplacé. Le gain porte sur le temps passé à chercher où regarder avant une revue de projet.
+
+### Modifier, depuis juillet, sous surveillance
+
+Les deux nouveaux serveurs fonctionnent par paliers, chacun incluant les outils du précédent.
+
+Le serveur « Trusted-Write » propose un nombre restreint d'outils de modification et ajoute un écran de vérification : l'utilisateur voit ce que l'IA a changé sur chaque élément. Le serveur « Experimental » ouvre des capacités de création et de modification plus larges, qu'Autodesk présente lui-même comme un usage à vos risques.
+
+Les exemples montrés par Autodesk restent volontairement modestes : remplacer un type de fenêtre sur tous les niveaux, dupliquer une vue en plan, colorer les pièces une à une. Des tâches répétitives, où une erreur saute aux yeux.
+
+Autodesk annonce une logique de maturation : les nouveaux outils apparaîtront d'abord dans le serveur expérimental, puis rejoindront l'écriture contrôlée une fois éprouvés.
+
+Pour le panorama plus large, du croquis génératif au modèle 3D, voir [notre article sur l'architecte face à l'IA](/article/architecte-ia-conception-batiment/).
+
+## La limite à connaître
+
+### Plausible ne veut pas dire conforme
+
+La comparaison avec Blender éclaire la prudence d'Autodesk. Le logiciel 3D open source dispose depuis avril d'un connecteur officiel pour Claude capable de lire et de modifier les scènes, développé par l'équipe Blender avec le soutien financier d'Anthropic.
+
+Un rendu Blender raté coûte un nouveau calcul d'image. Une maquette Revit fausse peut coûter un avenant, ou une erreur découverte une fois le béton coulé.
+
+Une modification qui a l'air correcte n'est pas pour autant conforme. Un escalier, par exemple, doit respecter hauteur de marche, giron, échappée et paliers, selon des règles qui varient d'un pays à l'autre et engagent la responsabilité de celui qui signe les plans. Aucun des outils d'Autodesk ne prétend vérifier cette conformité.
+
+L'écran de vérification de Trusted-Write sert à rendre une modification visible avant qu'elle s'installe dans le projet. Il ne dit rien de sa justesse : ce jugement reste celui du professionnel qui valide.
+
+### Ce que l'IA voit, et où ça part
+
+Même en lecture seule, chaque requête fait transiter des données du modèle chez le fournisseur d'IA : nom du client, adresse du projet, paramètres liés aux coûts.
+
+Pour une agence sous accord de confidentialité ou engagée sur un marché public, la question se règle avec le service informatique avant de brancher Claude sur un projet réel, pas après.
+
+En écriture, Autodesk recommande lui-même de sauvegarder la maquette avant toute session. Des connecteurs non officiels, développés par la communauté (certains sur pyRevit), donnent aussi à l'agent des droits d'écriture, hors du cadre d'Autodesk : ils se traitent comme n'importe quel plugin tiers doté de droits d'écriture, sur une copie du projet plutôt que sur le fichier de référence.
+
+## Pour qui, et à quel niveau
+
+Le serveur en lecture est déjà rentable pour les BIM managers et projeteurs qui passent du temps sur les nomenclatures, les extractions de données et les contrôles de cohérence. Le risque y est faible, puisque rien n'est modifié.
+
+L'écriture contrôlée se justifie sur des tâches répétitives et visibles (remplacement de types, création de vues, graphismes), sur une copie du projet.
+
+Le serveur expérimental et les connecteurs communautaires relèvent du banc d'essai, pas de la production.
+
+Côté prérequis : Revit 2027 mis à jour en 2027.2 au minimum, et un client compatible MCP comme Claude Desktop. Le serveur fonctionne avec d'autres modèles que Claude ; pour choisir, voir [notre comparatif des LLM pour un usage professionnel](/article/choisir-llm-professionnel-comparatif/). L'ensemble reste en avant-première technique, documenté sur le [portail MCP d'Autodesk](https://help.autodesk.com/view/ADSKMCP/ENU).
+
+La responsabilité de la géométrie, et la signature au bas des plans, restent à l'architecte ou à l'ingénieur. Ce qui recule, c'est le temps passé à fouiller les menus pour retrouver une information.
+
+La confiance dans l'écriture se gagnera comme pour tout outil qui touche à la sécurité : d'abord sur des tâches où une erreur se voit, et seulement ensuite sur les éléments porteurs.
