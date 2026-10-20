@@ -78,6 +78,7 @@ const METIER_TAGS = new Set([
   'juriste',
   'management',
   'médecin',
+  'notaire',
   'ressources humaines',
   'traducteur',
 ]);
