@@ -126,8 +126,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) return {};
+  // Balise <title> : seo_title si fourni, sinon le titre éditorial.
+  // Suffixe de marque ajouté seulement si le total reste <= 60 caractères
+  // (au-delà, Google tronque ou réécrit le titre).
+  const baseTitle = article.seo_title || article.title;
+  const pageTitle = baseTitle.length <= 49 ? `${baseTitle} | ialucide` : baseTitle;
   return {
-    title: `${article.title} : Guide 2026 | ialucide`,
+    title: pageTitle,
     description: (article.excerpt || '').slice(0, 155),
     alternates: {
       canonical: `https://ialucide.fr/article/${slug}/`,

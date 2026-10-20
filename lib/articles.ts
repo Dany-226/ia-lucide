@@ -7,6 +7,8 @@ const contentDir = path.join(process.cwd(), 'content');
 export interface Article {
   slug: string;
   title: string;
+  /** Titre SEO optionnel pour la balise <title> (sinon : title). Viser <= 60 caractères. */
+  seo_title?: string;
   excerpt: string;
   tag: string;
   category?: 'metiers' | 'outils' | 'comprendre' | 'entrepreneuriat' | 'education-ia';
