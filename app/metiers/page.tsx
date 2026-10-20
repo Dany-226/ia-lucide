@@ -27,7 +27,7 @@ const METIERS = [
       {
         titre: 'Comptable',
         description: "Saisie, rapprochements, déclarations fiscales : les IA automatisent l'essentiel des tâches répétitives. Le rôle évolue vers le conseil et l'analyse stratégique.",
-        slug: 'expert-comptable-ia-guide-2026',
+        slug: 'outils-ia-experts-comptables-2026',
       },
       {
         titre: 'Juriste / Avocat',

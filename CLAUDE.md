@@ -20,6 +20,10 @@
 ## Format MDX obligatoire
 title, slug, excerpt, tag, author, read_time, image_url, featured, date
 
+Optionnel : `seo_title` (balise `<title>` seulement, viser <= 60 caractères ; sinon `title` est utilisé).
+Le gabarit n'ajoute `| ialucide` que si le total reste <= 60 caractères. Ne jamais remettre de suffixe
+fixe type "Guide 2026" dans `app/article/[slug]/page.tsx`.
+
 ## Conventions
 - Zéro border-radius sur boutons et cards
 - generateMetadata() sur chaque nouvelle page
@@ -315,3 +319,21 @@ l'ancien slug court Base44 `juriste-avocat` vers `/article/juriste-ia-avocat-pra
 qui n'existe plus comme article depuis la fusion ; la règle 9 rattrape ensuite ce chemin (ainsi que
 les deux autres anciens slugs fusionnés) vers `/article/guide-ia-juristes-avocats-2026/`. Double hop
 délibéré, validé par `curl -IL` le 23/08/2026.
+
+## Session SEO — 20 octobre 2026 : CTR (analyse GSC 3 mois)
+
+- Gabarit `<title>` des articles corrigé : suppression du suffixe fixe " : Guide 2026 | ialucide", champ
+  `seo_title` optionnel (cf. Format MDX).
+- `seo_title` + intros alignés sur les requêtes réelles : Pennylane ("pennylane sci", pos. 5-7, 0 clic),
+  Base44 ("base44 vs lovable", pos. 6-9, 0 clic : verdict + tableau en tête), agent-ia-devis,
+  agent-ia-serveur, cours-claude.
+- **Fusion comptable** : `expert-comptable-ia-guide-2026` (mince, chiffres non sourcés) fusionné dans
+  `outils-ia-experts-comptables-2026` (cannibalisation : pos. 22 vs 42 sur la même intention).
+  301 dans `_redirects`, `/article/comptable/` repointé en direct, slug /metiers/ et liens internes mis à jour.
+  La table "anciens slugs Base44" plus haut (19 août) est donc obsolète pour `comptable` et
+  `ia-comptabilite-expert-comptable-2026` : cible finale = `outils-ia-experts-comptables-2026`.
+  Redirect Rule dashboard n°2 (`redirect-ia-comptabilite-old-path`) pointe encore vers l'ancien slug :
+  double hop fonctionnel, à repointer vers `outils-ia-experts-comptables-2026/` dans le dashboard.
+- Auteur `digicorpex` remplacé par `Daniel Rollin` sur les 12 fiches métier historiques (E-E-A-T,
+  cohérence de signature).
+
