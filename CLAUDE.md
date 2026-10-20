@@ -301,7 +301,7 @@ debug technique plus haut).
 | # | Nom | Match | Action |
 |---|---|---|---|
 | 1 | Redirect newsletter subdomain to /newsletter/ | Hostname equals `newsletter.ialucide.fr` | 301 → `https://ialucide.fr/newsletter/` |
-| 2 | `redirect-ia-comptabilite-old-path` | URI Full equals `https://ialucide.fr/article/ia-comptabilite-expert-comptable-2026` | 301 → `https://ialucide.fr/article/expert-comptable-ia-guide-2026/` |
+| 2 | `redirect-ia-comptabilite-old-path` | URI Full equals `https://ialucide.fr/article/ia-comptabilite-expert-comptable-2026` | 301 → `https://ialucide.fr/article/outils-ia-experts-comptables-2026/` (repointée le 20/10/2026) |
 | 3 | `redirect-juriste-avocat-old-slug` | URI Full equals `https://ialucide.fr/article?slug=juriste-avocat`, URI Full equals `https://ialucide.fr/Article?slug=juriste-avocat` | 301 → `https://ialucide.fr/article/juriste-ia-avocat-pratique-augmentee/` |
 | 4 | `redirect-architecte-old-slug` | URI Full equals `https://ialucide.fr/article?slug=architecte`, URI Full equals `https://ialucide.fr/Article?slug=architecte` | 301 → `https://ialucide.fr/article/architecte-ia-conception-batiment/` |
 | 5 | `redirect-article-slug` | URI Full wildcard `https://ialucide.fr/article?slug=*` | 301 → wildcard_replace vers `https://ialucide.fr/article/${1}/` |
@@ -332,8 +332,8 @@ délibéré, validé par `curl -IL` le 23/08/2026.
   301 dans `_redirects`, `/article/comptable/` repointé en direct, slug /metiers/ et liens internes mis à jour.
   La table "anciens slugs Base44" plus haut (19 août) est donc obsolète pour `comptable` et
   `ia-comptabilite-expert-comptable-2026` : cible finale = `outils-ia-experts-comptables-2026`.
-  Redirect Rule dashboard n°2 (`redirect-ia-comptabilite-old-path`) pointe encore vers l'ancien slug :
-  double hop fonctionnel, à repointer vers `outils-ia-experts-comptables-2026/` dans le dashboard.
+  Redirect Rule dashboard n°2 (`redirect-ia-comptabilite-old-path`) repointée le 20/10 vers
+  `outils-ia-experts-comptables-2026/` (validé `curl -IL` : 301 unique puis 200).
 - Auteur `digicorpex` remplacé par `Daniel Rollin` sur les 12 fiches métier historiques (E-E-A-T,
   cohérence de signature).
 
