@@ -122,6 +122,17 @@ export async function generateStaticParams() {
   return articles.map(a => ({ slug: a.slug }));
 }
 
+// Coupe un texte à `max` caractères au plus, sur une fin de mot, avec une ellipse.
+// Évite les meta descriptions coupées en plein mot (ex. "sans être ras").
+function truncateAtWord(text: string, max: number): string {
+  const clean = text.replace(/\s+/g, ' ').trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(' ');
+  const base = lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut;
+  return base.replace(/[\s,;:.\-–—(]+$/u, '') + '…';
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
@@ -133,7 +144,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const pageTitle = baseTitle.length <= 49 ? `${baseTitle} | ialucide` : baseTitle;
   return {
     title: pageTitle,
-    description: (article.excerpt || '').slice(0, 155),
+    description: truncateAtWord(article.excerpt || '', 155),
     alternates: {
       canonical: `https://ialucide.fr/article/${slug}/`,
     },
@@ -145,7 +156,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     twitter: {
       card: 'summary_large_image',
       title: article.title,
-      description: (article.excerpt || '').slice(0, 200),
+      description: truncateAtWord(article.excerpt || '', 200),
     },
   };
 }
