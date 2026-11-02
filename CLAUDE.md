@@ -19,11 +19,18 @@
 
 ## Images et couleurs (performance et contraste, 02/11/2026)
 - Image de couverture locale : WebP de 1 200 px de large max, jamais un PNG de plusieurs Mo
-  (le site est en export statique, Next ne redimensionne rien). Après l'ajout d'une image de
+  (le site est en export statique, Next ne redimensionne rien : un PNG de 2 Mo est servi tel quel,
+  c'est ce qui faisait peser la page d'accueil 6,8 Mo). Après l'ajout d'une image de
   couverture locale, lancer `npm run thumbnails` pour créer sa vignette « nom-640.webp » utilisée
-  par les cartes d'articles (lib/images.ts).
+  par les cartes d'articles (lib/images.ts). Commiter l'image et sa vignette ensemble.
 - Images Imgur : utiliser la variante « h » (1 024 px, ex. `https://i.imgur.com/XXXXXXXh.jpg`),
   jamais le PNG d'origine ; les cartes passent automatiquement à la variante « l » (640 px).
+- Images Unsplash : garder le paramètre `?w=1200&q=80` ; les cartes passent à `w=640`.
+- Images inline dans le corps d'un article : mêmes règles (WebP 1 200 px max), avec un texte
+  `alt` descriptif. Figure reprise d'une étude sous licence CC BY : légende en italique sous
+  l'image avec la source complète et la mention de licence.
+- Logo : `/logo-nav.webp` (249x136, 7 Ko) dans la barre de navigation et le pied de page ; ne pas
+  revenir au PNG 1408x768 de 186 Ko. Toujours déclarer `width` et `height` sur un `<img>`.
 - Couleurs de texte : or `#c9a84c` réservé aux fonds sombres et aux grands titres ; petit texte
   et liens sur fond clair en or foncé `#8a6a1c` (4,8:1). Texte secondaire : gris `#6b6b6b` sur
   fond clair uniquement, gris clair `#a8a59c` sur fond sombre (`#6b6b6b` y tombe à 3,2:1).
@@ -34,6 +41,39 @@ title, slug, excerpt, tag, author, read_time, image_url, featured, date
 Optionnel : `seo_title` (balise `<title>` seulement, viser <= 60 caractères ; sinon `title` est utilisé).
 Le gabarit n'ajoute `| ialucide` que si le total reste <= 60 caractères. Ne jamais remettre de suffixe
 fixe type "Guide 2026" dans `app/article/[slug]/page.tsx`.
+
+Optionnel : `updated: "AAAA-MM-JJ"` pour une mise à jour substantielle d'un article existant. Affiche
+« Mis à jour - JJ/MM/AAAA » sous le titre et alimente `dateModified` (schema Article) et `lastModified`
+(sitemap). Ne jamais avancer `date` pour signaler une mise à jour : `date` reste la date de publication
+(elle sert aussi au tri de la page d'accueil).
+
+`excerpt` : 155 caractères maximum. Il sert de meta description, coupée au dernier mot entier avant
+155 caractères (`truncateAtWord()` dans `app/article/[slug]/page.tsx`) : au-delà, Google affiche une
+phrase tronquée qui se termine en « … ».
+
+## Liens internes
+- Toujours lier vers l'URL finale, avec le slash final (`/article/slug/`). Avant d'ajouter un lien,
+  vérifier que le slug existe dans `content/` et qu'il n'a pas été fusionné (voir `public/_redirects`
+  et les sessions SEO plus bas) : un lien vers un article fusionné fonctionne mais passe par une 301.
+- Deux articles proches (même étude, même requête) : différencier l'angle et le public visé, et lier
+  dans les deux sens, plutôt que de laisser deux pages viser la même requête.
+
+## Performance (PageSpeed mobile 96 au 02/11/2026, contre 81 avant)
+- Ne jamais démarrer une animation à `opacity: 0` sur un élément visible au chargement : le navigateur
+  ne compte pas un élément invisible comme affiché, ce qui retardait le LCP mobile d'environ 2,3 s.
+  L'animation `.animate-fade-in-up` (globals.css) est volontairement en translation seule.
+- Mesurer avec PageSpeed Insights après chaque changement de gabarit ou d'images, en relançant
+  l'analyse une fois le déploiement confirmé : une seule mesure varie de quelques points.
+
+## Déploiement Cloudflare Pages
+- Vérifier le statut d'un build sans le tableau de bord :
+  `gh api repos/Dany-226/ia-lucide/commits/<sha>/check-runs -q '.check_runs[] | select(.name=="Cloudflare Pages") | .conclusion'`
+- Le workflow IndexNow au vert ne prouve pas qu'un déploiement a réussi (les URL existantes répondent
+  déjà 200 avec l'ancienne version). Vérifier le build Cloudflare et le contenu en production.
+- Le 02/11/2026, deux builds contenant de nouvelles images ont échoué alors que le même code compilait
+  en local ; une relance sans modification (commit vide ou « Retry deployment ») a réussi les deux fois.
+  Si un build échoue sur du code qui compile en local : relancer une fois avant d'investiguer, puis
+  lire le journal dans Cloudflare Pages → Deployments si l'échec se reproduit.
 
 ## Conventions
 - Zéro border-radius sur boutons et cards
@@ -103,6 +143,15 @@ Ces éléments signalent un texte généré par IA. Les éviter systématiquemen
 - Pas de conclusion qui résume ce qui vient d'être dit
 - Pas de phrase d'accroche générique en intro ("Dans un monde où l'IA...")
 - Pas de questions rhétoriques en fin de section
+
+### Sources et chiffres
+- Aucun chiffre sans source vérifiable (« 3x plus vite », « 70 % de temps gagné » ont été retirés le
+  02/11/2026). Pour une étude, lire la source primaire (note, PDF) plutôt que ses reprises presse, et
+  citer les limites que les auteurs indiquent eux-mêmes (causalité, période, champ).
+- Ne jamais présenter ialucide comme proposant des prestations (formation, audit, accompagnement) :
+  c'est un site éditorial. Les prestations relèvent de Digicorpex, avec la disclosure ci-dessous.
+- Prix et offres d'outils : vérifier sur la page officielle de l'éditeur, indiquer HT et la devise,
+  et dater le relevé dans l'article (les prix changent souvent).
 
 ### Ton
 - Pas de superlatifs non justifiés ("révolutionnaire", "incontournable", "majeur")
@@ -347,4 +396,17 @@ délibéré, validé par `curl -IL` le 23/08/2026.
   `outils-ia-experts-comptables-2026/` (validé `curl -IL` : 301 unique puis 200).
 - Auteur `digicorpex` remplacé par `Daniel Rollin` sur les 12 fiches métier historiques (E-E-A-T,
   cohérence de signature).
+
+## Session SEO — 2 novembre 2026 : CTR, performance et contraste
+
+- Analyse GSC 3 mois : ignorer les requêtes au format « entre X et Y, pour default topic… <context>
+  company url: … » (sondes automatiques d'un outil de suivi de visibilité IA, pas des internautes).
+  L'export ne relie pas requêtes et pages : toute attribution requête → page est une déduction.
+- Ne pas retoucher le titre ou l'excerpt d'une page modifiée depuis moins de 4 semaines : comparer
+  d'abord les périodes avant/après dans GSC. Pages retouchées le 20/10 et le 02/11 à évaluer début décembre.
+- `seo_title` + excerpt + intro réécrits : `analyste-risque-remplace-par-ia` (pos. 4-5, 0 clic),
+  `guide-ia-juristes-avocats-2026` (titre de 92 caractères tronqué). Refonte complète :
+  `developpeur-augmente-ia-2026` et `choisir-llm-professionnel-comparatif` (champ `updated`).
+- Meta description coupée en plein mot sur 19 articles : corrigé par `truncateAtWord()`.
+- Images, animation du hero, logo, contraste : voir sections « Images et couleurs » et « Performance ».
 
