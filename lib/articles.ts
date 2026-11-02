@@ -15,6 +15,8 @@ export interface Article {
   author: string;
   read_time: string;
   date: string;
+  /** Date de mise à jour optionnelle (AAAA-MM-JJ), affichée « Mis à jour - JJ/MM/AAAA ». */
+  updated?: string;
   image_url?: string;
   featured?: boolean;
   content?: string;

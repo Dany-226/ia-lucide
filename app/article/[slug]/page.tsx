@@ -195,6 +195,15 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       })
     : '';
 
+  // Date de mise à jour optionnelle, au format JJ/MM/AAAA.
+  const formattedUpdated = article.updated
+    ? new Date(article.updated).toLocaleDateString('fr-FR', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      })
+    : '';
+
   const catEntry = article.category && article.category in CATEGORY_MAP
     ? CATEGORY_MAP[article.category as keyof typeof CATEGORY_MAP]
     : null;
@@ -230,7 +239,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     '@type': 'Article',
     headline: article.title,
     datePublished: article.date,
-    dateModified: article.date,
+    dateModified: article.updated || article.date,
     author: {
       '@type': 'Person',
       name: article.author || 'Rédaction IA Lucide',
@@ -330,6 +339,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <span>{article.author || 'Rédaction IA Lucide'}</span>
                 <span className="w-1 h-1 bg-[#c9a84c]/40 rounded-full" />
                 {formattedDate && <span>{formattedDate}</span>}
+                {formattedUpdated && (
+                  <>
+                    <span className="w-1 h-1 bg-[#c9a84c]/40 rounded-full" />
+                    <span>Mis à jour - {formattedUpdated}</span>
+                  </>
+                )}
                 {article.read_time && (
                   <>
                     <span className="w-1 h-1 bg-[#c9a84c]/40 rounded-full" />
