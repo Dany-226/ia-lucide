@@ -94,7 +94,7 @@ function ToolCard({ tool }: { tool: typeof TOOLS[0]['items'][0] }) {
           {tool.name}
         </h3>
         {/* Label-MD */}
-        <span className="font-mono text-xs font-bold tracking-widest uppercase text-[#c9a84c]">
+        <span className="font-mono text-xs font-bold tracking-widest uppercase text-[#8a6a1c]">
           {tool.subtitle}
         </span>
       </div>
@@ -124,7 +124,7 @@ export default function RessourcesPage() {
 
         {/* Header */}
         <header className="mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] block mb-4">
+          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#8a6a1c] block mb-4">
             Ressources — Mis à jour mensuellement
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#1c1c17] leading-[1.05] mb-6" style={{ letterSpacing: '-0.02em' }}>

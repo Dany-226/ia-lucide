@@ -223,7 +223,7 @@ export default function MetiersPage() {
 
         {/* Header */}
         <header className="mb-16 md:mb-20 max-w-2xl">
-          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-4">
+          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#8a6a1c] block mb-4">
             Analyse par métier
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#1c1c17] leading-[1.05] mb-6" style={{ letterSpacing: '-0.02em' }}>
@@ -278,7 +278,7 @@ export default function MetiersPage() {
 
         {/* FAQ */}
         <section className="mb-20">
-          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-4">
+          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#8a6a1c] block mb-4">
             Questions fréquentes
           </span>
           <h2 className="text-[1.75rem] font-bold text-[#1c1c17] mb-10" style={{ letterSpacing: '-0.02em' }}>

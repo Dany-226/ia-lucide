@@ -22,7 +22,7 @@ export default function MetiersFaqItem({ item }: FaqItemProps) {
           height="18"
           viewBox="0 0 18 18"
           fill="none"
-          className="text-[#c9a84c] mt-0.5 flex-shrink-0 transition-transform duration-300"
+          className="text-[#8a6a1c] mt-0.5 flex-shrink-0 transition-transform duration-300"
           style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
         >
           <path d="M4 6l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

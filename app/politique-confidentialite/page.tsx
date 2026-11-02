@@ -166,7 +166,7 @@ export default function PolitiqueConfidentialitePage() {
 
           <div className="h-px bg-[#c9a84c]/15" />
 
-          <p className="font-mono text-xs text-[#6b6b6b] tracking-wider">
+          <p className="font-mono text-xs text-[#a8a59c] tracking-wider">
             Dernière mise à jour : 7 octobre 2026
           </p>
 

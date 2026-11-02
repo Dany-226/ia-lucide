@@ -58,7 +58,7 @@ export default function Home() {
 
           {/* Body-LG */}
           <p
-            className="animate-fade-in-up animate-delay-2 text-base text-[#6b6b6b] max-w-xl mx-auto mb-12 leading-relaxed"
+            className="animate-fade-in-up animate-delay-2 text-base text-[#a8a59c] max-w-xl mx-auto mb-12 leading-relaxed"
           >
             Analyses, enquêtes et perspectives sur la transformation des métiers
             par l&apos;intelligence artificielle. Sans jargon, sans fantasme.
@@ -73,7 +73,7 @@ export default function Home() {
             </a>
             <Link
               href="/about"
-              className="font-mono inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#6b6b6b]/30 text-[#6b6b6b] hover:border-[#fcf9f0]/50 hover:text-[#fcf9f0] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
+              className="font-mono inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#6b6b6b]/30 text-[#a8a59c] hover:border-[#fcf9f0]/50 hover:text-[#fcf9f0] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
             >
               Notre mission
             </Link>
@@ -94,7 +94,7 @@ export default function Home() {
           {/* Section header — Label-MD */}
           <div className="flex items-center gap-6 mb-12 md:mb-16">
             <div className="h-px flex-1 bg-[#c9a84c]/20" />
-            <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c]">
+            <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#8a6a1c]">
               Derniers articles
             </h2>
             <div className="h-px flex-1 bg-[#c9a84c]/20" />
@@ -147,7 +147,7 @@ export default function Home() {
                           {articles[0].read_time} min de lecture
                         </span>
                       </div>
-                      <span className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#c9a84c] mt-2 group-hover:gap-3 transition-all duration-300">
+                      <span className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#8a6a1c] mt-2 group-hover:gap-3 transition-all duration-300">
                         Lire l&apos;article complet →
                       </span>
                     </div>
@@ -197,7 +197,7 @@ export default function Home() {
       <section id="newsletter" className="py-20 bg-[#fcf9f0]">
         <div className="max-w-2xl mx-auto px-5 md:px-8 text-center">
           {/* Label-MD */}
-          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] mb-4 block">
+          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#8a6a1c] mb-4 block">
             Newsletter gratuite
           </span>
           {/* Headline-MD */}

@@ -305,7 +305,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </li>
             {catEntry && (
               <>
-                <li className="mx-2 text-[#c9a84c] select-none">›</li>
+                <li className="mx-2 text-[#8a6a1c] select-none">›</li>
                 <li>
                   <Link href={catEntry.href} className="text-[#6b6b6b] hover:text-[#c9a84c] transition-colors duration-200">
                     {catEntry.label}
@@ -313,7 +313,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 </li>
               </>
             )}
-            <li className="mx-2 text-[#c9a84c] select-none">›</li>
+            <li className="mx-2 text-[#8a6a1c] select-none">›</li>
             <li className="text-[#6b6b6b]">{truncatedTitle}</li>
           </ol>
         </nav>
@@ -403,7 +403,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {(sameTagArticles.length > 0 || allRecent.length > 0) && (
               <div className="mt-16 pt-12 border-t border-[#c9a84c]/20">
                 <div className="mb-8">
-                  <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-2">
+                  <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#8a6a1c] block mb-2">
                     {sameTagArticles.length > 0 ? `${article.tag}` : 'À lire aussi'}
                   </span>
                   <h2 className="text-[1.75rem] md:text-3xl font-bold text-[#1c1c17]" style={{ letterSpacing: '-0.02em' }}>
@@ -452,7 +452,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div className="max-w-7xl mx-auto px-5 md:px-8">
             <div className="flex items-center gap-6 mb-10 md:mb-14">
               <div className="h-px flex-1 bg-[#c9a84c]/20" />
-              <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c]">
+              <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#8a6a1c]">
                 Dans la même catégorie
               </h2>
               <div className="h-px flex-1 bg-[#c9a84c]/20" />

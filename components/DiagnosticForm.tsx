@@ -229,7 +229,7 @@ export default function DiagnosticForm() {
             <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c]">
               Diagnostic exposition IA
             </span>
-            <span className="font-mono text-xs text-[#f4f0e8]/50">
+            <span className="font-mono text-xs text-[#f4f0e8]/75">
               {step + 1} / {TOTAL_STEPS}
             </span>
           </div>
@@ -396,7 +396,7 @@ export default function DiagnosticForm() {
             type="button"
             onClick={handlePrevious}
             disabled={step === 0 || submitting}
-            className="font-mono text-xs font-bold tracking-widest uppercase text-[#f4f0e8]/50 hover:text-[#f4f0e8] disabled:opacity-0 disabled:pointer-events-none transition-colors"
+            className="font-mono text-xs font-bold tracking-widest uppercase text-[#f4f0e8]/75 hover:text-[#f4f0e8] disabled:opacity-0 disabled:pointer-events-none transition-colors"
           >
             ← Précédent
           </button>

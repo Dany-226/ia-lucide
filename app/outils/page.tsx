@@ -30,7 +30,7 @@ export default function OutilsPage() {
           >
             Outils IA professionnels
           </h1>
-          <p className="text-base text-[#6b6b6b] max-w-xl mx-auto leading-relaxed">
+          <p className="text-base text-[#a8a59c] max-w-xl mx-auto leading-relaxed">
             Comparatifs et avis sur les outils IA pour juristes, comptables et développeurs. Sans langue de bois.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function OutilsPage() {
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="flex items-center gap-6 mb-12 md:mb-16">
             <div className="h-px flex-1 bg-[#c9a84c]/20" />
-            <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c]">
+            <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#8a6a1c]">
               {articles.length} comparatif{articles.length > 1 ? 's' : ''}
             </h2>
             <div className="h-px flex-1 bg-[#c9a84c]/20" />

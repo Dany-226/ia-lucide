@@ -319,7 +319,7 @@ export default function DiagnosticResultat() {
               </li>
             ))}
           </ul>
-          <p className="text-sm text-[#f4f0e8]/50 italic leading-relaxed">
+          <p className="text-sm text-[#f4f0e8]/75 italic leading-relaxed">
             Ces chiffres mesurent l&apos;exposition des tâches, pas leur suppression. Un métier exposé n&apos;est
             pas un métier condamné.
           </p>

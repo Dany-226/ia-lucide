@@ -30,7 +30,7 @@ export default function ComprendrePage() {
           >
             Comprendre l&apos;IA
           </h1>
-          <p className="text-base text-[#6b6b6b] max-w-xl mx-auto leading-relaxed">
+          <p className="text-base text-[#a8a59c] max-w-xl mx-auto leading-relaxed">
             Analyses factuelles sur l&apos;impact de l&apos;IA sur le travail, les licenciements, la souveraineté des données.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function ComprendrePage() {
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="flex items-center gap-6 mb-12 md:mb-16">
             <div className="h-px flex-1 bg-[#c9a84c]/20" />
-            <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c]">
+            <h2 className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#8a6a1c]">
               {articles.length} analyse{articles.length > 1 ? 's' : ''}
             </h2>
             <div className="h-px flex-1 bg-[#c9a84c]/20" />

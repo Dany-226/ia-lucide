@@ -11,7 +11,7 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
       {/* Newsletter mini CTA */}
       <div className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] p-6">
         {/* Label-MD */}
-        <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#c9a84c] block mb-3">
+        <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#8a6a1c] block mb-3">
           Newsletter
         </span>
         {/* Title-LG */}
@@ -26,7 +26,7 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
           href="https://ialucide.beehiiv.com/subscribe"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono inline-block text-xs font-bold tracking-widest uppercase text-[#c9a84c] border-b border-[#c9a84c]/40 hover:border-[#c9a84c] transition-colors pb-0.5"
+          className="font-mono inline-block text-xs font-bold tracking-widest uppercase text-[#8a6a1c] border-b border-[#c9a84c]/40 hover:border-[#c9a84c] transition-colors pb-0.5"
         >
           S&apos;inscrire →
         </a>
@@ -50,7 +50,7 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
 
       {/* Google Preferred Source */}
       <div className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] p-6">
-        <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#c9a84c] block mb-3">
+        <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#8a6a1c] block mb-3">
           Suivez ialucide sur Google
         </span>
         <div google-add-preferred-source-btn=""></div>
@@ -59,7 +59,7 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
       {/* Related articles */}
       {relatedArticles.length > 0 && (
         <div className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] p-6">
-          <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#c9a84c] block mb-6">
+          <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#8a6a1c] block mb-6">
             À lire aussi
           </span>
           <div className="space-y-6">

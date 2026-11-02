@@ -25,7 +25,7 @@ export default function NewsletterPage() {
 
         {/* Hero */}
         <div className="mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block">
+          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#8a6a1c] mb-6 block">
             Newsletter gratuite
           </span>
           <h1
@@ -34,7 +34,7 @@ export default function NewsletterPage() {
           >
             La newsletter ialucide
           </h1>
-          <p className="text-xl font-bold text-[#c9a84c] mb-8">
+          <p className="text-xl font-bold text-[#8a6a1c] mb-8">
             Une analyse par semaine sur l&apos;IA et les métiers
           </p>
           <div className="h-px bg-[#c9a84c]/15" />
@@ -90,7 +90,7 @@ export default function NewsletterPage() {
         <div className="h-px bg-[#c9a84c]/15 mb-10" />
         <p className="font-mono text-xs text-[#6b6b6b] tracking-wider leading-relaxed">
           Désinscription en un clic. Vos données sont traitées par Beehiiv conformément à notre{' '}
-          <Link href="/politique-confidentialite/" className="text-[#c9a84c] hover:underline">
+          <Link href="/politique-confidentialite/" className="text-[#8a6a1c] hover:underline">
             politique de confidentialité
           </Link>.
         </p>
