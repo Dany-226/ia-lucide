@@ -52,14 +52,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── Animations ── */
+/* Animation en translation seule : un élément à opacity 0 n'est pas compté comme
+   affiché par le navigateur, ce qui retardait le LCP mobile d'environ 2 s (PageSpeed, 02/11/2026). */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { transform: translateY(24px); }
+  to   { transform: translateY(0); }
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.7s ease-out forwards;
-  opacity: 0;
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up { animation: none; }
 }
 .animate-delay-1 { animation-delay: 0.1s; }
 .animate-delay-2 { animation-delay: 0.2s; }

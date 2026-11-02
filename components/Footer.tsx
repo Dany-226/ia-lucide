@@ -12,8 +12,11 @@ export default async function Footer() {
           <div className="space-y-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-white.png"
+              src="/logo-nav.webp"
               alt="iALucide"
+              width={249}
+              height={136}
+              loading="lazy"
               style={{ height: 'clamp(44px, 6vw, 68px)', width: 'auto', filter: 'invert(1)' }}
             />
             <p className="text-sm text-[#6b6b6b] leading-relaxed max-w-xs">
@@ -29,9 +32,9 @@ export default async function Footer() {
 
           {/* Navigation */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c]">
+            <h2 className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c]">
               Navigation
-            </h4>
+            </h2>
             <div className="space-y-3">
               {[
                 { label: 'Articles', href: '/#articles' },
@@ -53,9 +56,9 @@ export default async function Footer() {
 
           {/* Articles récents — maillage interne SEO */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c]">
+            <h2 className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c]">
               Articles récents
-            </h4>
+            </h2>
             <div className="space-y-3">
               {recentArticles.map((article) => (
                 <Link
@@ -71,9 +74,9 @@ export default async function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c]">
+            <h2 className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#c9a84c]">
               Contact
-            </h4>
+            </h2>
             <a
               href="mailto:contact@ialucide.fr"
               className="block text-sm text-[#6b6b6b] hover:text-[#c9a84c] transition-colors duration-300"
