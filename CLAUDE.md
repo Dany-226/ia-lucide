@@ -17,6 +17,17 @@
    manuellement. Pour une soumission exceptionnelle du site entier, la
    commande manuelle reste disponible : `npm run indexnow` (sans `--urls`).
 
+## Images et couleurs (performance et contraste, 02/11/2026)
+- Image de couverture locale : WebP de 1 200 px de large max, jamais un PNG de plusieurs Mo
+  (le site est en export statique, Next ne redimensionne rien). Après l'ajout d'une image de
+  couverture locale, lancer `npm run thumbnails` pour créer sa vignette « nom-640.webp » utilisée
+  par les cartes d'articles (lib/images.ts).
+- Images Imgur : utiliser la variante « h » (1 024 px, ex. `https://i.imgur.com/XXXXXXXh.jpg`),
+  jamais le PNG d'origine ; les cartes passent automatiquement à la variante « l » (640 px).
+- Couleurs de texte : or `#c9a84c` réservé aux fonds sombres et aux grands titres ; petit texte
+  et liens sur fond clair en or foncé `#8a6a1c` (4,8:1). Texte secondaire : gris `#6b6b6b` sur
+  fond clair uniquement, gris clair `#a8a59c` sur fond sombre (`#6b6b6b` y tombe à 3,2:1).
+
 ## Format MDX obligatoire
 title, slug, excerpt, tag, author, read_time, image_url, featured, date
 
