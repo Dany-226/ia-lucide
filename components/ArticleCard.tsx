@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { thumbnailUrl } from '@/lib/images';
 
 interface ArticleCardProps {
   slug: string;
@@ -29,7 +30,7 @@ export default function ArticleCard({
         <div className="relative overflow-hidden" style={{ height: '220px' }}>
           {image_url ? (
             <Image
-              src={image_url}
+              src={thumbnailUrl(image_url)!}
               alt={title}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
