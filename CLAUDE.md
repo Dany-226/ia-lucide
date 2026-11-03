@@ -51,6 +51,34 @@ Optionnel : `updated: "AAAA-MM-JJ"` pour une mise à jour substantielle d'un art
 155 caractères (`truncateAtWord()` dans `app/article/[slug]/page.tsx`) : au-delà, Google affiche une
 phrase tronquée qui se termine en « … ».
 
+## Signature des articles (champ `author`, depuis le 03/11/2026)
+Deux valeurs seulement, écrites exactement ainsi : `"Daniel Rollin"` ou `"La rédaction ialucide"`.
+Aucune autre variante (« Rédaction IA Lucide », « Rédaction iALucide », « digicorpex » ont été
+normalisées le 03/11).
+
+- **« Daniel Rollin »** : texte à la première personne ou expérience vécue ; mention Digicorpex à la
+  première personne (« l'agence que j'ai fondée », cf. Axe éditorial plus bas : sous une signature
+  collective, le « je » de la disclosure devient ambigu) ; analyse d'opinion ou critique
+  méthodologique ; article construit autour de la lecture d'une étude précise ; pages de confiance
+  (`avis-ialucide-ia`).
+- **« La rédaction ialucide »** : fiches métiers, comparatifs et listicles d'outils, guides
+  pratiques, y compris quand ils citent des études en appui.
+- En cas de doute : Daniel Rollin.
+
+Répartition au 03/11/2026 : 22 Daniel Rollin, 26 La rédaction ialucide (commit `62b1dc8`).
+
+La page /about/ annonce publiquement cette règle (commit `7860f37`) : « Les articles signés « La
+rédaction ialucide » sont des contenus pratiques : fiches métiers, comparatifs d'outils, guides. Ils
+sont produits et relus sous ma responsabilité de directeur de la publication. Les analyses, les
+lectures d'études et les retours d'expérience portent mon nom. » Toute évolution de la règle doit
+mettre ce paragraphe à jour.
+
+Schema Article (`app/article/[slug]/page.tsx`) : `author` en `Organization` avec
+`url: https://ialucide.fr/about/` pour la rédaction ; `Person` avec `url` /about/ et `sameAs`
+LinkedIn pour Daniel Rollin. La comparaison se fait sur la constante `REDACTION_AUTHOR`
+(`lib/articles.ts`), aussi utilisée comme valeur par défaut si `author` est vide : une variante
+d'orthographe dans le frontmatter produirait silencieusement un schema `Person` au nom de la rédaction.
+
 ## Liens internes
 - Toujours lier vers l'URL finale, avec le slash final (`/article/slug/`). Avant d'ajouter un lien,
   vérifier que le slug existe dans `content/` et qu'il n'a pas été fusionné (voir `public/_redirects`
@@ -66,8 +94,12 @@ phrase tronquée qui se termine en « … ».
   l'analyse une fois le déploiement confirmé : une seule mesure varie de quelques points.
 
 ## Déploiement Cloudflare Pages
+- Toujours faire `git pull --ff-only` avant de modifier quoi que ce soit (le 03/11/2026, le dépôt
+  local avait 22 commits de retard).
 - Vérifier le statut d'un build sans le tableau de bord :
   `gh api repos/Dany-226/ia-lucide/commits/<sha>/check-runs -q '.check_runs[] | select(.name=="Cloudflare Pages") | .conclusion'`
+  (au 03/11/2026, `gh` n'est pas installé sur le Mac de Daniel et le dépôt est privé : l'API sans
+  authentification répond « Not Found ». À défaut, vérifier le contenu servi en production.)
 - Le workflow IndexNow au vert ne prouve pas qu'un déploiement a réussi (les URL existantes répondent
   déjà 200 avec l'ancienne version). Vérifier le build Cloudflare et le contenu en production.
 - Le 02/11/2026, deux builds contenant de nouvelles images ont échoué alors que le même code compilait
