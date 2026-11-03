@@ -148,6 +148,11 @@ export default function AboutPage() {
               >
                 ialucide.fr est le résultat de cette démarche.
               </p>
+              <p
+                className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85]"
+              >
+                Les articles signés « La rédaction ialucide » sont des contenus pratiques : fiches métiers, comparatifs d&apos;outils, guides. Ils sont produits et relus sous ma responsabilité de directeur de la publication. Les analyses, les lectures d&apos;études et les retours d&apos;expérience portent mon nom.
+              </p>
             </div>
           </section>
 
