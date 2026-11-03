@@ -250,6 +250,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       : {
           '@type': 'Person',
           name: authorName,
+          url: 'https://ialucide.fr/about/',
+          sameAs: ['https://www.linkedin.com/in/danielrollin'],
         },
     publisher: {
       '@type': 'Organization',
