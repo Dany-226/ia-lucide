@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAllArticles } from '@/lib/articles';
+import { getAllArticles, REDACTION_AUTHOR } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 
 export const metadata: Metadata = {
@@ -140,7 +140,7 @@ export default function Home() {
                       {/* Label-MD metadata */}
                       <div className="flex items-center gap-3 pt-2">
                         <span className="font-mono text-xs font-bold tracking-[0.05em] uppercase text-[#6b6b6b]">
-                          {articles[0].author || 'Rédaction'}
+                          {articles[0].author || REDACTION_AUTHOR}
                         </span>
                         <span className="w-1 h-1 bg-[#c9a84c]/40 rounded-full" />
                         <span className="font-mono text-xs text-[#6b6b6b]">

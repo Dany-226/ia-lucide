@@ -1,4 +1,4 @@
-import { getAllArticles, getArticleBySlug, getRelatedArticles } from '@/lib/articles';
+import { getAllArticles, getArticleBySlug, getRelatedArticles, REDACTION_AUTHOR } from '@/lib/articles';
 import { notFound } from 'next/navigation';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -234,16 +234,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         : `https://ialucide.fr${article.image_url}`)
     : undefined;
 
+  const authorName = article.author || REDACTION_AUTHOR;
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
     datePublished: article.date,
     dateModified: article.updated || article.date,
-    author: {
-      '@type': 'Person',
-      name: article.author || 'Rédaction IA Lucide',
-    },
+    author: authorName === REDACTION_AUTHOR
+      ? {
+          '@type': 'Organization',
+          name: REDACTION_AUTHOR,
+          url: 'https://ialucide.fr/about/',
+        }
+      : {
+          '@type': 'Person',
+          name: authorName,
+        },
     publisher: {
       '@type': 'Organization',
       name: 'ialucide',
@@ -336,7 +343,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </p>
               {/* Label-MD metadata */}
               <div className="font-mono flex flex-wrap items-center gap-4 text-xs font-bold tracking-[0.05em] uppercase text-[#6b6b6b]">
-                <span>{article.author || 'Rédaction IA Lucide'}</span>
+                <span>{authorName}</span>
                 <span className="w-1 h-1 bg-[#c9a84c]/40 rounded-full" />
                 {formattedDate && <span>{formattedDate}</span>}
                 {formattedUpdated && (

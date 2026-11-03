@@ -4,6 +4,9 @@ import matter from 'gray-matter';
 
 const contentDir = path.join(process.cwd(), 'content');
 
+/** Signature collective : schema Organization au lieu de Person. Aussi valeur par défaut si author est vide. */
+export const REDACTION_AUTHOR = 'La rédaction ialucide';
+
 export interface Article {
   slug: string;
   title: string;

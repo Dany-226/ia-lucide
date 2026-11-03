@@ -62,7 +62,7 @@ export default function ArticleCard({
           {/* Label-MD metadata */}
           <div className="flex items-center justify-between pt-2">
             <span className="font-mono text-xs font-bold tracking-[0.05em] uppercase text-[#6b6b6b]">
-              {author || 'Rédaction'}
+              {author || 'La rédaction ialucide'}
             </span>
             {read_time && (
               <span className="font-mono text-xs text-[#6b6b6b]">
