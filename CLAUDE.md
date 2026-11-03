@@ -76,8 +76,10 @@ mettre ce paragraphe à jour.
 Schema Article (`app/article/[slug]/page.tsx`) : `author` en `Organization` avec
 `url: https://ialucide.fr/about/` pour la rédaction ; `Person` avec `url` /about/ et `sameAs`
 LinkedIn pour Daniel Rollin. La comparaison se fait sur la constante `REDACTION_AUTHOR`
-(`lib/articles.ts`), aussi utilisée comme valeur par défaut si `author` est vide : une variante
-d'orthographe dans le frontmatter produirait silencieusement un schema `Person` au nom de la rédaction.
+(`lib/articles.ts`). Le build bloque toute autre valeur : `assertAuthor()` lève une erreur au
+chargement des articles (« content/<fichier> (slug …) : author "…" invalide »), y compris si le champ
+est absent ou vide. Une variante d'orthographe ne peut donc plus produire en silence un schema
+`Person` au nom de la rédaction : corriger le frontmatter, ne jamais assouplir la liste.
 
 ## Liens internes
 - Toujours lier vers l'URL finale, avec le slash final (`/article/slug/`). Avant d'ajouter un lien,

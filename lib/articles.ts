@@ -4,8 +4,20 @@ import matter from 'gray-matter';
 
 const contentDir = path.join(process.cwd(), 'content');
 
-/** Signature collective : schema Organization au lieu de Person. Aussi valeur par défaut si author est vide. */
+/** Signature collective : schema Organization au lieu de Person. */
 export const REDACTION_AUTHOR = 'La rédaction ialucide';
+
+const ALLOWED_AUTHORS = ['Daniel Rollin', REDACTION_AUTHOR];
+
+// Fait échouer le build plutôt que de publier un schema Person au nom d'une variante.
+function assertAuthor(filename: string, slug: string, author: unknown): void {
+  if (typeof author !== 'string' || !ALLOWED_AUTHORS.includes(author)) {
+    throw new Error(
+      `content/${filename} (slug ${slug}) : author ${JSON.stringify(author)} invalide. ` +
+      `Valeurs acceptées : ${ALLOWED_AUTHORS.map(a => `"${a}"`).join(' ou ')} (cf. CLAUDE.md, Signature des articles).`
+    );
+  }
+}
 
 export interface Article {
   slug: string;
@@ -32,6 +44,8 @@ export function getAllArticles(): Article[] {
     .map(filename => {
       const raw = fs.readFileSync(path.join(contentDir, filename), 'utf-8');
       const { data } = matter(raw);
+      const slug = data.slug || filename.replace('.mdx', '');
+      assertAuthor(filename, slug, data.author);
       return {
         title: '',
         excerpt: '',
@@ -40,7 +54,7 @@ export function getAllArticles(): Article[] {
         read_time: '5',
         date: '2026-01-01',
         ...data,
-        slug: data.slug || filename.replace('.mdx', ''),
+        slug,
       } as Article;
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -56,6 +70,7 @@ export function getArticleBySlug(slug: string): Article | null {
   if (!file) return null;
   const raw = fs.readFileSync(path.join(contentDir, file), 'utf-8');
   const { data, content } = matter(raw);
+  assertAuthor(file, slug, data.author);
   return {
     title: '',
     excerpt: '',
