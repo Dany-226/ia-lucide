@@ -98,10 +98,13 @@ est absent ou vide. Une variante d'orthographe ne peut donc plus produire en sil
 ## Déploiement Cloudflare Pages
 - Toujours faire `git pull --ff-only` avant de modifier quoi que ce soit (le 03/11/2026, le dépôt
   local avait 22 commits de retard).
-- Vérifier le statut d'un build sans le tableau de bord :
-  `gh api repos/Dany-226/ia-lucide/commits/<sha>/check-runs -q '.check_runs[] | select(.name=="Cloudflare Pages") | .conclusion'`
-  (au 03/11/2026, `gh` n'est pas installé sur le Mac de Daniel et le dépôt est privé : l'API sans
-  authentification répond « Not Found ». À défaut, vérifier le contenu servi en production.)
+- Vérifier le statut d'un build sans le tableau de bord (dépôt public, pas besoin de `gh`, qui n'est
+  pas installé sur le Mac de Daniel) :
+  `curl -s https://api.github.com/repos/Dany-226/ia-lucide/commits/<sha>/check-runs`
+  puis lire le check « Cloudflare Pages » : `status` completed et `conclusion` success attendus.
+  Interroger le DERNIER commit du push : Cloudflare ne construit que la tête de chaque push, les
+  commits intermédiaires renvoient `"check_runs": []` (constaté le 03/11 sur `62b1dc8` et `dc0c78a`),
+  ce qui n'est pas un échec. Un « Not Found » signifie que le dépôt n'est plus public.
 - Le workflow IndexNow au vert ne prouve pas qu'un déploiement a réussi (les URL existantes répondent
   déjà 200 avec l'ancienne version). Vérifier le build Cloudflare et le contenu en production.
 - Le 02/11/2026, deux builds contenant de nouvelles images ont échoué alors que le même code compilait
