@@ -96,6 +96,24 @@ const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
       a: "Ce ne sont pas des concurrents directs aujourd'hui. Doctrine est conçu pour le droit français avec hébergement en France et une base documentaire construite pour cette pratique. Claude for Legal cible pour l'instant les grands cabinets internationaux, sans hébergement européen confirmé ni tarification publique. Pour un cabinet français de taille courante, Doctrine reste le choix par défaut, Claude for Legal étant un outil à surveiller plutôt qu'une alternative disponible dans l'immédiat.",
     },
   ],
+  'agent-ia-pme-comparatif-2026': [
+    {
+      q: "Quelle différence entre un assistant IA et un agent IA ?",
+      a: "Un assistant répond à une demande dans une conversation. Un agent reçoit un objectif, décide des étapes, utilise des outils et rend un résultat terminé. Pour comparer les assistants de conversation entre eux, voir notre comparatif des LLM pour un usage professionnel.",
+    },
+    {
+      q: "Faut-il un agent différent pour chaque tâche ?",
+      a: "Non. La plupart des offres permettent de créer plusieurs agents dans le même abonnement, chacun avec ses instructions et ses outils. Limiter chaque agent aux outils dont il a besoin réduit le risque d'erreur.",
+    },
+    {
+      q: "Peut-on utiliser son abonnement ChatGPT ou Claude dans un autre outil ?",
+      a: "Certaines plateformes, comme Rerun, le proposent en pilotant les outils officiels de ces éditeurs. Vérifiez que l'usage prévu reste compatible avec les conditions de votre abonnement, en particulier pour un usage d'équipe.",
+    },
+    {
+      q: "Ces agents sont-ils fiables pour des tâches longues ?",
+      a: "Pas encore. Sur le benchmark OSWorld 2.0, publié en juin 2026, le meilleur modèle termine environ une tâche longue sur cinq. Le guide de l'automatisation IA détaille ces résultats.",
+    },
+  ],
   'automatisation-ia-entreprise-guide-2026': [
     {
       q: "Quelle est la différence entre une automatisation et un agent IA ?",
