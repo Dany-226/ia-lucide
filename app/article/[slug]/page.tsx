@@ -96,6 +96,24 @@ const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
       a: "Ce ne sont pas des concurrents directs aujourd'hui. Doctrine est conçu pour le droit français avec hébergement en France et une base documentaire construite pour cette pratique. Claude for Legal cible pour l'instant les grands cabinets internationaux, sans hébergement européen confirmé ni tarification publique. Pour un cabinet français de taille courante, Doctrine reste le choix par défaut, Claude for Legal étant un outil à surveiller plutôt qu'une alternative disponible dans l'immédiat.",
     },
   ],
+  'automatisation-ia-entreprise-guide-2026': [
+    {
+      q: "Quelle est la différence entre une automatisation et un agent IA ?",
+      a: "Dans une automatisation, un humain définit les étapes à l'avance et l'IA n'intervient qu'à des points précis. Un agent reçoit un objectif et choisit lui-même ses étapes et ses outils. La première est plus prévisible, le second plus souple.",
+    },
+    {
+      q: "Faut-il savoir coder pour automatiser avec l'IA ?",
+      a: "Pas pour les deux premiers niveaux. Les fonctions intégrées s'activent dans les réglages, et n8n, Make ou Zapier se configurent par blocs visuels. Le code devient utile pour connecter un logiciel métier dépourvu de connecteur ou pour héberger n8n sur ses propres serveurs.",
+    },
+    {
+      q: "Combien coûte une première automatisation IA ?",
+      a: "Pour un workflow simple, les offres d'entrée de gamme des plateformes no-code se situent entre une dizaine et une cinquantaine d'euros par mois, auxquels peut s'ajouter la consommation du modèle d'IA. Le coût principal reste le temps passé à décrire le processus et à le tester.",
+    },
+    {
+      q: "Les agents IA vont-ils remplacer Zapier ou Make ?",
+      a: "Ces éditeurs intègrent eux-mêmes des agents dans leurs workflows, et Microsoft réunit workflows et agents dans Copilot Studio. Le mouvement de 2026 va vers la combinaison des deux : des étapes fixes là où l'entreprise a besoin de prévisibilité, un agent là où il faut de la souplesse.",
+    },
+  ],
 };
 
 // Autorise uniquement <div class="cta-button-wrapper"> et <a class="cta-button" href="...">
