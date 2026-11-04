@@ -96,6 +96,24 @@ const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
       a: "Ce ne sont pas des concurrents directs aujourd'hui. Doctrine est conçu pour le droit français avec hébergement en France et une base documentaire construite pour cette pratique. Claude for Legal cible pour l'instant les grands cabinets internationaux, sans hébergement européen confirmé ni tarification publique. Pour un cabinet français de taille courante, Doctrine reste le choix par défaut, Claude for Legal étant un outil à surveiller plutôt qu'une alternative disponible dans l'immédiat.",
     },
   ],
+  'facturation-electronique-auto-entrepreneur-plateforme-gratuite': [
+    {
+      q: "La facturation électronique est-elle obligatoire pour un auto-entrepreneur ?",
+      a: "Oui. Depuis le 1er septembre 2026, tout auto-entrepreneur doit pouvoir recevoir des factures électroniques via une plateforme agréée, y compris en franchise de TVA. L'émission devient obligatoire au 1er septembre 2027 pour les factures adressées à des clients professionnels établis en France.",
+    },
+    {
+      q: "Existe-t-il une plateforme de facturation électronique gratuite ?",
+      a: "Oui, plusieurs plateformes agréées proposent une offre à 0 € pour les indépendants. Vérifiez qu'elle couvre l'émission et la réception, et notez ses plafonds de factures ou d'utilisateurs.",
+    },
+    {
+      q: "Un site de facturation gratuit qui génère des PDF suffit-il ?",
+      a: "Non, pour les clients professionnels établis en France à partir de septembre 2027. Un PDF classique n'est pas une facture électronique au sens de la réforme : il faut un format structuré (Factur-X, UBL ou CII) transmis par une plateforme agréée.",
+    },
+    {
+      q: "Comment corriger une facture électronique déjà émise ?",
+      a: "On ne modifie pas une facture émise, électronique ou non. On émet une facture d'avoir qui annule tout ou partie de la facture initiale, puis, si nécessaire, une nouvelle facture. Votre plateforme gère ces avoirs dans le même circuit que les factures.",
+    },
+  ],
   'agent-ia-pme-comparatif-2026': [
     {
       q: "Quelle différence entre un assistant IA et un agent IA ?",
