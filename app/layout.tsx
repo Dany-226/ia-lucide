@@ -29,6 +29,9 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
+  // URL de base des métadonnées : sans elle, Next complète les images relatives
+  // (og:image, twitter:image) avec http://localhost:3000 au build.
+  metadataBase: new URL('https://ialucide.fr'),
   title: "IA Lucide — Le regard lucide sur l'IA qui transforme les métiers",
   description:
     "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
