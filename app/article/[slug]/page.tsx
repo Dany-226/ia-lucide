@@ -152,12 +152,15 @@ const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
   ],
 };
 
-// Autorise uniquement <div class="cta-button-wrapper"> et <a class="cta-button" href="...">
-// en plus du schéma par défaut (GitHub) — tout le reste du HTML brut reste filtré.
+// Autorise uniquement <div class="cta-button-wrapper">, <a class="cta-button" href="..."> et
+// <video> (attributs de lecture listés ci-dessous) en plus du schéma par défaut (GitHub) - tout le
+// reste du HTML brut reste filtré. Vidéos hébergées dans public/videos/ (voir CLAUDE.md).
 const articleContentSchema: SanitizeSchema = {
   ...defaultSchema,
+  tagNames: [...(defaultSchema.tagNames ?? []), 'video'],
   attributes: {
     ...defaultSchema.attributes,
+    video: ['src', 'poster', 'controls', 'preload', 'playsInline', 'muted', 'width', 'height', 'ariaLabel'],
     a: [
       ...(defaultSchema.attributes?.a ?? []).filter(
         (attr) => !(Array.isArray(attr) && attr[0] === 'className')

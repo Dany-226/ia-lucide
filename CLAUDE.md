@@ -35,6 +35,17 @@
   et liens sur fond clair en or foncé `#8a6a1c` (4,8:1). Texte secondaire : gris `#6b6b6b` sur
   fond clair uniquement, gris clair `#a8a59c` sur fond sombre (`#6b6b6b` y tombe à 3,2:1).
 
+## Vidéos dans les articles (depuis le 06/11/2026)
+- Fichiers dans `public/videos/` : MP4 H.264 1280x720, `-movflags +faststart`, sans piste audio si la vidéo
+  est muette, moins de 25 Mo (limite par fichier de Cloudflare Pages), plus une affiche WebP 1280x720.
+- Insertion en HTML brut dans le MDX : `<video src="/videos/x.mp4" poster="/videos/x-poster.webp" controls
+  preload="none" playsinline muted width="1280" height="720" aria-label="..."></video>`, suivie d'une légende
+  en italique. `preload="none"` protège le poids de la page et le LCP.
+- `rehypeSanitize` (`articleContentSchema`, `app/article/[slug]/page.tsx`) n'autorise sur `<video>` que ces
+  attributs : `autoplay`, gestionnaires `on*` et `src` en `javascript:` sont supprimés (testé le 06/11).
+- Illustrations générées par IA : le dire dans la légende et dans la vidéo, et ne jamais les présenter comme
+  une photo réelle d'un lieu ou d'une institution. Source de la première vidéo : projet Remotion hors dépôt.
+
 ## Format MDX obligatoire
 title, slug, excerpt, tag, author, read_time, image_url, featured, date
 

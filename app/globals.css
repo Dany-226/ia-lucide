@@ -125,6 +125,15 @@ h1, h2, h3, h4, h5, h6 {
 .prose-ia strong { font-weight: 700; }
 .prose-ia em     { font-style: italic; }
 
+.prose-ia video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #1c1c17;
+  margin: 2rem 0 0.75rem;
+}
+
 .prose-ia a {
   /* Or foncé : #c9a84c sur fond clair ne donne que 2,2:1 de contraste (minimum 4,5:1). */
   color: #8a6a1c;
