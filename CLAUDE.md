@@ -39,10 +39,15 @@
 - Fichiers dans `public/videos/` : MP4 H.264 1280x720, `-movflags +faststart`, sans piste audio si la vidéo
   est muette, moins de 25 Mo (limite par fichier de Cloudflare Pages), plus une affiche WebP 1280x720.
 - Insertion en HTML brut dans le MDX : `<video src="/videos/x.mp4" poster="/videos/x-poster.webp" controls
-  preload="none" playsinline muted width="1280" height="720" aria-label="..."></video>`, suivie d'une légende
-  en italique. `preload="none"` protège le poids de la page et le LCP.
+  preload="none" playsinline muted loop width="1280" height="720" aria-label="..."></video>`, suivie d'une
+  légende en italique. `preload="none"` protège le poids de la page et le LCP.
+- Lecture automatique en boucle (depuis le 06/11) : `components/ArticleVideos.tsx`, monté par la page article
+  seulement si le contenu contient `<video`. Lecture quand la vidéo est visible à 50 %, pause hors écran, rien
+  téléchargé avant ; pas de relance si le lecteur a mis en pause ; aucune lecture auto avec
+  `prefers-reduced-motion`. Ne PAS mettre l'attribut `autoplay` (filtré, et il chargerait la vidéo dès
+  l'ouverture de la page). Testé en Chrome headless (CDP) sur ces 6 cas le 06/11.
 - `rehypeSanitize` (`articleContentSchema`, `app/article/[slug]/page.tsx`) n'autorise sur `<video>` que ces
-  attributs : `autoplay`, gestionnaires `on*` et `src` en `javascript:` sont supprimés (testé le 06/11).
+  attributs (dont `loop`) : `autoplay`, gestionnaires `on*` et `src` en `javascript:` sont supprimés (testé le 06/11).
 - Illustrations générées par IA : le dire dans la légende et dans la vidéo, et ne jamais les présenter comme
   une photo réelle d'un lieu ou d'une institution. Source de la première vidéo : projet Remotion hors dépôt.
 

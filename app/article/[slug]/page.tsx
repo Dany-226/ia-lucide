@@ -10,6 +10,7 @@ import rehypeStringify from 'rehype-stringify';
 import Link from 'next/link';
 import ArticleSidebar from '@/components/ArticleSidebar';
 import ArticleCard from '@/components/ArticleCard';
+import ArticleVideos from '@/components/ArticleVideos';
 
 const CATEGORY_MAP = {
   metiers:       { label: 'Métiers',       href: '/metiers/' },
@@ -160,7 +161,7 @@ const articleContentSchema: SanitizeSchema = {
   tagNames: [...(defaultSchema.tagNames ?? []), 'video'],
   attributes: {
     ...defaultSchema.attributes,
-    video: ['src', 'poster', 'controls', 'preload', 'playsInline', 'muted', 'width', 'height', 'ariaLabel'],
+    video: ['src', 'poster', 'controls', 'preload', 'playsInline', 'muted', 'loop', 'width', 'height', 'ariaLabel'],
     a: [
       ...(defaultSchema.attributes?.a ?? []).filter(
         (attr) => !(Array.isArray(attr) && attr[0] === 'className')
@@ -426,6 +427,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               className="prose-ia"
               dangerouslySetInnerHTML={{ __html: contentHtml }}
             />
+            {contentHtml.includes('<video') && <ArticleVideos />}
 
             {/* Newsletter CTA */}
             <div className="mt-12 bg-[#1a3a4a] px-6 py-8 text-center">
