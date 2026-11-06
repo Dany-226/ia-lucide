@@ -382,6 +382,10 @@ invalide au passage l'affirmation "testé et validé" de la session du 15 juille
 test reposait sur un comportement des Redirect Rules dashboard qui a changé depuis, soit le test
 initial était insuffisant (un seul cas testé, cf. méthodologie ci-dessous).
 
+Le 06/11/2026, les 7 dernières lignes à query string encore présentes (`/Article?id=…`, `/Article?slug=…`,
+signalées « invalid redirect lines » dans le journal de build) ont été supprimées ; la seule règle restante
+est `/Article / 301`, écrite sous sa forme réelle.
+
 Le routing par query string doit passer exclusivement par les Cloudflare Redirect Rules (dashboard),
 en "URI Full equals" pour un match exact ou "Wildcard pattern" (pas "Custom filter expression" avec
 un `*` littéral - ça ne matche jamais) pour un pattern générique.

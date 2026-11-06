@@ -7,13 +7,11 @@
 /Contact /contact/ 301
 /Metiers /metiers/ 301
 
-# === Redirections IDs Base44 obsolètes (vers home) ===
+# === Ancien chemin Base44 /Article (vers home) ===
 
-/Article?id=69a07ad8e7133c18a4034acc / 301
-/Article?id=69a1e94559083f394f08d5c4 / 301
-/Article?id=69a1a5538f6925f5571ef9a2 / 301
-/Article?id=69a1e9b9a89f71dfe4a6a7d2 / 301
-/Article?id=69a1727f47c2c516ed1899f8 / 301
+# _redirects ignore la query string : cette règle couvre tout /Article (repli, les
+# Redirect Rules du dashboard traitent ?slug= et ?id= avant Pages).
+/Article / 301
 
 # === Fusions doublons - redirections 301 ===
 
@@ -31,9 +29,6 @@
 
 /About /about/ 301
 /Home / 301
-/Article?slug=architecte /article/architecte-ia-conception-batiment/ 301
-/Article?slug=juriste-avocat /article/guide-ia-juristes-avocats-2026/ 301
-/Article?id=69a081abc75a106ddf686823 / 301
 /article/ia-comptabilite-expert-comptable-2026/ /article/outils-ia-experts-comptables-2026/ 301
 
 # === Slash final — règle universelle articles (doit rester en dernier : sinon elle intercepte
