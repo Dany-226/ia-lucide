@@ -27,6 +27,14 @@ export default async function Footer() {
                 Suivez ialucide sur Google
               </span>
               <div google-add-preferred-source-btn="" data-theme="dark"></div>
+              <a
+                href="https://www.google.com/preferences/source?q=ialucide.fr"
+                target="_blank"
+                rel="noopener"
+                className="font-mono inline-block mt-3 text-xs text-[#a8a59c] hover:text-[#c9a84c]"
+              >
+                Ou ouvrir la page Google &rarr;
+              </a>
             </div>
           </div>
 

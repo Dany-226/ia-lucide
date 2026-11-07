@@ -53,7 +53,20 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
         <span className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#8a6a1c] block mb-3">
           Suivez ialucide sur Google
         </span>
+        <p className="text-sm text-[#6b6b6b] mb-4">
+          Nos articles en priorité dans vos résultats Google.
+        </p>
+        {/* Bouton officiel Google (publisher.js) : ajoute la source en un clic, sans confirmation
+            visible. Lien de secours : la page de préférences Google, toujours accessible. */}
         <div google-add-preferred-source-btn=""></div>
+        <a
+          href="https://www.google.com/preferences/source?q=ialucide.fr"
+          target="_blank"
+          rel="noopener"
+          className="font-mono inline-block mt-3 text-xs tracking-[0.05em] text-[#8a6a1c] hover:underline"
+        >
+          Ou ouvrir la page Google &rarr;
+        </a>
       </div>
 
       {/* Related articles */}
