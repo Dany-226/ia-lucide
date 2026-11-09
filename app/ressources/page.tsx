@@ -25,7 +25,7 @@ const TOOLS = [
         subtitle: 'La plateforme tout-en-un',
         description: "Le meilleur outil actuel pour piloter la comptabilité en temps réel avec une brique IA puissante pour l'automatisation des flux.",
         cta: 'Découvrir Pennylane',
-        href: 'https://www.pennylane.com',
+        href: 'https://lb.affilae.com/r/?p=608019f0b27a1f2e0480a96d&af=602&lp=https%3A%2F%2Fwww.pennylane.com%2Ffr%3Futm_source%3Dafl%26utm_campaign%3Dpennylane-fr%26utm_medium%3Dia-lucide',
       },
       {
         name: 'Indy',
