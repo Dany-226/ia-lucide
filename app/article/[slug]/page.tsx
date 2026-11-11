@@ -23,6 +23,28 @@ const CATEGORY_MAP = {
 // dur sur /metiers/ — un article n'entre ici que si son contenu affiche
 // réellement une section FAQ correspondante.
 const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
+  'metiers-ia-qui-recrutent-offres-emploi': [
+    {
+      q: "Quel métier de l'IA recrute le plus en France ?",
+      a: "Le data engineer, avec 1 548 offres mentionnant le terme sur France Travail le 11 novembre 2026, devant l'ingénieur IA (699) et le data scientist (402). Ces trois métiers concentrent l'essentiel des recrutements liés à l'IA.",
+    },
+    {
+      q: "Le métier de prompt engineer recrute-t-il ?",
+      a: "Très peu. Le relevé du 11 novembre 2026 ne trouve que deux offres distinctes portant cet intitulé dans toute la France. La rédaction d'instructions pour les modèles est devenue une compétence attendue dans d'autres postes, surtout d'ingénieur et de développeur.",
+    },
+    {
+      q: "Peut-on travailler dans l'IA sans bac+5 ?",
+      a: "C'est difficile sur les postes techniques : sur les 61 offres lues en détail, 25 précisent le diplôme, et 22 d'entre elles demandent un bac+5 ou un bac+4/5. Aucune ne mentionne une formation courte. Les voies plus accessibles passent par l'alternance, les postes d'adoption de l'IA en entreprise ou l'intégration de l'IA dans son métier actuel.",
+    },
+    {
+      q: "Combien gagne-t-on dans un métier de l'IA en début de carrière ?",
+      a: "Dans notre échantillon de 61 offres, les CDI ouverts aux débutants qui affichent un salaire annoncent de 36 000 à 47 000 € par an. Avec un à cinq ans d'expérience, les fourchettes vont de 32 000 à 80 000 €, et la plupart démarrent à 45 000 € ou plus. Ces montants sont des ordres de grandeur, pas une grille.",
+    },
+    {
+      q: "À quelle fréquence ces chiffres sont-ils mis à jour ?",
+      a: "Tous les trois mois, avec les mêmes recherches sur France Travail. Le prochain relevé est prévu en février 2027.",
+    },
+  ],
   'orientation-scolaire-ia-parents': [
     {
       q: "Faut-il éviter les filières jugées « à risque » face à l'IA ?",
