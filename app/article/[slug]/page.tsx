@@ -11,6 +11,7 @@ import Link from 'next/link';
 import ArticleSidebar from '@/components/ArticleSidebar';
 import ArticleCard from '@/components/ArticleCard';
 import ArticleVideos from '@/components/ArticleVideos';
+import { pageMetadata, ORGANIZATION_ID, SITE_LOGO, SITE_NAME, SITE_URL } from '@/lib/seo';
 
 const CATEGORY_MAP = {
   metiers:       { label: 'Métiers',       href: '/metiers/' },
@@ -222,24 +223,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // (au-delà, Google tronque ou réécrit le titre).
   const baseTitle = article.seo_title || article.title;
   const pageTitle = baseTitle.length <= 49 ? `${baseTitle} | ialucide` : baseTitle;
-  return {
-    // absolute : le suffixe est géré ici, pas par le template du layout.
-    title: { absolute: pageTitle },
+  // Le suffixe est géré ici (title absolu), pas par le template du layout.
+  // og:title garde le titre éditorial, plus parlant en partage que le seo_title.
+  return pageMetadata({
+    absoluteTitle: pageTitle,
+    ogTitle: article.title,
     description: truncateAtWord(article.excerpt || '', 155),
-    alternates: {
-      canonical: `https://ialucide.fr/article/${slug}/`,
-    },
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      images: article.image_url ? [article.image_url] : [],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: article.title,
-      description: truncateAtWord(article.excerpt || '', 200),
-    },
-  };
+    path: `/article/${slug}/`,
+    image: article.image_url || undefined,
+    type: 'article',
+    publishedTime: article.date,
+    modifiedTime: article.updated || article.date,
+  });
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -332,16 +327,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           '@type': 'Person',
           name: authorName,
           url: 'https://ialucide.fr/about/',
-          sameAs: ['https://www.linkedin.com/in/danielrollin'],
+          sameAs: ['https://www.linkedin.com/in/danielrollin', 'https://x.com/daniel_rol22591'],
         },
     publisher: {
       '@type': 'Organization',
-      name: 'ialucide',
+      '@id': ORGANIZATION_ID,
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://ialucide.fr/logo-black.png',
-        width: 1408,
-        height: 768,
+        url: SITE_LOGO.url,
+        width: SITE_LOGO.width,
+        height: SITE_LOGO.height,
       },
     },
     ...(absoluteImageUrl ? { image: absoluteImageUrl } : {}),

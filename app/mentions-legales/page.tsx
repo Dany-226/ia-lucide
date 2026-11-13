@@ -1,18 +1,14 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Mentions légales',
-  description: 'Mentions légales de ialucide.fr — éditeur DIGICORPEX, hébergeur Cloudflare Inc.',
-  alternates: {
-    canonical: 'https://ialucide.fr/mentions-legales/',
-  },
-  openGraph: {
-    description: 'Mentions légales de ialucide.fr — éditeur DIGICORPEX, hébergeur Cloudflare Inc.',
-  },
-  twitter: {
-    description: 'Mentions légales de ialucide.fr — éditeur DIGICORPEX, hébergeur Cloudflare Inc.',
-  },
-};
+const PAGE_DESCRIPTION =
+  "Mentions légales de ialucide.fr — éditeur DIGICORPEX, hébergeur Cloudflare Inc.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Mentions légales",
+  description: PAGE_DESCRIPTION,
+  path: "/mentions-legales/",
+});
 
 export default function MentionsLegalesPage() {
   return (

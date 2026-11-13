@@ -1,20 +1,15 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'À propos',
-  description:
-    "ialucide : le regard lucide sur l'IA qui transforme les métiers. Qui nous sommes, notre mission, notre méthodologie.",
-  alternates: {
-    canonical: 'https://ialucide.fr/about/',
-  },
-  openGraph: {
-    description: "ialucide : le regard lucide sur l'IA qui transforme les métiers. Qui nous sommes, notre mission, notre méthodologie.",
-  },
-  twitter: {
-    description: "ialucide : le regard lucide sur l'IA qui transforme les métiers. Qui nous sommes, notre mission, notre méthodologie.",
-  },
-};
+const PAGE_DESCRIPTION =
+  "ialucide : le regard lucide sur l'IA qui transforme les métiers. Qui nous sommes, notre mission, notre méthodologie.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "À propos",
+  description: PAGE_DESCRIPTION,
+  path: "/about/",
+});
 
 export default function AboutPage() {
   return (

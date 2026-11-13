@@ -1,22 +1,16 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
+const PAGE_DESCRIPTION =
+  "Une analyse par semaine sur l'impact réel de l'IA sur les métiers. Lucide, sans évangélisme ni catastrophisme. Inscription gratuite.";
+
+export const metadata: Metadata = pageMetadata({
   title: "Newsletter - l'IA sans illusions",
-  description: "Une analyse par semaine sur l'impact réel de l'IA sur les métiers. Lucide, sans évangélisme ni catastrophisme. Inscription gratuite.",
-  alternates: {
-    canonical: 'https://ialucide.fr/newsletter/',
-  },
-  openGraph: {
-    title: "La newsletter ialucide — l'IA sans illusions",
-    description: "Une analyse par semaine sur l'impact réel de l'IA sur les métiers. Lucide, sans évangélisme ni catastrophisme. Inscription gratuite.",
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: "La newsletter ialucide — l'IA sans illusions",
-    description: "Une analyse par semaine sur l'impact réel de l'IA sur les métiers. Lucide, sans évangélisme ni catastrophisme. Inscription gratuite.",
-  },
-};
+  description: PAGE_DESCRIPTION,
+  path: "/newsletter/",
+  ogTitle: "La newsletter ialucide - l'IA sans illusions",
+});
 
 export default function NewsletterPage() {
   return (

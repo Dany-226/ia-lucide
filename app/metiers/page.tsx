@@ -1,22 +1,16 @@
 import type { Metadata } from 'next';
+import { collectionPageJsonLd, jsonLdHtml, pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import MetiersFaqItem from '@/components/MetiersFaqItem';
 
-export const metadata: Metadata = {
+const PAGE_DESCRIPTION =
+  "Quels métiers sont vraiment menacés par l'IA en 2026 ? 21 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.";
+
+export const metadata: Metadata = pageMetadata({
   title: "Métiers menacés par l'IA en France (2026) : 21 analyses par profession",
-  description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 21 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
-  alternates: {
-    canonical: 'https://ialucide.fr/metiers/',
-  },
-  openGraph: {
-    title: "Métiers menacés par l'IA en France (2026) : 21 analyses par profession | ialucide",
-    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 21 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
-  },
-  twitter: {
-    title: "Métiers menacés par l'IA en France (2026) : 21 analyses par profession | ialucide",
-    description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 21 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
-  },
-};
+  description: PAGE_DESCRIPTION,
+  path: "/metiers/",
+});
 
 const METIERS = [
   {
@@ -212,9 +206,20 @@ const faqJsonLd = {
   })),
 };
 
+// Fiches listées sur la page, dans l'ordre d'affichage (FAQPage conservé à part).
+const collectionJsonLd = collectionPageJsonLd({
+  name: "Métiers menacés par l'IA en France : analyses par profession",
+  description: PAGE_DESCRIPTION,
+  path: '/metiers/',
+  items: METIERS.flatMap((section) =>
+    section.metiers.map((m) => ({ name: m.titre, url: `/article/${m.slug}/` })),
+  ),
+});
+
 export default function MetiersPage() {
   return (
     <div className="bg-[#fcf9f0] min-h-screen pt-24 md:pt-32 pb-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(collectionJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

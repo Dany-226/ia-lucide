@@ -1,18 +1,14 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Contact',
-  description: "Contactez ialucide.fr — questions, suggestions, retours d'expérience professionnels sur l'IA.",
-  alternates: {
-    canonical: 'https://ialucide.fr/contact/',
-  },
-  openGraph: {
-    description: "Contactez ialucide.fr — questions, suggestions, retours d'expérience professionnels sur l'IA.",
-  },
-  twitter: {
-    description: "Contactez ialucide.fr — questions, suggestions, retours d'expérience professionnels sur l'IA.",
-  },
-};
+const PAGE_DESCRIPTION =
+  "Contactez ialucide.fr — questions, suggestions, retours d'expérience professionnels sur l'IA.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Contact",
+  description: PAGE_DESCRIPTION,
+  path: "/contact/",
+});
 
 export default function ContactPage() {
   return (

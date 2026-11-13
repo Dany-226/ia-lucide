@@ -1,22 +1,18 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllArticles, REDACTION_AUTHOR } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 
-export const metadata: Metadata = {
-  title: { absolute: "ialucide | L'IA sans illusions, métier par métier" },
-  description: "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
-  alternates: {
-    canonical: 'https://ialucide.fr/',
-  },
-  openGraph: {
-    description: "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
-  },
-  twitter: {
-    description: "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
-  },
-};
+const PAGE_DESCRIPTION =
+  "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.";
+
+export const metadata: Metadata = pageMetadata({
+  absoluteTitle: "ialucide | L'IA sans illusions, métier par métier",
+  description: PAGE_DESCRIPTION,
+  path: "/",
+});
 
 export default function Home() {
   const articles = getAllArticles();

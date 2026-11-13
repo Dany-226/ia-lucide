@@ -1,18 +1,14 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Politique de confidentialité',
-  description: 'Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.',
-  alternates: {
-    canonical: 'https://ialucide.fr/politique-confidentialite/',
-  },
-  openGraph: {
-    description: 'Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.',
-  },
-  twitter: {
-    description: 'Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.',
-  },
-};
+const PAGE_DESCRIPTION =
+  "Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Politique de confidentialité",
+  description: PAGE_DESCRIPTION,
+  path: "/politique-confidentialite/",
+});
 
 export default function PolitiqueConfidentialitePage() {
   return (

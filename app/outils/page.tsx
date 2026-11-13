@@ -1,24 +1,29 @@
 import type { Metadata } from 'next';
+import { collectionPageJsonLd, jsonLdHtml, pageMetadata } from '@/lib/seo';
 import { getAllArticles } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 
-export const metadata: Metadata = {
-  title: 'Meilleurs outils IA professionnels 2026 - Comparatifs honnêtes',
-  description: 'Comparatifs et avis sur les outils IA pour juristes, comptables et développeurs. Sans langue de bois.',
-  alternates: { canonical: 'https://ialucide.fr/outils/' },
-  openGraph: {
-    description: 'Comparatifs et avis sur les outils IA pour juristes, comptables et développeurs. Sans langue de bois.',
-  },
-  twitter: {
-    description: 'Comparatifs et avis sur les outils IA pour juristes, comptables et développeurs. Sans langue de bois.',
-  },
-};
+const PAGE_DESCRIPTION =
+  "Comparatifs et avis sur les outils IA pour juristes, comptables et développeurs. Sans langue de bois.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Meilleurs outils IA professionnels 2026 - Comparatifs honnêtes",
+  description: PAGE_DESCRIPTION,
+  path: "/outils/",
+});
 
 export default function OutilsPage() {
   const articles = getAllArticles().filter(a => a.category === 'outils');
+  const jsonLd = collectionPageJsonLd({
+    name: "Outils IA professionnels : comparatifs et avis",
+    description: PAGE_DESCRIPTION,
+    path: '/outils/',
+    items: articles.map((a) => ({ name: a.title, url: `/article/${a.slug}/` })),
+  });
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }} />
       <section className="pt-32 pb-16 bg-[#1c1c17]">
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
           <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block">

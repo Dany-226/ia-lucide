@@ -5,6 +5,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnalyticsConsent from '@/components/AnalyticsConsent';
+import { SITE_DESCRIPTION, SITE_LOGO, SITE_NAME, jsonLdHtml, organizationJsonLd } from '@/lib/seo';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -40,9 +41,15 @@ export const metadata: Metadata = {
     "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
   openGraph: {
     title: "ialucide | L'IA sans illusions, métier par métier",
-    description:
-      "Analyses par métier sur l'impact réel de l'intelligence artificielle.",
-    siteName: 'ialucide',
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
+    locale: 'fr_FR',
+    type: 'website',
+    images: [SITE_LOGO],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [SITE_LOGO.url],
   },
   other: {
     'impact-site-verification': '679f10f1-0511-476f-979a-b265417ca7b6',
@@ -61,6 +68,10 @@ export default function RootLayout({
       className={`${playfair.variable} ${spaceGrotesk.variable} ${dmMono.variable} font-sans`}
     >
       <body className="min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(organizationJsonLd()) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

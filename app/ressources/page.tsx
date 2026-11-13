@@ -1,19 +1,14 @@
 import type { Metadata } from 'next';
+import { collectionPageJsonLd, jsonLdHtml, pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: { absolute: 'Outils IA Recommandés : La Sélection Expert de ialucide' },
-  description:
-    "Découvrez les meilleurs outils d'intelligence artificielle testés et validés par ialucide pour les comptables, juristes, développeurs et architectes.",
-  alternates: {
-    canonical: 'https://ialucide.fr/ressources/',
-  },
-  openGraph: {
-    description: "Découvrez les meilleurs outils d'intelligence artificielle testés et validés par ialucide pour les comptables, juristes, développeurs et architectes.",
-  },
-  twitter: {
-    description: "Découvrez les meilleurs outils d'intelligence artificielle testés et validés par ialucide pour les comptables, juristes, développeurs et architectes.",
-  },
-};
+const PAGE_DESCRIPTION =
+  "Découvrez les meilleurs outils d'intelligence artificielle testés et validés par ialucide pour les comptables, juristes, développeurs et architectes.";
+
+export const metadata: Metadata = pageMetadata({
+  absoluteTitle: "Outils IA Recommandés : La Sélection Expert de ialucide",
+  description: PAGE_DESCRIPTION,
+  path: "/ressources/",
+});
 
 const TOOLS = [
   {
@@ -117,9 +112,25 @@ function ToolCard({ tool }: { tool: typeof TOOLS[0]['items'][0] }) {
   );
 }
 
+// URL officielle de l'outil pour le JSON-LD : on déroule le lien d'affiliation Affilae
+// (paramètre lp) et on retire les paramètres de suivi.
+function officialUrl(href: string): string {
+  const u = new URL(href);
+  const target = u.hostname === 'lb.affilae.com' ? new URL(u.searchParams.get('lp') || href) : u;
+  return `${target.origin}${target.pathname}`;
+}
+
+const collectionJsonLd = collectionPageJsonLd({
+  name: 'Outils IA recommandés par métier',
+  description: PAGE_DESCRIPTION,
+  path: '/ressources/',
+  items: TOOLS.flatMap((group) => group.items.map((t) => ({ name: t.name, url: officialUrl(t.href) }))),
+});
+
 export default function RessourcesPage() {
   return (
     <div className="bg-[#fcf9f0] min-h-screen pt-24 md:pt-32 pb-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(collectionJsonLd) }} />
       <div className="max-w-4xl mx-auto px-5 md:px-8">
 
         {/* Header */}
