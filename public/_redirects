@@ -31,6 +31,11 @@
 /Home / 301
 /article/ia-comptabilite-expert-comptable-2026/ /article/outils-ia-experts-comptables-2026/ 301
 
+# === URL déformée relevée par Ahrefs (11/11/2026), 404 : les deux formes, un seul saut ===
+
+/article/cours-cours-claude-et-anthropic-academy-bilan/ /article/cours-claude-anthropic-academy-bilan/ 301
+/article/cours-cours-claude-et-anthropic-academy-bilan /article/cours-claude-anthropic-academy-bilan/ 301
+
 # === Slash final — règle universelle articles (doit rester en dernier : sinon elle intercepte
 # les requêtes sans slash avant les règles de fusion spécifiques ci-dessus) ===
 
