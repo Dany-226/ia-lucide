@@ -7,7 +7,7 @@ const PAGE_DESCRIPTION =
   "Comparatifs et avis sur les outils IA pour juristes, comptables et développeurs. Sans langue de bois.";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Meilleurs outils IA professionnels 2026 - Comparatifs honnêtes",
+  title: "Comparatifs d'outils IA professionnels (2026)",
   description: PAGE_DESCRIPTION,
   path: "/outils/",
 });

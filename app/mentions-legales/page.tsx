@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 
 const PAGE_DESCRIPTION =
-  "Mentions légales de ialucide.fr — éditeur DIGICORPEX, hébergeur Cloudflare Inc.";
+  "Mentions légales de ialucide.fr : société éditrice DIGICORPEX, directeur de la publication, hébergement par Cloudflare Inc. et adresse de contact.";
 
 export const metadata: Metadata = pageMetadata({
   title: "Mentions légales",

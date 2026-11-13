@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 
 const PAGE_DESCRIPTION =
-  "Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.";
+  "Politique de confidentialité de ialucide.fr : données collectées, cookies Google Analytics soumis à consentement, newsletter Beehiiv et vos droits RGPD.";
 
 export const metadata: Metadata = pageMetadata({
   title: "Politique de confidentialité",

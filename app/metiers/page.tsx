@@ -4,10 +4,10 @@ import Link from 'next/link';
 import MetiersFaqItem from '@/components/MetiersFaqItem';
 
 const PAGE_DESCRIPTION =
-  "Quels métiers sont vraiment menacés par l'IA en 2026 ? 21 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.";
+  "Quels métiers sont menacés par l'IA en 2026 ? 21 professions analysées tâche par tâche, sans catastrophisme ni déni : comptable, juriste, médecin...";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Métiers menacés par l'IA en France (2026) : 21 analyses par profession",
+  absoluteTitle: "Métiers menacés par l'IA en France : 21 analyses (2026)",
   description: PAGE_DESCRIPTION,
   path: "/metiers/",
 });

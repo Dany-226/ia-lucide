@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 
 const PAGE_DESCRIPTION =
-  "Contactez ialucide.fr — questions, suggestions, retours d'expérience professionnels sur l'IA.";
+  "Contactez la rédaction de ialucide.fr : question sur un article, outil IA à tester, retour d'expérience professionnel sur l'IA dans votre métier.";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
