@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Newsletter — l'IA sans illusions | ialucide",
+  title: "Newsletter - l'IA sans illusions",
   description: "Une analyse par semaine sur l'impact réel de l'IA sur les métiers. Lucide, sans évangélisme ni catastrophisme. Inscription gratuite.",
   alternates: {
     canonical: 'https://ialucide.fr/newsletter/',

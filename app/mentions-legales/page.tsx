@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mentions légales — IA Lucide',
+  title: 'Mentions légales',
   description: 'Mentions légales de ialucide.fr — éditeur DIGICORPEX, hébergeur Cloudflare Inc.',
   alternates: {
     canonical: 'https://ialucide.fr/mentions-legales/',

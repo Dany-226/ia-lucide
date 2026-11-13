@@ -3,7 +3,7 @@ import { getAllArticles } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 
 export const metadata: Metadata = {
-  title: 'Meilleurs outils IA professionnels 2026 — Comparatifs honnêtes | ialucide',
+  title: 'Meilleurs outils IA professionnels 2026 - Comparatifs honnêtes',
   description: 'Comparatifs et avis sur les outils IA pour juristes, comptables et développeurs. Sans langue de bois.',
   alternates: { canonical: 'https://ialucide.fr/outils/' },
   openGraph: {

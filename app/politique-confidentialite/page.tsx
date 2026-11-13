@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Politique de confidentialité — IA Lucide',
+  title: 'Politique de confidentialité',
   description: 'Politique de confidentialité de ialucide.fr — RGPD, cookies, newsletter Beehiiv.',
   alternates: {
     canonical: 'https://ialucide.fr/politique-confidentialite/',

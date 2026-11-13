@@ -223,7 +223,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const baseTitle = article.seo_title || article.title;
   const pageTitle = baseTitle.length <= 49 ? `${baseTitle} | ialucide` : baseTitle;
   return {
-    title: pageTitle,
+    // absolute : le suffixe est géré ici, pas par le template du layout.
+    title: { absolute: pageTitle },
     description: truncateAtWord(article.excerpt || '', 155),
     alternates: {
       canonical: `https://ialucide.fr/article/${slug}/`,

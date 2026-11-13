@@ -3,7 +3,7 @@ import Link from 'next/link';
 import MetiersFaqItem from '@/components/MetiersFaqItem';
 
 export const metadata: Metadata = {
-  title: "Métiers menacés par l'IA en France (2026) : 21 analyses par profession | ialucide",
+  title: "Métiers menacés par l'IA en France (2026) : 21 analyses par profession",
   description: "Quels métiers sont vraiment menacés par l'IA en 2026 ? 21 professions analysées tâche par tâche - sans catastrophisme ni déni. Comptable, juriste, développeur, médecin et plus.",
   alternates: {
     canonical: 'https://ialucide.fr/metiers/',
@@ -166,7 +166,7 @@ const FAQ = [
   },
   {
     q: "Ces analyses sont-elles fiables ? Qui les produit ?",
-    a: "IA Lucide est une publication indépendante. Nos analyses s'appuient sur des études académiques, des rapports sectoriels (McKinsey, Goldman Sachs, OCDE) et des entretiens avec des professionnels en exercice. Nous ne vendons ni formation ni logiciel : notre seul intérêt est la clarté.",
+    a: "ialucide est une publication indépendante. Nos analyses s'appuient sur des études académiques, des rapports sectoriels (McKinsey, Goldman Sachs, OCDE) et des entretiens avec des professionnels en exercice. Nous ne vendons ni formation ni logiciel : notre seul intérêt est la clarté.",
   },
 ];
 

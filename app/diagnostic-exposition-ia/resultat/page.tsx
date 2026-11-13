@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import DiagnosticResultat from '@/components/DiagnosticResultat';
 
 export const metadata: Metadata = {
-  title: 'Vos résultats — Diagnostic exposition IA — IA Lucide',
+  title: 'Vos résultats - Diagnostic exposition IA',
   robots: {
     index: false,
     follow: false,

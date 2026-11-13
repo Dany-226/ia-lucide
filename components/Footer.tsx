@@ -13,7 +13,7 @@ export default async function Footer() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo-nav.webp"
-              alt="iALucide"
+              alt="ialucide"
               width={249}
               height={136}
               loading="lazy"
@@ -132,7 +132,7 @@ export default async function Footer() {
 
         <div className="mt-16 pt-8 border-t border-[#c9a84c]/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-mono text-[10px] tracking-wider text-[#a8a59c] uppercase">
-            © 2026 IA Lucide — Tous droits réservés
+            © 2026 ialucide - Tous droits réservés
           </p>
           <div className="flex items-center gap-6">
             {[

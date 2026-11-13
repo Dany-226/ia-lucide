@@ -3,7 +3,7 @@ import { getAllArticles } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 
 export const metadata: Metadata = {
-  title: "Comprendre l'IA — Analyses sans jargon | ialucide",
+  title: "Comprendre l'IA - Analyses sans jargon",
   description: "Analyses factuelles sur l'impact de l'IA sur le travail, les licenciements, la souveraineté des données.",
   alternates: { canonical: 'https://ialucide.fr/comprendre/' },
   openGraph: {

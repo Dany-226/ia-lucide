@@ -5,7 +5,7 @@ import { getAllArticles, REDACTION_AUTHOR } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 
 export const metadata: Metadata = {
-  title: "IA Lucide — Le regard lucide sur l'IA qui transforme les métiers",
+  title: { absolute: "ialucide | L'IA sans illusions, métier par métier" },
   description: "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.",
   alternates: {
     canonical: 'https://ialucide.fr/',

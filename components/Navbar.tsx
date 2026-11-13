@@ -22,7 +22,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-nav.webp" alt="iALucide" width={249} height={136} fetchPriority="high" style={{ height: 'clamp(44px, 6vw, 68px)', width: 'auto' }} />
+          <img src="/logo-nav.webp" alt="ialucide" width={249} height={136} fetchPriority="high" style={{ height: 'clamp(44px, 6vw, 68px)', width: 'auto' }} />
         </Link>
 
         {/* Desktop nav */}

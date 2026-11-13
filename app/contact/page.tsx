@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact — IA Lucide',
+  title: 'Contact',
   description: "Contactez ialucide.fr — questions, suggestions, retours d'expérience professionnels sur l'IA.",
   alternates: {
     canonical: 'https://ialucide.fr/contact/',

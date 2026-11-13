@@ -3,7 +3,7 @@ import { getAllArticles } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 
 export const metadata: Metadata = {
-  title: "Éducation IA — Accompagner les jeunes face à l'IA | ialucide",
+  title: "Éducation IA - Accompagner les jeunes face à l'IA",
   description: "Guides pratiques pour parents et éducateurs : orientation scolaire, compétences à développer, usage de l'IA chez les jeunes.",
   alternates: { canonical: 'https://ialucide.fr/education-ia/' },
   openGraph: {

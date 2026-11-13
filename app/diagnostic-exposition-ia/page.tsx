@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import DiagnosticForm from '@/components/DiagnosticForm';
 
 export const metadata: Metadata = {
-  title: 'Diagnostic exposition IA — IA Lucide',
+  title: 'Diagnostic exposition IA',
   description:
     "Évaluez en 8 questions votre exposition réelle à l'automatisation par l'IA, selon votre poste, votre secteur et la nature de votre travail.",
   alternates: {
