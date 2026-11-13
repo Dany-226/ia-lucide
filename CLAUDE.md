@@ -128,6 +128,46 @@ est absent ou vide. Une variante d'orthographe ne peut donc plus produire en sil
   Si un build échoue sur du code qui compile en local : relancer une fois avant d'investiguer, puis
   lire le journal dans Cloudflare Pages → Deployments si l'échec se reproduit.
 
+## Marque, métadonnées et données structurées (depuis le 13/11/2026)
+
+**Graphie de la marque : « ialucide »**, tout en minuscules, partout : titles, descriptions, texte
+visible, attributs `alt` du logo, schema. Jamais « IA Lucide », « iALucide », « IALucide ».
+Seule exception : le logotype en capitales de la charte newsletter (`brand/newsletter-design.md`).
+Accroche officielle : « L'IA sans illusions, métier par métier ».
+
+**Titles** : le layout racine définit `title.default` (« ialucide | L'IA sans illusions, métier
+par métier ») et `title.template` (`%s | ialucide`). Une page déclare seulement son nom
+(« Contact ») et le template ajoute la marque. Ne jamais écrire « | ialucide » à la main dans un
+title de page : il apparaîtrait en double. Les articles gardent leur règle propre (suffixe
+seulement si le total reste <= 60 caractères, cf. Format MDX) via un title absolu.
+
+**Open Graph obligatoire, via `lib/seo.ts`** : chaque page exporte
+`metadata = pageMetadata({ title | absoluteTitle, description, path, ... })` (ou le renvoie
+depuis `generateMetadata()`). Le helper produit le title, la canonical et les balises
+og:title/description/url (absolue, slash final)/image (absolue, logo par défaut)/type
+(`article` sur les articles, `website` ailleurs)/locale `fr_FR`/site_name `ialucide`, plus
+`twitter:card summary_large_image`. Ne jamais déclarer un objet `openGraph` ou `twitter` à la
+main dans une page : Next le substitue entièrement à celui du layout, ce qui faisait disparaître
+site_name, url, type et locale sur tout le site (constaté par l'audit Ahrefs du 11/11).
+
+**JSON-LD obligatoire** :
+- Layout racine : `Organization` (`@id` https://ialucide.fr/#organization, logo, description,
+  e-mail, `sameAs` Instagram seul, pas de page LinkedIn entreprise).
+- Articles : `Article` (headline, description, image, datePublished = `date`, dateModified =
+  `updated` sinon `date`, author selon la règle de signature, publisher relié à l'Organization)
+  + `BreadcrumbList`. Le `sameAs` du `Person` Daniel Rollin contient LinkedIn et le compte X
+  (`x.com/daniel_rol22591`) ; le compte X ne va pas dans l'Organization.
+- Pages hubs (/metiers/, /outils/, /comprendre/, /education-ia/, /ressources/) :
+  `collectionPageJsonLd()` (CollectionPage + ItemList des éléments listés, URL absolues ; les
+  liens d'affiliation sont remplacés par l'URL officielle de l'outil). Le FAQPage de /metiers/
+  reste à part.
+- Autre page indexable : `webPageJsonLd()` au minimum (ex. /diagnostic-exposition-ia/).
+- Une seule balise H1 par page : le gabarit article affiche déjà le titre en H1, un MDX ne
+  commence jamais par `# Titre`.
+
+Une nouvelle page indexable doit aussi être ajoutée à `app/sitemap.ts` (pages légales et
+contact incluses, priorité 0.3).
+
 ## Conventions
 - Zéro border-radius sur boutons et cards
 - generateMetadata() sur chaque nouvelle page
@@ -163,6 +203,13 @@ suivantes, à ne jamais supprimer sans vérifier d'abord si Cloudflare "Managed 
   l'entraînement IA au titre de l'article 4 de la directive UE 2019/790
 - `Disallow: /` explicite pour : Amazonbot, Applebot-Extended, Bytespider, CCBot,
   ClaudeBot, CloudflareBrowserRenderingCrawler, Google-Extended, GPTBot, meta-externalagent
+
+Politique (validée le 13/11/2026) : bloquer l'entraînement, autoriser la recherche IA. Les
+robots de recherche et agents utilisateur (OAI-SearchBot, ChatGPT-User, Claude-SearchBot,
+Claude-User, PerplexityBot, Perplexity-User, plus Googlebot et bingbot) sont autorisés dans un
+groupe commun qui **répète** la ligne `Content-Signal` : un robot qui trouve son propre groupe
+ignore entièrement le groupe `*`, donc ne lirait pas la réserve `ai-train=no`. Tout nouveau groupe
+nommé doit reprendre cette ligne.
 
 Le toggle Cloudflare Dashboard → AI Crawl Control → Overview → "Managed robots.txt" est
 désactivé depuis le 23/08/2026. S'il est réactivé, Cloudflare injecte automatiquement ces
