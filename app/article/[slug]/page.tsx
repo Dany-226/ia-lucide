@@ -24,6 +24,20 @@ const CATEGORY_MAP = {
 // dur sur /metiers/ — un article n'entre ici que si son contenu affiche
 // réellement une section FAQ correspondante.
 const ARTICLE_FAQS: Record<string, { q: string; a: string }[]> = {
+  'kpmg-projet-exponential-audit-agents-ia': [
+    {
+      q: "Qu'est-ce que le projet Exponential de KPMG ?",
+      a: "C'est le nom de code interne d'une expérience menée en 2026 par KPMG UK : l'audit complet d'une société du FTSE 250 réalisé par plus de 100 agents IA, en parallèle de l'audit classique de la même entreprise. Les agents ont collecté, analysé et documenté les données, puis rédigé des projets de conclusions, sous la supervision d'une équipe humaine.",
+    },
+    {
+      q: "L'audit réalisé par l'IA a-t-il servi à certifier les comptes ?",
+      a: "Non. L'audit expérimental a été signé par un associé, mais KPMG ne s'en est pas servi pour la certification officielle des comptes de l'entreprise, qui repose sur l'audit humain conduit en parallèle.",
+    },
+    {
+      q: "L'IA va-t-elle remplacer les auditeurs ?",
+      a: "Pas à court terme. KPMG décrit un modèle où l'IA produit et l'humain garantit, et le régulateur britannique rappelle que l'auditeur reste responsable. Le changement le plus probable porte sur la structure des équipes : moins de tâches confiées aux juniors, ce qui pose la question de leur formation.",
+    },
+  ],
   'metiers-ia-qui-recrutent-offres-emploi': [
     {
       q: "Quel métier de l'IA recrute le plus en France ?",
