@@ -6,9 +6,10 @@ tag: "Comptable"
 category: "outils"
 author: "La rédaction ialucide"
 read_time: "8"
-image_url: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80"
+image_url: "/images/articles/experts-comptables-pennylane-mcp.webp"
 featured: false
 date: "2026-04-14"
+updated: "2026-11-20"
 ---
 
 Le mot "IA" s'est glissé dans la fiche produit de presque tous les logiciels comptables. Certains l'utilisent pour désigner une vraie automatisation intelligente. D'autres, pour habiller une règle de gestion écrite en 2018.
@@ -41,7 +42,7 @@ Les cabinets qui veulent standardiser leur relation client sur une plateforme un
 
 Pennylane reste une plateforme collaborative avant d'être un logiciel de production comptable pur. Les cabinets avec des dossiers complexes (consolidation, multi-devises, secteurs réglementés) trouveront vite ses limites techniques. Ce n'est pas un remplaçant de Cegid ou ACD pour les gros dossiers.
 
-**Ce qui change côté tarifs (mise à jour septembre 2026)**
+**Ce qui change côté tarifs (relevé de septembre 2026)**
 
 Le Compte Pro Pennylane (cartes bancaires, encaissements, financement de factures) est désormais accessible dès l'offre Starter à 7€ HT/mois, auparavant réservé aux offres supérieures. Pour un cabinet qui oriente un indépendant vers l'outil, ça change le ticket d'entrée réel.
 
@@ -50,6 +51,32 @@ Autre évolution : l'obligation de facturation électronique, entrée en vigueur
 Pennylane propose aussi des terminaux de paiement physiques depuis peu, à partir de 89€ sans abonnement ni engagement. Les frais de transaction varient selon la carte : 0,75% pour les cartes bancaires classiques émises dans l'UE, 2% pour les cartes hors UE ou professionnelles, 2,5% pour Amex, avec les fonds disponibles sous 24h ouvrées sur le compte professionnel. Pour un client qui encaisse par carte, ça évite de jongler entre un terminal tiers et la compta.
 
 [→ Découvrir Pennylane](https://lb.affilae.com/r/?p=608019f0b27a1f2e0480a96d&af=602&lp=https%3A%2F%2Fwww.pennylane.com%2Ffr%3Futm_source%3Dafl%26utm_campaign%3Dpennylane-fr%26utm_medium%3Dia-lucide)
+
+**Nouveau : interroger Pennylane depuis Claude ou ChatGPT (relevé du 20 novembre 2026)**
+
+Pennylane propose désormais un connecteur officiel, un serveur MCP, qui permet à un assistant IA d'interroger directement les données d'un dossier. Claude, ChatGPT et Le Chat de Mistral font partie des assistants compatibles cités par l'éditeur.
+
+Il n'y a plus d'export à faire ni de copier-coller : on ajoute le connecteur dans l'assistant, on se connecte avec ses identifiants Pennylane, et l'assistant voit ce que l'utilisateur voit, avec les mêmes droits.
+
+Les exemples donnés par Pennylane pour les cabinets : lister les dossiers clients soumis à la TVA trimestrielle, passer en revue les écritures du compte 606 supérieures à 500 €, retrouver les transactions bancaires en attente de lettrage, préparer un budget 2027 à partir des chiffres 2026.
+
+L'assistant peut lire les clients, fournisseurs et factures, les comptes et écritures, les états financiers, les déclarations de TVA et formulaires fiscaux, ainsi que l'historique des modifications sur quatre semaines. Chaque catégorie s'active séparément : un cabinet peut ouvrir les factures à l'assistant sans lui ouvrir les déclarations fiscales.
+
+Pour les cabinets d'expertise comptable, le connecteur est accessible sans surcoût. Côté entreprises, il faut au minimum l'abonnement Essentiel : Starter, Collaboratif et Basique ne sont pas compatibles. Côté assistant, certains réservent les connecteurs aux abonnements payants.
+
+**La limite du connecteur**
+
+L'accès est en lecture seule. L'assistant ne crée, ne modifie et ne supprime rien dans Pennylane : il ne lettre pas, ne passe aucune écriture. Pennylane indique que l'écriture est en développement, avec des étapes de validation humaine.
+
+Le secret professionnel se joue côté assistant, et c'est le point le plus important pour un cabinet. Les données lues par le connecteur passent dans la conversation. Chez Anthropic, sur les offres grand public (Free, Pro, Max), les conversations peuvent servir à entraîner les modèles si l'utilisateur ne l'a pas désactivé. Sur les offres Team et Enterprise, Anthropic agit comme sous-traitant et n'utilise pas les données pour l'entraînement. Pour des dossiers clients, seule une offre professionnelle est défendable. La page de Pennylane ne dit rien de l'usage des données par les assistants : c'est la politique de l'assistant choisi qui s'applique.
+
+L'accès se révoque depuis les paramètres de l'assistant, pas depuis Pennylane. Un associé ne peut donc pas couper d'un clic, depuis Pennylane, l'accès qu'un collaborateur a ouvert dans son propre assistant.
+
+Enfin, l'assistant lit les données sans les vérifier. Une transaction mal catégorisée produira une analyse fausse, rédigée avec la même assurance qu'une analyse juste.
+
+Nous n'avons pas encore testé ce connecteur sur un dossier réel : ce qui précède reprend la documentation de Pennylane et les conditions d'Anthropic.
+
+[→ Découvrir le connecteur MCP de Pennylane](https://lb.affilae.com/r/?p=608019f0b27a1f2e0480a96d&af=602&lp=https%3A%2F%2Fwww.pennylane.com%2Ffr%2Fmcp%3Futm_source%3Dafl%26utm_campaign%3Dpennylane-fr%26utm_medium%3Dia-lucide)
 
 ---
 
@@ -164,5 +191,7 @@ Digits est moins répandu en France que les autres outils de cette liste - son a
 Ces cinq outils ne s'excluent pas mutuellement. La plupart des cabinets qui ont industrialisé leur production combinent un outil de capture (Dext), une plateforme collaborative (Pennylane), et potentiellement un outil d'analyse (Digits) selon leur positionnement.
 
 L'IA ne remplace pas le jugement du comptable - elle déplace son intervention vers les tâches à plus forte valeur. Ce déplacement n'est pas automatique : il demande une réorganisation des workflows internes que l'outil seul ne fait pas.
+
+La frontière entre outil spécialisé et assistant généraliste commence à bouger. Avec le connecteur de Pennylane, un assistant comme Claude ou ChatGPT peut lire les données de la plateforme, sans pouvoir encore y écrire. La production comptable reste dans l'outil métier, mais l'analyse et la restitution au client peuvent désormais se faire ailleurs.
 
 Le vrai risque n'est pas de choisir le mauvais outil. C'est d'acheter un abonnement sans changer l'organisation autour.
