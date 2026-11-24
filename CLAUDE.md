@@ -68,7 +68,8 @@ Optionnel : `updated: "AAAA-MM-JJ"` pour une mise à jour substantielle d'un art
 phrase tronquée qui se termine en « … ».
 
 ## Signature des articles (champ `author`, depuis le 03/11/2026)
-Deux valeurs seulement, écrites exactement ainsi : `"Daniel Rollin"` ou `"La rédaction ialucide"`.
+Deux valeurs pour les textes d'ialucide, écrites exactement ainsi : `"Daniel Rollin"` ou
+`"La rédaction ialucide"`, plus les articles invités déclarés dans `GUEST_AUTHORS` (voir plus bas).
 Aucune autre variante (« Rédaction IA Lucide », « Rédaction iALucide », « digicorpex » ont été
 normalisées le 03/11).
 
@@ -80,6 +81,16 @@ normalisées le 03/11).
 - **« La rédaction ialucide »** : fiches métiers, comparatifs et listicles d'outils, guides
   pratiques, y compris quand ils citent des études en appui.
 - En cas de doute : Daniel Rollin.
+
+**Articles invités (depuis le 24/11/2026)** : troisième famille de valeurs, déclarée dans
+`GUEST_AUTHORS` (`lib/articles.ts`), dont la clé est la valeur exacte du champ `author`
+(ex. `"Incroyable.ai (article invité)"`). Effets : schema `Organization` au nom et à l'URL de la
+publication invitée (jamais au nom d'ialucide), encadré « Article invité » sous l'en-tête de
+l'article. Conditions éditoriales : texte relu et ajusté par Daniel avant publication, mêmes règles
+que le reste du site (sources primaires, prix HT datés, « la limite à connaître », style), aucune
+rémunération, un seul lien vers la publication invitée, pas de lien affilié. Un nouvel invité
+s'ajoute dans `GUEST_AUTHORS` avant publication, sinon `assertAuthor()` bloque le build. La page
+/about/ annonce cette règle.
 
 Répartition au 03/11/2026 : 22 Daniel Rollin, 26 La rédaction ialucide (commit `62b1dc8`).
 

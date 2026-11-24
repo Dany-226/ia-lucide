@@ -146,7 +146,7 @@ export default function AboutPage() {
               <p
                 className="text-base md:text-lg text-[#fcf9f0]/70 leading-[1.85]"
               >
-                Les articles signés « La rédaction ialucide » sont des contenus pratiques : fiches métiers, comparatifs d&apos;outils, guides. Ils sont produits et relus sous ma responsabilité de directeur de la publication. Les analyses, les lectures d&apos;études et les retours d&apos;expérience portent mon nom.
+                Les articles signés « La rédaction ialucide » sont des contenus pratiques : fiches métiers, comparatifs d&apos;outils, guides. Ils sont produits et relus sous ma responsabilité de directeur de la publication. Les analyses, les lectures d&apos;études et les retours d&apos;expérience portent mon nom. Les articles invités, écrits par une autre publication, sont signés de son nom et signalés comme tels en tête d&apos;article : je les relis et les ajuste avant publication, et aucun n&apos;est rémunéré.
               </p>
             </div>
           </section>

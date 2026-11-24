@@ -1,4 +1,4 @@
-import { getAllArticles, getArticleBySlug, getRelatedArticles, REDACTION_AUTHOR } from '@/lib/articles';
+import { getAllArticles, getArticleBySlug, getRelatedArticles, getGuestAuthor, REDACTION_AUTHOR } from '@/lib/articles';
 import { notFound } from 'next/navigation';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -325,13 +325,20 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     : undefined;
 
   const authorName = article.author || REDACTION_AUTHOR;
+  const guestAuthor = getGuestAuthor(authorName);
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
     datePublished: article.date,
     dateModified: article.updated || article.date,
-    author: authorName === REDACTION_AUTHOR
+    author: guestAuthor
+      ? {
+          '@type': 'Organization',
+          name: guestAuthor.name,
+          url: guestAuthor.url,
+        }
+      : authorName === REDACTION_AUTHOR
       ? {
           '@type': 'Organization',
           name: REDACTION_AUTHOR,
@@ -454,6 +461,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 )}
               </div>
               <div className="h-px bg-[#c9a84c]/15 mt-8" />
+              {guestAuthor && (
+                <p className="mt-6 border-l-2 border-[#c9a84c] pl-4 text-sm text-[#1c1c17] leading-relaxed">
+                  <strong className="font-bold">Article invité.</strong> Ce texte a été écrit par{' '}
+                  <a href={guestAuthor.url} target="_blank" rel="noopener noreferrer" className="underline text-[#8a6a1c]">
+                    {guestAuthor.name}
+                  </a>
+                  , puis relu et ajusté par ialucide, qui en assume la publication. ialucide n&apos;a perçu aucune
+                  rémunération pour le publier.
+                </p>
+              )}
             </header>
 
             {/* Article body */}

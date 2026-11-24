@@ -7,14 +7,34 @@ const contentDir = path.join(process.cwd(), 'content');
 /** Signature collective : schema Organization au lieu de Person. */
 export const REDACTION_AUTHOR = 'La rédaction ialucide';
 
-const ALLOWED_AUTHORS = ['Daniel Rollin', REDACTION_AUTHOR];
+/**
+ * Articles invités : texte écrit par une publication extérieure, relu et ajusté par ialucide.
+ * La clé est la valeur exacte du champ `author` (affichée telle quelle sur la page et les cartes).
+ * Schema Organization au nom de la publication invitée, jamais au nom d'ialucide.
+ * Ajouter une entrée ici avant de publier un nouvel invité (cf. CLAUDE.md, Signature des articles).
+ */
+export interface GuestAuthor {
+  name: string;
+  url: string;
+}
+
+export const GUEST_AUTHORS: Record<string, GuestAuthor> = {
+  'Incroyable.ai (article invité)': { name: 'Incroyable.ai', url: 'https://www.incroyable.ai/' },
+};
+
+export function getGuestAuthor(author: string | undefined): GuestAuthor | undefined {
+  return author ? GUEST_AUTHORS[author] : undefined;
+}
+
+const ALLOWED_AUTHORS = ['Daniel Rollin', REDACTION_AUTHOR, ...Object.keys(GUEST_AUTHORS)];
 
 // Fait échouer le build plutôt que de publier un schema Person au nom d'une variante.
 function assertAuthor(filename: string, slug: string, author: unknown): void {
   if (typeof author !== 'string' || !ALLOWED_AUTHORS.includes(author)) {
     throw new Error(
       `content/${filename} (slug ${slug}) : author ${JSON.stringify(author)} invalide. ` +
-      `Valeurs acceptées : ${ALLOWED_AUTHORS.map(a => `"${a}"`).join(' ou ')} (cf. CLAUDE.md, Signature des articles).`
+      `Valeurs acceptées : ${ALLOWED_AUTHORS.map(a => `"${a}"`).join(' ou ')} ` +
+      `(cf. CLAUDE.md, Signature des articles ; un invité s'ajoute dans GUEST_AUTHORS).`
     );
   }
 }
