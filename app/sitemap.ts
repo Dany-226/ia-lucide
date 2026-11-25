@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getAllArticles } from '@/lib/articles';
+import { METIERS_HUB_UPDATED } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 
@@ -17,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/metiers/`,
-      lastModified: new Date(),
+      lastModified: new Date(METIERS_HUB_UPDATED),
       changeFrequency: 'weekly',
       priority: 0.9,
     },

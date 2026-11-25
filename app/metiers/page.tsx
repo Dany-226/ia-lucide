@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { collectionPageJsonLd, jsonLdHtml, pageMetadata } from '@/lib/seo';
+import { collectionPageJsonLd, jsonLdHtml, METIERS_HUB_UPDATED, pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import MetiersFaqItem from '@/components/MetiersFaqItem';
 
@@ -24,11 +24,6 @@ const METIERS = [
         slug: 'outils-ia-experts-comptables-2026',
       },
       {
-        titre: 'Juriste / Avocat',
-        description: "Recherche jurisprudentielle, rédaction de contrats, veille réglementaire : les legaltechs et les LLM performent déjà au niveau junior. La plaidoirie et la stratégie résistent.",
-        slug: 'guide-ia-juristes-avocats-2026',
-      },
-      {
         titre: 'Traducteur',
         description: "La traduction automatique a atteint un niveau professionnel pour de nombreuses paires de langues. La valeur se déplace vers la post-édition et la spécialisation sectorielle.",
         slug: 'traducteur',
@@ -43,6 +38,11 @@ const METIERS = [
         description: "Génération de brèves, synthèses de données, rédaction standardisée : l'IA occupe déjà ce terrain. Le reportage d'investigation et l'analyse de fond résistent mieux.",
         slug: 'journaliste',
       },
+      {
+        titre: 'Développeur',
+        description: "Écriture de code, tests, documentation : ce sont les tâches les plus couvertes par l'IA dans les usages observés, et les embauches de jeunes développeurs ont le plus reculé. Le métier se déplace vers l'architecture, la revue de code et la responsabilité de ce qui part en production.",
+        slug: 'developpeur-augmente-ia-2026',
+      },
     ],
   },
   {
@@ -50,6 +50,11 @@ const METIERS = [
     label: 'Exposition modérée',
     color: '#c9a84c',
     metiers: [
+      {
+        titre: 'Juriste / Avocat',
+        description: "Recherche jurisprudentielle, premiers jets de contrats, veille réglementaire : l'IA prend en charge le travail préparatoire, celui des assistants juridiques en premier. Le conseil, la stratégie, la plaidoirie et la responsabilité professionnelle restent à l'avocat.",
+        slug: 'guide-ia-juristes-avocats-2026',
+      },
       {
         titre: 'RH / Recruteur',
         description: "Tri de CV, rédaction de fiches de poste, scoring de candidats : l'IA prend en charge le volume. L'évaluation humaine, culturelle et comportementale reste déterminante.",
@@ -123,11 +128,6 @@ const METIERS = [
         slug: 'consultant',
       },
       {
-        titre: 'Développeur',
-        description: "La génération de code accélère la production mais exige plus de recul architectural. Le développeur se transforme en chef d'orchestre, superviseur de l'IA plutôt que simple exécutant.",
-        slug: 'developpeur-augmente-ia-2026',
-      },
-      {
         titre: 'Architecte',
         description: "Les outils génératifs accélèrent la phase conceptuelle, mais la maîtrise d'œuvre, la responsabilité légale, la relation client et la vision urbaine restent profondément humaines.",
         slug: 'architecte-ia-conception-batiment',
@@ -141,26 +141,82 @@ const METIERS = [
   },
 ];
 
+// Date de la dernière révision du hub : affichée sous l'introduction, transmise en
+// dateModified (JSON-LD) et en lastModified (sitemap.ts). À avancer à chaque révision
+// du classement ou des sources, jamais pour une simple retouche de style.
+const UPDATED_ISO = METIERS_HUB_UPDATED;
+const UPDATED_LABEL = '25 novembre 2026';
+
+// Études de référence citées dans la section « Ce que disent les études récentes ».
+// Règle : source primaire, date, et la limite indiquée par les auteurs eux-mêmes.
+const ETUDES = [
+  {
+    source: 'Coface et Observatoire des emplois menacés et émergents',
+    date: '1er avril 2026',
+    url: 'https://www.coface.com/fr/actualites-economie-conseils-d-experts/emplois-competences-valeur-ce-que-l-ia-est-en-train-de-bouleverser',
+    texte: "923 professions décomposées en tâches, chacune notée selon des règles explicites. En France, 16 % du contenu du travail est potentiellement automatisable, ce qui place le pays dans la moyenne européenne. Les familles les plus exposées sont le management et l'administration, les métiers créatifs, le droit et la finance, l'ingénierie et l'informatique.",
+    limite: "L'étude mesure une exposition technique des tâches. Ses auteurs précisent qu'elle ne préjuge d'aucun volume de destructions nettes d'emplois.",
+  },
+  {
+    source: 'Banque de France et HEC Paris (LIFT), Bloc-notes Éco n° 463',
+    date: '8 octobre 2026',
+    url: 'https://www.banque-france.fr/fr/publications-et-statistiques/publications/ia-generative-les-premiers-changements-du-marche-du-travail-sur-les-jeunes',
+    texte: "Un indice d'exposition construit sur le répertoire des métiers de France Travail (ROME), croisé avec les embauches réelles. Chez les 21-29 ans, les embauches en CDI des métiers les plus exposés se situent en mars 2026 à 28,3 % sous leur niveau de novembre 2022, contre 7,5 % pour les métiers les moins exposés.",
+    limite: "Les auteurs établissent une association, pas un effet causal, et leur indice mesure une capacité technique, pas l'usage réel de l'IA.",
+    article: { label: "Notre lecture détaillée de l'étude", slug: 'ia-embauche-jeunes-etude-banque-de-france' },
+  },
+  {
+    source: 'France Travail, enquête auprès des employeurs',
+    date: '17 novembre 2026',
+    url: 'https://www.francetravail.org/accueil/actualites/infographies/2026/l-impact-de-l-ia-a-5-ans-sur-les-metiers-la-vision-des-employeurs.html?type=article',
+    texte: "16 000 établissements interrogés sur l'impact de l'IA à cinq ans. Les métiers qu'ils jugent fragilisés, ceux dont l'IA peut réaliser l'essentiel des tâches : secrétaires administratifs, aides-comptables, assistants juridiques. Avocats, responsables RH, radiologues et chefs de projet sont classés parmi les métiers augmentés, où l'IA assiste et l'humain décide.",
+    limite: "Ce sont des anticipations d'employeurs, pas une mesure. Seuls 6 % d'entre eux pensent que l'IA pourrait concurrencer l'humain sur leur métier principal.",
+  },
+  {
+    source: 'Anthropic, « Labor market impacts of AI »',
+    date: '5 mars 2026',
+    url: 'https://www.anthropic.com/research/labor-market-impacts',
+    texte: "Une mesure de l'exposition observée : la part des tâches d'un métier pour lesquelles l'assistant Claude est réellement utilisé au travail. Les programmeurs arrivent en tête avec 75 % de tâches couvertes, les opérateurs de saisie de données sont à 67 %. Environ 30 % des travailleurs ont une exposition nulle, comme les cuisiniers, les mécaniciens ou les barmans.",
+    limite: "Les données portent sur les métiers américains (nomenclature O*NET) et sur un seul assistant, publiées par l'éditeur de cet assistant.",
+  },
+  {
+    source: 'Direction générale du Trésor, Trésor-Éco n° 391',
+    date: '30 juin 2026',
+    url: 'https://www.tresor.economie.gouv.fr/Articles/2026/06/30/l-intelligence-artificielle-quels-effets-sur-l-emploi',
+    texte: "L'effet net de l'IA sur le volume d'emploi y est jugé incertain : elle peut remplacer certains postes mais aussi accroître la productivité et la demande de travail. Les premiers licenciements attribués à l'IA touchent surtout la finance et l'informatique, et l'IA sert parfois de justification à des licenciements qui ont d'autres causes.",
+    limite: "Les auteurs signalent le manque de recul et une adoption encore limitée dans les entreprises.",
+    article: { label: "Licenciements et IA : les vraies raisons", slug: 'licenciements-ia-vraies-raisons' },
+  },
+];
+
 const FAQ = [
   {
+    q: "Quels métiers sont les plus menacés par l'IA ?",
+    a: "Selon les études publiées en 2026, les métiers administratifs et de saisie, la comptabilité courante, la traduction, la rédaction standardisée et le développement logiciel. France Travail cite les secrétaires administratifs, les aides-comptables et les assistants juridiques. Anthropic mesure 75 % de tâches couvertes chez les programmeurs. Exposé ne veut pas dire supprimé : c'est d'abord la composition du travail qui change.",
+  },
+  {
+    q: "Quels métiers sont les moins menacés par l'IA ?",
+    a: "Ceux qui reposent sur le geste, le terrain ou la relation : artisans, cuisiniers, aides à domicile, psychologues, selon les employeurs interrogés par France Travail. Dans les usages observés par Anthropic, environ 30 % des travailleurs ont une exposition nulle. Parmi les métiers analysés ici, manager, consultant, architecte et enseignant restent en exposition faible.",
+  },
+  {
     q: "Comment l'IA va-t-elle concrètement changer mon métier ?",
-    a: "L'IA transforme d'abord les tâches répétitives et traitables en volume : saisie, recherche, rédaction standardisée, classification. Dans un second temps, elle touche les tâches analytiques. Ce qui résiste : la relation humaine, le jugement contextuel, la responsabilité et la créativité ancrée dans l'expérience.",
+    a: "L'IA transforme d'abord les tâches répétitives et traitables en volume : saisie, recherche, rédaction standardisée, classification. Elle gagne ensuite une partie des tâches analytiques. Ce qui résiste : la relation humaine, le jugement en situation, la responsabilité et la créativité ancrée dans l'expérience.",
   },
   {
     q: "Mon métier va-t-il disparaître à cause de l'IA ?",
-    a: "La disparition totale d'un métier est rare. Ce qui se transforme, c'est la composition des tâches qui le définissent. Certains profils juniors sont davantage menacés que les seniors. Les métiers à forte exposition voient leur valeur se déplacer vers des compétences de supervision, de conseil et de relation client.",
+    a: "La disparition totale d'un métier est rare. Ce qui se transforme, c'est la composition des tâches qui le définissent. Le premier effet mesuré en France porte sur les embauches : l'étude Banque de France et HEC Paris montre un recul des recrutements en CDI dans les métiers exposés, plus marqué chez les moins de 30 ans. Dans ces métiers, la valeur se déplace vers la supervision, le conseil et la relation client.",
   },
   {
     q: "Comment se préparer à ces transformations ?",
-    a: "Trois axes : comprendre ce que l'IA fait réellement (pas juste les annonces), identifier les 20% de vos tâches les plus exposées, et développer activement les compétences que l'IA ne peut pas reproduire — jugement, relation, sens politique, créativité stratégique.",
+    a: "Commencez par regarder ce que les outils font réellement dans votre métier, au-delà des annonces. Repérez ensuite, dans votre semaine, les tâches courantes qu'un outil prend déjà en charge. Investissez enfin dans ce qui reste au professionnel : le jugement, la relation, la responsabilité de la décision.",
   },
   {
     q: "L'IA est-elle un outil ou une menace pour les professionnels ?",
-    a: "Les deux simultanément, selon votre positionnement. Pour celui qui la maîtrise, c'est un levier de productivité sans précédent. Pour celui qui l'ignore, c'est une pression compétitive croissante. La variable déterminante n'est pas l'IA elle-même mais la vitesse d'adaptation de chaque professionnel.",
+    a: "Cela dépend moins de l'outil que de la place qu'on lui donne. Un professionnel qui l'utilise sur ses tâches courantes gagne du temps ; celui qui l'ignore voit ce temps gagné par ses concurrents. Les études récentes montrent aussi un effet plus discret : dans les métiers exposés, ce sont les postes de débutants qui se raréfient en premier.",
   },
   {
     q: "Ces analyses sont-elles fiables ? Qui les produit ?",
-    a: "ialucide est une publication indépendante. Nos analyses s'appuient sur des études académiques, des rapports sectoriels (McKinsey, Goldman Sachs, OCDE) et des entretiens avec des professionnels en exercice. Nous ne vendons ni formation ni logiciel : notre seul intérêt est la clarté.",
+    a: "ialucide est une publication indépendante. Chaque analyse s'appuie sur des études publiées et datées (Coface et OEM, Banque de France, France Travail, Direction générale du Trésor, Anthropic) et cite ses sources, avec leurs limites. Les fiches signées « La rédaction ialucide » sont relues sous la responsabilité du directeur de la publication. ialucide ne vend ni formation ni logiciel.",
   },
 ];
 
@@ -211,6 +267,7 @@ const collectionJsonLd = collectionPageJsonLd({
   name: "Métiers menacés par l'IA en France : analyses par profession",
   description: PAGE_DESCRIPTION,
   path: '/metiers/',
+  dateModified: UPDATED_ISO,
   items: METIERS.flatMap((section) =>
     section.metiers.map((m) => ({ name: m.titre, url: `/article/${m.slug}/` })),
   ),
@@ -237,11 +294,14 @@ export default function MetiersPage() {
           <p className="text-base text-[#1c1c17] leading-relaxed mb-4">
             21 professions analysées avec méthode. Pas de catastrophisme, pas de déni : une lecture lucide de ce que l&apos;IA change réellement, tâche par tâche.
           </p>
-          <p className="text-base text-[#6b6b6b] leading-relaxed">
-            Chaque analyse est construite à partir de sources publiques, retours terrain et observations concrètes sur l&apos;évolution des outils. Le niveau d&apos;exposition est évalué selon la proportion de tâches automatisables dans les 3 à 5 prochaines années.
+          <p className="text-base text-[#6b6b6b] leading-relaxed mb-4">
+            Le niveau d&apos;exposition correspond à la part des tâches du métier que les outils d&apos;IA actuels peuvent prendre en charge dans les 3 à 5 prochaines années. La méthode et les études utilisées sont détaillées <a href="#methode" className="text-[#8a6a1c] underline underline-offset-2">plus bas</a>.
           </p>
-          <p className="text-base text-[#6b6b6b] leading-relaxed">
-            En France, 5 millions d&apos;emplois sont estimés fortement exposés à l&apos;IA d&apos;ici 2030 - sans que cela signifie automatiquement suppression. 120 métiers sont identifiés en première ligne de cette mutation. Pour chacun, l&apos;enjeu réel est de distinguer les tâches automatisables des compétences qui résistent.
+          <p className="text-base text-[#6b6b6b] leading-relaxed mb-4">
+            Selon l&apos;étude de Coface et de l&apos;Observatoire des emplois menacés et émergents publiée le 1er avril 2026, 16 % du contenu du travail est potentiellement automatisable en France, et environ une profession sur huit dépasse le seuil de 30 % de tâches automatisables. L&apos;étude mesure une exposition technique et ne prévoit aucun volume de destructions d&apos;emplois. Le chiffre de « 5 millions d&apos;emplois menacés », repris par une partie de la presse, n&apos;y figure pas.
+          </p>
+          <p className="font-mono text-xs tracking-[0.1em] uppercase text-[#6b6b6b]">
+            Mis à jour le <time dateTime={UPDATED_ISO}>{UPDATED_LABEL}</time>
           </p>
         </header>
 
@@ -281,6 +341,79 @@ export default function MetiersPage() {
         {/* Divider */}
         <div className="h-px bg-[#c9a84c]/20 my-16" />
 
+        {/* Méthode */}
+        <section id="methode" className="mb-16 max-w-3xl scroll-mt-28">
+          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#8a6a1c] block mb-4">
+            Méthode
+          </span>
+          <h2 className="text-[1.75rem] font-bold text-[#1c1c17] mb-6" style={{ letterSpacing: '-0.02em' }}>
+            Comment nous classons les métiers
+          </h2>
+          <p className="text-base text-[#1c1c17] leading-relaxed mb-4">
+            Le niveau d&apos;exposition mesure la part des tâches courantes d&apos;un métier qu&apos;un outil d&apos;IA actuel peut réaliser ou fortement accélérer, à un horizon de 3 à 5 ans.
+          </p>
+          <ul className="space-y-3 mb-6">
+            <li className="text-base text-[#1c1c17] leading-relaxed pl-4" style={{ borderLeft: '3px solid #c0392b' }}>
+              <strong>Exposition forte</strong>&nbsp;: l&apos;IA prend déjà en charge l&apos;essentiel des tâches courantes du métier.
+            </li>
+            <li className="text-base text-[#1c1c17] leading-relaxed pl-4" style={{ borderLeft: '3px solid #c9a84c' }}>
+              <strong>Exposition modérée</strong>&nbsp;: une part importante des tâches s&apos;automatise, mais la décision, la relation ou la responsabilité restent au professionnel.
+            </li>
+            <li className="text-base text-[#1c1c17] leading-relaxed pl-4" style={{ borderLeft: '3px solid #2e7d52' }}>
+              <strong>Exposition faible</strong>&nbsp;: le métier repose surtout sur le jugement en situation, la relation ou la présence physique, que les outils actuels ne remplacent pas.
+            </li>
+          </ul>
+          <p className="text-base text-[#6b6b6b] leading-relaxed mb-4">
+            Chaque niveau est confronté aux études publiées ci-dessous. Être exposé ne veut pas dire disparaître : ces études mesurent ce que l&apos;IA sait faire, pas ce que les entreprises décideront d&apos;en faire.
+          </p>
+          <p className="text-base text-[#6b6b6b] leading-relaxed">
+            Le classement est révisé à chaque nouvelle étude de référence. Révision du {UPDATED_LABEL} : le développeur passe en exposition forte, le juriste et l&apos;avocat en exposition modérée.
+          </p>
+        </section>
+
+        {/* Études */}
+        <section className="mb-16 max-w-3xl">
+          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#8a6a1c] block mb-4">
+            Sources
+          </span>
+          <h2 className="text-[1.75rem] font-bold text-[#1c1c17] mb-8" style={{ letterSpacing: '-0.02em' }}>
+            Ce que disent les études récentes
+          </h2>
+          <div className="space-y-8">
+            {ETUDES.map((etude) => (
+              <article key={etude.source} className="bg-white p-6" style={{ borderLeft: '4px solid #1a3a4a' }}>
+                <h3 className="text-lg font-bold text-[#1c1c17] mb-1 leading-snug">
+                  <a href={etude.url} target="_blank" rel="noopener noreferrer" className="hover:text-[#8a6a1c] transition-colors">
+                    {etude.source}
+                  </a>
+                </h3>
+                <p className="font-mono text-xs tracking-[0.1em] uppercase text-[#6b6b6b] mb-3">
+                  {etude.date}
+                </p>
+                <p className="text-base text-[#1c1c17] leading-relaxed mb-3">
+                  {etude.texte}
+                </p>
+                <p className="text-base text-[#6b6b6b] leading-relaxed">
+                  <strong className="text-[#1c1c17]">La limite à connaître :</strong> {etude.limite}
+                </p>
+                {etude.article && (
+                  <Link
+                    href={`/article/${etude.article.slug}/`}
+                    className="font-mono inline-flex items-center gap-1 mt-4 text-xs font-bold tracking-widest uppercase text-[#8a6a1c]"
+                  >
+                    {etude.article.label}
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                      <path d="M2 5.5H9M6 2.5l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Link>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <div className="h-px bg-[#c9a84c]/20 my-16" />
+
         {/* FAQ */}
         <section className="mb-20">
           <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#8a6a1c] block mb-4">
@@ -296,7 +429,7 @@ export default function MetiersPage() {
           </div>
         </section>
 
-        {/* CTA ailucide.com */}
+        {/* CTA diagnostic exposition */}
         <section className="bg-[#1a3a4a] p-10 md:p-14 text-center">
           <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-4">
             Cadre ou dirigeant ?
