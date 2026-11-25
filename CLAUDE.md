@@ -172,6 +172,28 @@ site_name, url, type et locale sur tout le site (constaté par l'audit Ahrefs du
   `collectionPageJsonLd()` (CollectionPage + ItemList des éléments listés, URL absolues ; les
   liens d'affiliation sont remplacés par l'URL officielle de l'outil). Le FAQPage de /metiers/
   reste à part.
+
+### Hub /metiers/ (révision du 25/11/2026)
+- Page la plus citée du site par les moteurs IA (Bing IA : 1 264 citations sur 1 626 entre le
+  25/08 et le 23/11/2026). Toute modification doit l'enrichir, jamais la remplacer : URL fixe,
+  titre inchangé sauf changement du nombre de métiers (règle des 4 semaines, dernier changement
+  de titre le 13/11/2026).
+- Date de révision : constante `METIERS_HUB_UPDATED` (`lib/seo.ts`), affichée sous l'intro,
+  transmise en `dateModified` (CollectionPage) et en `lastModified` (sitemap). L'avancer à chaque
+  révision du classement, des sources ou de la liste des métiers, pas pour une retouche de style ;
+  mettre à jour `UPDATED_LABEL` et la phrase « Révision du … » de la section Méthode en même temps.
+- Classement : trois niveaux définis dans la section « Comment nous classons » (part des tâches
+  courantes qu'un outil actuel réalise ou accélère fortement, horizon 3 à 5 ans). Chaque niveau
+  est confronté aux études du tableau `ETUDES` ; un changement de niveau est annoncé dans la phrase
+  « Révision du … ». Révision du 25/11 : Développeur → forte, Juriste / Avocat → modérée.
+- `ETUDES` : source primaire, date, lien, et « la limite à connaître » formulée par les auteurs.
+  Le chiffre « 5 millions d'emplois menacés » ne vient pas de l'étude Coface/OEM (qui donne 16 %
+  du contenu du travail automatisable) : ne jamais le réintroduire.
+- FAQ : `components/MetiersFaqItem.tsx` utilise `<details>` natif pour que les réponses soient
+  dans le HTML statique (avant le 25/11, elles n'étaient rendues qu'après un clic). Toute réponse
+  modifiée l'est dans `FAQ`, qui alimente aussi le FAQPage.
+- Nouveau métier : ajouter l'entrée dans `METIERS` seulement quand la fiche est publiée, puis
+  mettre à jour le nombre de professions dans l'intro et `PAGE_DESCRIPTION`.
 - Autre page indexable : `webPageJsonLd()` au minimum (ex. /diagnostic-exposition-ia/).
 - Une seule balise H1 par page : le gabarit article affiche déjà le titre en H1, un MDX ne
   commence jamais par `# Titre`.

@@ -103,12 +103,17 @@ export function organizationJsonLd() {
 
 type ListEntry = { name: string; url: string };
 
+/** Dernière révision éditoriale du hub /metiers/ (classement ou sources). Lue par
+ * app/metiers/page.tsx (affichage, dateModified) et app/sitemap.ts (lastModified). */
+export const METIERS_HUB_UPDATED = '2026-11-25';
+
 /** JSON-LD CollectionPage + ItemList pour une page hub. */
 export function collectionPageJsonLd(input: {
   name: string;
   description: string;
   path: string;
   items: ListEntry[];
+  dateModified?: string;
 }) {
   const url = absoluteUrl(input.path);
   return {
@@ -119,6 +124,7 @@ export function collectionPageJsonLd(input: {
     name: input.name,
     description: input.description,
     inLanguage: 'fr-FR',
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
     isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: `${SITE_URL}/` },
     publisher: { '@id': ORGANIZATION_ID },
     mainEntity: {
