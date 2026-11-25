@@ -171,6 +171,7 @@ const ETUDES = [
     url: 'https://www.francetravail.org/accueil/actualites/infographies/2026/l-impact-de-l-ia-a-5-ans-sur-les-metiers-la-vision-des-employeurs.html?type=article',
     texte: "16 000 établissements interrogés sur l'impact de l'IA à cinq ans. Les métiers qu'ils jugent fragilisés, ceux dont l'IA peut réaliser l'essentiel des tâches : secrétaires administratifs, aides-comptables, assistants juridiques. Avocats, responsables RH, radiologues et chefs de projet sont classés parmi les métiers augmentés, où l'IA assiste et l'humain décide.",
     limite: "Ce sont des anticipations d'employeurs, pas une mesure. Seuls 6 % d'entre eux pensent que l'IA pourrait concurrencer l'humain sur leur métier principal.",
+    article: { label: "Notre lecture de l'enquête complète", slug: 'ia-entreprises-enquete-france-travail-2026' },
   },
   {
     source: 'Anthropic, « Labor market impacts of AI »',
