@@ -68,10 +68,10 @@ export default function Home() {
               Lire les derniers articles
             </a>
             <Link
-              href="/about"
+              href="/diagnostic-exposition-ia/"
               className="font-mono inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#6b6b6b]/30 text-[#a8a59c] hover:border-[#fcf9f0]/50 hover:text-[#fcf9f0] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
             >
-              Notre mission
+              Où passe la ligne dans votre poste ?
             </Link>
           </div>
         </div>

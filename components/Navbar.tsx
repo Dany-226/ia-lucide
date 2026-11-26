@@ -20,27 +20,38 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#fcf9f0]/80 backdrop-blur-[12px] border-b border-[#c9a84c]/20">
       <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo-nav.webp" alt="ialucide" width={249} height={136} fetchPriority="high" style={{ height: 'clamp(44px, 6vw, 68px)', width: 'auto' }} />
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-8 ml-auto">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-[10px] tracking-[0.3em] uppercase text-[#0e0e0e] hover:text-[#c9a84c] transition-colors duration-300"
+              className="whitespace-nowrap text-[10px] tracking-[0.3em] uppercase text-[#0e0e0e] hover:text-[#c9a84c] transition-colors duration-300"
             >
               {link.label}
             </Link>
           ))}
         </div>
 
+        {/* Accès à l'outil « Où passe la ligne » : hors menu, visible aussi sur mobile.
+            Contour or ; texte en or foncé #8a6a1c (petit texte sur fond clair, cf. CLAUDE.md). */}
+        <Link
+          href="/diagnostic-exposition-ia/"
+          onClick={() => setMobileOpen(false)}
+          className="font-mono shrink-0 whitespace-nowrap ml-auto lg:ml-6 xl:ml-8 border border-[#c9a84c] px-3 py-2 md:px-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#8a6a1c] hover:bg-[#c9a84c] hover:text-[#1c1c17] transition-colors duration-300"
+        >
+          <span className="hidden min-[400px]:inline">Où passe la ligne</span>
+          <span className="min-[400px]:hidden">La ligne →</span>
+        </Link>
+
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-[#0e0e0e] p-1"
+          className="lg:hidden text-[#0e0e0e] p-1 ml-3 shrink-0"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -63,7 +74,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#fcf9f0]/95 border-t border-[#c9a84c]/20 px-5 pb-6 pt-4 space-y-4">
+        <div className="lg:hidden bg-[#fcf9f0]/95 border-t border-[#c9a84c]/20 px-5 pb-6 pt-4 space-y-4">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
