@@ -1,7 +1,7 @@
 {
   "domaine": "droit",
-  "poste": "avocat",
-  "libelle": "Avocat",
+  "poste": "avocat-juriste",
+  "libelle": "Avocat·e ou juriste",
   "isco08": "2611",
   "isco_titre": "Lawyers",
   "oit": {
@@ -9,6 +9,18 @@
     "sd": 0.09,
     "categorie": "Minimal Exposure"
   },
+  "note_methode": "Ce poste reprend les tâches du code ISCO 2611 (Lawyers), dont il affiche la catégorie. Les juristes relèvent du code 2619 (Legal Professionals Not Elsewhere Classified : μ 0,37, exposition minimale, même catégorie que 2611), dont les 4 tâches sont trop génériques et en partie sans équivalent en France (enquête sur les causes d'un décès, rôle du coroner).",
+  "isco_associes": [
+    {
+      "isco08": "2619",
+      "isco_titre": "Legal Professionals Not Elsewhere Classified",
+      "oit": {
+        "mu": 0.37,
+        "sd": 0.09,
+        "categorie": "Minimal Exposure"
+      }
+    }
+  ],
   "rome": {
     "code": "À RELEVER",
     "libelle": "À RELEVER"
@@ -23,6 +35,8 @@
       "bande": "faible",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -34,6 +48,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -45,6 +61,8 @@
       "bande": "faible",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -56,6 +74,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -67,6 +87,8 @@
       "bande": "faible",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -78,6 +100,8 @@
       "bande": "faible",
       "retenue": false,
       "raison_exclusion": "Reflète la distinction anglo-saxonne entre solicitor et barrister, sans équivalent en France : l'avocat plaide lui-même ses dossiers (tâche 5).",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -89,6 +113,8 @@
       "bande": "faible",
       "retenue": false,
       "raison_exclusion": "En France, l'accusation est portée par les magistrats du parquet, pas par des avocats.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -100,6 +126,8 @@
       "bande": "faible",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -111,6 +139,8 @@
       "bande": "faible",
       "retenue": false,
       "raison_exclusion": "En France, la rédaction des lois et des règlements relève des administrations, du Parlement et du Conseil d'État, pas de l'activité d'avocat.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -122,6 +152,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     }

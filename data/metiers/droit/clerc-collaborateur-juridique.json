@@ -9,6 +9,8 @@
     "sd": 0.14,
     "categorie": "Exposed: Gradient 1"
   },
+  "note_methode": null,
+  "isco_associes": [],
   "rome": {
     "code": "À RELEVER",
     "libelle": "À RELEVER"
@@ -23,17 +25,21 @@
       "bande": "partiel",
       "retenue": false,
       "raison_exclusion": "Tâche du greffier, profession distincte en France (fonction publique), pas du clerc ni du collaborateur juridique.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
     {
       "task_id": 2,
       "texte_en": "Serving statements of claims, summonses, warrants, subpoenas and other court orders;",
-      "libelle_fr": "Remettre officiellement aux personnes concernées les assignations, citations, mandats et autres décisions de justice",
+      "libelle_fr": "Préparer les actes à signifier",
       "score_2025": 0.435,
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": true,
+      "raison_adaptation": "Le texte de l'OIT vise la signification elle-même (remise officielle des actes), réservée en France au commissaire de justice. ialucide retient la part qui revient au clerc : la préparation des actes.",
       "statut": "propose",
       "valide_le": null
     },
@@ -45,6 +51,8 @@
       "bande": "faible",
       "retenue": false,
       "raison_exclusion": "En France, la police de l'audience revient au président de la juridiction, assisté d'huissiers audienciers et des forces de l'ordre : ce n'est pas une tâche de clerc.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -56,6 +64,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -67,6 +77,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -78,6 +90,8 @@
       "bande": "faible",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -89,6 +103,8 @@
       "bande": "faible",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -100,6 +116,8 @@
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -111,6 +129,8 @@
       "bande": "faible",
       "retenue": false,
       "raison_exclusion": "Tâche d'agent de sécurité ou d'enquêteur privé, regroupée dans le même code ISCO, sans rapport avec le clerc ou le collaborateur juridique.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -122,6 +142,8 @@
       "bande": "faible",
       "retenue": false,
       "raison_exclusion": "Tâche de détective privé (agent de recherches privées), regroupée dans le même code ISCO, sans rapport avec le clerc ou le collaborateur juridique.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     }

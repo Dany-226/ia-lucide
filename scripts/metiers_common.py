@@ -26,7 +26,7 @@ MOJIBAKE = (("‚Äô", "’"), ("¬¥", "´"))
 
 CSV_COLUMNS = [
     "domaine", "poste", "ISCO", "task_id", "texte_en", "libelle_fr",
-    "score", "bande", "retenue", "raison_exclusion", "statut",
+    "score", "bande", "retenue", "raison_exclusion", "adaptation", "raison_adaptation", "statut",
 ]
 
 
@@ -110,7 +110,8 @@ def export_relecture(postes_cfg, path=RELECTURE_CSV):
             w.writerow([
                 doc["domaine"], doc["poste"], doc["isco08"], t["task_id"], t["texte_en"],
                 t["libelle_fr"] or "", fmt_score(t["score_2025"]), t["bande"],
-                "oui" if t["retenue"] else "non", t["raison_exclusion"] or "", t["statut"],
+                "oui" if t["retenue"] else "non", t["raison_exclusion"] or "",
+                "oui" if t["adaptation"] else "non", t["raison_adaptation"] or "", t["statut"],
             ])
             n += 1
     with open(path, "w", encoding="utf-8-sig", newline="") as f:

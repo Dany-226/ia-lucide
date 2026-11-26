@@ -4,7 +4,7 @@
 // Contrôle des données du diagnostic v2 « Où passe la ligne » (spec §9,
 // docs/spec-diagnostic-exposition-v2.md). Sort en erreur (code 1) si :
 // - une tâche d'un poste publié (« publie »: true) n'a pas le statut « valide » ;
-// - une tâche écartée n'a pas de raison ;
+// - une tâche écartée n'a pas de raison, ou une adaptation n'a pas de raison ;
 // - les valeurs de l'OIT d'un JSON (μ, σ, catégorie, scores, textes, liste des tâches) ne
 //   correspondent plus à l'Excel de référence, ou une bande ne correspond plus à son score.
 //
@@ -124,6 +124,23 @@ const blank = (s) => s === null || s === undefined || String(s).trim() === '';
 
 // ---------- Contrôle ----------
 
+// Vérifie isco_titre et le bloc oit (μ, σ, catégorie) d'un poste ou d'un code associé.
+function checkOit(doc, occ, prefix, err) {
+  const rows = occ.get(String(doc.isco08));
+  if (!rows) { err(`${prefix}ISCO ${doc.isco08} absent de l'Excel`); return null; }
+  const r0 = rows[0];
+  const mu = round(r0.mean_score_2025, 2);
+  const sd = round(r0.SD_2025, 2);
+  const cat = String(r0.potential25).trim();
+  const oit = doc.oit || {};
+  if (doc.isco_titre !== repair(r0.Title)) err(`${prefix}isco_titre ne correspond plus à l'Excel (« ${repair(r0.Title)} »)`);
+  if (!(Math.abs(oit.mu - mu) < EPS)) err(`${prefix}oit.mu ${oit.mu}, Excel ${mu}`);
+  if (!(Math.abs(oit.sd - sd) < EPS)) err(`${prefix}oit.sd ${oit.sd}, Excel ${sd}`);
+  if (oit.categorie !== cat) err(`${prefix}oit.categorie « ${oit.categorie} », Excel « ${cat} »`);
+  if (categorie(mu, sd) !== cat) err(`${prefix}les seuils du tableau 5 donnent « ${categorie(mu, sd)} », l'Excel « ${cat} »`);
+  return rows;
+}
+
 function checkPoste(doc, cfg, occ, rel, errors) {
   const err = (m) => errors.push(`${rel} : ${m}`);
   for (const k of ['domaine', 'poste', 'isco08']) {
@@ -131,19 +148,17 @@ function checkPoste(doc, cfg, occ, rel, errors) {
   }
   if (doc.source !== SOURCE) err(`source « ${doc.source} » au lieu de « ${SOURCE} »`);
   if (typeof doc.publie !== 'boolean') err('champ « publie » absent ou non booléen');
-  const rows = occ.get(String(doc.isco08));
-  if (!rows) { err(`ISCO ${doc.isco08} absent de l'Excel`); return; }
+  const rows = checkOit(doc, occ, '', err);
+  if (!rows) return;
 
-  const r0 = rows[0];
-  const mu = round(r0.mean_score_2025, 2);
-  const sd = round(r0.SD_2025, 2);
-  const cat = String(r0.potential25).trim();
-  const oit = doc.oit || {};
-  if (doc.isco_titre !== repair(r0.Title)) err(`isco_titre ne correspond plus à l'Excel (« ${repair(r0.Title)} »)`);
-  if (!(Math.abs(oit.mu - mu) < EPS)) err(`oit.mu ${oit.mu}, Excel ${mu}`);
-  if (!(Math.abs(oit.sd - sd) < EPS)) err(`oit.sd ${oit.sd}, Excel ${sd}`);
-  if (oit.categorie !== cat) err(`oit.categorie « ${oit.categorie} », Excel « ${cat} »`);
-  if (categorie(mu, sd) !== cat) err(`les seuils du tableau 5 donnent « ${categorie(mu, sd)} », l'Excel « ${cat} »`);
+  // Note de méthode et codes associés : recopiés de postes.json, valeurs OIT vérifiées.
+  if ((doc.note_methode ?? null) !== (cfg.note_methode ?? null)) err('note_methode différente de postes.json');
+  const assocCfg = (cfg.isco_associes || []).map((a) => a.isco08);
+  const assoc = Array.isArray(doc.isco_associes) ? doc.isco_associes : [];
+  if (JSON.stringify(assoc.map((a) => a.isco08)) !== JSON.stringify(assocCfg)) {
+    err(`isco_associes [${assoc.map((a) => a.isco08)}] au lieu de [${assocCfg}] (postes.json)`);
+  }
+  for (const a of assoc) checkOit(a, occ, `code associé ${a.isco08} : `, err);
 
   const excel = new Map(rows.map((r) => [Number(r.taskID), r]));
   const taches = Array.isArray(doc.taches) ? doc.taches : [];
@@ -161,6 +176,10 @@ function checkPoste(doc, cfg, occ, rel, errors) {
     if (typeof t.retenue !== 'boolean') err(`${where} : « retenue » doit valoir true ou false`);
     if (t.retenue === false && blank(t.raison_exclusion)) err(`${where} : tâche écartée sans raison`);
     if (t.retenue === true && !blank(t.raison_exclusion)) err(`${where} : tâche retenue avec une raison d'exclusion`);
+    if (typeof t.adaptation !== 'boolean') err(`${where} : « adaptation » doit valoir true ou false`);
+    if (t.adaptation === true && blank(t.raison_adaptation)) err(`${where} : adaptation sans raison`);
+    if (t.adaptation === false && !blank(t.raison_adaptation)) err(`${where} : raison d'adaptation sans adaptation`);
+    if (t.adaptation === true && t.retenue === false) err(`${where} : tâche écartée marquée comme adaptation`);
     if (t.statut === 'valide' && blank(t.libelle_fr)) err(`${where} : validée sans libellé français`);
     if ((t.statut === 'valide' || t.statut === 'rejete') && !isDate(t.valide_le)) err(`${where} : statut « ${t.statut} » sans date valide_le`);
     if (t.statut === 'propose' && t.valide_le !== null) err(`${where} : statut « propose » avec une date valide_le`);

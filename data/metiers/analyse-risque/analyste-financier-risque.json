@@ -1,7 +1,7 @@
 {
   "domaine": "analyse-risque",
-  "poste": "analyste-risque-financier",
-  "libelle": "Analyste risque financier (banque, crédit)",
+  "poste": "analyste-financier-risque",
+  "libelle": "Analyste financier·ère ou risque",
   "isco08": "2413",
   "isco_titre": "Financial Analysts",
   "oit": {
@@ -9,6 +9,8 @@
     "sd": 0.06,
     "categorie": "Exposed: Gradient 4"
   },
+  "note_methode": null,
+  "isco_associes": [],
   "rome": {
     "code": "À RELEVER",
     "libelle": "À RELEVER"
@@ -23,6 +25,8 @@
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -34,6 +38,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -45,6 +51,8 @@
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -56,6 +64,8 @@
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -67,6 +77,8 @@
       "bande": "eleve",
       "retenue": false,
       "raison_exclusion": "Conseil en investissement : relève de l'analyste financier ou du conseiller en placements, pas de l'analyste risque en banque ou en crédit.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -78,6 +90,8 @@
       "bande": "eleve",
       "retenue": false,
       "raison_exclusion": "Tâche de marché primaire (banque d'affaires), sans rapport avec l'analyse de risque en banque ou en crédit.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -87,8 +101,10 @@
       "libelle_fr": "Préparer des plans d'action d'investissement à partir des analyses financières",
       "score_2025": 0.6225,
       "bande": "eleve",
-      "retenue": true,
-      "raison_exclusion": null,
+      "retenue": false,
+      "raison_exclusion": "Tâche d'investissement (plans d'action d'investissement) : relève de la gestion d'actifs ou du conseil en investissement, pas du travail d'analyste financier ou risque retenu ici.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -98,8 +114,10 @@
       "libelle_fr": "Évaluer et comparer la qualité de différents titres au sein d'un même secteur",
       "score_2025": 0.635,
       "bande": "eleve",
-      "retenue": true,
-      "raison_exclusion": null,
+      "retenue": false,
+      "raison_exclusion": "Tâche d'investissement (comparer la qualité de titres pour un choix de placement) : relève de l'analyse en gestion d'actifs ou en banque d'investissement, pas du travail d'analyste financier ou risque retenu ici.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -111,6 +129,8 @@
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     }

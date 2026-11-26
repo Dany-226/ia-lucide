@@ -9,6 +9,8 @@
     "sd": 0.11,
     "categorie": "Exposed: Gradient 3"
   },
+  "note_methode": null,
+  "isco_associes": [],
   "rome": {
     "code": "À RELEVER",
     "libelle": "À RELEVER"
@@ -23,17 +25,21 @@
       "bande": "partiel",
       "retenue": false,
       "raison_exclusion": "Linguistique historique : activité de chercheur, regroupée dans le même code ISCO, qui ne fait pas partie du travail de traducteur ou d'interprète.",
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
     {
       "task_id": 2,
       "texte_en": "Advising on or preparing language classification systems, grammars, dictionaries and similar materials;",
-      "libelle_fr": "Conseiller sur des systèmes de classification des langues, des grammaires, des dictionnaires et des outils comparables, ou en élaborer",
+      "libelle_fr": "Constituer des glossaires et ressources terminologiques",
       "score_2025": 0.615,
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": true,
+      "raison_adaptation": "Le texte de l'OIT vise l'élaboration de systèmes de classification des langues, de grammaires et de dictionnaires, travail de linguiste. ialucide retient la part qui correspond au métier de traducteur en France : la terminologie.",
       "statut": "propose",
       "valide_le": null
     },
@@ -45,6 +51,8 @@
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -56,6 +64,8 @@
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -67,6 +77,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -78,6 +90,8 @@
       "bande": "eleve",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     }

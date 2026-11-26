@@ -9,6 +9,8 @@
     "sd": 0.07,
     "categorie": "Exposed: Gradient 2"
   },
+  "note_methode": null,
+  "isco_associes": [],
   "rome": {
     "code": "À RELEVER",
     "libelle": "À RELEVER"
@@ -23,6 +25,8 @@
       "bande": "faible",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -34,6 +38,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -45,6 +51,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -56,6 +64,8 @@
       "bande": "faible",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     },
@@ -67,6 +77,8 @@
       "bande": "partiel",
       "retenue": true,
       "raison_exclusion": null,
+      "adaptation": false,
+      "raison_adaptation": null,
       "statut": "propose",
       "valide_le": null
     }

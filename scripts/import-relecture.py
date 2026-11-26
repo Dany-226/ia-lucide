@@ -2,7 +2,8 @@
 """Réimport du tableau de relecture validé (spec §10, étape 3).
 
 Lit data/metiers/relecture.csv (ou le fichier donné) et reporte dans les JSON de poste les
-champs éditoriaux : libelle_fr, retenue, raison_exclusion, statut. Pour chaque tâche qui
+champs éditoriaux : libelle_fr, retenue, raison_exclusion, adaptation, raison_adaptation,
+statut. Pour chaque tâche qui
 passe en « valide » ou « rejete », valide_le reçoit la date du jour (ou --date) ; une tâche
 déjà validée et inchangée garde sa date.
 
@@ -11,6 +12,8 @@ Garde-fous (le script s'arrête sans rien écrire au moindre problème) :
   l'OIT ou du script d'import et ne se corrigent jamais dans le tableau ;
 - statut parmi propose, valide, rejete ;
 - retenue = oui ou non ; une tâche écartée a une raison, une tâche retenue n'en a pas ;
+- adaptation = oui ou non ; une adaptation (libellé qui s'écarte du texte de l'OIT pour
+  correspondre au poste en France) a une raison et concerne une tâche retenue ;
 - une tâche « valide » a un libellé français ;
 - chaque tâche apparaît au plus une fois.
 
@@ -114,6 +117,18 @@ def main():
             errs.append("%s : retenue « %s » (attendu : oui ou non)" % (where, r["retenue"]))
             continue
         retenue = ret in ("oui", "true")
+        ad = norm(r["adaptation"]).lower()
+        if ad not in ("oui", "non", "true", "false"):
+            errs.append("%s : adaptation « %s » (attendu : oui ou non)" % (where, r["adaptation"]))
+            continue
+        adaptation = ad in ("oui", "true")
+        raison_ad = norm(r["raison_adaptation"]) or None
+        if adaptation and not raison_ad:
+            errs.append("%s : adaptation sans raison" % where)
+        if not adaptation and raison_ad:
+            errs.append("%s : raison d'adaptation sans adaptation (vider la colonne ou passer adaptation à oui)" % where)
+        if adaptation and not retenue:
+            errs.append("%s : une tâche écartée ne peut pas être marquée comme adaptation" % where)
         raison = norm(r["raison_exclusion"]) or None
         libelle = norm(r["libelle_fr"]) or None
         if not retenue and not raison:
@@ -123,7 +138,8 @@ def main():
         if statut == "valide" and not libelle:
             errs.append("%s : tâche validée sans libellé français" % where)
 
-        new = {"libelle_fr": libelle, "retenue": retenue, "raison_exclusion": raison, "statut": statut}
+        new = {"libelle_fr": libelle, "retenue": retenue, "raison_exclusion": raison,
+               "adaptation": adaptation, "raison_adaptation": raison_ad, "statut": statut}
         edited = any(t[k] != v for k, v in new.items())
         if statut == "propose":
             new["valide_le"] = None

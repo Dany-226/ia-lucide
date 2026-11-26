@@ -1,5 +1,5 @@
 {
-  "_note": "Périmètre du diagnostic v2 (spec §3). Les valeurs 'attendu' sont recopiées du tableau de la spec : scripts/import-oit.py les compare au fichier de l'OIT et s'arrête sur tout écart. Elles ne sont jamais écrites dans les JSON de poste, qui reprennent les valeurs du fichier.",
+  "_note": "Périmètre du diagnostic v2 (spec §3). Les valeurs 'attendu' sont recopiées du tableau de la spec : scripts/import-oit.py les compare au fichier de l'OIT et s'arrête sur tout écart. Elles ne sont jamais écrites dans les JSON de poste, qui reprennent les valeurs du fichier. Écarts au tableau de la spec décidés le 26/11/2026 : Avocat (2611) et Juriste (2619) fusionnés en « Avocat·e ou juriste » sur les tâches 2611, 2619 gardé en code associé (vérifié, non affiché en tâches) ; 2413 renommé « Analyste financier·ère ou risque ».",
   "domaines": [
     { "slug": "droit", "libelle": "Droit" },
     { "slug": "comptabilite", "libelle": "Comptabilité" },
@@ -13,8 +13,9 @@
     { "slug": "secretariat-assistanat", "libelle": "Secrétariat et assistanat" }
   ],
   "postes": [
-    { "domaine": "droit", "poste": "avocat", "libelle": "Avocat", "isco08": "2611", "attendu": { "mu": 0.36, "sd": 0.09, "categorie": "Minimal Exposure" } },
-    { "domaine": "droit", "poste": "juriste", "libelle": "Juriste (entreprise, cabinet)", "isco08": "2619", "attendu": { "mu": 0.37, "sd": 0.09, "categorie": "Minimal Exposure" } },
+    { "domaine": "droit", "poste": "avocat-juriste", "libelle": "Avocat·e ou juriste", "isco08": "2611", "attendu": { "mu": 0.36, "sd": 0.09, "categorie": "Minimal Exposure" },
+      "note_methode": "Ce poste reprend les tâches du code ISCO 2611 (Lawyers), dont il affiche la catégorie. Les juristes relèvent du code 2619 (Legal Professionals Not Elsewhere Classified : μ 0,37, exposition minimale, même catégorie que 2611), dont les 4 tâches sont trop génériques et en partie sans équivalent en France (enquête sur les causes d'un décès, rôle du coroner).",
+      "isco_associes": [ { "isco08": "2619", "attendu": { "mu": 0.37, "sd": 0.09, "categorie": "Minimal Exposure" } } ] },
     { "domaine": "droit", "poste": "clerc-collaborateur-juridique", "libelle": "Clerc / collaborateur·rice juridique", "isco08": "3411", "attendu": { "mu": 0.39, "sd": 0.14, "categorie": "Exposed: Gradient 1" } },
     { "domaine": "droit", "poste": "secretaire-juridique", "libelle": "Secrétaire juridique / assistant·e notarial·e", "isco08": "3342", "attendu": { "mu": 0.55, "sd": 0.13, "categorie": "Exposed: Gradient 3" } },
 
@@ -40,7 +41,7 @@
 
     { "domaine": "architecture", "poste": "architecte", "libelle": "Architecte", "isco08": "2161", "attendu": { "mu": 0.37, "sd": 0.08, "categorie": "Minimal Exposure" } },
 
-    { "domaine": "analyse-risque", "poste": "analyste-risque-financier", "libelle": "Analyste risque financier (banque, crédit)", "isco08": "2413", "attendu": { "mu": 0.62, "sd": 0.06, "categorie": "Exposed: Gradient 4" } },
+    { "domaine": "analyse-risque", "poste": "analyste-financier-risque", "libelle": "Analyste financier·ère ou risque", "isco08": "2413", "attendu": { "mu": 0.62, "sd": 0.06, "categorie": "Exposed: Gradient 4" } },
 
     { "domaine": "secretariat-assistanat", "poste": "assistant-direction", "libelle": "Assistant·e de direction", "isco08": "3343", "attendu": { "mu": 0.54, "sd": 0.14, "categorie": "Exposed: Gradient 3" } },
     { "domaine": "secretariat-assistanat", "poste": "secretaire", "libelle": "Secrétaire", "isco08": "4120", "attendu": { "mu": 0.58, "sd": 0.10, "categorie": "Exposed: Gradient 3" } },

@@ -10,8 +10,10 @@ data/metiers/relecture.csv.
   tableau de la spec (valeurs « attendu » de postes.json), que μ et σ recalculés à partir
   des tâches redonnent les valeurs publiées, et que les seuils de l'OIT redonnent la
   catégorie publiée. Au moindre écart, il s'arrête sans rien écrire.
-- Les champs éditoriaux d'un JSON existant (libelle_fr, retenue, raison_exclusion, statut,
-  valide_le, rome, publie) sont conservés. Si le texte anglais d'une tâche a changé dans une
+- Les codes ISCO associés à un poste (isco_associes dans postes.json) passent les mêmes
+  vérifications ; seules leurs valeurs OIT sont recopiées. note_methode vient de postes.json.
+- Les champs éditoriaux d'un JSON existant (libelle_fr, retenue, raison_exclusion,
+  adaptation, raison_adaptation, statut, valide_le, rome, publie) sont conservés. Si le texte anglais d'une tâche a changé dans une
   nouvelle version des données, la tâche repasse en statut « propose ».
 
 Usage : python3 scripts/import-oit.py [--check]
@@ -105,7 +107,8 @@ def merge(p, info, taches, today):
     out_t = []
     for t in taches:
         prev = old_t.pop(t["task_id"], None)
-        ed = {"libelle_fr": None, "retenue": True, "raison_exclusion": None, "statut": "propose", "valide_le": None}
+        ed = {"libelle_fr": None, "retenue": True, "raison_exclusion": None, "adaptation": False,
+              "raison_adaptation": None, "statut": "propose", "valide_le": None}
         if prev:
             for k in ed:
                 ed[k] = prev.get(k, ed[k])
@@ -116,7 +119,8 @@ def merge(p, info, taches, today):
         out_t.append({
             "task_id": t["task_id"], "texte_en": t["texte_en"], "libelle_fr": ed["libelle_fr"],
             "score_2025": t["score_2025"], "bande": t["bande"], "retenue": ed["retenue"],
-            "raison_exclusion": ed["raison_exclusion"], "statut": ed["statut"], "valide_le": ed["valide_le"],
+            "raison_exclusion": ed["raison_exclusion"], "adaptation": ed["adaptation"],
+            "raison_adaptation": ed["raison_adaptation"], "statut": ed["statut"], "valide_le": ed["valide_le"],
         })
     for tid in old_t:
         warnings.append("%s tâche %s : absente de la nouvelle version des données, supprimée" % (p["poste"], tid))
@@ -127,6 +131,8 @@ def merge(p, info, taches, today):
         "isco08": p["isco08"],
         "isco_titre": info["titre"],
         "oit": info["oit"],
+        "note_methode": p.get("note_methode"),
+        "isco_associes": info["isco_associes"],
         "rome": (old or {}).get("rome") or {"code": "À RELEVER", "libelle": "À RELEVER"},
         "publie": bool((old or {}).get("publie", False)),
         "taches": out_t,
@@ -154,6 +160,18 @@ def main():
         seen.add(key)
         e, info, taches = check_poste(p, occ.get(p["isco08"], []))
         errs += e
+        # Codes associés (ex. 2619 pour « Avocat·e ou juriste ») : mêmes vérifications, seules
+        # leurs valeurs OIT sont recopiées, pas leurs tâches.
+        assoc = []
+        for a in p.get("isco_associes", []):
+            pa = {"domaine": p["domaine"], "poste": p["poste"] + ", code associé",
+                  "isco08": a["isco08"], "attendu": a["attendu"]}
+            ea, ia, _ = check_poste(pa, occ.get(a["isco08"], []))
+            errs += ea
+            if ia:
+                assoc.append({"isco08": a["isco08"], "isco_titre": ia["titre"], "oit": ia["oit"]})
+        if info:
+            info["isco_associes"] = assoc
         results.append((p, info, taches))
     if errs:
         print("Écarts entre le fichier de l'OIT et la spec, aucun fichier écrit :", file=sys.stderr)
