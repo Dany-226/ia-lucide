@@ -1,0 +1,120 @@
+{
+  "domaine": "enseignement",
+  "poste": "enseignant-superieur",
+  "libelle": "Enseignant·e du supérieur",
+  "isco08": "2310",
+  "isco_titre": "University and Higher Education Teachers",
+  "oit": {
+    "mu": 0.37,
+    "sd": 0.12,
+    "categorie": "Minimal Exposure"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Designing and modifying curricula and preparing courses of study in accordance with requirements;",
+      "libelle_fr": "Concevoir et adapter les maquettes de formation et préparer les enseignements",
+      "score_2025": 0.3625,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Preparing and delivering lectures and conducting tutorials, seminars and laboratory experiments;",
+      "libelle_fr": "Préparer et donner les cours magistraux, travaux dirigés, séminaires et travaux pratiques",
+      "score_2025": 0.2325,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Stimulating discussion and independent thought among students;",
+      "libelle_fr": "Susciter le débat et la réflexion personnelle des étudiants",
+      "score_2025": 0.285,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Supervising, where appropriate, experimental and practical work undertaken by students;",
+      "libelle_fr": "Encadrer, le cas échéant, les travaux expérimentaux et pratiques des étudiants",
+      "score_2025": 0.275,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Administering, evaluating and marking examination papers and tests;",
+      "libelle_fr": "Organiser les examens, évaluer et corriger les copies",
+      "score_2025": 0.555,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Directing research of post-graduate students or other members of department;",
+      "libelle_fr": "Diriger les recherches des doctorants ou d'autres membres du département",
+      "score_2025": 0.35,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Researching into and developing concepts, theories and operational methods for application in industrial and other fields;",
+      "libelle_fr": "Mener des recherches et développer des concepts, des théories et des méthodes applicables dans l'industrie et d'autres domaines",
+      "score_2025": 0.44,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Preparing scholarly books, papers or articles;",
+      "libelle_fr": "Écrire des ouvrages, des articles et des publications scientifiques",
+      "score_2025": 0.535,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 9,
+      "texte_en": "Participating in departmental and faculty meetings and in conferences and seminars;",
+      "libelle_fr": "Participer aux réunions du département et de la faculté, aux colloques et aux séminaires",
+      "score_2025": 0.29,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

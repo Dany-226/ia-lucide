@@ -1,0 +1,87 @@
+{
+  "domaine": "traduction",
+  "poste": "traducteur-interprete",
+  "libelle": "Traducteur·rice / interprète",
+  "isco08": "2643",
+  "isco_titre": "Translators, Interpreters and Other Linguists",
+  "oit": {
+    "mu": 0.59,
+    "sd": 0.11,
+    "categorie": "Exposed: Gradient 3"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Studying relationships between ancient parent languages and modern language groups, tracing the origin and evolution of words, grammar and language forms, and presenting findings;",
+      "libelle_fr": "Étudier les liens entre langues anciennes et familles de langues modernes, retracer l'origine et l'évolution des mots, de la grammaire et des formes, et publier les résultats",
+      "score_2025": 0.4,
+      "bande": "partiel",
+      "retenue": false,
+      "raison_exclusion": "Linguistique historique : activité de chercheur, regroupée dans le même code ISCO, qui ne fait pas partie du travail de traducteur ou d'interprète.",
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Advising on or preparing language classification systems, grammars, dictionaries and similar materials;",
+      "libelle_fr": "Conseiller sur des systèmes de classification des langues, des grammaires, des dictionnaires et des outils comparables, ou en élaborer",
+      "score_2025": 0.615,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Translating from one language into another and ensuring that the correct meaning of the original is retained, that legal, technical or scientific works are correctly rendered, and that the phraseology and terminology of the spirit and style of literary works are conveyed as far as possible;",
+      "libelle_fr": "Traduire d'une langue à une autre en restituant fidèlement le sens, la précision des textes juridiques, techniques ou scientifiques, et autant que possible le style des œuvres littéraires",
+      "score_2025": 0.64,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Developing methods for the use of computers and other instruments to improve productivity and quality of translation;",
+      "libelle_fr": "Mettre au point des méthodes d'utilisation de l'informatique et d'autres outils pour gagner en productivité et en qualité de traduction",
+      "score_2025": 0.665,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Interpreting from a spoken or a signed language into another spoken or signed language , in particular at conferences, meetings and similar occasions, and ensuring that the correct meaning and, as far as possible, the spirit of the original are transmitted;",
+      "libelle_fr": "Interpréter d'une langue parlée ou signée vers une autre, notamment en conférence et en réunion, en restituant fidèlement le sens et autant que possible l'esprit du propos",
+      "score_2025": 0.535,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Revising and correcting translated material.",
+      "libelle_fr": "Relire et corriger des traductions",
+      "score_2025": 0.7,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

@@ -1,0 +1,120 @@
+{
+  "domaine": "architecture",
+  "poste": "architecte",
+  "libelle": "Architecte",
+  "isco08": "2161",
+  "isco_titre": "Building Architects",
+  "oit": {
+    "mu": 0.37,
+    "sd": 0.08,
+    "categorie": "Minimal Exposure"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Developing new or improved architectural theories and methods;",
+      "libelle_fr": "Développer des théories et des méthodes architecturales nouvelles ou améliorées",
+      "score_2025": 0.4,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Inspecting sites and consulting clients, management and other stakeholders to determine type, style and size of proposed buildings and alterations to existing buildings;",
+      "libelle_fr": "Visiter les sites et consulter les clients, les décideurs et les autres parties prenantes pour définir le type, le style et la taille des bâtiments ou des transformations prévus",
+      "score_2025": 0.29,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Providing information regarding designs, materials and estimated building times;",
+      "libelle_fr": "Informer sur la conception, les matériaux et les délais de construction estimés",
+      "score_2025": 0.325,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Preparing project documentation, including sketches and scale drawings, and integrating structural, mechanical and aesthetic elements in final designs;",
+      "libelle_fr": "Préparer les pièces du projet (esquisses, plans à l'échelle) en intégrant structure, équipements techniques et esthétique dans la conception finale",
+      "score_2025": 0.47,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Writing specifications and contract documents for use by builders and calling tenders on behalf of clients;",
+      "libelle_fr": "Rédiger le cahier des charges et les pièces du marché pour les entreprises, et lancer les appels d'offres pour le compte des clients",
+      "score_2025": 0.46,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Making necessary contacts to ensure feasibility of projects regarding style, cost, timing and compliance with regulations;",
+      "libelle_fr": "Prendre les contacts nécessaires pour vérifier la faisabilité du projet : style, coût, délais, respect de la réglementation",
+      "score_2025": 0.36,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Identifying and finding best solutions for problems regarding function and quality of interior environments of buildings and making necessary designs, drawings and plans;",
+      "libelle_fr": "Trouver les meilleures solutions aux problèmes de fonctionnement et de qualité des espaces intérieurs, et produire les dessins et plans correspondants",
+      "score_2025": 0.4125,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Monitoring construction or rehabilitation work to ensure compliance with specifications and quality standards;",
+      "libelle_fr": "Suivre les travaux de construction ou de réhabilitation pour vérifier le respect du cahier des charges et des normes de qualité",
+      "score_2025": 0.225,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 9,
+      "texte_en": "Maintaining technical liaison and consultancy with other relevant specialists.",
+      "libelle_fr": "Assurer la coordination technique et le conseil avec les autres spécialistes concernés",
+      "score_2025": 0.4,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

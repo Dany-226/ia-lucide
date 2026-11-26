@@ -1,0 +1,142 @@
+{
+  "domaine": "ressources-humaines",
+  "poste": "directeur-rh",
+  "libelle": "Directeur·rice RH",
+  "isco08": "1212",
+  "isco_titre": "Human Resource Managers",
+  "oit": {
+    "mu": 0.36,
+    "sd": 0.05,
+    "categorie": "Minimal Exposure"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Planning, directing and coordinating the personnel and industrial relations activities, policies and practices of an enterprise or organization;",
+      "libelle_fr": "Planifier, diriger et coordonner la gestion du personnel et les relations sociales d'une entreprise ou d'une organisation, et leurs règles",
+      "score_2025": 0.36,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Planning and organizing procedures for recruitment, training, promotion, transfer and dismissal of staff;",
+      "libelle_fr": "Définir et organiser les procédures de recrutement, de formation, de promotion, de mutation et de licenciement",
+      "score_2025": 0.35,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Planning and organizing negotiations and procedures for determination of wage structures and level and for consultation with workers on conditions of employment;",
+      "libelle_fr": "Préparer et organiser les négociations sur les salaires et la consultation des salariés sur les conditions d'emploi",
+      "score_2025": 0.315,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Overseeing safety, health and related programmes and activities;",
+      "libelle_fr": "Superviser les programmes de santé et de sécurité au travail",
+      "score_2025": 0.275,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Establishing and managing budgets, controlling expenditure and ensuring the efficient use of resources;",
+      "libelle_fr": "Établir et gérer des budgets, contrôler les dépenses et veiller au bon usage des ressources",
+      "score_2025": 0.375,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Establishing and directing operational and administrative procedures;",
+      "libelle_fr": "Mettre en place et diriger les procédures opérationnelles et administratives",
+      "score_2025": 0.35,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Overseeing the development and implementation of management information systems;",
+      "libelle_fr": "Superviser le développement et la mise en place des systèmes d'information de gestion",
+      "score_2025": 0.475,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Ensuring compliance with standards and legislation relating to employees rights, health and safety, equal opportunity and related concerns;",
+      "libelle_fr": "Veiller au respect des règles et de la loi sur les droits des salariés, la santé, la sécurité et l'égalité des chances",
+      "score_2025": 0.305,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 9,
+      "texte_en": "Overseeing the selection, training and performance of staff for the entire enterprise or organization;",
+      "libelle_fr": "Superviser la sélection, la formation et l'évaluation du personnel de toute l'organisation",
+      "score_2025": 0.36,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 10,
+      "texte_en": "Consulting with senior management and with managers of other departments;",
+      "libelle_fr": "Travailler avec la direction générale et les responsables des autres services",
+      "score_2025": 0.385,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 11,
+      "texte_en": "Representing the enterprise or organization in dealings with outside bodies.",
+      "libelle_fr": "Représenter l'entreprise ou l'organisation auprès des interlocuteurs extérieurs",
+      "score_2025": 0.37,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

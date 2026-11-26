@@ -1,0 +1,131 @@
+{
+  "domaine": "enseignement",
+  "poste": "professeur-des-ecoles",
+  "libelle": "Professeur·e des écoles",
+  "isco08": "2341",
+  "isco_titre": "Primary School Teachers",
+  "oit": {
+    "mu": 0.26,
+    "sd": 0.09,
+    "categorie": "Not Exposed"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Preparing daily and longer term lesson plans in accordance with curriculum guidelines;",
+      "libelle_fr": "Préparer les séances et les progressions à court et long terme, en suivant les programmes",
+      "score_2025": 0.465,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Instructing children individually and in groups, using various teaching methods and materials (e.g. computers, books, games), adapting to children’s varying needs;",
+      "libelle_fr": "Faire classe aux enfants, seuls ou en groupe, avec différentes méthodes et supports (ordinateur, livres, jeux), en s'adaptant aux besoins de chacun",
+      "score_2025": 0.195,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Maintaining discipline and good working habits in the classroom;",
+      "libelle_fr": "Faire respecter la discipline et de bonnes habitudes de travail en classe",
+      "score_2025": 0.16,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Planning and conduct activities with the children such as sporting activities, concerts and excursions;",
+      "libelle_fr": "Organiser et animer des activités avec les enfants : sport, spectacles, sorties",
+      "score_2025": 0.2625,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Assigning and grading class work and homework;",
+      "libelle_fr": "Donner et corriger le travail en classe et les devoirs",
+      "score_2025": 0.3375,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Preparing, administering, and grading tests and assignments to evaluate children’s progress;",
+      "libelle_fr": "Préparer, faire passer et corriger les évaluations pour suivre les progrès des enfants",
+      "score_2025": 0.285,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Observing and evaluating children’s performance and behaviour;",
+      "libelle_fr": "Observer et évaluer les apprentissages et le comportement des enfants",
+      "score_2025": 0.205,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Supervising children during classes and at other times in the school day, including the playground during breaks;",
+      "libelle_fr": "Surveiller les enfants en classe et pendant le reste de la journée, y compris dans la cour de récréation",
+      "score_2025": 0.1925,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 9,
+      "texte_en": "Participating in staff meetings and other sessions, and conferring with other teachers concerning educational issues;",
+      "libelle_fr": "Participer aux réunions d'équipe et échanger avec les collègues sur les questions pédagogiques",
+      "score_2025": 0.25,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 10,
+      "texte_en": "Preparing for and attending parent meetings to discuss children’s progress and problems.",
+      "libelle_fr": "Préparer les rencontres avec les parents et y participer pour parler des progrès et des difficultés des enfants",
+      "score_2025": 0.26,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

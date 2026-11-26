@@ -1,0 +1,98 @@
+{
+  "domaine": "ressources-humaines",
+  "poste": "assistant-rh",
+  "libelle": "Assistant·e RH / gestion du personnel",
+  "isco08": "4416",
+  "isco_titre": "Personnel Clerks",
+  "oit": {
+    "mu": 0.6,
+    "sd": 0.09,
+    "categorie": "Exposed: Gradient 4"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Updating information on, employment history, salaries, performance evaluations, qualifications and training and leave taken and accumulated;",
+      "libelle_fr": "Mettre à jour les informations sur le parcours, les salaires, les évaluations, les qualifications, les formations et les congés des salariés",
+      "score_2025": 0.635,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Initiating records for newly appointed workers and checking records for completeness;",
+      "libelle_fr": "Ouvrir les dossiers des nouveaux salariés et vérifier qu'ils sont complets",
+      "score_2025": 0.615,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Processing applications for employment and promotions and advising applicants of results;",
+      "libelle_fr": "Traiter les candidatures et les demandes de promotion, et en communiquer les résultats",
+      "score_2025": 0.4425,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Receiving and answering inquiries about employment entitlements and conditions;",
+      "libelle_fr": "Répondre aux questions sur les droits et les conditions d'emploi",
+      "score_2025": 0.525,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Sending out job applications and announcements of job openings and job examinations;",
+      "libelle_fr": "Diffuser les offres d'emploi, les annonces de postes et les convocations aux épreuves de recrutement",
+      "score_2025": 0.6825,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Maintaining and updating manual and computerized filing and registration systems, and compiling and preparing reports and documents relating to personnel activities;",
+      "libelle_fr": "Tenir à jour les classements et les fichiers, papier et informatiques, et préparer les rapports et documents sur le personnel",
+      "score_2025": 0.66,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Storing and retrieving personnel records and files on request.",
+      "libelle_fr": "Archiver et retrouver à la demande les dossiers du personnel",
+      "score_2025": 0.675,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

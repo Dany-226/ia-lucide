@@ -1,0 +1,131 @@
+{
+  "domaine": "droit",
+  "poste": "clerc-collaborateur-juridique",
+  "libelle": "Clerc / collaborateur·rice juridique",
+  "isco08": "3411",
+  "isco_titre": "Legal and Related Associate Professionals",
+  "oit": {
+    "mu": 0.39,
+    "sd": 0.14,
+    "categorie": "Exposed: Gradient 1"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Documenting court proceedings and judgements;",
+      "libelle_fr": "Consigner le déroulement des audiences et les décisions de justice",
+      "score_2025": 0.455,
+      "bande": "partiel",
+      "retenue": false,
+      "raison_exclusion": "Tâche du greffier, profession distincte en France (fonction publique), pas du clerc ni du collaborateur juridique.",
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Serving statements of claims, summonses, warrants, subpoenas and other court orders;",
+      "libelle_fr": "Remettre officiellement aux personnes concernées les assignations, citations, mandats et autres décisions de justice",
+      "score_2025": 0.435,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Maintaining order in court and hearing rooms;",
+      "libelle_fr": "Maintenir l'ordre dans les salles d'audience",
+      "score_2025": 0.2,
+      "bande": "faible",
+      "retenue": false,
+      "raison_exclusion": "En France, la police de l'audience revient au président de la juridiction, assisté d'huissiers audienciers et des forces de l'ordre : ce n'est pas une tâche de clerc.",
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Preparing legal documents including trial briefs, pleadings, appeals, wills and contracts and preparing, papers summarizing legal positions or setting out conditions of loans or insurance;",
+      "libelle_fr": "Préparer des documents juridiques (conclusions, recours, testaments, contrats) et des notes de synthèse sur une position juridique ou sur les conditions d'un prêt ou d'une assurance",
+      "score_2025": 0.56,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Investigating facts, assembling evidence and researching relevant statutes, decisions and other legal documents to prepare cases;",
+      "libelle_fr": "Établir les faits, rassembler les preuves et rechercher les textes, décisions et documents utiles pour préparer un dossier",
+      "score_2025": 0.4,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Advising clients on legal matters;",
+      "libelle_fr": "Conseiller les clients sur des questions juridiques",
+      "score_2025": 0.375,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Examining documentation such as mortgages, liens, judgements, easements, contracts and maps in order to verify properties’ legal descriptions and ownership;",
+      "libelle_fr": "Examiner des documents (hypothèques, sûretés, jugements, servitudes, contrats, plans) pour vérifier la description juridique et la propriété d'un bien",
+      "score_2025": 0.39,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Preparing documents relating to transfer of real estate, stocks or other matters requiring formal registration;",
+      "libelle_fr": "Préparer les documents de transfert de biens immobiliers, de titres ou d'autres opérations soumises à enregistrement officiel",
+      "score_2025": 0.605,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 9,
+      "texte_en": "Investigating possible cases of theft of goods, money or information from business establishments and of other possible cases of unlawful behaviour by customers or employees;",
+      "libelle_fr": "Enquêter sur des vols de marchandises, d'argent ou d'informations dans une entreprise et sur d'autres agissements illicites de clients ou de salariés",
+      "score_2025": 0.1925,
+      "bande": "faible",
+      "retenue": false,
+      "raison_exclusion": "Tâche d'agent de sécurité ou d'enquêteur privé, regroupée dans le même code ISCO, sans rapport avec le clerc ou le collaborateur juridique.",
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 10,
+      "texte_en": "Investigating establishments or the circumstances and behaviour of persons on behalf of clients.",
+      "libelle_fr": "Enquêter sur des entreprises ou sur la situation et le comportement de personnes pour le compte de clients",
+      "score_2025": 0.295,
+      "bande": "faible",
+      "retenue": false,
+      "raison_exclusion": "Tâche de détective privé (agent de recherches privées), regroupée dans le même code ISCO, sans rapport avec le clerc ou le collaborateur juridique.",
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

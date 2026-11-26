@@ -1,0 +1,87 @@
+{
+  "domaine": "comptabilite",
+  "poste": "technicien-comptable",
+  "libelle": "Technicien·ne comptable",
+  "isco08": "3313",
+  "isco_titre": "Accounting Associate Professionals",
+  "oit": {
+    "mu": 0.49,
+    "sd": 0.13,
+    "categorie": "Exposed: Gradient 2"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Maintaining complete records of all financial transactions of an undertaking according to general bookkeeping principles, with guidance from Accountants;",
+      "libelle_fr": "Tenir l'ensemble des écritures des opérations financières d'une structure selon les règles comptables, sous la supervision d'un comptable",
+      "score_2025": 0.4525,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Verifying accuracy of documents and records relating to payments, receipts and other financial transactions;",
+      "libelle_fr": "Vérifier l'exactitude des pièces et des écritures liées aux paiements, aux encaissements et aux autres opérations financières",
+      "score_2025": 0.51,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Preparing financial statements and reports for specified periods;",
+      "libelle_fr": "Préparer les états financiers et les rapports périodiques",
+      "score_2025": 0.61,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Applying knowledge of bookkeeping principles and practices in order to identify and solve problems arising in the course of their work;",
+      "libelle_fr": "Appliquer les règles et pratiques comptables pour repérer et résoudre les problèmes rencontrés",
+      "score_2025": 0.39,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Using standard computer software packages to perform accounting and related calculations;",
+      "libelle_fr": "Utiliser des logiciels courants pour effectuer les calculs comptables",
+      "score_2025": 0.66,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Supervising the work of accounts and bookkeeping clerks.",
+      "libelle_fr": "Encadrer le travail des employés de comptabilité",
+      "score_2025": 0.33,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

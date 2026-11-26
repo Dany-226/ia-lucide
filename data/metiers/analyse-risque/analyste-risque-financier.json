@@ -1,0 +1,120 @@
+{
+  "domaine": "analyse-risque",
+  "poste": "analyste-risque-financier",
+  "libelle": "Analyste risque financier (banque, crédit)",
+  "isco08": "2413",
+  "isco_titre": "Financial Analysts",
+  "oit": {
+    "mu": 0.62,
+    "sd": 0.06,
+    "categorie": "Exposed: Gradient 4"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Analysing financial information to produce forecasts of business, industry, and economic conditions for use in making investment decisions;",
+      "libelle_fr": "Analyser les informations financières pour prévoir la situation des entreprises, des secteurs et de l'économie, en vue de décisions d'investissement",
+      "score_2025": 0.645,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Maintaining knowledge and staying abreast of developments in the fields of industrial technology, business, finance, and economic theory;",
+      "libelle_fr": "Se tenir informé des évolutions de la technologie industrielle, des affaires, de la finance et de la théorie économique",
+      "score_2025": 0.46,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Interpreting data affecting investment programmes, such as price, yield, stability, future trends in investment risks and economic influences;",
+      "libelle_fr": "Interpréter les données qui pèsent sur les programmes d'investissement : prix, rendement, stabilité, évolution des risques, facteurs économiques",
+      "score_2025": 0.62,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Monitoring economic, industrial, and corporate developments through analysis of information obtained from financial publications and services, investment banking firms, government agencies, trade publications, company sources and personal interviews;",
+      "libelle_fr": "Suivre l'actualité économique, sectorielle et des entreprises à partir de publications financières, de banques d'investissement, d'administrations, de la presse professionnelle, des entreprises et d'entretiens",
+      "score_2025": 0.635,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Recommending investments and investment timing to companies, investment firm staff or the investing public;",
+      "libelle_fr": "Recommander des placements, et le bon moment pour les faire, aux entreprises, aux sociétés d'investissement ou au public",
+      "score_2025": 0.635,
+      "bande": "eleve",
+      "retenue": false,
+      "raison_exclusion": "Conseil en investissement : relève de l'analyste financier ou du conseiller en placements, pas de l'analyste risque en banque ou en crédit.",
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Determining the prices at which securities should be syndicated and offered to the public;",
+      "libelle_fr": "Fixer le prix auquel des titres sont placés par un syndicat bancaire et proposés au public",
+      "score_2025": 0.635,
+      "bande": "eleve",
+      "retenue": false,
+      "raison_exclusion": "Tâche de marché primaire (banque d'affaires), sans rapport avec l'analyse de risque en banque ou en crédit.",
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Preparing plans of action for investment based on financial analyses;",
+      "libelle_fr": "Préparer des plans d'action d'investissement à partir des analyses financières",
+      "score_2025": 0.6225,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Evaluating and comparing the relative quality of various securities in a given industry;",
+      "libelle_fr": "Évaluer et comparer la qualité de différents titres au sein d'un même secteur",
+      "score_2025": 0.635,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 9,
+      "texte_en": "Presenting oral and written reports on general economic trends, individual corporations, and entire industries.",
+      "libelle_fr": "Présenter, à l'oral et à l'écrit, des analyses sur la conjoncture, sur des entreprises et sur des secteurs entiers",
+      "score_2025": 0.675,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

@@ -1,0 +1,49 @@
+{
+  "_note": "Périmètre du diagnostic v2 (spec §3). Les valeurs 'attendu' sont recopiées du tableau de la spec : scripts/import-oit.py les compare au fichier de l'OIT et s'arrête sur tout écart. Elles ne sont jamais écrites dans les JSON de poste, qui reprennent les valeurs du fichier.",
+  "domaines": [
+    { "slug": "droit", "libelle": "Droit" },
+    { "slug": "comptabilite", "libelle": "Comptabilité" },
+    { "slug": "ressources-humaines", "libelle": "Ressources humaines" },
+    { "slug": "enseignement", "libelle": "Enseignement" },
+    { "slug": "traduction", "libelle": "Traduction" },
+    { "slug": "developpement", "libelle": "Développement" },
+    { "slug": "marketing-communication", "libelle": "Marketing et communication" },
+    { "slug": "architecture", "libelle": "Architecture" },
+    { "slug": "analyse-risque", "libelle": "Analyse de risque" },
+    { "slug": "secretariat-assistanat", "libelle": "Secrétariat et assistanat" }
+  ],
+  "postes": [
+    { "domaine": "droit", "poste": "avocat", "libelle": "Avocat", "isco08": "2611", "attendu": { "mu": 0.36, "sd": 0.09, "categorie": "Minimal Exposure" } },
+    { "domaine": "droit", "poste": "juriste", "libelle": "Juriste (entreprise, cabinet)", "isco08": "2619", "attendu": { "mu": 0.37, "sd": 0.09, "categorie": "Minimal Exposure" } },
+    { "domaine": "droit", "poste": "clerc-collaborateur-juridique", "libelle": "Clerc / collaborateur·rice juridique", "isco08": "3411", "attendu": { "mu": 0.39, "sd": 0.14, "categorie": "Exposed: Gradient 1" } },
+    { "domaine": "droit", "poste": "secretaire-juridique", "libelle": "Secrétaire juridique / assistant·e notarial·e", "isco08": "3342", "attendu": { "mu": 0.55, "sd": 0.13, "categorie": "Exposed: Gradient 3" } },
+
+    { "domaine": "comptabilite", "poste": "comptable", "libelle": "Comptable / expert-comptable", "isco08": "2411", "attendu": { "mu": 0.51, "sd": 0.08, "categorie": "Exposed: Gradient 3" } },
+    { "domaine": "comptabilite", "poste": "technicien-comptable", "libelle": "Technicien·ne comptable", "isco08": "3313", "attendu": { "mu": 0.49, "sd": 0.13, "categorie": "Exposed: Gradient 2" } },
+    { "domaine": "comptabilite", "poste": "aide-comptable", "libelle": "Aide-comptable / employé·e de comptabilité", "isco08": "4311", "attendu": { "mu": 0.64, "sd": 0.07, "categorie": "Exposed: Gradient 4" } },
+
+    { "domaine": "ressources-humaines", "poste": "directeur-rh", "libelle": "Directeur·rice RH", "isco08": "1212", "attendu": { "mu": 0.36, "sd": 0.05, "categorie": "Minimal Exposure" } },
+    { "domaine": "ressources-humaines", "poste": "charge-rh-recrutement", "libelle": "Chargé·e RH / recrutement", "isco08": "2423", "attendu": { "mu": 0.45, "sd": 0.07, "categorie": "Exposed: Gradient 2" } },
+    { "domaine": "ressources-humaines", "poste": "assistant-rh", "libelle": "Assistant·e RH / gestion du personnel", "isco08": "4416", "attendu": { "mu": 0.60, "sd": 0.09, "categorie": "Exposed: Gradient 4" } },
+
+    { "domaine": "enseignement", "poste": "professeur-des-ecoles", "libelle": "Professeur·e des écoles", "isco08": "2341", "attendu": { "mu": 0.26, "sd": 0.09, "categorie": "Not Exposed" } },
+    { "domaine": "enseignement", "poste": "enseignant-secondaire", "libelle": "Enseignant·e du secondaire", "isco08": "2330", "attendu": { "mu": 0.30, "sd": 0.07, "categorie": "Not Exposed" } },
+    { "domaine": "enseignement", "poste": "enseignant-superieur", "libelle": "Enseignant·e du supérieur", "isco08": "2310", "attendu": { "mu": 0.37, "sd": 0.12, "categorie": "Minimal Exposure" } },
+
+    { "domaine": "traduction", "poste": "traducteur-interprete", "libelle": "Traducteur·rice / interprète", "isco08": "2643", "attendu": { "mu": 0.59, "sd": 0.11, "categorie": "Exposed: Gradient 3" } },
+
+    { "domaine": "developpement", "poste": "developpeur-logiciel", "libelle": "Développeur·se logiciel", "isco08": "2512", "attendu": { "mu": 0.53, "sd": 0.07, "categorie": "Exposed: Gradient 3" } },
+    { "domaine": "developpement", "poste": "developpeur-web", "libelle": "Développeur·se web / multimédia", "isco08": "2513", "attendu": { "mu": 0.60, "sd": 0.08, "categorie": "Exposed: Gradient 4" } },
+
+    { "domaine": "marketing-communication", "poste": "marketing-publicite", "libelle": "Marketing / publicité", "isco08": "2431", "attendu": { "mu": 0.55, "sd": 0.09, "categorie": "Exposed: Gradient 3" } },
+    { "domaine": "marketing-communication", "poste": "relations-presse", "libelle": "Relations presse / publiques", "isco08": "2432", "attendu": { "mu": 0.43, "sd": 0.09, "categorie": "Exposed: Gradient 2" } },
+
+    { "domaine": "architecture", "poste": "architecte", "libelle": "Architecte", "isco08": "2161", "attendu": { "mu": 0.37, "sd": 0.08, "categorie": "Minimal Exposure" } },
+
+    { "domaine": "analyse-risque", "poste": "analyste-risque-financier", "libelle": "Analyste risque financier (banque, crédit)", "isco08": "2413", "attendu": { "mu": 0.62, "sd": 0.06, "categorie": "Exposed: Gradient 4" } },
+
+    { "domaine": "secretariat-assistanat", "poste": "assistant-direction", "libelle": "Assistant·e de direction", "isco08": "3343", "attendu": { "mu": 0.54, "sd": 0.14, "categorie": "Exposed: Gradient 3" } },
+    { "domaine": "secretariat-assistanat", "poste": "secretaire", "libelle": "Secrétaire", "isco08": "4120", "attendu": { "mu": 0.58, "sd": 0.10, "categorie": "Exposed: Gradient 3" } },
+    { "domaine": "secretariat-assistanat", "poste": "employe-administratif", "libelle": "Employé·e administratif·ve", "isco08": "4110", "attendu": { "mu": 0.60, "sd": 0.10, "categorie": "Exposed: Gradient 4" } }
+  ]
+}

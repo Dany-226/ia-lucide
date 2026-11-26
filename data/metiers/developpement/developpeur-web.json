@@ -1,0 +1,76 @@
+{
+  "domaine": "developpement",
+  "poste": "developpeur-web",
+  "libelle": "Développeur·se web / multimédia",
+  "isco08": "2513",
+  "isco_titre": "Web and Multimedia Developers",
+  "oit": {
+    "mu": 0.6,
+    "sd": 0.08,
+    "categorie": "Exposed: Gradient 4"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Analysing, designing and developing Internet sites by applying a mixture of artistry and creativity with software programming and scripting languages and interfacing with operating environments;",
+      "libelle_fr": "Analyser, concevoir et développer des sites web, en alliant sens créatif, programmation, langages de script et intégration à l'environnement technique",
+      "score_2025": 0.65,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Designing and developing digital animations, imaging, presentations, games, audio and video clips, and Internet applications using multimedia software, tools and utilities, interactive graphics and programming languages;",
+      "libelle_fr": "Concevoir et développer animations, images, présentations, jeux, sons, vidéos et applications web avec des logiciels multimédias, du graphisme interactif et des langages de programmation",
+      "score_2025": 0.66,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Communicating with network specialists regarding web-related issues, such as security and hosting web sites, to control and enforce Internet and web server security, space allocation, user access, business continuity, web site backup and disaster recovery planning;",
+      "libelle_fr": "Échanger avec les spécialistes réseau sur la sécurité et l'hébergement des sites : sécurité des serveurs, espace, accès des utilisateurs, continuité, sauvegarde et plan de reprise",
+      "score_2025": 0.48,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Designing, developing and integrating computer code with other specialised inputs, such as image files, audio files and scripting languages, to produce, maintain and support web sites;",
+      "libelle_fr": "Concevoir, développer et intégrer le code avec les autres éléments (images, sons, scripts) pour produire, maintenir et faire évoluer des sites web",
+      "score_2025": 0.6675,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Assisting in analysing, specifying and developing Internet strategies, web-based methodologies and development plans.",
+      "libelle_fr": "Participer à l'analyse, à la définition et au développement des stratégies, des méthodes et des plans de développement web",
+      "score_2025": 0.565,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

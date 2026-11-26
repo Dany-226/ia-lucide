@@ -1,0 +1,109 @@
+{
+  "domaine": "marketing-communication",
+  "poste": "relations-presse",
+  "libelle": "Relations presse / publiques",
+  "isco08": "2432",
+  "isco_titre": "Public Relations Professionals",
+  "oit": {
+    "mu": 0.43,
+    "sd": 0.09,
+    "categorie": "Exposed: Gradient 2"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Planning and organizing publicity campaigns and communication strategies;",
+      "libelle_fr": "Concevoir et organiser des campagnes de communication et des stratégies de communication",
+      "score_2025": 0.44,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Advising executives on the public relations implications of their policies, programmes and practices preparing and controlling the issue of news and press releases;",
+      "libelle_fr": "Conseiller les dirigeants sur l'effet de leurs décisions, projets et pratiques sur l'image de l'organisation, préparer et contrôler la diffusion des communiqués de presse",
+      "score_2025": 0.485,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Undertaking and commissioning public opinion research, analysing the findings and planning public relations and promotional campaigns;",
+      "libelle_fr": "Mener ou commander des études d'opinion, en analyser les résultats et en tirer des campagnes de relations publiques et de promotion",
+      "score_2025": 0.585,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Organizing special events, seminars, entertainment, competitions and social functions to promote goodwill and favourable publicity;",
+      "libelle_fr": "Organiser des événements, séminaires, animations, concours et réceptions pour créer un climat favorable et une bonne image",
+      "score_2025": 0.3325,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Representing organizations and arranging interviews with publicity media;",
+      "libelle_fr": "Représenter l'organisation et organiser les interviews avec les médias",
+      "score_2025": 0.465,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Attending business, social and other functions to promote the organization;",
+      "libelle_fr": "Participer à des événements professionnels, mondains ou autres pour promouvoir l'organisation",
+      "score_2025": 0.33,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Commissioning and obtaining photographs and other illustrative material;",
+      "libelle_fr": "Commander et obtenir des photos et d'autres illustrations",
+      "score_2025": 0.335,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Selecting, appraising and revising material submitted by publicity writers, photographers, illustrators and others to create favourable publicity.",
+      "libelle_fr": "Choisir, évaluer et retoucher les contenus fournis par les rédacteurs, photographes et illustrateurs pour obtenir une image favorable",
+      "score_2025": 0.48,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

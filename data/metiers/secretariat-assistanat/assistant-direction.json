@@ -1,0 +1,109 @@
+{
+  "domaine": "secretariat-assistanat",
+  "poste": "assistant-direction",
+  "libelle": "Assistant·e de direction",
+  "isco08": "3343",
+  "isco_titre": "Administrative and Executive Secretaries",
+  "oit": {
+    "mu": 0.54,
+    "sd": 0.14,
+    "categorie": "Exposed: Gradient 3"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Drafting administrative correspondence and minutes;",
+      "libelle_fr": "Rédiger les courriers administratifs et les comptes rendus",
+      "score_2025": 0.585,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Obtaining, proposing and monitoring deadlines and follow-up dates;",
+      "libelle_fr": "Recueillir, proposer et suivre les échéances et les dates de relance",
+      "score_2025": 0.595,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Screening requests for meetings, and scheduling and organizing meetings and travel arrangements;",
+      "libelle_fr": "Filtrer les demandes de rendez-vous, planifier et organiser les réunions et les déplacements",
+      "score_2025": 0.715,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Assisting in the preparation of budgets, monitoring of expenditures, drafting of contracts and purchasing or acquisition orders;",
+      "libelle_fr": "Aider à préparer les budgets, suivre les dépenses, rédiger des contrats et des bons de commande",
+      "score_2025": 0.455,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Liaising with other staff about a range of matters relating to the organization’s operations;",
+      "libelle_fr": "Échanger avec les autres services sur les questions liées au fonctionnement de l'organisation",
+      "score_2025": 0.32,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Writing and answering business or technical letters and other similar correspondence;",
+      "libelle_fr": "Rédiger et répondre aux courriers professionnels ou techniques",
+      "score_2025": 0.625,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Preparing verbatim reports of proceedings in legislative assemblies, courts of law or other places using shorthand or specialized office equipment.",
+      "libelle_fr": "Prendre mot à mot, en sténo ou avec un matériel spécialisé, les débats des assemblées, des tribunaux ou d'autres instances",
+      "score_2025": 0.645,
+      "bande": "eleve",
+      "retenue": false,
+      "raison_exclusion": "Sténotypie des débats : métier distinct en France (sténotypiste, rédacteur des débats), pas une tâche d'assistant·e de direction.",
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Supervising the work of  clerical support workers.",
+      "libelle_fr": "Encadrer le travail du personnel administratif",
+      "score_2025": 0.35,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

@@ -1,0 +1,109 @@
+{
+  "domaine": "developpement",
+  "poste": "developpeur-logiciel",
+  "libelle": "Développeur·se logiciel",
+  "isco08": "2512",
+  "isco_titre": "Software Developers",
+  "oit": {
+    "mu": 0.53,
+    "sd": 0.07,
+    "categorie": "Exposed: Gradient 3"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Researching, analysing and evaluating requirements for software applications and operating systems;",
+      "libelle_fr": "Recueillir, analyser et évaluer les besoins pour des applications et des systèmes d'exploitation",
+      "score_2025": 0.605,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Researching, designing, and developing computer software systems;",
+      "libelle_fr": "Étudier, concevoir et développer des systèmes logiciels",
+      "score_2025": 0.5,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Consulting with engineering staff to evaluate interfaces between hardware and software;",
+      "libelle_fr": "Travailler avec les équipes d'ingénierie pour évaluer les interfaces entre matériel et logiciel",
+      "score_2025": 0.4525,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Developing and directing software testing and validation procedures;",
+      "libelle_fr": "Concevoir et piloter les procédures de test et de validation des logiciels",
+      "score_2025": 0.655,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Modifying existing software to correct errors, to adapt it to new hardware or to upgrade interfaces and improve performance;",
+      "libelle_fr": "Modifier un logiciel existant pour corriger des erreurs, l'adapter à un nouveau matériel, faire évoluer ses interfaces ou améliorer ses performances",
+      "score_2025": 0.5,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Directing software programming and development of documentation;",
+      "libelle_fr": "Diriger la programmation et la rédaction de la documentation",
+      "score_2025": 0.52,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Assessing, developing, upgrading and documenting maintenance procedures for operating systems, communications environments and applications software;",
+      "libelle_fr": "Évaluer, concevoir, mettre à jour et documenter les procédures de maintenance des systèmes, des réseaux et des applications",
+      "score_2025": 0.53,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Consulting with customers concerning maintenance of software system.",
+      "libelle_fr": "Échanger avec les clients sur la maintenance de leur système",
+      "score_2025": 0.45,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

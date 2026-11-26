@@ -1,0 +1,142 @@
+{
+  "domaine": "enseignement",
+  "poste": "enseignant-secondaire",
+  "libelle": "Enseignant·e du secondaire",
+  "isco08": "2330",
+  "isco_titre": "Secondary Education Teachers",
+  "oit": {
+    "mu": 0.3,
+    "sd": 0.07,
+    "categorie": "Not Exposed"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Designing and modifying curricula and preparing educational courses of study in accordance with curriculum guidelines;",
+      "libelle_fr": "Concevoir et adapter les progressions et préparer les cours, en suivant les programmes",
+      "score_2025": 0.465,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Establishing and enforcing rules for behaviour and procedures for maintaining order among students;",
+      "libelle_fr": "Fixer et faire respecter les règles de comportement et de fonctionnement de la classe",
+      "score_2025": 0.225,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Preparing and giving lessons, discussions and demonstrations in one or more subjects;",
+      "libelle_fr": "Préparer et faire les cours, les discussions et les démonstrations dans une ou plusieurs matières",
+      "score_2025": 0.265,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Establishing clear objectives for all lessons, units, and projects and communicating those objectives to students;",
+      "libelle_fr": "Fixer des objectifs clairs pour chaque cours, séquence et projet, et les expliquer aux élèves",
+      "score_2025": 0.32,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Preparing materials and classrooms for class activities;",
+      "libelle_fr": "Préparer le matériel et la salle pour les activités",
+      "score_2025": 0.235,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Adapting teaching methods and instructional materials to meet students' varying needs and interests;",
+      "libelle_fr": "Adapter les méthodes et les supports aux besoins et aux centres d'intérêt des élèves",
+      "score_2025": 0.26,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Observing and evaluating students’ performance and behaviour;",
+      "libelle_fr": "Observer et évaluer le travail et le comportement des élèves",
+      "score_2025": 0.26,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Preparing, administering and marking tests, assignments and examinations to evaluate pupils' progress;",
+      "libelle_fr": "Préparer, faire passer et corriger les contrôles, devoirs et examens",
+      "score_2025": 0.35,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 9,
+      "texte_en": "Preparing reports about pupils' work and conferring with other teachers and parents;",
+      "libelle_fr": "Rédiger les bilans sur le travail des élèves et en parler avec les collègues et les parents",
+      "score_2025": 0.34,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 10,
+      "texte_en": "Participating in meetings concerning the school's educational or organizational policies;",
+      "libelle_fr": "Participer aux réunions sur le projet pédagogique ou l'organisation de l'établissement",
+      "score_2025": 0.255,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 11,
+      "texte_en": "Planning, organizing and participating in school activities such as excursions, sporting events and concerts.",
+      "libelle_fr": "Organiser des activités scolaires et y participer : sorties, rencontres sportives, spectacles",
+      "score_2025": 0.305,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

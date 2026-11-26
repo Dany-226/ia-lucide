@@ -1,0 +1,120 @@
+{
+  "domaine": "marketing-communication",
+  "poste": "marketing-publicite",
+  "libelle": "Marketing / publicité",
+  "isco08": "2431",
+  "isco_titre": "Advertising and Marketing Professionals",
+  "oit": {
+    "mu": 0.55,
+    "sd": 0.09,
+    "categorie": "Exposed: Gradient 3"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Planning, developing and organizing advertising policies and campaigns to support sales objectives;",
+      "libelle_fr": "Définir, développer et organiser la politique publicitaire et les campagnes au service des objectifs de vente",
+      "score_2025": 0.51,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Advising managers and clients on strategies and campaigns to reach target markets, creating consumer awareness and effectively promoting the attributes of goods and services;",
+      "libelle_fr": "Conseiller la direction et les clients sur les stratégies et campagnes pour toucher les publics visés, faire connaître les produits et services et en valoriser les atouts",
+      "score_2025": 0.465,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Writing advertising copy and media scripts, and arranging television and film production and media placement;",
+      "libelle_fr": "Écrire des textes publicitaires et des scripts, organiser la production télé ou vidéo et l'achat d'espaces",
+      "score_2025": 0.665,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Collecting and analysing data regarding consumer patterns and preferences;",
+      "libelle_fr": "Collecter et analyser les données sur les habitudes et les préférences des consommateurs",
+      "score_2025": 0.65,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Interpreting and predicting current and future consumer trends;",
+      "libelle_fr": "Interpréter les tendances de consommation actuelles et anticiper les prochaines",
+      "score_2025": 0.585,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Researching potential demand and market characteristics for new goods and services;",
+      "libelle_fr": "Étudier la demande potentielle et les caractéristiques du marché pour de nouveaux produits et services",
+      "score_2025": 0.61,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Supporting business growth and development through the preparation and execution of marketing objectives, policies and programmes;",
+      "libelle_fr": "Contribuer au développement de l'activité en préparant et en mettant en œuvre les objectifs, les politiques et les plans marketing",
+      "score_2025": 0.465,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Commissioning and undertaking market research to identify market opportunities for new and existing goods and services;",
+      "libelle_fr": "Commander ou réaliser des études de marché pour repérer des opportunités pour les produits et services, nouveaux ou existants",
+      "score_2025": 0.605,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 9,
+      "texte_en": "Advising on all elements of marketing such as product mix, pricing, advertising and sales promotion, selling and distribution channels.",
+      "libelle_fr": "Conseiller sur l'ensemble du marketing : gamme de produits, prix, publicité, promotion, vente et canaux de distribution",
+      "score_2025": 0.4375,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

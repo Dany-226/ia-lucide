@@ -1,0 +1,109 @@
+{
+  "domaine": "comptabilite",
+  "poste": "comptable",
+  "libelle": "Comptable / expert-comptable",
+  "isco08": "2411",
+  "isco_titre": "Accountants",
+  "oit": {
+    "mu": 0.51,
+    "sd": 0.08,
+    "categorie": "Exposed: Gradient 3"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Advising on, planning and installing budgetary, accounts controlling and other accounting policies and systems;",
+      "libelle_fr": "Conseiller sur les politiques et systèmes budgétaires, de contrôle des comptes et de comptabilité, et les mettre en place",
+      "score_2025": 0.4625,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Preparing and certifying financial statements for presentation to management, shareholders and statutory or other bodies;",
+      "libelle_fr": "Établir et certifier les états financiers destinés à la direction, aux actionnaires et aux organismes officiels",
+      "score_2025": 0.65,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Preparing tax returns, advising on taxation problems and contesting disputed claims before tax officials;",
+      "libelle_fr": "Préparer les déclarations fiscales, conseiller sur les questions fiscales et contester les redressements auprès de l'administration",
+      "score_2025": 0.465,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Preparing or reporting on profit forecasts and budgets;",
+      "libelle_fr": "Établir des prévisions de résultat et des budgets, ou en rendre compte",
+      "score_2025": 0.515,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Conducting financial investigations in such matters as suspected fraud, insolvency and bankruptcy;",
+      "libelle_fr": "Mener des investigations financières en cas de soupçon de fraude, d'insolvabilité ou de faillite",
+      "score_2025": 0.415,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Auditing accounts and bookkeeping records;",
+      "libelle_fr": "Auditer les comptes et les écritures comptables",
+      "score_2025": 0.4335,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Conducting investigations and advising management on financial aspects of productivity, stockholdings, sales, new products, etc.;",
+      "libelle_fr": "Analyser et conseiller la direction sur les aspects financiers de la productivité, des stocks, des ventes, des nouveaux produits",
+      "score_2025": 0.565,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Devising and controlling a system to determine unit cost of products and services.",
+      "libelle_fr": "Concevoir et piloter un système de calcul du coût de revient des produits et services",
+      "score_2025": 0.6,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

@@ -1,0 +1,65 @@
+{
+  "domaine": "droit",
+  "poste": "juriste",
+  "libelle": "Juriste (entreprise, cabinet)",
+  "isco08": "2619",
+  "isco_titre": "Legal Professionals Not Elsewhere Classified",
+  "oit": {
+    "mu": 0.37,
+    "sd": 0.09,
+    "categorie": "Minimal Exposure"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Giving advice on legal aspects of various personal, business and administrative problems;",
+      "libelle_fr": "Conseiller sur les aspects juridiques de problèmes personnels, professionnels ou administratifs",
+      "score_2025": 0.4,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Drawing up legal documents and contracts;",
+      "libelle_fr": "Rédiger des actes juridiques et des contrats",
+      "score_2025": 0.4,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Arranging property transfers;",
+      "libelle_fr": "Organiser des transferts de propriété",
+      "score_2025": 0.4475,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Determining, by inquest, the causes of any death not obviously due to natural causes.",
+      "libelle_fr": "Déterminer par une enquête les causes d'un décès qui n'est pas manifestement naturel",
+      "score_2025": 0.244,
+      "bande": "faible",
+      "retenue": false,
+      "raison_exclusion": "Rôle du coroner des pays anglo-saxons, sans équivalent chez le juriste français : en France, ces enquêtes relèvent du procureur et du médecin légiste.",
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

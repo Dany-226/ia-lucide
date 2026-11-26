@@ -1,0 +1,76 @@
+{
+  "domaine": "comptabilite",
+  "poste": "aide-comptable",
+  "libelle": "Aide-comptable / employé·e de comptabilité",
+  "isco08": "4311",
+  "isco_titre": "Accounting and Bookkeeping Clerks",
+  "oit": {
+    "mu": 0.64,
+    "sd": 0.07,
+    "categorie": "Exposed: Gradient 4"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Checking figures, postings and documents for correct entry, mathematical accuracy and proper codes;",
+      "libelle_fr": "Vérifier chiffres, écritures et pièces : saisie correcte, exactitude des calculs, bons codes",
+      "score_2025": 0.53,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Operating computers programmed with accounting software to record, store and analyse information;",
+      "libelle_fr": "Utiliser un logiciel de comptabilité pour enregistrer, conserver et analyser les informations",
+      "score_2025": 0.7,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Classifying, recording and summarizing numerical and financial data to compile and keep financial records, using journals and ledgers or computers;",
+      "libelle_fr": "Classer, enregistrer et récapituler les données chiffrées et financières pour tenir les livres comptables, sur papier ou sur ordinateur",
+      "score_2025": 0.62,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Calculating, preparing and issuing bills, invoices, account statements and other financial statements according to established procedures.",
+      "libelle_fr": "Calculer, préparer et émettre factures, relevés de compte et autres documents financiers selon les procédures établies",
+      "score_2025": 0.71,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Compiling statistical, financial, accounting or auditing reports and tables pertaining to such matters as cash receipts, expenditures, accounts payable and receivable, and profits and losses.",
+      "libelle_fr": "Établir des rapports et tableaux statistiques, financiers ou comptables : encaissements, dépenses, comptes fournisseurs et clients, résultats",
+      "score_2025": 0.64,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

@@ -1,0 +1,76 @@
+{
+  "domaine": "ressources-humaines",
+  "poste": "charge-rh-recrutement",
+  "libelle": "Chargé·e RH / recrutement",
+  "isco08": "2423",
+  "isco_titre": "Personnel and Careers Professionals",
+  "oit": {
+    "mu": 0.45,
+    "sd": 0.07,
+    "categorie": "Exposed: Gradient 2"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Advising on and performing personnel functions relating to employee recruitment, placement, training, promotion, compensation, and employee-management relations or other areas of personnel policy;",
+      "libelle_fr": "Conseiller et agir sur le recrutement, l'affectation, la formation, la promotion, la rémunération et les relations entre salariés et direction",
+      "score_2025": 0.39,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Studying and analysing jobs performed in an establishment by various means, including interviews with workers, supervisors and management, and writing detailed position, job or occupation descriptions from information obtained;",
+      "libelle_fr": "Étudier les postes de l'entreprise, notamment par des entretiens avec les salariés, l'encadrement et la direction, et rédiger des fiches de poste détaillées",
+      "score_2025": 0.53,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Preparing occupational information or working on occupational classification systems;",
+      "libelle_fr": "Préparer des informations sur les métiers ou travailler sur des systèmes de classification des emplois",
+      "score_2025": 0.505,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Advising and working on the foregoing and other aspects of job and occupational analysis in such fields as personnel administration, workforce research and planning, training or occupational information and vocational guidance;",
+      "libelle_fr": "Conseiller et travailler sur l'analyse des emplois dans la gestion du personnel, la planification des effectifs, la formation ou l'orientation professionnelle",
+      "score_2025": 0.385,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Studying and advising individuals on employment opportunities, career choices and further education or training that may be desirable.",
+      "libelle_fr": "Conseiller des personnes sur les débouchés, les choix de carrière et les formations utiles",
+      "score_2025": 0.43,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}

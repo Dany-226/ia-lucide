@@ -1,0 +1,109 @@
+{
+  "domaine": "secretariat-assistanat",
+  "poste": "employe-administratif",
+  "libelle": "Employé·e administratif·ve",
+  "isco08": "4110",
+  "isco_titre": "General Office Clerks",
+  "oit": {
+    "mu": 0.6,
+    "sd": 0.1,
+    "categorie": "Exposed: Gradient 4"
+  },
+  "rome": {
+    "code": "À RELEVER",
+    "libelle": "À RELEVER"
+  },
+  "publie": false,
+  "taches": [
+    {
+      "task_id": 1,
+      "texte_en": "Recording, preparing, sorting, classifying and filing information;",
+      "libelle_fr": "Enregistrer, préparer, trier, classer et archiver les informations",
+      "score_2025": 0.595,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 2,
+      "texte_en": "Sorting, opening and sending mail;",
+      "libelle_fr": "Trier, ouvrir et envoyer le courrier",
+      "score_2025": 0.3875,
+      "bande": "faible",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 3,
+      "texte_en": "Photocopying and faxing documents;",
+      "libelle_fr": "Photocopier et faxer des documents",
+      "score_2025": 0.535,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 4,
+      "texte_en": "Preparing reports and correspondence of a routine nature;",
+      "libelle_fr": "Préparer les rapports et les courriers courants",
+      "score_2025": 0.65,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 5,
+      "texte_en": "Recording issue of equipment to staff;",
+      "libelle_fr": "Enregistrer le matériel remis aux salariés",
+      "score_2025": 0.565,
+      "bande": "partiel",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 6,
+      "texte_en": "Responding to telephone or electronic enquiries or forwarding to appropriate person;",
+      "libelle_fr": "Répondre aux demandes par téléphone ou par voie électronique, ou les transmettre à la bonne personne",
+      "score_2025": 0.63,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 7,
+      "texte_en": "Checking figures, preparing invoices and recording details of financial transactions made;",
+      "libelle_fr": "Vérifier des chiffres, préparer des factures et enregistrer le détail des opérations financières",
+      "score_2025": 0.685,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    },
+    {
+      "task_id": 8,
+      "texte_en": "Transcribing information onto computers, and proofreading and correcting copy.",
+      "libelle_fr": "Saisir des informations sur ordinateur, relire et corriger les textes",
+      "score_2025": 0.7125,
+      "bande": "eleve",
+      "retenue": true,
+      "raison_exclusion": null,
+      "statut": "propose",
+      "valide_le": null
+    }
+  ],
+  "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
+  "maj": "2026-11-26"
+}
