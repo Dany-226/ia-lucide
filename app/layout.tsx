@@ -1,32 +1,42 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Playfair_Display, Space_Grotesk, DM_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnalyticsConsent from '@/components/AnalyticsConsent';
 import { SITE_DESCRIPTION, SITE_LOGO, SITE_NAME, jsonLdHtml, organizationJsonLd } from '@/lib/seo';
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
+// Polices auto-hébergées (app/fonts/, licence OFL à côté de chaque famille) : jamais
+// next/font/google, dont le téléchargement pendant le build faisait échouer Cloudflare Pages
+// par intermittence (26/11/2026). Sous-ensemble latin, plus les glyphes du site que ces polices
+// contiennent (Ł ł ń ← → ≈ ≤ ≥, μ pour Playfair). Variables CSS inchangées (--nf-*).
+const playfair = localFont({
+  src: [
+    { path: './fonts/PlayfairDisplay-latin-wght.woff2', weight: '700 900', style: 'normal' },
+    { path: './fonts/PlayfairDisplay-Italic-latin-wght.woff2', weight: '700 900', style: 'italic' },
+  ],
   variable: '--nf-playfair',
   display: 'swap',
-  weight: ['700', '900'],
-  style: ['normal', 'italic'],
+  adjustFontFallback: 'Times New Roman',
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
+const spaceGrotesk = localFont({
+  src: './fonts/SpaceGrotesk-latin-wght.woff2',
+  weight: '400 700',
+  style: 'normal',
   variable: '--nf-sans',
   display: 'swap',
-  weight: ['400', '500', '700'],
 });
 
-const dmMono = DM_Mono({
-  subsets: ['latin'],
+const dmMono = localFont({
+  src: [
+    { path: './fonts/DMMono-Light-latin.woff2', weight: '300', style: 'normal' },
+    { path: './fonts/DMMono-Regular-latin.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/DMMono-Medium-latin.woff2', weight: '500', style: 'normal' },
+  ],
   variable: '--nf-mono',
   display: 'swap',
-  weight: ['300', '400', '500'],
 });
 
 export const metadata: Metadata = {

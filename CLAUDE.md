@@ -122,6 +122,18 @@ est absent ou vide. Une variante d'orthographe ne peut donc plus produire en sil
 - Mesurer avec PageSpeed Insights après chaque changement de gabarit ou d'images, en relançant
   l'analyse une fois le déploiement confirmé : une seule mesure varie de quelques points.
 
+## Polices (depuis le 26/11/2026)
+- **Polices locales uniquement** : `next/font/local` avec les woff2 de `app/fonts/` (licence OFL de chaque
+  famille à côté). **Jamais `next/font/google`**, ni d'`@import` vers fonts.googleapis.com : le
+  téléchargement chez Google pendant le build échouait par intermittence et faisait planter Turbopack
+  (« Can't resolve '@vercel/turbopack-next/internal/font/google/font' »), cause des builds Cloudflare
+  intermittents du 26/11/2026.
+- Fichiers générés depuis le dépôt google/fonts (`ofl/<famille>/`) avec fontTools : polices variables
+  limitées aux graisses utilisées, sous-ensemble latin de Google Fonts plus les glyphes du site présents
+  dans la police (Ł ł ń ← → ≈ ≤ ≥, μ pour Playfair), `--no-hinting --desubroutinize
+  --layout-features+=lnum,pnum,tnum`. Une nouvelle graisse ou un nouveau caractère hors latin demande de
+  régénérer le fichier concerné.
+
 ## Déploiement Cloudflare Pages
 - Toujours faire `git pull --ff-only` avant de modifier quoi que ce soit (le 03/11/2026, le dépôt
   local avait 22 commits de retard).

@@ -24,7 +24,7 @@ export default function NewsletterPage() {
           </span>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black italic text-[#1a3a4a] leading-[1.05] mb-6"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ fontFamily: 'var(--font-playfair)' }}
           >
             La newsletter ialucide
           </h1>
