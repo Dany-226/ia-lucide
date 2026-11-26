@@ -201,6 +201,23 @@ site_name, url, type et locale sur tout le site (constaté par l'audit Ahrefs du
 Une nouvelle page indexable doit aussi être ajoutée à `app/sitemap.ts` (pages légales et
 contact incluses, priorité 0.3).
 
+### Diagnostic v2 « Où passe la ligne » (depuis le 26/11/2026)
+- Spec : `docs/spec-diagnostic-exposition-v2.md`. Elle fait foi pour tout ce qui touche au
+  diagnostic ; CLAUDE.md fait foi pour les règles générales. URL conservée : /diagnostic-exposition-ia/.
+- Source : `data/source/Final_Scores_ISCO08_Gmyrek_et_al_2025.xlsx` (OIT, CC BY 4.0), avec le README
+  du dépôt (clauses de traduction et d'adaptation à reproduire sur la page méthodologie). Écrire
+  « d'après les données de l'OIT », jamais « diagnostic OIT », ni logo de l'OIT.
+- Données : `data/metiers/postes.json` (périmètre et valeurs attendues du §3), un JSON par poste dans
+  `data/metiers/<domaine>/<poste>.json`, tableau de relecture `data/metiers/relecture.csv`.
+- Scripts : `python3 scripts/import-oit.py` (génère les JSON, s'arrête sur tout écart avec la spec),
+  `python3 scripts/import-relecture.py` (réimporte le tableau validé), `node scripts/check-metiers.js`
+  (contrôle §9, pas encore branché sur le build). Scores, catégorie OIT et bandes ne se modifient
+  jamais à la main, ni dans les JSON ni dans le CSV.
+- **Aucune tâche publiée sans statut `valide`** donné par Daniel (traduction et pertinence, exclusions
+  comprises). Un poste ne passe à `"publie": true` que lorsque toutes ses tâches sont validées.
+- Vocabulaire : potentiel élevé / partiel / faible pour les tâches ; jamais « automatisable »,
+  « menacé », « augmenté », « protégé », ni de probabilité de perdre son emploi.
+
 ## Conventions
 - Zéro border-radius sur boutons et cards
 - generateMetadata() sur chaque nouvelle page
