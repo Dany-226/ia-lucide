@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# documents de travail locaux (spec du diagnostic v2), non versionnés : dépôt public
+docs/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
