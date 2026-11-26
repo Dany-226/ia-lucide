@@ -239,6 +239,8 @@ contact incluses, priorité 0.3).
 - Inscription : `functions/api/diagnostic-submit.ts` (champs personnalisés metier_domaine, metier_poste,
   isco08, categorie_oit, part_potentiel_eleve, statut, date_diagnostic, à créer dans Beehiiv ; tags
   metier-<domaine>, diagnostic-v2, attente-<métier>). Les tâches cochées ne sont jamais envoyées.
+- **Publication validée par Daniel le 26/11/2026 pour les 22 postes**, à faire dans la session de fusion
+  (avec la correction du hub /metiers/), pas avant : passer alors `"publie": true` sur les 22 JSON.
 - Avant de fusionner dans main : textes passés en `valide`, postes en `"publie": true`, champs Beehiiv
   créés, hub corrigé ; mention du diagnostic dans /politique-confidentialite/ faite sur la branche (§8.2), avancer
   sa date « Dernière mise à jour » au jour de la fusion.

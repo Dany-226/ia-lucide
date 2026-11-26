@@ -9,7 +9,7 @@
     "developpement": ["cursor-copilot-windsurf-comparatif-outils-ia-coder-2026", "developpeur-augmente-ia-2026"],
     "marketing-communication": ["choisir-llm-professionnel-comparatif"],
     "architecture": ["architecte-ia-conception-batiment", "revit-mcp-claude-ia-maquette-bim-2026"],
-    "analyse-risque": ["analyste-risque-credit-ia-banque", "analyste-risque-remplace-par-ia"],
+    "analyse-risque": ["analyste-risque-credit-ia-banque"],
     "secretariat-assistanat": ["assistant", "choisir-llm-professionnel-comparatif"]
   },
   "_note_liens_postes": "Articles de la piste « outils » par poste, prioritaires sur liens_domaines. Un poste absent d'ici reprend la liste de son domaine. Les pages /metiers/<domaine>/ gardent liens_domaines.",
@@ -19,7 +19,7 @@
     "secretaire-juridique": ["notaire-ia-etude-avant-signature", "assistant"],
     "developpeur-logiciel": ["developpeur-augmente-ia-2026", "cursor-copilot-windsurf-comparatif-outils-ia-coder-2026"],
     "developpeur-web": ["developpeur-augmente-ia-2026", "base44-bolt-lovable-v0-comparatif-vibe-coding-2026"],
-    "marketing-publicite": ["vibe-coding-saas-martech-remplacement-2026", "choisir-llm-professionnel-comparatif"],
+    "marketing-publicite": ["choisir-llm-professionnel-comparatif"],
     "relations-presse": ["choisir-llm-professionnel-comparatif"]
   },
   "liens_pistes": {
