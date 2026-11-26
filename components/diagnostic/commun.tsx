@@ -23,6 +23,20 @@ export function minusculeInitiale(s: string): string {
   return s ? s[0].toLowerCase() + s.slice(1) : s;
 }
 
+/** Rend les liens internes écrits [texte](/chemin/) dans un modèle de textes.json. Nouvel onglet :
+ *  le résultat, calculé dans la page, serait perdu en quittant l'outil. */
+export function avecLiens(texte: string): React.ReactNode[] {
+  return texte.split(/(\[[^\]]+\]\(\/[^)\s]*\))/).map((morceau, i) => {
+    const m = morceau.match(/^\[([^\]]+)\]\((\/[^)\s]*)\)$/);
+    if (!m) return morceau;
+    return (
+      <a key={i} href={m[2]} target="_blank" rel="noopener" className="text-[#8a6a1c] underline underline-offset-2 hover:text-[#1c1c17]">
+        {m[1]}
+      </a>
+    );
+  });
+}
+
 /** « A, B et C ». */
 export function enumeration(items: string[]): string {
   if (items.length <= 1) return items.join('');

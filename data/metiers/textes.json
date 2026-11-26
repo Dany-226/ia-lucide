@@ -12,6 +12,16 @@
     "analyse-risque": ["analyste-risque-credit-ia-banque", "analyste-risque-remplace-par-ia"],
     "secretariat-assistanat": ["assistant", "choisir-llm-professionnel-comparatif"]
   },
+  "_note_liens_postes": "Articles de la piste « outils » par poste, prioritaires sur liens_domaines. Un poste absent d'ici reprend la liste de son domaine. Les pages /metiers/<domaine>/ gardent liens_domaines.",
+  "liens_postes": {
+    "avocat-juriste": ["guide-ia-juristes-avocats-2026"],
+    "clerc-collaborateur-juridique": ["notaire-ia-etude-avant-signature", "guide-ia-juristes-avocats-2026"],
+    "secretaire-juridique": ["notaire-ia-etude-avant-signature", "assistant"],
+    "developpeur-logiciel": ["developpeur-augmente-ia-2026", "cursor-copilot-windsurf-comparatif-outils-ia-coder-2026"],
+    "developpeur-web": ["developpeur-augmente-ia-2026", "base44-bolt-lovable-v0-comparatif-vibe-coding-2026"],
+    "marketing-publicite": ["vibe-coding-saas-martech-remplacement-2026", "choisir-llm-professionnel-comparatif"],
+    "relations-presse": ["choisir-llm-professionnel-comparatif"]
+  },
   "liens_pistes": {
     "voisins": ["metiers-ia-qui-recrutent-offres-emploi"],
     "independant": ["facturation-electronique-auto-entrepreneur-plateforme-gratuite", "legalplace-creation-societe-2026"],
@@ -80,7 +90,7 @@
 
     "piste.titre": { "texte": "Par où commencer", "statut": "valide" },
     "piste.outils.titre": { "texte": "Les outils testés pour vos tâches à potentiel partiel", "statut": "valide" },
-    "piste.outils.texte": { "texte": "La plus grande part de votre temps porte sur des tâches où un outil peut faire une partie du travail sans le faire en entier. Nos tests disent ce que ces outils font vraiment, avec leurs limites et leurs prix. Quand un article contient des liens affiliés, il le signale.", "statut": "valide" },
+    "piste.outils.texte": { "texte": "La plus grande part de votre temps porte sur des tâches où un outil peut faire une partie du travail sans le faire en entier. Nos articles détaillent ce que ces outils font, avec leurs limites et leurs prix. Quand un article contient des liens affiliés, il le signale.", "statut": "valide" },
     "piste.voisins.titre": { "texte": "Les postes voisins moins exposés", "statut": "valide" },
     "piste.voisins.texte": { "texte": "Dans votre domaine, {voisins} sont moins exposés d'après l'OIT. Ce qui les sépare de votre poste tient surtout aux tâches ci-dessous, à faible potentiel : elles demandent d'autres compétences ou d'autres responsabilités.", "statut": "valide" },
     "piste.voisins.recrutement": { "texte": "Les métiers de l'IA recrutent aussi, avec des limites : la plupart des offres demandent un bac+5, et très peu sont ouvertes aux débutants. Notre relevé des offres de France Travail donne le détail.", "statut": "valide" },
@@ -95,7 +105,7 @@
 
     "inscription.titre": { "texte": "Suivez l'évolution de votre métier : une mise à jour à chaque nouvelle donnée, plus la newsletter ialucide", "statut": "valide" },
     "inscription.consentement": { "texte": "J'accepte de recevoir la newsletter ialucide et les mises à jour sur mon métier. Je peux me désinscrire à tout moment. [Politique de confidentialité](/politique-confidentialite/)", "statut": "valide" },
-    "inscription.donnees": { "texte": "Seuls votre e-mail, votre poste, sa catégorie OIT, votre part à potentiel élevé et votre statut sont transmis à notre outil de newsletter. Les tâches que vous avez indiquées ne sont jamais envoyées.", "statut": "valide" },
+    "inscription.donnees": { "texte": "Seuls votre e-mail, votre domaine, votre poste, son code ISCO, sa catégorie OIT, votre part à potentiel élevé, votre statut et la date du diagnostic sont transmis à notre outil de newsletter. Les tâches que vous avez indiquées ne sont jamais envoyées.", "statut": "valide" },
     "inscription.confirmation": { "texte": "C'est noté. Vous recevrez les mises à jour sur votre métier avec la newsletter.", "statut": "valide" },
     "partage.texte": { "texte": "J'ai regardé où passe la ligne dans mon poste. D'après les données de l'OIT : {categorie}, et voici quelles tâches sont concernées. À vous :", "statut": "valide" },
     "partage.note": { "texte": "Le lien rejoue le calcul à partir de votre poste et du temps indiqué. Il ne contient ni e-mail, ni statut, ni aucune autre donnée personnelle.", "statut": "valide" },
@@ -116,6 +126,7 @@
     "postes.avocat-juriste.description": { "texte": "Vous conseillez, rédigez des contrats et des actes, ou défendez des clients, comme avocat·e ou comme juriste en entreprise ou en cabinet.", "statut": "valide" },
     "postes.clerc-collaborateur-juridique.description": { "texte": "Vous préparez les dossiers et les actes, faites les recherches et vérifiez les pièces, pour un avocat, un notaire ou un commissaire de justice.", "statut": "valide" },
     "postes.secretaire-juridique.description": { "texte": "Vous gérez les documents, les dossiers, le courrier et les rendez-vous d'un cabinet ou d'une étude.", "statut": "valide" },
+    "postes.avocat-juriste.note_resultat": { "texte": "Ce poste regroupe avocats et juristes : [voir la méthode](/methodologie-exposition-ia/#postes).", "statut": "valide" },
     "postes.comptable.description": { "texte": "Vous établissez les comptes et les déclarations, conseillez la direction ou les clients, et, pour l'expert-comptable, engagez votre signature.", "statut": "valide" },
     "postes.technicien-comptable.description": { "texte": "Vous tenez la comptabilité jusqu'aux états financiers, sous la supervision d'un comptable ou d'un expert-comptable.", "statut": "valide" },
     "postes.aide-comptable.description": { "texte": "Vous saisissez, vérifiez et classez les écritures, et préparez les factures et les relevés selon les procédures établies.", "statut": "valide" },

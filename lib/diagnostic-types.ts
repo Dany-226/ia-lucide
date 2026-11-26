@@ -40,6 +40,10 @@ export type PosteV = {
   mu: number;
   sd: number;
   note: string | null;
+  /** Ligne courte sur le résultat quand le poste a une note de méthode (détail sur la méthodologie). */
+  noteResultat: string | null;
+  /** Articles de la piste « outils » : liens_postes, sinon liens_domaines (textes.json). */
+  articles: LienArticle[];
   /** Tâches retenues et validées, dans l'ordre de l'OIT (l'ordre de l'URL de partage). */
   taches: TacheV[];
   maj: string;

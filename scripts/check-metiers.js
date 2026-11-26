@@ -280,12 +280,15 @@ function checkTextes(cfg, publies, errors) {
     if (m && !/(ni une|pas une|n'est pas une) probabilité de perdre/i.test(e.texte)) err(`« ${k} » : vocabulaire interdit (« ${m[0]} »)`);
     if (publies > 0 && e.statut !== 'valide') err(`« ${k} » : statut « ${e.statut} » alors qu'un poste est publié (« valide » requis)`);
   }
-  const slugs = [...Object.values(tx.liens_domaines || {}), ...Object.values(tx.liens_pistes || {})].flat();
+  const slugs = [...Object.values(tx.liens_domaines || {}), ...Object.values(tx.liens_postes || {}), ...Object.values(tx.liens_pistes || {})].flat();
   for (const s of new Set(slugs)) {
     if (!fs.existsSync(path.join(ROOT, 'content', `${s}.mdx`))) err(`article lié « ${s} » absent de content/`);
   }
   for (const d of Object.keys(tx.liens_domaines || {})) {
     if (!cfg.domaines.some((x) => x.slug === d)) err(`liens_domaines : domaine « ${d} » inconnu`);
+  }
+  for (const p of Object.keys(tx.liens_postes || {})) {
+    if (!cfg.postes.some((x) => x.poste === p)) err(`liens_postes : poste « ${p} » inconnu`);
   }
   return counts;
 }

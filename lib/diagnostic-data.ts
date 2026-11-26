@@ -54,6 +54,8 @@ type Config = {
 
 type Textes = {
   liens_domaines: Record<string, string[]>;
+  /** Prioritaire sur liens_domaines pour la piste « outils » du résultat. */
+  liens_postes: Record<string, string[]>;
   liens_pistes: Record<string, string[]>;
   entrees: Record<string, { texte: string; statut: string }>;
 };
@@ -106,6 +108,8 @@ function toPosteV(p: PosteJson): PosteV {
     mu: p.oit.mu,
     sd: p.oit.sd,
     note: p.note_methode,
+    noteResultat: load().textes.entrees[`postes.${p.poste}.note_resultat`]?.texte ?? null,
+    articles: (load().textes.liens_postes[p.poste] ?? load().textes.liens_domaines[p.domaine] ?? []).map(lien),
     // Spec §1.4 : seules les tâches retenues et validées s'affichent.
     taches: p.taches
       .filter((t) => t.retenue && t.statut === 'valide' && t.libelle_fr)

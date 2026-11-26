@@ -1,13 +1,13 @@
 'use client';
 
-// Écran 5, le résultat (spec §6.2). Ordre : catégorie OIT, répartition du temps, tâches en
-// trois colonnes, synthèse, comparaison avec les postes voisins, pistes (§7), avertissement,
+// Écran 5, le résultat (spec §6.2). Ordre : catégorie OIT, tâches en trois colonnes,
+// répartition du temps, comparaison avec les postes voisins, synthèse, pistes (§7), avertissement,
 // inscription facultative et partage. Le résultat ne dépend jamais de l'inscription.
 import { useState } from 'react';
 import Link from 'next/link';
 import { BANDES, ECHELLE, encoderPoids, pistes as choisirPistes, type Piste, type Repartition } from '@/lib/diagnostic-calcul';
-import { RANG_CATEGORIE, type DiagData, type DomaineV, type PosteV } from '@/lib/diagnostic-types';
-import { COULEUR_BANDE, BOUTON_CONTOUR, Etiquette, LIEN, PastilleBande, enumeration, minusculeInitiale, remplir } from './commun';
+import { RANG_CATEGORIE, type CodeCategorie, type DiagData, type DomaineV, type PosteV } from '@/lib/diagnostic-types';
+import { COULEUR_BANDE, BOUTON_CONTOUR, Etiquette, LIEN, PastilleBande, avecLiens, enumeration, minusculeInitiale, remplir } from './commun';
 import { Inscription } from './Formulaires';
 
 export type Contexte = { statut: string | null; taille: string | null; usage: string | null };
@@ -22,6 +22,36 @@ function LiensArticles({ liens }: { liens: { slug: string; titre: string }[] }) 
         </li>
       ))}
     </ul>
+  );
+}
+
+// Échelle des 6 catégories de l'OIT, de la moins exposée (niveau 1, non exposé) à la plus
+// exposée (niveau 6, gradient 4). Palette neutre, carrés sans arrondi, sans animation.
+const ORDRE_CATEGORIES: CodeCategorie[] = ['NE', 'MIN', 'G1', 'G2', 'G3', 'G4'];
+export const niveauCategorie = (code: CodeCategorie) => 6 - RANG_CATEGORIE[code];
+
+function EchelleCategories({ code, t }: { code: CodeCategorie; t: Record<string, string> }) {
+  const niveau = niveauCategorie(code);
+  return (
+    <div role="img" aria-label={`Catégorie OIT : niveau ${niveau} sur 6, du moins exposé au plus exposé`} className="max-w-3xl">
+      <div className="grid grid-cols-6 gap-1">
+        {ORDRE_CATEGORIES.map((c, i) => {
+          const actif = c === code;
+          return (
+            <div key={c}>
+              <div className="h-3" style={{ backgroundColor: actif ? '#1a3a4a' : '#dcd8cb' }} />
+              <p className={`hidden sm:block text-[11px] leading-tight mt-2 ${actif ? 'font-bold text-[#1c1c17]' : 'text-[#6b6b6b]'}`}>
+                <span className="font-mono">{i + 1}</span> {t[`categorie.${c}.libelle`]}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+      <div className="flex justify-between font-mono text-[11px] text-[#6b6b6b] mt-2 sm:hidden">
+        <span>1 : non exposé</span>
+        <span>6 : le plus exposé</span>
+      </div>
+    </div>
   );
 }
 
@@ -69,7 +99,7 @@ export default function Resultat(props: {
     categorie: poste.categorie,
     statut: contexte.statut,
     usageIa: contexte.usage,
-    outilsDisponibles: domaine.articles.length > 0,
+    outilsDisponibles: poste.articles.length > 0,
   });
 
   // Piste « démarrer » : la tâche à potentiel partiel qui pèse le plus dans la semaine,
@@ -82,7 +112,7 @@ export default function Resultat(props: {
 
   const urlPartage = () =>
     `${window.location.origin}/diagnostic-exposition-ia/?p=${poste.slug}&t=${encoderPoids(poids)}&utm_source=partage`;
-  const textePartage = remplir(t['partage.texte'], { categorie: libCat });
+  const textePartage = remplir(t['partage.texte'], { categorie: minusculeInitiale(libCat) });
 
   async function partager() {
     const url = urlPartage();
@@ -106,11 +136,18 @@ export default function Resultat(props: {
         <h2 id="res-categorie" className="text-3xl md:text-4xl font-bold text-[#1c1c17] mt-1 mb-2 leading-tight">
           {libCat}
         </h2>
-        <p className="font-mono text-xs tracking-[0.1em] uppercase text-[#6b6b6b] mb-4">
-          Catégorie OIT : {poste.categorie} · ISCO-08 {poste.isco08} ({poste.iscoTitre})
+        <p className="font-mono text-xs tracking-[0.1em] uppercase text-[#6b6b6b] mb-3">
+          Catégorie OIT : niveau {niveauCategorie(poste.code)} sur 6
         </p>
-        <p className="text-lg text-[#1c1c17] leading-relaxed max-w-3xl">{t[`categorie.${poste.code}.explication`]}</p>
-        {poste.note && <p className="text-base text-[#6b6b6b] leading-relaxed mt-3 max-w-3xl">{poste.note}</p>}
+        <EchelleCategories code={poste.code} t={t} />
+        <p className="text-lg text-[#1c1c17] leading-relaxed max-w-3xl mt-6">{t[`categorie.${poste.code}.explication`]}</p>
+        {poste.noteResultat && <p className="text-base text-[#6b6b6b] leading-relaxed mt-3 max-w-3xl">{avecLiens(poste.noteResultat)}</p>}
+        <details className="mt-3 max-w-3xl">
+          <summary className="text-xs text-[#8a6a1c] cursor-pointer">Texte d&apos;origine (OIT)</summary>
+          <p lang="en" className="text-xs text-[#6b6b6b] leading-relaxed mt-1">
+            ISCO-08 {poste.isco08}, {poste.iscoTitre} : {poste.categorie}
+          </p>
+        </details>
         <p className="text-sm text-[#6b6b6b] mt-3">
           La catégorie est la donnée officielle de l&apos;OIT ; tout le reste de cette page est une lecture personnalisée.{' '}
           <Link href="/methodologie-exposition-ia/" className={LIEN}>Voir la méthode</Link>
@@ -213,7 +250,7 @@ export default function Resultat(props: {
                 {p === 'outils' && (
                   <>
                     <p className="text-base text-[#1c1c17] leading-relaxed">{t['piste.outils.texte']}</p>
-                    <LiensArticles liens={domaine.articles} />
+                    <LiensArticles liens={poste.articles} />
                   </>
                 )}
                 {p === 'voisins' && (
