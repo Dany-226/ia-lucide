@@ -7,7 +7,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { BANDES, ECHELLE, encoderPoids, pistes as choisirPistes, type Piste, type Repartition } from '@/lib/diagnostic-calcul';
 import { RANG_CATEGORIE, type DiagData, type DomaineV, type PosteV } from '@/lib/diagnostic-types';
-import { COULEUR_BANDE, BOUTON_CONTOUR, Etiquette, LIEN, PastilleBande, enumeration, remplir } from './commun';
+import { COULEUR_BANDE, BOUTON_CONTOUR, Etiquette, LIEN, PastilleBande, enumeration, minusculeInitiale, remplir } from './commun';
 import { Inscription } from './Formulaires';
 
 export type Contexte = { statut: string | null; taille: string | null; usage: string | null };
@@ -181,7 +181,7 @@ export default function Resultat(props: {
       {/* 5. Comparaison avec les postes voisins */}
       {voisins.length > 0 && (
         <section aria-labelledby="res-comparaison">
-          <h3 id="res-comparaison" className="text-xl font-bold text-[#1c1c17] mb-2">Les postes voisins : {domaine.libelle.toLowerCase()}</h3>
+          <h3 id="res-comparaison" className="text-xl font-bold text-[#1c1c17] mb-2">Les postes voisins : {minusculeInitiale(domaine.libelle)}</h3>
           <p className="text-base text-[#6b6b6b] leading-relaxed mb-5 max-w-3xl">{t['comparaison.intro']}</p>
           <ul className="divide-y divide-[#1c1c17]/10 bg-white">
             {domaine.postes.map((p) => (

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { jsonLdHtml, pageMetadata, webPageJsonLd, SITE_URL } from '@/lib/seo';
 import { DIAGNOSTIC_ROBOTS, getMethodologie, texte } from '@/lib/diagnostic-data';
 import { CODES_CATEGORIE } from '@/lib/diagnostic-types';
+import { minusculeInitiale } from '@/components/diagnostic/commun';
 
 // Méthodologie publique du diagnostic « Où passe la ligne » (spec §1.6, §2 et §9).
 // Signée Daniel Rollin. Tableaux des postes, des tâches écartées et des adaptations générés
@@ -247,7 +248,7 @@ export default function MethodologiePage() {
               <p className="text-base text-[#1c1c17] leading-relaxed">{fusion.note}</p>
               {fusion.associes.map((a) => (
                 <p key={a.isco08} className="text-sm text-[#6b6b6b] mt-2">
-                  Code {a.isco08} (<span lang="en">{a.isco_titre}</span>) : μ {fr(a.oit.mu)}, σ {fr(a.oit.sd)}, {texte(`categorie.${CODES_CATEGORIE[a.oit.categorie]}.libelle`).toLowerCase()}.
+                  Code {a.isco08} (<span lang="en">{a.isco_titre}</span>) : μ {fr(a.oit.mu)}, σ {fr(a.oit.sd)}, {minusculeInitiale(texte(`categorie.${CODES_CATEGORIE[a.oit.categorie]}.libelle`))}.
                 </p>
               ))}
             </div>

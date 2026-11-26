@@ -18,6 +18,11 @@ export function decimal(x: number, d = 2): string {
   return x.toFixed(d).replace('.', ',');
 }
 
+/** Première lettre en minuscule (« Exposition minimale » → « exposition minimale »), sans toucher à « OIT ». */
+export function minusculeInitiale(s: string): string {
+  return s ? s[0].toLowerCase() + s.slice(1) : s;
+}
+
 /** « A, B et C ». */
 export function enumeration(items: string[]): string {
   if (items.length <= 1) return items.join('');
