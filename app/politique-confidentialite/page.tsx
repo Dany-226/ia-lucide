@@ -51,7 +51,7 @@ export default function PolitiqueConfidentialitePage() {
                 <strong className="text-[#fcf9f0]">Beehiiv</strong>, plateforme d&apos;envoi de newsletters dont le siège est situé aux États-Unis.
               </p>
               <div className="border-l-2 border-[#c9a84c]/40 pl-6 space-y-3">
-                <p><strong className="text-[#fcf9f0]">Données collectées :</strong> adresse e-mail uniquement.</p>
+                <p><strong className="text-[#fcf9f0]">Données collectées :</strong> adresse e-mail uniquement, sauf inscription depuis l&apos;outil « Où passe la ligne » (voir ci-dessous).</p>
                 <p><strong className="text-[#fcf9f0]">Finalité :</strong> envoi de la newsletter ialucide.fr.</p>
                 <p><strong className="text-[#fcf9f0]">Base légale :</strong> consentement (opt-in explicite).</p>
                 <p><strong className="text-[#fcf9f0]">Durée de conservation :</strong> jusqu&apos;à désinscription.</p>
@@ -60,6 +60,30 @@ export default function PolitiqueConfidentialitePage() {
               <p>
                 Beehiiv agit en qualité de sous-traitant au sens du RGPD. Leur politique de confidentialité est consultable sur{' '}
                 <a href="https://www.beehiiv.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline">beehiiv.com/privacy</a>.
+              </p>
+            </div>
+          </section>
+
+          <div className="h-px bg-[#c9a84c]/15" />
+
+          {/* Outil « Où passe la ligne » (diagnostic v2, spec §8.2) */}
+          <section>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#fcf9f0] mb-6">
+              Outil « Où passe la ligne »
+            </h2>
+            <div className="space-y-5 text-base text-[#fcf9f0]/70 leading-[1.85]">
+              <p>
+                Le résultat de l&apos;outil <a href="/diagnostic-exposition-ia/" className="text-[#c9a84c] hover:underline">« Où passe la ligne »</a> est calculé dans votre navigateur. Vos réponses (poste, temps passé sur chaque tâche, questions de contexte) ne sont envoyées à aucun serveur pendant le calcul, et rien n&apos;est enregistré si vous ne vous inscrivez pas. Seule exception : un lien de résultat contient vos réponses sous forme codée dans son adresse ; quand il est ouvert, cette adresse passe par notre hébergeur comme celle de n&apos;importe quelle page. Le résultat ne dépend jamais d&apos;une inscription.
+              </p>
+              <div className="border-l-2 border-[#c9a84c]/40 pl-6 space-y-3">
+                <p><strong className="text-[#fcf9f0]">Si vous vous inscrivez depuis le résultat :</strong> Beehiiv reçoit votre adresse e-mail, votre domaine et votre poste, le code ISCO-08 du poste, sa catégorie selon l&apos;OIT, la part de votre temps sur des tâches à potentiel élevé, votre statut s&apos;il est indiqué et la date du diagnostic. Les tâches que vous avez renseignées et le temps passé sur chacune ne sont jamais transmis, pas plus que la taille de votre structure ni votre usage de l&apos;IA.</p>
+                <p><strong className="text-[#fcf9f0]">Si votre métier n&apos;est pas dans la liste :</strong> Beehiiv reçoit votre adresse e-mail et le métier que vous avez saisi.</p>
+                <p><strong className="text-[#fcf9f0]">Finalité :</strong> vous envoyer les mises à jour sur votre métier et la newsletter ialucide, et choisir les prochains métiers ajoutés à l&apos;outil.</p>
+                <p><strong className="text-[#fcf9f0]">Base légale :</strong> consentement (case à cocher, jamais précochée).</p>
+                <p><strong className="text-[#fcf9f0]">Durée de conservation :</strong> jusqu&apos;à désinscription.</p>
+              </div>
+              <p>
+                Ces informations ne sont stockées nulle part ailleurs que chez Beehiiv. Le lien de partage d&apos;un résultat contient le poste et vos réponses sous forme codée, mais aucune donnée personnelle : toute personne qui reçoit ce lien voit le même résultat.
               </p>
             </div>
           </section>

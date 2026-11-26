@@ -240,7 +240,8 @@ contact incluses, priorité 0.3).
   isco08, categorie_oit, part_potentiel_eleve, statut, date_diagnostic, à créer dans Beehiiv ; tags
   metier-<domaine>, diagnostic-v2, attente-<métier>). Les tâches cochées ne sont jamais envoyées.
 - Avant de fusionner dans main : textes passés en `valide`, postes en `"publie": true`, champs Beehiiv
-  créés, hub corrigé, mention du diagnostic dans /politique-confidentialite/ (§8.2).
+  créés, hub corrigé ; mention du diagnostic dans /politique-confidentialite/ faite sur la branche (§8.2), avancer
+  sa date « Dernière mise à jour » au jour de la fusion.
 - **Au lancement**, mettre à jour `calculateurs-risque-ia-ne-mesurent-rien` (champ `updated`) :
   réécrire la conclusion (elle parle de tâches « automatisables » et promet un résultat « propre à ta
   situation, pas à ton intitulé de poste ») et dire honnêtement que le niveau de poste pèse plus que
