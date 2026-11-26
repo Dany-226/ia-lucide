@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllArticles } from '@/lib/articles';
 import { METIERS_HUB_UPDATED } from '@/lib/seo';
+import { getDomaines } from '@/lib/diagnostic-data';
 
 export const dynamic = 'force-static';
 
@@ -84,6 +85,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // Diagnostic v2 : méthodologie et pages de domaine (domaines avec au moins un poste
+  // visible). En noindex hors production (lib/diagnostic-data.ts, DIAGNOSTIC_ROBOTS).
+  const domaines = getDomaines();
+  const majDomaine = (postes: { maj: string }[]) => new Date(postes.map((p) => p.maj).sort().at(-1) || Date.now());
+  const diagnosticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/methodologie-exposition-ia/`,
+      lastModified: majDomaine(domaines.flatMap((d) => d.postes)),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    ...domaines.map((d) => ({
+      url: `${BASE_URL}/metiers/${d.slug}/`,
+      lastModified: majDomaine(d.postes),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+  ];
+
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${BASE_URL}/article/${article.slug}/`,
     lastModified: new Date(article.updated || article.date || Date.now()),
@@ -91,5 +111,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...articleRoutes];
+  return [...staticRoutes, ...diagnosticRoutes, ...articleRoutes];
 }

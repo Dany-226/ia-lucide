@@ -31,7 +31,7 @@
     "ecran.contexte.intro": { "texte": "Trois questions facultatives pour choisir les pistes proposées. Elles n'entrent pas dans le calcul.", "statut": "propose" },
     "ecran.resultat.titre": { "texte": "Où passe la ligne dans votre poste", "statut": "propose" },
 
-    "metier_absent.texte": { "texte": "Votre métier n'est pas dans la liste ? Indiquez-le. Les prochains domaines seront choisis d'après ces demandes, et si vous laissez votre e-mail, nous vous écrirons quand le vôtre sera disponible.", "statut": "propose" },
+    "metier_absent.texte": { "texte": "Votre métier n'est pas dans la liste ? Indiquez-le avec votre e-mail. Les prochains domaines seront choisis d'après ces demandes, et nous vous écrirons quand le vôtre sera disponible.", "statut": "propose" },
     "metier_absent.confirmation": { "texte": "C'est noté. Nous vous écrirons quand ce métier sera disponible.", "statut": "propose" },
 
     "categorie.G4.libelle": { "texte": "Exposition élevée et homogène", "statut": "propose" },

@@ -222,6 +222,13 @@ function main() {
 
   const tx = checkTextes(cfg, publies, errors);
 
+  // Build de production (branche main sur Cloudflare Pages) : la v2 remplace la v1 à l'URL
+  // /diagnostic-exposition-ia/ ; sans poste publié, l'outil serait vide (et Next refuse une
+  // route /metiers/[domaine] sans aucune page). On l'arrête ici avec un message clair.
+  if (process.env.CF_PAGES_BRANCH === 'main' && publies === 0) {
+    errors.push('build de production sans aucun poste publié : passer "publie": true sur les postes validés avant de fusionner diagnostic-v2 dans main (voir CLAUDE.md, Diagnostic v2)');
+  }
+
   if (errors.length) {
     console.error(`check-metiers : ${errors.length} erreur(s)`);
     for (const e of errors) console.error(`  - ${e}`);

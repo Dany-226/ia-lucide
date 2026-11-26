@@ -117,21 +117,7 @@ export default function Resultat(props: {
         </p>
       </section>
 
-      {/* 2. Répartition du temps */}
-      <section aria-labelledby="res-repartition" className="bg-white p-6 md:p-8">
-        <h3 id="res-repartition" className="text-xl font-bold text-[#1c1c17] mb-4">La répartition de votre temps</h3>
-        {r ? (
-          <>
-            <p className="text-lg text-[#1c1c17] leading-relaxed mb-5">{remplir(t['repartition.phrase'], r.parts)}</p>
-            <BarreRepartition r={r} t={t} />
-          </>
-        ) : (
-          <p className="text-base text-[#1c1c17] leading-relaxed">{t['repartition.aucun_resultat']}</p>
-        )}
-        <p className="text-sm text-[#6b6b6b] leading-relaxed mt-5">{t['bande.note']}</p>
-      </section>
-
-      {/* 3. Tâches cochées en trois colonnes */}
+      {/* 2. Tâches cochées en trois colonnes */}
       {cochees.length > 0 && (
         <section aria-labelledby="res-taches">
           <h3 id="res-taches" className="text-xl font-bold text-[#1c1c17] mb-6">Vos tâches, par potentiel</h3>
@@ -170,15 +156,21 @@ export default function Resultat(props: {
         </section>
       )}
 
-      {/* 4. Synthèse */}
-      {synthese && (
-        <section aria-labelledby="res-synthese" className="max-w-3xl">
-          <h3 id="res-synthese" className="text-xl font-bold text-[#1c1c17] mb-3">En résumé</h3>
-          <p className="text-lg text-[#1c1c17] leading-relaxed">{synthese}</p>
-        </section>
-      )}
+      {/* 3. Répartition du temps */}
+      <section aria-labelledby="res-repartition" className="bg-white p-6 md:p-8">
+        <h3 id="res-repartition" className="text-xl font-bold text-[#1c1c17] mb-4">La répartition de votre temps</h3>
+        {r ? (
+          <>
+            <p className="text-lg text-[#1c1c17] leading-relaxed mb-5">{remplir(t['repartition.phrase'], r.parts)}</p>
+            <BarreRepartition r={r} t={t} />
+          </>
+        ) : (
+          <p className="text-base text-[#1c1c17] leading-relaxed">{t['repartition.aucun_resultat']}</p>
+        )}
+        <p className="text-sm text-[#6b6b6b] leading-relaxed mt-5">{t['bande.note']}</p>
+      </section>
 
-      {/* 5. Comparaison avec les postes voisins */}
+      {/* 4. Comparaison avec les postes voisins */}
       {voisins.length > 0 && (
         <section aria-labelledby="res-comparaison">
           <h3 id="res-comparaison" className="text-xl font-bold text-[#1c1c17] mb-2">Les postes voisins : {minusculeInitiale(domaine.libelle)}</h3>
@@ -199,6 +191,14 @@ export default function Resultat(props: {
           <p className="text-sm mt-3">
             <Link href={`/metiers/${domaine.slug}/`} className={LIEN}>Comparer tous les postes du domaine, tâche par tâche</Link>
           </p>
+        </section>
+      )}
+
+      {/* 5. Synthèse */}
+      {synthese && (
+        <section aria-labelledby="res-synthese" className="max-w-3xl">
+          <h3 id="res-synthese" className="text-xl font-bold text-[#1c1c17] mb-3">En résumé</h3>
+          <p className="text-lg text-[#1c1c17] leading-relaxed">{synthese}</p>
         </section>
       )}
 
@@ -223,7 +223,7 @@ export default function Resultat(props: {
                         <p className="text-base text-[#1c1c17] leading-relaxed">
                           {remplir(t['piste.voisins.texte'], { voisins: enumeration(moinsExposes.map((v) => v.libelle)) })}
                         </p>
-                        {moinsExposes.map((v) => (
+                        {moinsExposes.filter((v) => v.taches.some((x) => x.bande === 'faible')).map((v) => (
                           <div key={v.slug} className="mt-3">
                             <p className="font-mono text-xs font-bold tracking-[0.1em] uppercase text-[#6b6b6b]">{v.libelle}</p>
                             <ul className="list-disc pl-5 mt-1 space-y-1">
