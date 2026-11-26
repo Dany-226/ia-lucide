@@ -27,8 +27,8 @@
       "raison_exclusion": "Linguistique historique : activité de chercheur, regroupée dans le même code ISCO, qui ne fait pas partie du travail de traducteur ou d'interprète.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 2,
@@ -40,8 +40,8 @@
       "raison_exclusion": null,
       "adaptation": true,
       "raison_adaptation": "Le texte de l'OIT vise l'élaboration de systèmes de classification des langues, de grammaires et de dictionnaires, travail de linguiste. ialucide retient la part qui correspond au métier de traducteur en France : la terminologie.",
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 3,
@@ -53,8 +53,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 4,
@@ -66,8 +66,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 5,
@@ -79,8 +79,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 6,
@@ -92,8 +92,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     }
   ],
   "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",

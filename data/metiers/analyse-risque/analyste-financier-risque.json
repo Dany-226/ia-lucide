@@ -27,8 +27,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 2,
@@ -40,8 +40,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 3,
@@ -53,8 +53,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 4,
@@ -66,8 +66,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 5,
@@ -79,8 +79,8 @@
       "raison_exclusion": "Conseil en investissement : relève de l'analyste financier ou du conseiller en placements, pas de l'analyste risque en banque ou en crédit.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 6,
@@ -92,8 +92,8 @@
       "raison_exclusion": "Tâche de marché primaire (banque d'affaires), sans rapport avec l'analyse de risque en banque ou en crédit.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 7,
@@ -105,8 +105,8 @@
       "raison_exclusion": "Tâche d'investissement (plans d'action d'investissement) : relève de la gestion d'actifs ou du conseil en investissement, pas du travail d'analyste financier ou risque retenu ici.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 8,
@@ -118,8 +118,8 @@
       "raison_exclusion": "Tâche d'investissement (comparer la qualité de titres pour un choix de placement) : relève de l'analyse en gestion d'actifs ou en banque d'investissement, pas du travail d'analyste financier ou risque retenu ici.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 9,
@@ -131,8 +131,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     }
   ],
   "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",

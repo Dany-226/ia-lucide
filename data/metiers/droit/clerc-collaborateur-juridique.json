@@ -27,8 +27,8 @@
       "raison_exclusion": "Tâche du greffier, profession distincte en France (fonction publique), pas du clerc ni du collaborateur juridique.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 2,
@@ -40,8 +40,8 @@
       "raison_exclusion": null,
       "adaptation": true,
       "raison_adaptation": "Le texte de l'OIT vise la signification elle-même (remise officielle des actes), réservée en France au commissaire de justice. ialucide retient la part qui revient au clerc : la préparation des actes.",
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 3,
@@ -53,8 +53,8 @@
       "raison_exclusion": "En France, la police de l'audience revient au président de la juridiction, assisté d'huissiers audienciers et des forces de l'ordre : ce n'est pas une tâche de clerc.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 4,
@@ -66,8 +66,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 5,
@@ -79,8 +79,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 6,
@@ -92,8 +92,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 7,
@@ -105,8 +105,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 8,
@@ -118,8 +118,8 @@
       "raison_exclusion": null,
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 9,
@@ -131,8 +131,8 @@
       "raison_exclusion": "Tâche d'agent de sécurité ou d'enquêteur privé, regroupée dans le même code ISCO, sans rapport avec le clerc ou le collaborateur juridique.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     },
     {
       "task_id": 10,
@@ -144,8 +144,8 @@
       "raison_exclusion": "Tâche de détective privé (agent de recherches privées), regroupée dans le même code ISCO, sans rapport avec le clerc ou le collaborateur juridique.",
       "adaptation": false,
       "raison_adaptation": null,
-      "statut": "propose",
-      "valide_le": null
+      "statut": "valide",
+      "valide_le": "2026-11-26"
     }
   ],
   "source": "Gmyrek et al. 2025, ILO WP 140, CC BY 4.0",
