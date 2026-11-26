@@ -213,7 +213,7 @@ contact incluses, priorité 0.3).
   `data/metiers/<domaine>/<poste>.json`, tableau de relecture `data/metiers/relecture.csv`.
 - Scripts : `python3 scripts/import-oit.py` (génère les JSON, s'arrête sur tout écart avec la spec),
   `python3 scripts/import-relecture.py` (réimporte le tableau validé), `node scripts/check-metiers.js`
-  (contrôle §9, pas encore branché sur le build). Scores, catégorie OIT et bandes ne se modifient
+  (contrôle §9, lancé par `npm run build` ; sur main, il échoue tant qu'aucun poste n'est publié). Scores, catégorie OIT et bandes ne se modifient
   jamais à la main, ni dans les JSON ni dans le CSV.
 - **Aucune tâche publiée sans statut `valide`** donné par Daniel (traduction et pertinence, exclusions
   comprises). Un poste ne passe à `"publie": true` que lorsque toutes ses tâches sont validées.
@@ -228,6 +228,19 @@ contact incluses, priorité 0.3).
   n'est pas corrigé (classements alignés sur les catégories de l'OIT, vocabulaire sans « menacé » ni
   « automatisable », OIT ajoutée à `ETUDES`). Le title et la description du hub ne changent
   qu'après le 23/12/2026 (règle des 4 semaines à compter du 25/11).
+- Interface (branche `diagnostic-v2`, depuis le 26/11/2026) : calcul pur et testé dans
+  `lib/diagnostic-calcul.ts` (`npm test`), données serveur dans `lib/diagnostic-data.ts`, composants dans
+  `components/diagnostic/`, textes affichés dans `data/metiers/textes.json` (statut `propose` tant que
+  Daniel ne les a pas validés ; vocabulaire et tirets contrôlés par check-metiers). Pages : l'outil
+  /diagnostic-exposition-ia/, /methodologie-exposition-ia/ (signée Daniel Rollin), /metiers/<domaine>/
+  (signées « La rédaction ialucide »). Le hub /metiers/ n'est pas touché.
+- Visibilité : `DIAGNOSTIC_PREVIEW` (`CF_PAGES_BRANCH !== 'main'`). En prévisualisation, tous les postes
+  sont visibles et les pages sont en noindex ; en production, seuls les postes `"publie": true`.
+- Inscription : `functions/api/diagnostic-submit.ts` (champs personnalisés metier_domaine, metier_poste,
+  isco08, categorie_oit, part_potentiel_eleve, statut, date_diagnostic, à créer dans Beehiiv ; tags
+  metier-<domaine>, diagnostic-v2, attente-<métier>). Les tâches cochées ne sont jamais envoyées.
+- Avant de fusionner dans main : textes passés en `valide`, postes en `"publie": true`, champs Beehiiv
+  créés, hub corrigé, mention du diagnostic dans /politique-confidentialite/ (§8.2).
 - **Au lancement**, mettre à jour `calculateurs-risque-ia-ne-mesurent-rien` (champ `updated`) :
   réécrire la conclusion (elle parle de tâches « automatisables » et promet un résultat « propre à ta
   situation, pas à ton intitulé de poste ») et dire honnêtement que le niveau de poste pèse plus que
