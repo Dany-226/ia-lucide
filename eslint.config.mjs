@@ -1,10 +1,17 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import globals from "globals";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  // Scripts Node (CommonJS) : require() autorisé, globals Node déclarés.
+  {
+    files: ["scripts/**", "instagram/**", "postcss.config.js"],
+    languageOptions: { globals: { ...globals.node } },
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

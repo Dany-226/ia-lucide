@@ -29,7 +29,7 @@ export default function NewsletterPage() {
             La newsletter ialucide
           </h1>
           <p className="text-xl font-bold text-[#8a6a1c] mb-8">
-            Une analyse par semaine sur l&apos;IA et les métiers
+            Une analyse par semaine sur l’IA et les métiers
           </p>
           <div className="h-px bg-[#c9a84c]/15" />
         </div>
@@ -37,13 +37,13 @@ export default function NewsletterPage() {
         {/* Pitch éditorial */}
         <div className="space-y-6 text-base text-[#1c1c17] leading-[1.85] mb-16">
           <p>
-            Chaque semaine, ialucide publie une analyse concrète sur l&apos;impact de l&apos;intelligence artificielle sur un métier, un secteur ou une pratique professionnelle. Pas de promesses. Pas de prophéties de fin du monde. Des faits, des exemples réels, des conclusions actionnables.
+            Chaque semaine, ialucide publie une analyse concrète sur l’impact de l’intelligence artificielle sur un métier, un secteur ou une pratique professionnelle. Pas de promesses. Pas de prophéties de fin du monde. Des faits, des exemples réels, des conclusions actionnables.
           </p>
           <p>
-            L&apos;IA transforme le travail — c&apos;est indéniable. Mais ni l&apos;évangélisme tech ("l&apos;IA va tout révolutionner dans six mois") ni le catastrophisme ("votre métier va disparaître") ne vous aident à décider ce que vous devez faire, maintenant, dans votre quotidien professionnel. Cette newsletter existe pour combler cet espace.
+            L’IA transforme le travail — c’est indéniable. Mais ni l’évangélisme tech ("l’IA va tout révolutionner dans six mois") ni le catastrophisme ("votre métier va disparaître") ne vous aident à décider ce que vous devez faire, maintenant, dans votre quotidien professionnel. Cette newsletter existe pour combler cet espace.
           </p>
           <p>
-            Elle s&apos;adresse aux professionnels en exercice — comptables, juristes, managers, développeurs, médecins, commerciaux — qui veulent comprendre sans être manipulés, et agir sans panique. Une analyse par semaine. Lucide. Sans bullshit.
+            Elle s’adresse aux professionnels en exercice — comptables, juristes, managers, développeurs, médecins, commerciaux — qui veulent comprendre sans être manipulés, et agir sans panique. Une analyse par semaine. Lucide. Sans bullshit.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export default function NewsletterPage() {
             rel="noopener noreferrer"
             className="font-mono inline-flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-[#1a3a4a] text-[#fcf9f0] hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
           >
-            S&apos;inscrire gratuitement
+            S’inscrire gratuitement
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M3 7H11M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
