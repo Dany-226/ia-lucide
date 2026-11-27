@@ -134,6 +134,20 @@ est absent ou vide. Une variante d'orthographe ne peut donc plus produire en sil
   --layout-features+=lnum,pnum,tnum`. Une nouvelle graisse ou un nouveau caractère hors latin demande de
   régénérer le fichier concerné.
 
+## Scripts tiers et requêtes vers Google (depuis le 27/11/2026)
+- **Aucune requête vers un domaine Google avant consentement.** Seul GA4 se charge, et seulement après
+  « Accepter » (`components/AnalyticsConsent.tsx`). Ne jamais ajouter de script tiers dans `app/layout.tsx`
+  ni dans un composant chargé sur toutes les pages sans passer par ce consentement.
+- **Sources préférées Google = lien simple, jamais de script** : `https://www.google.com/preferences/source?q=ialucide.fr`
+  (lien direct documenté par Google Search Central), en nouvel onglet, bouton en HTML et CSS du site
+  (`components/Footer.tsx`, `components/ArticleSidebar.tsx`). Le script `news.google.com/swg/js/v1/publisher.js`
+  a été retiré le 27/11/2026 : il se chargeait sur toutes les pages sans consentement depuis le 03/09.
+- **Contrôle mensuel** : lister les domaines tiers contactés par l'accueil, un article et l'outil, avec un
+  navigateur sans consentement enregistré (Chrome headless + protocole DevTools, événements
+  `Network.requestWillBeSent`, page défilée jusqu'en bas). Attendu : `ialucide.fr` seul. Puis cliquer
+  « Accepter » : seuls `googletagmanager.com` et `google-analytics.com` doivent s'ajouter. Tout autre
+  domaine : le signaler à Daniel avant de corriger, et vérifier la politique de confidentialité.
+
 ## Déploiement Cloudflare Pages
 - Toujours faire `git pull --ff-only` avant de modifier quoi que ce soit (le 03/11/2026, le dépôt
   local avait 22 commits de retard).
@@ -185,7 +199,7 @@ site_name, url, type et locale sur tout le site (constaté par l'audit Ahrefs du
   liens d'affiliation sont remplacés par l'URL officielle de l'outil). Le FAQPage de /metiers/
   reste à part.
 
-### Hub /metiers/ (révision du 25/11/2026)
+### Hub /metiers/ (révision du 27/11/2026)
 - Page la plus citée du site par les moteurs IA (Bing IA : 1 264 citations sur 1 626 entre le
   25/08 et le 23/11/2026). Toute modification doit l'enrichir, jamais la remplacer : URL fixe,
   titre inchangé sauf changement du nombre de métiers (règle des 4 semaines, dernier changement
@@ -194,13 +208,33 @@ site_name, url, type et locale sur tout le site (constaté par l'audit Ahrefs du
   transmise en `dateModified` (CollectionPage) et en `lastModified` (sitemap). L'avancer à chaque
   révision du classement, des sources ou de la liste des métiers, pas pour une retouche de style ;
   mettre à jour `UPDATED_LABEL` et la phrase « Révision du … » de la section Méthode en même temps.
-- Classement : trois niveaux définis dans la section « Comment nous classons » (part des tâches
-  courantes qu'un outil actuel réalise ou accélère fortement, horizon 3 à 5 ans). Chaque niveau
-  est confronté aux études du tableau `ETUDES` ; un changement de niveau est annoncé dans la phrase
-  « Révision du … ». Révision du 25/11 : Développeur → forte, Juriste / Avocat → modérée.
-- `ETUDES` : source primaire, date, lien, et « la limite à connaître » formulée par les auteurs.
-  Le chiffre « 5 millions d'emplois menacés » ne vient pas de l'étude Coface/OEM (qui donne 16 %
-  du contenu du travail automatisable) : ne jamais le réintroduire.
+- Classement (depuis le 27/11/2026) : sections par catégorie de l'OIT (gradient 4 à « non exposé »,
+  plus « Sans code ISCO-08 fidèle »), sans aucun horizon de temps. Ligne d'introduction de chaque section :
+  `INTRO_CATEGORIE` (au pluriel, validée par Daniel le 27/11). Données dans `FICHES` (`app/metiers/page.tsx`) :
+  - métier couvert par l'outil : `outil: { domaine, poste }`, catégorie lue au build dans
+    `data/metiers/<domaine>/<poste>.json` (jamais recopiée), lien vers /metiers/<domaine>/ et postes voisins
+    du domaine affichés ; le build échoue si le poste est introuvable ou non publié ;
+  - métier hors outil : `isco: { code, titre, categorie }`, catégorie (colonne `potential25`) relevée dans
+    `data/source/Final_Scores_ISCO08_Gmyrek_et_al_2025.xlsx`, mention « hors outil pour l'instant » ;
+  - `sansCode` : aucune catégorie affichée plutôt qu'une approximation.
+- Codes ISCO-08 des métiers hors outil, validés par Daniel le 27/11/2026 : journaliste 2642 (gradient 3),
+  commercial 3322 (gradient 2), graphiste 2166 (gradient 2), consultant 2421 (gradient 2), contrôleur
+  financier 2411 (gradient 3), directeur financier 1211 (minimale), médecin 2211 (non exposé), notaire 2619
+  (minimale, avec la note « ce code décrit mal le notariat français » et lien vers /metiers/droit/).
+  Sans catégorie : manager (pas de code unique), analyste risque assurance et analyste risque opérationnel
+  (pas d'équivalent fidèle). Postes de l'outil retenus : assistant administratif = assistant·e de direction
+  (3343), enseignant = enseignant·e du secondaire (2330), analyste risque et analyste risque crédit = 2413.
+  Changer un code demande l'accord de Daniel et une mise à jour de cette liste.
+- Vocabulaire du hub : exposition, potentiel élevé / partiel / faible. Jamais « menacé(s) », « les plus
+  menacés », « automatise(nt) », « s'automatise(nt) », « automatisable », « irremplaçable », « outil ou
+  menace », « augmenté ». Exceptions : le nom propre « Observatoire des emplois menacés et émergents », le
+  slug `developpeur-augmente-ia-2026`, et le title et la description (inchangés jusqu'au 23/12/2026,
+  règle des 4 semaines, qui ne couvre que ces deux balises).
+- `ETUDES` : source primaire, date, lien, et « la limite à connaître » formulée par les auteurs. L'OIT
+  (Gmyrek et al., 2025, ILO Working Paper 140, publié le 20/05/2025, CC BY 4.0) est en tête et sert de
+  référence au classement ; Coface/OEM est présenté comme une autre mesure, avec sa propre méthode.
+  Le chiffre « 5 millions d'emplois » ne vient pas de l'étude Coface/OEM : ne jamais le réintroduire.
+  Lien d'une étude : champ `article.href` (URL interne complète, slash final).
 - FAQ : `components/MetiersFaqItem.tsx` utilise `<details>` natif pour que les réponses soient
   dans le HTML statique (avant le 25/11, elles n'étaient rendues qu'après un clic). Toute réponse
   modifiée l'est dans `FAQ`, qui alimente aussi le FAQPage.
@@ -213,7 +247,7 @@ site_name, url, type et locale sur tout le site (constaté par l'audit Ahrefs du
 Une nouvelle page indexable doit aussi être ajoutée à `app/sitemap.ts` (pages légales et
 contact incluses, priorité 0.3).
 
-### Diagnostic v2 « Où passe la ligne » (depuis le 26/11/2026)
+### Diagnostic v2 « Où passe la ligne » (en ligne depuis le 27/11/2026)
 - Spec : `docs/spec-diagnostic-exposition-v2.md`, **locale et non versionnée** (`docs/` est dans
   `.gitignore` : le dépôt est public). Ne jamais la commiter ni la citer dans un fichier publié. Elle
   fait foi pour tout ce qui touche au diagnostic ; CLAUDE.md fait foi pour les règles générales. URL
@@ -245,21 +279,19 @@ contact incluses, priorité 0.3).
   `components/diagnostic/`, textes affichés dans `data/metiers/textes.json` (statut `propose` tant que
   Daniel ne les a pas validés ; vocabulaire et tirets contrôlés par check-metiers). Pages : l'outil
   /diagnostic-exposition-ia/, /methodologie-exposition-ia/ (signée Daniel Rollin), /metiers/<domaine>/
-  (signées « La rédaction ialucide »). Le hub /metiers/ n'est pas touché.
+  (signées « La rédaction ialucide »). Le hub /metiers/ lit les catégories des postes (voir Hub /metiers/).
 - Visibilité : `DIAGNOSTIC_PREVIEW` (`CF_PAGES_BRANCH !== 'main'`). En prévisualisation, tous les postes
   sont visibles et les pages sont en noindex ; en production, seuls les postes `"publie": true`.
 - Inscription : `functions/api/diagnostic-submit.ts` (champs personnalisés metier_domaine, metier_poste,
   isco08, categorie_oit, part_potentiel_eleve, statut, date_diagnostic, à créer dans Beehiiv ; tags
   metier-<domaine>, diagnostic-v2, attente-<métier>). Les tâches cochées ne sont jamais envoyées.
-- **Publication validée par Daniel le 26/11/2026 pour les 22 postes**, à faire dans la session de fusion
-  (avec la correction du hub /metiers/), pas avant : passer alors `"publie": true` sur les 22 JSON.
-- Avant de fusionner dans main : textes passés en `valide`, postes en `"publie": true`, champs Beehiiv
-  créés, hub corrigé ; mention du diagnostic dans /politique-confidentialite/ faite sur la branche (§8.2), avancer
-  sa date « Dernière mise à jour » au jour de la fusion.
-- **Au lancement**, mettre à jour `calculateurs-risque-ia-ne-mesurent-rien` (champ `updated`) :
-  réécrire la conclusion (elle parle de tâches « automatisables » et promet un résultat « propre à ta
-  situation, pas à ton intitulé de poste ») et dire honnêtement que le niveau de poste pèse plus que
-  l'article ne le disait.
+- **Statut : en ligne depuis le 27/11/2026** (fusion `d91d7ee`). 22 postes publiés (`"publie": true`),
+  177 tâches et 106 textes au statut `valide`, champs personnalisés Beehiiv créés le 26/11. Inscription
+  testée en production le 27/11 (7 champs et tags `metier-<domaine>`, `diagnostic-v2` remplis).
+  Pages de domaine et méthodologie soumises à IndexNow le 27/11. Ancienne URL
+  `/diagnostic-exposition-ia/resultat/` redirigée en 301 (`public/_redirects`).
+- Nouveau poste : JSON généré par `import-oit.py`, tâches validées par Daniel, puis `"publie": true` ;
+  `check-metiers` avec `CF_PAGES_BRANCH=main` avant de pousser.
 
 ## Conventions
 - Zéro border-radius sur boutons et cards
