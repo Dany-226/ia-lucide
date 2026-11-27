@@ -9,6 +9,7 @@ read_time: "7"
 image_url: "https://i.imgur.com/d11tFWth.jpg"
 featured: true
 date: "2026-09-16"
+updated: "2026-11-27"
 ---
 
 Sur ai-job-risk.net, le métier de planificateur affiche un score de risque de 95 sur 100.
@@ -23,13 +24,15 @@ Le problème commence dès qu'on cherche à savoir d'où vient ce chiffre.
 
 ## Un métier n'est pas un chiffre unique
 
-La classification qui sert de base à la plupart de ces calculateurs découpe un métier en tâches. C'est une bonne méthode en soi. Un poste comptable regroupe de la saisie, du contrôle, du conseil client, de la veille réglementaire, chacune avec un niveau d'automatisation différent.
+La classification qui sert de base à la plupart de ces calculateurs découpe un métier en tâches. C'est une bonne méthode en soi. Un poste comptable regroupe de la saisie, du contrôle, du conseil client, de la veille réglementaire, chacune avec un niveau d'exposition différent.
 
 Le problème arrive à l'étape suivante. Pour produire un score affichable, ces tâches sont recompressées en un seul chiffre par intitulé de poste.
 
 Deux personnes portant le même titre, analyste risque par exemple, l'une en banque de détail et l'autre dans une direction des risques opérationnels d'un groupe industriel, se retrouvent avec le même score. Leur quotidien n'a pourtant presque rien en commun.
 
 Le score ne voit ni le secteur, ni la taille de l'entreprise, ni les outils déjà déployés en interne. Il voit un intitulé de poste.
+
+Le poste compte pourtant, et plus que je ne le pensais en écrivant cet article. Dans les données de l'Organisation internationale du Travail (OIT), l'exposition varie bien plus d'un niveau de poste à l'autre que d'une tâche à l'autre au sein d'un même poste : le score moyen d'un aide-comptable est de 0,64, celui d'un comptable de 0,51. Ma critique vise le score unique attribué à un intitulé, pas la prise en compte du poste.
 
 ## Des méthodologies difficiles à vérifier
 
@@ -43,7 +46,7 @@ Ni l'un ni l'autre ne constitue une donnée scientifique au sens où on l'entend
 
 ## Ce qu'aucun score ne peut voir
 
-Trois éléments décident en réalité de l'exposition d'une personne à l'IA. Aucun des trois n'entre dans un modèle de scoring par intitulé de poste.
+Au-delà du poste, trois éléments pèsent sur l'exposition d'une personne à l'IA. Aucun des trois n'entre dans un modèle de scoring par intitulé de poste.
 
 La vitesse de déploiement dans l'entreprise où elle travaille. Une technologie disponible n'est pas une technologie utilisée. Le délai entre les deux se compte en années dans la plupart des organisations françaises.
 
@@ -55,4 +58,6 @@ L'adaptabilité individuelle. Deux personnes au même poste ne réagissent pas d
 
 Plutôt qu'un score composite construit sur un intitulé de poste générique, la question utile est différente : parmi les tâches qui remplissent réellement votre semaine de travail, lesquelles l'IA générative touche, et lesquelles elle touche peu.
 
-C'est la question que pose notre [outil « Où passe la ligne »](/diagnostic-exposition-ia/) : pas un score sur 100, un état des lieux de vos tâches. Avec une correction que les données nous ont apprises : le niveau de poste pèse davantage que nous ne l'écrivions ici. Un aide-comptable et un expert-comptable n'ont pas la même exposition, même quand ils font en partie les mêmes tâches.
+C'est la question que pose l'[outil « Où passe la ligne »](/diagnostic-exposition-ia/) d'ialucide : pas un score sur 100, un état des lieux de vos tâches. Avec la correction présentée plus haut : un aide-comptable et un expert-comptable n'ont pas la même exposition, même quand ils font en partie les mêmes tâches.
+
+L'outil ne mesure pas non plus le secteur, la taille de la structure ni les outils déjà en place : ses limites sont détaillées sur la [page méthodologie](/methodologie-exposition-ia/).
