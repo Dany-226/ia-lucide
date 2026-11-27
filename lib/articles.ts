@@ -53,6 +53,8 @@ export interface Article {
   /** Date de mise à jour optionnelle (AAAA-MM-JJ), affichée « Mis à jour - JJ/MM/AAAA ». */
   updated?: string;
   image_url?: string;
+  /** Texte alternatif facultatif de la couverture (cartes, accueil, og:image:alt) ; sinon le titre. */
+  image_alt?: string;
   featured?: boolean;
   content?: string;
 }

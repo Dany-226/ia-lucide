@@ -246,6 +246,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: truncateAtWord(article.excerpt || '', 155),
     path: `/article/${slug}/`,
     image: article.image_url || undefined,
+    imageAlt: article.image_alt || undefined,
     type: 'article',
     publishedTime: article.date,
     modifiedTime: article.updated || article.date,

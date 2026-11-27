@@ -107,7 +107,7 @@ export default function Home() {
                       <div className="relative overflow-hidden" style={{ minHeight: '300px' }}>
                         <Image
                           src={articles[0].image_url}
-                          alt={articles[0].title}
+                          alt={articles[0].image_alt || articles[0].title}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-700"
                           sizes="(max-width: 768px) 100vw, 50vw"

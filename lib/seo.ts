@@ -36,6 +36,8 @@ type PageMetadataInput = {
   ogTitle?: string;
   /** Image relative ou absolue ; logo par défaut. */
   image?: string;
+  /** Texte alternatif de l'image (og:image:alt, twitter:image:alt). */
+  imageAlt?: string;
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
@@ -46,7 +48,7 @@ export function pageMetadata(input: PageMetadataInput): Metadata {
   const fullTitle = input.absoluteTitle ?? `${input.title} | ${SITE_NAME}`;
   const url = absoluteUrl(input.path);
   const image = input.image
-    ? { url: absoluteUrl(input.image) }
+    ? { url: absoluteUrl(input.image), ...(input.imageAlt ? { alt: input.imageAlt } : {}) }
     : { url: SITE_LOGO.url, width: SITE_LOGO.width, height: SITE_LOGO.height };
   const ogTitle = input.ogTitle ?? fullTitle;
 
@@ -75,7 +77,7 @@ export function pageMetadata(input: PageMetadataInput): Metadata {
       card: 'summary_large_image',
       title: { absolute: ogTitle },
       description: input.description,
-      images: [image.url],
+      images: [input.imageAlt && input.image ? { url: image.url, alt: input.imageAlt } : image.url],
     },
     ...(input.robots ? { robots: input.robots } : {}),
   };

@@ -11,6 +11,7 @@ interface ArticleCardProps {
   read_time: string;
   date?: string;
   image_url?: string;
+  image_alt?: string;
   featured?: boolean;
 }
 
@@ -22,6 +23,7 @@ export default function ArticleCard({
   author,
   read_time,
   image_url,
+  image_alt,
 }: ArticleCardProps) {
   return (
     <Link href={`/article/${slug}/`} className="group block">
@@ -31,7 +33,7 @@ export default function ArticleCard({
           {image_url ? (
             <Image
               src={thumbnailUrl(image_url)!}
-              alt={title}
+              alt={image_alt || title}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
