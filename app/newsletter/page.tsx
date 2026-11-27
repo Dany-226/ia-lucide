@@ -40,10 +40,10 @@ export default function NewsletterPage() {
             Chaque semaine, ialucide publie une analyse concrète sur l’impact de l’intelligence artificielle sur un métier, un secteur ou une pratique professionnelle. Pas de promesses. Pas de prophéties de fin du monde. Des faits, des exemples réels, des conclusions actionnables.
           </p>
           <p>
-            L’IA transforme le travail — c’est indéniable. Mais ni l’évangélisme tech ("l’IA va tout révolutionner dans six mois") ni le catastrophisme ("votre métier va disparaître") ne vous aident à décider ce que vous devez faire, maintenant, dans votre quotidien professionnel. Cette newsletter existe pour combler cet espace.
+            L’IA transforme le travail, c’est indéniable. Mais ni l’évangélisme tech (« l’IA va tout révolutionner dans six mois ») ni le catastrophisme (« votre métier va disparaître ») ne vous aident à décider ce que vous devez faire, maintenant, dans votre quotidien professionnel. Cette newsletter existe pour combler cet espace.
           </p>
           <p>
-            Elle s’adresse aux professionnels en exercice — comptables, juristes, managers, développeurs, médecins, commerciaux — qui veulent comprendre sans être manipulés, et agir sans panique. Une analyse par semaine. Lucide. Sans bullshit.
+            Elle s’adresse aux professionnels en exercice (comptables, juristes, managers, développeurs, médecins, commerciaux) qui veulent comprendre sans être manipulés, et agir sans panique. Une analyse par semaine. Lucide. Sans bullshit.
           </p>
         </div>
 

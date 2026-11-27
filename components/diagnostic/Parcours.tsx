@@ -75,6 +75,8 @@ export default function Parcours({ data }: { data: DiagData }) {
         const pos = dom.postes.find((x) => x.slug === p);
         if (!pos) continue;
         const w = decoderPoids(q.get('t'), pos.taches.length);
+        // Lecture de l'URL réservée au client : l'écran 1 doit rester dans le HTML statique, une lecture au rendu casserait l'hydratation.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setDomaineSlug(dom.slug);
         setPosteSlug(pos.slug);
         if (w) { setPoids(w); setEtape(5); } else { setPoids(pos.taches.map(() => 0)); setEtape(3); }
@@ -93,7 +95,7 @@ export default function Parcours({ data }: { data: DiagData }) {
     haut.current?.scrollIntoView({ block: 'start' });
   }, [etape]);
 
-  const r = useMemo(() => (poste ? repartition(poste.taches.map((x) => x.bande), poids) : null), [poste, poids]);
+  const r = poste ? repartition(poste.taches.map((x) => x.bande), poids) : null;
 
   const domainesFiltres = useMemo(() => {
     const q = normaliser(recherche);
