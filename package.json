@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/check-metiers.js && next build",
     "start": "next start",
     "lint": "eslint",
     "indexnow": "node scripts/indexnow-submit.js",
-    "thumbnails": "node scripts/make-thumbnails.mjs"
+    "thumbnails": "node scripts/make-thumbnails.mjs",
+    "test": "node --test scripts/diagnostic-calcul.test.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

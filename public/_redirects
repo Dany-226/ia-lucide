@@ -13,6 +13,11 @@
 # Redirect Rules du dashboard traitent ?slug= et ?id= avant Pages).
 /Article / 301
 
+# === Diagnostic v2 : l'ancienne page de résultat (v1, noindex) renvoie vers l'outil ===
+
+/diagnostic-exposition-ia/resultat/ /diagnostic-exposition-ia/ 301
+/diagnostic-exposition-ia/resultat /diagnostic-exposition-ia/ 301
+
 # === Fusions doublons - redirections 301 ===
 
 /article/developpeur-ia-2026/ /article/developpeur-augmente-ia-2026/ 301

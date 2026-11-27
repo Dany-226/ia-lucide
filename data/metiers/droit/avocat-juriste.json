@@ -25,7 +25,7 @@
     "code": "À RELEVER",
     "libelle": "À RELEVER"
   },
-  "publie": false,
+  "publie": true,
   "taches": [
     {
       "task_id": 1,

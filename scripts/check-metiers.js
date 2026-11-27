@@ -220,12 +220,77 @@ function main() {
     for (const t of doc.taches || []) if (t.statut in statuts) statuts[t.statut]++;
   }
 
+  const tx = checkTextes(cfg, publies, errors);
+
+  // Build de production (branche main sur Cloudflare Pages) : la v2 remplace la v1 à l'URL
+  // /diagnostic-exposition-ia/ ; sans poste publié, l'outil serait vide (et Next refuse une
+  // route /metiers/[domaine] sans aucune page). On l'arrête ici avec un message clair.
+  if (process.env.CF_PAGES_BRANCH === 'main' && publies === 0) {
+    errors.push('build de production sans aucun poste publié : passer "publie": true sur les postes validés avant de fusionner diagnostic-v2 dans main (voir CLAUDE.md, Diagnostic v2)');
+  }
+
   if (errors.length) {
     console.error(`check-metiers : ${errors.length} erreur(s)`);
     for (const e of errors) console.error(`  - ${e}`);
     process.exit(1);
   }
-  console.log(`check-metiers : OK, ${expected.size} postes (${publies} publiés), tâches : ${statuts.valide} valide, ${statuts.propose} propose, ${statuts.rejete} rejete.`);
+  console.log(`check-metiers : OK, ${expected.size} postes (${publies} publiés), tâches : ${statuts.valide} valide, ${statuts.propose} propose, ${statuts.rejete} rejete ; textes : ${tx.valide} valide, ${tx.propose} propose, ${tx.rejete} rejete.`);
+}
+
+// Modèles de texte (data/metiers/textes.json, spec §1.7) : toutes les entrées utilisées par
+// les pages existent, les articles liés existent dans content/, et dès qu'un poste est publié,
+// toutes les entrées sont « valide ».
+function checkTextes(cfg, publies, errors) {
+  const rel = 'data/metiers/textes.json';
+  const err = (m) => errors.push(`${rel} : ${m}`);
+  const counts = { propose: 0, valide: 0, rejete: 0 };
+  let tx;
+  try { tx = JSON.parse(fs.readFileSync(path.join(METIERS_DIR, 'textes.json'), 'utf8')); } catch (e) { err(`illisible (${e.message})`); return counts; }
+  const entrees = tx.entrees || {};
+  const required = [
+    'outil.sous_titre', 'outil.intro', 'repartition.phrase', 'repartition.aucun_resultat', 'comparaison.intro',
+    'avertissement', 'avertissement.source', 'bande.note', 'domaine.comparaison',
+    'metier_absent.texte', 'metier_absent.confirmation', 'piste.titre',
+    'inscription.titre', 'inscription.consentement', 'inscription.donnees', 'inscription.confirmation',
+    'partage.texte', 'partage.note',
+  ];
+  for (const e of ['domaine', 'poste', 'taches', 'contexte']) required.push(`ecran.${e}.titre`, `ecran.${e}.intro`);
+  required.push('ecran.resultat.titre');
+  const codes = ['G4', 'G3', 'G2', 'G1', 'MIN', 'NE'];
+  const bandes = ['eleve', 'partiel', 'faible'];
+  for (const c of codes) {
+    required.push(`categorie.${c}.libelle`, `categorie.${c}.explication`);
+    for (const b of bandes) required.push(`synthese.${c}.${b}`);
+  }
+  for (const b of bandes) required.push(`bande.${b}.libelle`, `bande.${b}.definition`);
+  for (const p of ['outils', 'voisins', 'independant', 'demarrer']) required.push(`piste.${p}.titre`, `piste.${p}.texte`);
+  required.push('piste.voisins.recrutement', 'piste.demarrer.texte_sans_tache');
+  for (const d of cfg.domaines) required.push(`domaines.${d.slug}.description`);
+  for (const p of cfg.postes) required.push(`postes.${p.poste}.description`);
+  for (const k of required) if (!entrees[k]) err(`entrée « ${k} » manquante`);
+
+  const interdits = /automatisable|menacé|remplacé|remplacer|probabilité de perdre|% de risque/i;
+  for (const [k, e] of Object.entries(entrees)) {
+    if (!e || blank(e.texte)) { err(`« ${k} » : texte vide`); continue; }
+    if (!STATUTS.includes(e.statut)) err(`« ${k} » : statut « ${e.statut} » inconnu`);
+    else counts[e.statut]++;
+    if (/[–—]/.test(e.texte)) err(`« ${k} » : tiret long ou demi-cadratin (règle éditoriale)`);
+    // « probabilité de perdre » est permis seulement dans une négation (avertissement, intro).
+    const m = e.texte.match(interdits);
+    if (m && !/(ni une|pas une|n'est pas une) probabilité de perdre/i.test(e.texte)) err(`« ${k} » : vocabulaire interdit (« ${m[0]} »)`);
+    if (publies > 0 && e.statut !== 'valide') err(`« ${k} » : statut « ${e.statut} » alors qu'un poste est publié (« valide » requis)`);
+  }
+  const slugs = [...Object.values(tx.liens_domaines || {}), ...Object.values(tx.liens_postes || {}), ...Object.values(tx.liens_pistes || {})].flat();
+  for (const s of new Set(slugs)) {
+    if (!fs.existsSync(path.join(ROOT, 'content', `${s}.mdx`))) err(`article lié « ${s} » absent de content/`);
+  }
+  for (const d of Object.keys(tx.liens_domaines || {})) {
+    if (!cfg.domaines.some((x) => x.slug === d)) err(`liens_domaines : domaine « ${d} » inconnu`);
+  }
+  for (const p of Object.keys(tx.liens_postes || {})) {
+    if (!cfg.postes.some((x) => x.poste === p)) err(`liens_postes : poste « ${p} » inconnu`);
+  }
+  return counts;
 }
 
 main();
