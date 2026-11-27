@@ -44,16 +44,15 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
         <p className="text-sm text-[#6b6b6b] mb-4">
           Nos articles en priorité dans vos résultats Google.
         </p>
-        {/* Bouton officiel Google (publisher.js) : ajoute la source en un clic, sans confirmation
-            visible. Lien de secours : la page de préférences Google, toujours accessible. */}
-        <div google-add-preferred-source-btn=""></div>
+        {/* Lien simple vers les préférences Google (lien direct documenté par Google
+            Search Central), sans script tiers : aucune requête vers Google avant un clic. */}
         <a
           href="https://www.google.com/preferences/source?q=ialucide.fr"
           target="_blank"
           rel="noopener"
-          className="font-mono inline-block mt-3 text-xs tracking-[0.05em] text-[#8a6a1c] hover:underline"
+          className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#fcf9f0] bg-[#1a3a4a] border border-[#1a3a4a] px-4 py-3 hover:bg-[#1c1c17] hover:border-[#1c1c17] transition-colors"
         >
-          Ou ouvrir la page Google &rarr;
+          Ajouter aux sources préférées &rarr;
         </a>
       </div>
 

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -86,11 +85,6 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <AnalyticsConsent />
-        <Script
-          async
-          src="https://news.google.com/swg/js/v1/publisher.js"
-          strategy="lazyOnload"
-        />
       </body>
     </html>
   );
