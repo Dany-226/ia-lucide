@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
-import Link from 'next/link';
+import EncartOutil from '@/components/EncartOutil';
 
 const PAGE_DESCRIPTION =
   "ialucide : le regard lucide sur l'IA qui transforme les métiers. Qui nous sommes, notre mission, notre méthodologie.";
@@ -175,7 +175,6 @@ export default function AboutPage() {
 
           <div className="h-px bg-[#c9a84c]/15" />
 
-          {/* Diagnostic exposition IA */}
           <section className="border border-[#c9a84c]/20 p-8">
             <h2
               className="text-xl font-bold text-[#fcf9f0] mb-4"
@@ -183,22 +182,14 @@ export default function AboutPage() {
               ialucide.fr
             </h2>
             <p
-              className="text-base text-[#fcf9f0]/70 leading-[1.8] mb-4"
+              className="text-base text-[#fcf9f0]/70 leading-[1.8]"
             >
               ialucide.fr s&apos;adresse à tous les professionnels qui veulent comprendre l&apos;impact de l&apos;IA sur leur métier.
             </p>
-            <p
-              className="text-base text-[#fcf9f0]/70 leading-[1.8]"
-            >
-              Si vous êtes cadre supérieur, dirigeant ou profession libérale et que vous souhaitez aller plus loin, mesurez votre exposition professionnelle et patrimoniale à l&apos;IA avec notre{' '}
-              <Link
-                href="/diagnostic-exposition-ia/"
-                className="text-[#c9a84c] hover:underline"
-              >
-                diagnostic dédié
-              </Link>.
-            </p>
           </section>
+
+          {/* Outil « Où passe la ligne » */}
+          <EncartOutil />
 
           {/* Final quote */}
           <blockquote className="border-l-2 border-[#c9a84c] pl-6 my-4">

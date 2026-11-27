@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { collectionPageJsonLd, jsonLdHtml, METIERS_HUB_UPDATED, pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import MetiersFaqItem from '@/components/MetiersFaqItem';
+import EncartOutil from '@/components/EncartOutil';
 
 const PAGE_DESCRIPTION =
   "Quels métiers sont menacés par l'IA en 2026 ? 21 professions analysées tâche par tâche, sans catastrophisme ni déni : comptable, juriste, médecin...";
@@ -430,27 +431,8 @@ export default function MetiersPage() {
           </div>
         </section>
 
-        {/* CTA diagnostic exposition */}
-        <section className="bg-[#1a3a4a] p-10 md:p-14 text-center">
-          <span className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#c9a84c] block mb-4">
-            Cadre ou dirigeant ?
-          </span>
-          <h2 className="text-[1.75rem] md:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
-            Mesurez votre exposition à l&apos;IA
-          </h2>
-          <p className="text-base text-[#fcf9f0]/80 mb-8 max-w-xl mx-auto leading-relaxed">
-            Un diagnostic personnalisé en 10 minutes. Comprenez précisément quelles dimensions de votre poste sont concernées et par quoi commencer.
-          </p>
-          <Link
-            href="/diagnostic-exposition-ia/"
-            className="font-mono inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-8 py-4 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
-          >
-            Faire mon diagnostic
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7H12M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
-        </section>
+        {/* Outil « Où passe la ligne » */}
+        <EncartOutil />
 
       </div>
     </div>

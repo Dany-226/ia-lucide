@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Article } from '@/lib/articles';
+import EncartOutil from '@/components/EncartOutil';
 
 interface ArticleSidebarProps {
   relatedArticles: Article[];
@@ -32,21 +33,8 @@ export default function ArticleSidebar({ relatedArticles }: ArticleSidebarProps)
         </a>
       </div>
 
-      {/* ailucide.com CTA */}
-      <div className="bg-[#1a3a4a] p-6">
-        <p className="text-[1.375rem] font-bold text-white mb-2" style={{ letterSpacing: '-0.02em' }}>
-          Cadre ou dirigeant ?
-        </p>
-        <p className="text-base text-[#fcf9f0]/80 mb-4">
-          Mesurez votre exposition à l&apos;IA en 10 minutes.
-        </p>
-        <Link
-          href="/diagnostic-exposition-ia/"
-          className="font-mono inline-block text-xs font-bold tracking-widest uppercase text-[#c9a84c] border border-[#c9a84c] px-4 py-2 hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500"
-        >
-          Faire mon diagnostic
-        </Link>
-      </div>
+      {/* Outil « Où passe la ligne » */}
+      <EncartOutil variante="compacte" />
 
       {/* Google Preferred Source */}
       <div className="bg-white shadow-[0_2px_32px_rgba(28,28,23,0.04)] p-6">

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAllArticles, REDACTION_AUTHOR } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
+import EncartOutil from '@/components/EncartOutil';
 
 const PAGE_DESCRIPTION =
   "Analyses claires et sans illusions sur l'impact de l'intelligence artificielle sur les métiers et le travail. Ni catastrophisme, ni évangélisme.";
@@ -162,32 +163,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Diagnostic Banner ── */}
-      <section className="py-20 bg-[#1a3a4a]">
-        <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
-          {/* Label-MD */}
-          <span className="font-mono text-xs font-bold tracking-[0.4em] uppercase text-[#c9a84c] mb-6 block">
-            Pour les cadres et dirigeants
-          </span>
-          {/* Headline-MD */}
-          <h2 className="text-[1.75rem] sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
-            Mesurez votre exposition à l&apos;IA en 10 minutes.
-          </h2>
-          {/* Body-LG */}
-          <p className="text-base text-[#fcf9f0]/80 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Diagnostic patrimonial et professionnel gratuit — méthode utilisée par des profils à hauts revenus.
-          </p>
-          <Link
-            href="/diagnostic-exposition-ia/"
-            className="font-mono inline-flex items-center gap-2 px-8 py-3.5 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#1a3a4a] transition-all duration-500 text-xs font-bold tracking-widest uppercase"
-          >
-            Faire mon diagnostic
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M3 7H11M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
-        </div>
-      </section>
+      {/* ── Outil « Où passe la ligne » ── */}
+      <EncartOutil />
 
       {/* ── Newsletter ── */}
       <section id="newsletter" className="py-20 bg-[#fcf9f0]">
