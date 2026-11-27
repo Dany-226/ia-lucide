@@ -134,7 +134,7 @@ export default function MethodologiePage() {
             <a href="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure" target="_blank" rel="noopener noreferrer" className={LIEN}>le site de l&apos;OIT</a>
             {' '}(seuils : tableau 5, p. 38 du rapport imprimé), avec{' '}
             <a href="https://www.ilo.org/publications/generative-ai-and-jobs-2025-update" target="_blank" rel="noopener noreferrer" className={LIEN}>une note de synthèse, aussi en français</a>.
-            Les données viennent du fichier <code className="font-mono text-sm">Final_Scores_ISCO08_Gmyrek_et_al_2025.xlsx</code>, publié dans{' '}
+            Les données viennent du fichier <code className="font-mono text-sm break-all">Final_Scores_ISCO08_Gmyrek_et_al_2025.xlsx</code>, publié dans{' '}
             <a href="https://github.com/pgmyrek/2025_GenAI_scores_ISCO08" target="_blank" rel="noopener noreferrer" className={LIEN}>le dépôt GitHub des auteurs</a>
             {' '}: 3 265 tâches, 427 professions de la classification internationale ISCO-08.
           </p>
