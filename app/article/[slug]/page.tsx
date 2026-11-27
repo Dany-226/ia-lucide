@@ -11,6 +11,7 @@ import Link from 'next/link';
 import ArticleSidebar from '@/components/ArticleSidebar';
 import ArticleCard from '@/components/ArticleCard';
 import ArticleVideos from '@/components/ArticleVideos';
+import EncartOutil from '@/components/EncartOutil';
 import { pageMetadata, ORGANIZATION_ID, SITE_LOGO, SITE_NAME, SITE_URL } from '@/lib/seo';
 
 const CATEGORY_MAP = {
@@ -265,6 +266,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     .use(rehypeStringify)
     .process(article.content ?? '');
   const contentHtml = processed.toString();
+  // Fiches métier : la phrase de fin renvoie déjà vers l'outil (« Voir mon poste »).
+  const aDejaLienOutil = /href="\/diagnostic-exposition-ia\/"[^>]*>Voir mon poste<\/a>/.test(contentHtml);
 
   const related = getRelatedArticles(article);
   const allRecent = getAllArticles().filter(a => a.slug !== slug).slice(0, 3);
@@ -479,6 +482,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               dangerouslySetInnerHTML={{ __html: contentHtml }}
             />
             {contentHtml.includes('<video') && <ArticleVideos />}
+
+            {/* Outil « Où passe la ligne » sur mobile : la colonne latérale (qui le porte) est masquée
+                sous 1 024 px. Absent des fiches métier, qui se terminent déjà par la phrase « Voir mon poste ». */}
+            {!aDejaLienOutil && (
+              <div className="mt-12 lg:hidden">
+                <EncartOutil variante="compacte" />
+              </div>
+            )}
 
             {/* Newsletter CTA */}
             <div className="mt-12 bg-[#1a3a4a] px-6 py-8 text-center">
